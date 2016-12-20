@@ -3,12 +3,21 @@ import React, { Component } from 'react';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      allSefarim: [],
+    }
+  }
+
+  updateState(key, value) {
+    this.setState({
+      [key]: value,
+    });
   }
 
   componentDidMount() {
     fetch('/api/sefarim')
     .then(r => r.json())
-    .then(data => console.log(data))
+    .then(data => this.updateState('allSefarim', data))
     .catch(err => console.log(err));
   }
 
