@@ -23,7 +23,8 @@
     "express": "^4.14.0",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
-    "pg-promise": "^5.4.4"
+    "pg-promise": "^5.4.4",
+    "whatwg-fetch": "^2.0.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",

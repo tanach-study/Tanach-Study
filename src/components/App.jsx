@@ -5,6 +5,13 @@ class App extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    fetch('/api')
+    .then(r => r.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <div>
@@ -12,11 +19,23 @@ class App extends Component {
           <div className="nav-wrapper container">
             <a id="logo-container" href="#" className="brand-logo">Logo</a>
             <ul className="right hide-on-med-and-down">
-              <li><a href="#">Navbar Link</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Donate</a></li>
+              <li><a href="#">Nevi'im Rishonim</a></li>
+              <li><a href="#">Nevi'im Aharonim</a></li>
+              <li><a href="#">Ketuvim</a></li>
+              <li><a href="#">Contact us</a></li>
             </ul>
 
             <ul id="nav-mobile" className="side-nav">
-              <li><a href="#">Navbar Link</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Donate</a></li>
+              <li><a href="#">Nevi'im Rishonim</a></li>
+              <li><a href="#">Nevi'im Aharonim</a></li>
+              <li><a href="#">Ketuvim</a></li>
+              <li><a href="#">Contact us</a></li>
             </ul>
             <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
           </div>

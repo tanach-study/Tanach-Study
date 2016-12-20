@@ -12,6 +12,16 @@ const PORT         = process.argv[2] || process.env.PORT || 3000;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
+// allow CORS on the entire site
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Token_Authorization");
+  next();
+});
+
+// build API routes
+app.use('/api', require('./routes/api.js'));
+
 app.use(history({ logger: logger }))
 
 app.use(express.static(path.join(__dirname, 'dist')));

@@ -1,6 +1,7 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory, Router } from 'react-router';
+import 'whatwg-fetch';
 import routes from './routes';
 
 // mount a new router with the routes from the other file at #root-container
