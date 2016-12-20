@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css'
 
 class App extends Component {
   constructor(props) {
@@ -38,7 +37,7 @@ class App extends Component {
 
             </div>
           </div>
-          <div className="parallax"><img src="/background1.jpg" alt="Unsplashed background img 1" /></div>
+          <div className="parallax"><img src="/assets/images/background1.jpg" alt="Unsplashed background img 1" /></div>
         </div>
 
 
@@ -49,27 +48,27 @@ class App extends Component {
               <div className="col s12 m4">
                 <div className="icon-block">
                   <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
-                  <h5 className="center">Speeds up development</h5>
+                  <h5 className="center">Torah Content</h5>
 
-                  <p className="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                  <p className="light">Create and build your own identity by studying the entire Tanach firsthand. We teach the depth of “peshat” by studying the grammar and meaning of the words, context of each pasuk, and structure of every paragraph.</p>
                 </div>
               </div>
 
               <div className="col s12 m4">
                 <div className="icon-block">
                   <h2 className="center brown-text"><i className="material-icons">group</i></h2>
-                  <h5 className="center">User Experience Focused</h5>
+                  <h5 className="center">Tech Based Platform yields Ease of Use</h5>
 
-                  <p className="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                  <p className="light">Study with the program or at your own pace. Your choice: Daily email, website or podcast</p>
                 </div>
               </div>
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
-                  <h5 className="center">Easy to work with</h5>
+                  <h2 className="center brown-text"><i className="material-icons">desktop_mac</i></h2>
+                  <h5 className="center">Mode of Study</h5>
 
-                  <p className="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                  <p className="light">Audio based daily classes. Weekly and monthly live (and recorded) guest lectures. Text based thematic developments. Every book. Every chapter. Every verse.</p>
                 </div>
               </div>
             </div>
@@ -86,7 +85,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div className="parallax"><img src="/background2.jpg" alt="Unsplashed background img 2" /></div>
+          <div className="parallax"><img src="/assets/images/background2.jpg" alt="Unsplashed background img 2" /></div>
         </div>
 
         <div className="container">
@@ -112,7 +111,7 @@ class App extends Component {
               </div>
             </div>
           </div>
-          <div className="parallax"><img src="/background3.jpg" alt="Unsplashed background img 3" /></div>
+          <div className="parallax"><img src="/assets/images/background3.jpg" alt="Unsplashed background img 3" /></div>
         </div>
 
         <footer className="page-footer teal">

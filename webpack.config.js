@@ -35,12 +35,14 @@ module.exports = {
         description: 'test',
       },
       links: [
-        'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'
+        'https://fonts.googleapis.com/icon?family=Material+Icons',
+        '/assets/css/materialize.min.css',
+        '/assets/css/style.css'
       ],
       scripts: [
         'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js',
-        '/init.js'
+        '/assets/js/materialize.min.js',
+        '/assets/js/init.js'
       ]
     }),
     new ExtractTextPlugin('/css/[name].css', {
