@@ -6,7 +6,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('/api')
+    fetch('/api/sefarim')
     .then(r => r.json())
     .then(data => console.log(data))
     .catch(err => console.log(err));

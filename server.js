@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 // build API routes
-app.use('/api', require('./routes/api.js'));
+app.use('/api/sefarim', require('./routes/sefarim.js'));
 
 app.use(history({ logger: logger }))
 
