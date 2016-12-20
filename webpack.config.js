@@ -28,12 +28,19 @@ module.exports = {
       inject: false,
       template: require('html-webpack-template'),
       appMountId: 'root-container',
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no',
+        'http-equiv': 'Content-Type',
+        'content': 'text/html; charset=UTF-8',
+        description: 'test',
+      },
       links: [
         'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'
       ],
       scripts: [
         'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js',
+        '/init.js'
       ]
     }),
     new ExtractTextPlugin('/css/[name].css', {
@@ -56,10 +63,12 @@ module.exports = {
         test: /\.gif$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },
-      { test: /\.jpg$/,
+      {
+        test: /\.jpg$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },
-      { test: /\.png$/,
+      {
+        test: /\.png$/,
         loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
       },
       {

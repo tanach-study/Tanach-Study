@@ -15,5 +15,6 @@ app.use(bodyParser.json());
 app.use(history({ logger: logger }))
 
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => console.warn(`Server here! Listening on port ${PORT}!`));
