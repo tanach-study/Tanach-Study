@@ -27,7 +27,14 @@ module.exports = {
       xhtml: true,
       inject: false,
       template: require('html-webpack-template'),
-      appMountId: 'root-container'
+      appMountId: 'root-container',
+      links: [
+        'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css'
+      ],
+      scripts: [
+        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js'
+      ]
     }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true

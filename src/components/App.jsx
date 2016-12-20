@@ -7,7 +7,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='card-panel teal lighten-2'>
         <h1>Hello Tanach World!</h1>
       </div>
     );
