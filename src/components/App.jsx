@@ -6,6 +6,7 @@ class App extends Component {
     super(props);
     this.state = {
       allSefarim: [],
+      activePerek: {},
     }
   }
 
@@ -29,6 +30,7 @@ class App extends Component {
         {this.props.children && React.cloneElement(this.props.children, {
           updateOverallState: (k, v) => this.updateState(k, v),
           allSefarim: this.state.allSefarim,
+          activePerek: this.state.activePerek,
         })
         }
       </div>

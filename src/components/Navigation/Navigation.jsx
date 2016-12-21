@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Navigation extends Component {
   constructor(props) {
@@ -9,13 +10,14 @@ class Navigation extends Component {
   render() {
     return (
       <nav className="white" role="navigation">
+          <Link to="/" id="logo-container" className="brand-logo">
+            <img className="responsive-img" src="/assets/images/logo.png" alt="Tanach Study Logo"/>
+          </Link>
           <div className="nav-wrapper container">
-            <a id="logo-container" href="#" className="brand-logo">Logo
-            </a>
             <ul className="right hide-on-med-and-down">
               <li><a href="#">About Us</a></li>
               <li><a href="#">Donate</a></li>
-              <li><a href="#">Nevi'im Rishonim</a></li>
+              <li><Link to="/sefarim/yehoshua">Nevi'im Rishonim</Link></li>
               <li><a href="#">Nevi'im Aharonim</a></li>
               <li><a href="#">Ketuvim</a></li>
               <li><a href="#">Videos</a></li>

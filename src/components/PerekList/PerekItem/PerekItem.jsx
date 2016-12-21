@@ -19,7 +19,7 @@ const PerekItem = (props) => {
   const seferName = encodeURIComponent(formatDir(props.sefer.book_name.toLowerCase()));
   const fileName = `${props.sefer.book_name.replace(/ /g, '-')}-${props.perek.perek_id}.mp3`;
   return (
-    <div>
+    <div onClick={props.click} className='card red'>
       <p>Perek {props.perek.perek_id}</p>
       <audio src={`http://cdn.tanachstudy.com/archives/${partName}/${seferName}/${fileName}`} controls />
     </div>

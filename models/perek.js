@@ -3,7 +3,26 @@ const db = require('../lib/dbConnection');
 const getOnePerek = (req, res, next) => {
   const sefer = req.params.sefer;
   const perek = req.params.perek;
-  const query = `SELECT * FROM $1~ LEFT JOIN teacher ON ($1~.teacher_id = teacher.teacher_id) WHERE $1~.perek_id = $2;`;
+  const query = `
+    SELECT
+      teacher.bio,
+      teacher.title,
+      teacher.fname,
+      teacher.mname,
+      teacher.lname,
+      part.part_id,
+      part.name AS part_name,
+      $1~.is_many_parts,
+      $1~.parts_breakdown,
+      $1~.perek_id,
+      $1~.teacher_id,
+      $1~.reader_id
+    FROM $1~
+    LEFT JOIN teacher
+      ON ($1~.teacher_id = teacher.teacher_id)
+    INNER JOIN part
+      ON ($1~.part_id = part.part_id)
+    WHERE $1~.perek_id = $2;`;
   const values = [sefer, perek];
 
   db.one(query, values)

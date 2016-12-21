@@ -18,6 +18,12 @@ class Sefarim extends Component {
     });
   }
 
+  seferCardClick(i) {
+    // const perek = this.state.seferData[i];
+    // this.props.updateOverallState('activePerek', perek);
+    browserHistory.push(`/perakim/${this.state.seferName}/${i}`);
+  }
+
   componentDidMount() {
     const sefer = this.state.seferName;
     console.log('sefer', sefer)
@@ -38,6 +44,7 @@ class Sefarim extends Component {
         <PerekList
           perakim={this.state.seferData}
           sefer={this.state.selectedSefer}
+          click={this.seferCardClick.bind(this)}
         />
       </div>
     )

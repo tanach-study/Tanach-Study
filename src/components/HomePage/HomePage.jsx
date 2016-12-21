@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 import Lightbox from 'react-images';
+import Slider from './Slider/Slider.jsx';
 
 class HomePage extends Component {
   constructor(props) {
@@ -66,6 +68,10 @@ class HomePage extends Component {
     this.gotoNext();
   }
 
+  componentDidMount() {
+    init(jQuery);
+  }
+
   renderGallery () {
     const images = this.state.images;
     if (!images) return;
@@ -78,6 +84,7 @@ class HomePage extends Component {
           <img src={obj.thumbnail} />
         </a>
     );
+
 
     return (
       <div>
@@ -102,23 +109,21 @@ class HomePage extends Component {
   render() {
     return(
       <div>
-        <div id="index-banner" className="parallax-container">
-          <div className="section no-pad-bot">
+        <div id="index-banner">
+          <div className="section no-pad-top">
             <div className="container">
-              <br/><br/>
               <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
               <div className="row center">
                 <h5 className="header col s12 light">Fusing the most modern of technologies with the most ancient of texts</h5>
               </div>
               <div className="row center">
-                <a href="http://materializecss.com/getting-started.html" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">Sign Up Now!</a>
+                <a href="#" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">Sign Up Now!</a>
               </div>
-              <br/><br/>
-
             </div>
           </div>
-          <div className="parallax"><img src="/assets/images/logo.jpg" alt="Unsplashed background img 1" /></div>
         </div>
+
+        <Slider />
 
 
         <div className="container">
@@ -174,58 +179,40 @@ class HomePage extends Component {
                 <h3><i className="mdi-content-send brown-text"></i></h3>
                 <h4>Contact Us</h4>
                 <div className="center-align light">
-                  <div className="row center">
-                    <div className="col s1 l3 card red lightn-2">Sefer Yehoshua</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Shofetim</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Shemuel 1</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Shemuel 2</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Melachim 1</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Melachim 2</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Yeshayahu</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Yirmiyahu</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Yehezkel</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Hoshea</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Yoel</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Amos</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Ovadiah</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Yonah</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Michah</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Nahum</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Habakuk</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Sephania</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Hagai</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Zecharia</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Malachi</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Divre Hayamim 1</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Divre Hayamim 2</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Tehillim</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Mishle</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Iyov</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Shir Hashirim</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Ruth</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 card red lightn-2">Sefer Eicha</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Kohelet</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Esther</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Daniel</div>
-                  </div>
-                  <div className="row">
-                    <div className="col s1 l3 offset-l3  card red lightn-2">Sefer Ezra</div>
-                    <div className="col s1 l3 card red lightn-2">Sefer Nehemya</div>
-                  </div>
+                    <Link to="/sefarim/yehoshua"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yehoshua</div></Link>
+                    <Link to="/sefarim/shofetim"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Shofetim</div></Link>
+                    <Link to="/sefarim/shemuel1"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Shemuel 1</div></Link>
+                    <Link to="/sefarim/shemuel2"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Shemuel 2</div></Link>
+                    <Link to="/sefarim/melachim1"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Melachim 1</div></Link>
+                    <Link to="/sefarim/melachim2"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Melachim 2</div></Link>
+                    <Link to="/sefarim/yeshayahu"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yeshayahu</div></Link>
+                    <Link to="/sefarim/yirmiyahu"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yirmiyahu</div></Link>
+                    <Link to="/sefarim/yehezkel"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yehezkel</div></Link>
+                    <Link to="/sefarim/hoshea"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Hoshea</div></Link>
+                    <Link to="/sefarim/yoel"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yoel</div></Link>
+                    <Link to="/sefarim/amos"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Amos</div></Link>
+                    <Link to="/sefarim/ovadiah"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Ovadiah</div></Link>
+                    <Link to="/sefarim/yonah"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yonah</div></Link>
+                    <Link to="/sefarim/michah"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Michah</div></Link>
+                    <Link to="/sefarim/nahum"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Nahum</div></Link>
+                    <Link to="/sefarim/habakuk"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Habakuk</div></Link>
+                    <Link to="/sefarim/sephania"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Sephania</div></Link>
+                    <Link to="/sefarim/hagai"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Hagai</div></Link>
+                    <Link to="/sefarim/zecharia"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Zecharia</div></Link>
+                    <Link to="/sefarim/malachi"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Malachi</div></Link>
+                    <Link to="/sefarim/divrehayamim1"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Divre Hayamim 1</div></Link>
+                    <Link to="/sefarim/divrehayamim2"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Divre Hayamim 2</div></Link>
+                    <Link to="/sefarim/tehillim"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Tehillim</div></Link>
+                    <Link to="/sefarim/mishle"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Mishle</div></Link>
+                    <Link to="/sefarim/iyov"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Iyov</div></Link>
+                    <Link to="/sefarim/shirhashirim"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Shir Hashirim</div></Link>
+                    <Link to="/sefarim/ruth"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Ruth</div></Link>
+                    <Link to="/sefarim/eicha"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Eicha</div></Link>
+                    <Link to="/sefarim/kohelet"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Kohelet</div></Link>
+                    <Link to="/sefarim/esther"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Esther</div></Link>
+                    <Link to="/sefarim/daniel"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Daniel</div></Link>
+                    <Link to="/sefarim/ezra"><div className="col s12 m6 l3 offset-l3  card red lightn-2 btn waves-effect waves-red">Sefer Ezra</div></Link>
+                    <Link to="/sefarim/nehemya"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect waves-red">Sefer Nehemya</div></Link>
                 </div>
               </div>
             </div>
