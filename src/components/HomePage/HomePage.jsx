@@ -173,51 +173,58 @@ class HomePage extends Component {
               <div className="col s12 center">
                 <h3><i className="mdi-content-send brown-text"></i></h3>
                 <h4>Contact Us</h4>
-                <div className="left-align light">
+                <div className="center-align light">
                   <div className="row center">
-                    <div className="col s1 card red lightn-2">Sefer Yehoshua</div>
-                    <div className="col s1 card red lightn-2">Sefer Shofetim</div>
-                    <div className="col s1 card red lightn-2">Sefer Shemuel 1</div>
-                    <div className="col s1 card red lightn-2">Sefer Shemuel 2</div>
-                    <div className="col s1 card red lightn-2">Sefer Melachim 1</div>
-                    <div className="col s1 card red lightn-2">Sefer Melachim 2</div>
-                    <div className="col s1 card red lightn-2">Sefer Yeshayahu</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Yehoshua</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Shofetim</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Shemuel 1</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Shemuel 2</div>
                   </div>
-                  <div className="row center">
-                    <div className="col s1 card red lightn-2">Sefer Yirmiyahu</div>
-                    <div className="col s1 card red lightn-2">Sefer Yehezkel</div>
-                    <div className="col s1 card red lightn-2">Sefer Hoshea</div>
-                    <div className="col s1 card red lightn-2">Sefer Yoel</div>
-                    <div className="col s1 card red lightn-2">Sefer Amos</div>
-                    <div className="col s1 card red lightn-2">Sefer Ovadiah</div>
-                    <div className="col s1 card red lightn-2">Sefer Yonah</div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Melachim 1</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Melachim 2</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Yeshayahu</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Yirmiyahu</div>
                   </div>
-                  <div className="row center">
-                    <div className="col s1 card red lightn-2">Sefer Michah</div>
-                    <div className="col s1 card red lightn-2">Sefer Nahum</div>
-                    <div className="col s1 card red lightn-2">Sefer Habakuk</div>
-                    <div className="col s1 card red lightn-2">Sefer Sephania</div>
-                    <div className="col s1 card red lightn-2">Sefer Hagai</div>
-                    <div className="col s1 card red lightn-2">Sefer Zecharia</div>
-                    <div className="col s1 card red lightn-2">Sefer Malachi</div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Yehezkel</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Hoshea</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Yoel</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Amos</div>
                   </div>
-                  <div className="row center">
-                    <div className="col s1 card red lightn-2">Sefer Divre Hayamim 1</div>
-                    <div className="col s1 card red lightn-2">Sefer Divre Hayamim 2</div>
-                    <div className="col s1 card red lightn-2">Sefer Tehillim</div>
-                    <div className="col s1 card red lightn-2">Sefer Mishle</div>
-                    <div className="col s1 card red lightn-2">Sefer Iyov</div>
-                    <div className="col s1 card red lightn-2">Sefer Shir Hashirim</div>
-                    <div className="col s1 card red lightn-2">Sefer Ruth</div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Ovadiah</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Yonah</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Michah</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Nahum</div>
                   </div>
-                  <div className="row center">
-                    <div className="col s1 card red lightn-2">Sefer Eicha</div>
-                    <div className="col s1 card red lightn-2">Sefer Kohelet</div>
-                    <div className="col s1 card red lightn-2">Sefer Esther</div>
-                    <div className="col s1 card red lightn-2">Sefer Daniel</div>
-                    <div className="col s1 card red lightn-2">Sefer Ezra</div>
-                    <div className="col s1 card red lightn-2">Sefer Nehemya</div>
-                    <div className="col s1 card red lightn-2"></div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Habakuk</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Sephania</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Hagai</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Zecharia</div>
+                  </div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Malachi</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Divre Hayamim 1</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Divre Hayamim 2</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Tehillim</div>
+                  </div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Mishle</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Iyov</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Shir Hashirim</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Ruth</div>
+                  </div>
+                  <div className="row">
+                    <div className="col s1 l3 card red lightn-2">Sefer Eicha</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Kohelet</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Esther</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Daniel</div>
+                  </div>
+                  <div className="row">
+                    <div className="col s1 l3 offset-l3  card red lightn-2">Sefer Ezra</div>
+                    <div className="col s1 l3 card red lightn-2">Sefer Nehemya</div>
                   </div>
                 </div>
               </div>

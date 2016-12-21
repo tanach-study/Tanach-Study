@@ -28,6 +28,7 @@ class App extends Component {
         <Navigation />
         {this.props.children && React.cloneElement(this.props.children, {
           updateOverallState: (k, v) => this.updateState(k, v),
+          allSefarim: this.state.allSefarim,
         })
         }
       </div>

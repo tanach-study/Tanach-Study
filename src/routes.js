@@ -8,7 +8,7 @@ import Videos from './components/Videos/Videos.jsx';
 module.exports = (
   <Route path='/' component={App}>
     <IndexRoute component={HomePage} />
-    <Route path='/sefarim' component={Sefarim} />
+    <Route path='/sefarim/:sefer' component={Sefarim} />
     <Route path='/videos' component={Videos} />
   </Route>
 );
