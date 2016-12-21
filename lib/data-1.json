@@ -1,0 +1,1662 @@
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/CXMaIy_EWZR4flqE9jmX9zrY6_o\"",
+    "nextPageToken": "CDIQAA",
+    "regionCode": "US",
+    "pageInfo": {
+        "totalResults": 100,
+        "resultsPerPage": 50
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/EeiM50PYxLFBThSozDv0_PdULOY\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ZzUHFu5amFE"
+            },
+            "snippet": {
+                "publishedAt": "2016-09-21T07:49:37.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Dr. Yael Ziegler - Does Sefer Tehillim Tell a Story?",
+                "description": "Recorded on Monday Sep. 19th, 2016 at 8:00 PM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ZzUHFu5amFE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ZzUHFu5amFE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ZzUHFu5amFE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/NdR7vr3bn6j7NqPIFNqiTvoCrJM\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "boowIz75Jg4"
+            },
+            "snippet": {
+                "publishedAt": "2016-09-19T05:38:12.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rav Baruch Gigi - The Origins of Musaf Rosh Hashana",
+                "description": "Recorded on Sunday Sep. 18th, 2016 at 9:45 AM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/boowIz75Jg4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/boowIz75Jg4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/boowIz75Jg4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/505VNolzU8uMVwCz-ta8HqxpZ1c\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "5cZHNLhRxi4"
+            },
+            "snippet": {
+                "publishedAt": "2016-09-15T13:09:34.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rav Reuven Taragin - Understanding Pesuke De'Zimra",
+                "description": "Rabbi Taragin focuses on the Mizmor of \"Tehillah LeDavid (Ashre in our tefillah), its importance, structure and meaning. Part 2 focuses on the rest of Pesuke ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/5cZHNLhRxi4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/5cZHNLhRxi4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/5cZHNLhRxi4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/J2AeoeMaiuSEnKKGGH-_dRI2pWY\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ufrT6YI3oqw"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T23:35:15.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Yitzchak Etshalom - On The Waters of Babel: A Celebratory Psalm (Tehillim 137)",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 11:00 AM in Congregation Magen David of West ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ufrT6YI3oqw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ufrT6YI3oqw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ufrT6YI3oqw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/NVwSxiCUJuGaK0BN_8ByRzJYBhM\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "3p6xMRiziL8"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T23:19:25.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Yitzchak Etshalom - When God Restored Our Fortunes (Tehillim 126)",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 5:00 PM in Congregation Magen David of West Deal, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/3p6xMRiziL8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/3p6xMRiziL8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/3p6xMRiziL8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/Mwo9NQUligY6AsdZE0YTS2WL-wg\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "gbU__sTeFGg"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T23:16:03.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Reuven Taragin - (How) Is Ahavat Yisrael Possible?",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/gbU__sTeFGg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/gbU__sTeFGg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/gbU__sTeFGg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/hScmfv8lTqm8WV0lArL2dBe4yeE\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "EcaFMN94Pu8"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T11:31:10.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Ricky Hidary - Tanach, Archaeology, & the Theological Significance of Dates",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 1:00 PM in Congregation Magen David of West Deal, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/EcaFMN94Pu8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/EcaFMN94Pu8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/EcaFMN94Pu8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/lPYpsjBBOns7C5pKZ8PH1eEt56A\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Lw1ceDQ0ar8"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T05:49:51.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Mrs. Shani Taragin - Tablets, Temples, and Tefilot",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 12:00 PM in Congregation Magen David of West ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Lw1ceDQ0ar8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Lw1ceDQ0ar8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Lw1ceDQ0ar8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/FhLVf3RAK2fqvapd5uR4yPsWZXc\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "kx4z6OgKkI8"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T04:55:47.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Albert Setton - Kiddush Hashem As It Appears In Nevi'im",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/kx4z6OgKkI8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/kx4z6OgKkI8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/kx4z6OgKkI8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/FceKd2_cWzO5CFV1d4R53GwAIBk\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "XR64Kp2FZXQ"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T04:39:24.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Divine Providence vs. Man's Efforts Within Tehilim",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/XR64Kp2FZXQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/XR64Kp2FZXQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/XR64Kp2FZXQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/wcocPB5kzgaLeRUiNY8jHdtfuac\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "eiG4_wd4Aw8"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T04:19:03.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Joey D. Mizrahi - The Many-Headed Beast Known as Anti-Semitism",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 3:00 PM in Congregation Magen David of West Deal, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/eiG4_wd4Aw8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/eiG4_wd4Aw8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/eiG4_wd4Aw8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/GALrAsriAjO3bdHjCxrHTShF1Oo\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "xAyBMh-XqKQ"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T01:23:04.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Mrs. Gitta Neufeld - A Tale of Two Sisters: Rachel & Leah and the Bet Hamikdash",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 12:00 PM in Congregation Magen David of West ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/xAyBMh-XqKQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/xAyBMh-XqKQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/xAyBMh-XqKQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/bNceNjYJeqgPDJOguoTrG0RxDOw\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vQ9GFB7v42U"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T01:24:07.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi David Fohrman - The Idea of the Messiah: How Come It's Not In the Torah?",
+                "description": "The source sheet for this class can be found at http://bit.ly/2aB1w93 Recorded on Sunday Jul. 24th, 2016 at 9:45 AM in Congregation Magen David of West Deal, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vQ9GFB7v42U/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vQ9GFB7v42U/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vQ9GFB7v42U/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/1NpxUp4wMbHFNoNwO49Z3B20BA0\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ao1y97Q4TPY"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T01:20:41.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rav Yuval Cherlow - The Revelation of God: In War and at Har SInai",
+                "description": "Recorded on Saturday Jul. 16th, 2016 at 9:30 PM.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ao1y97Q4TPY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ao1y97Q4TPY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ao1y97Q4TPY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/3WZ8PLT1oKwnaz873LsYGXGUW68\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "wZFGyrUCz0I"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-27T01:18:37.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rav Itamar Eldar - Hallel: Between Praise & Admittance",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/wZFGyrUCz0I/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/wZFGyrUCz0I/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/wZFGyrUCz0I/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/R6OVw-FiOmDzBY7CBVOgwXV6goE\"",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PLH9Ufrvy3Q2UOvelm_Ea5BQPD_8U67C2z"
+            },
+            "snippet": {
+                "publishedAt": "2016-07-26T13:05:06.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Shiv'a Asar BeTamuz 5776",
+                "description": "Source Sheets for this Yom Iyun can be found at http://bit.ly/2aB1w93.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vQ9GFB7v42U/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vQ9GFB7v42U/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vQ9GFB7v42U/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/ZbxvQZ4KMR_YqpRCgG6B4Ia2MaU\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "KnXLWRg4qC8"
+            },
+            "snippet": {
+                "publishedAt": "2016-06-09T10:43:29.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rav Amnon Bazak - Jerusalem: Who Chose it and Why",
+                "description": "Recorded on Sunday Jun. 6th, 2016 at 9:00 AM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/KnXLWRg4qC8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/KnXLWRg4qC8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/KnXLWRg4qC8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/Il875CTUGZDdMVla6VqrrgqVjzs\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "T2J6UG3NGAw"
+            },
+            "snippet": {
+                "publishedAt": "2016-06-09T10:30:44.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Dr. Tova Ganzel - A Portrait of King David: Tehillim vs. Nevi'im",
+                "description": "Recorded on Wednesday May 25th, 2016 at 7:45 PM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/T2J6UG3NGAw/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/T2J6UG3NGAw/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/T2J6UG3NGAw/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/-4PzTiK9zRO0oRy67JHjn2upaLE\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "2CvcV0ARgIQ"
+            },
+            "snippet": {
+                "publishedAt": "2016-06-09T10:28:04.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Nathan Dweck - The Triumph of the Righteous",
+                "description": "Recorded on Monday May 16th, 2016 at 8:30 PM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/2CvcV0ARgIQ/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/2CvcV0ARgIQ/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/2CvcV0ARgIQ/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/RvG9Iy-eNJihMY7GvhOAnZ2SJq8\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "S1u220x2dlM"
+            },
+            "snippet": {
+                "publishedAt": "2016-04-12T23:16:21.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton March 28th, 2016",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/S1u220x2dlM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/S1u220x2dlM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/S1u220x2dlM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/p1fQ39ekK8766pwqP-5yxCcGksk\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Y7rytfuguLM"
+            },
+            "snippet": {
+                "publishedAt": "2016-04-12T23:15:37.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Yitzchak Etshalom - Introduction to Sefer Tehillim",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Y7rytfuguLM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Y7rytfuguLM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Y7rytfuguLM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/fxdh8LUwwfjLr7R5KCpxA1XZYyk\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "6BoGywJ1Ry8"
+            },
+            "snippet": {
+                "publishedAt": "2016-04-05T04:07:30.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Dr. Avigail Rock - A King Gone Awry",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6BoGywJ1Ry8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6BoGywJ1Ry8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6BoGywJ1Ry8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/O5gC8XcK86uGVY9jlX1sOysYcEs\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "USV6OSPNr38"
+            },
+            "snippet": {
+                "publishedAt": "2016-03-14T23:03:31.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Chanoch Waxman - The Last Days of David: Mikdash David or Mikdash Shelomo?",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/USV6OSPNr38/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/USV6OSPNr38/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/USV6OSPNr38/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/jTgrXubviKrq86bdlgh1WhWd5U0\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "RTBU_6WTYrU"
+            },
+            "snippet": {
+                "publishedAt": "2016-02-08T05:00:58.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Celebration Event - Rabbi Harold Sutton's Speech",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/RTBU_6WTYrU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/RTBU_6WTYrU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/RTBU_6WTYrU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/-ZFTH2mQxsGH4hOTQqpp6aUlVKE\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "FuIn8XYG4rA"
+            },
+            "snippet": {
+                "publishedAt": "2016-02-08T04:57:04.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Celebration Event - Rabbi Avi Harari's Speech",
+                "description": "Recorded on Saturday Feb. 6th, 2016 at 8:30 PM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/FuIn8XYG4rA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/FuIn8XYG4rA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/FuIn8XYG4rA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/h7gpM5KScRKXZu5oECqagOKFJzI\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "SQXQzBtfUkU"
+            },
+            "snippet": {
+                "publishedAt": "2016-02-08T04:54:11.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Celebration Event - Siyum Nevi'im",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/SQXQzBtfUkU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/SQXQzBtfUkU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/SQXQzBtfUkU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/ngy45AI6MdjY_26hmZDCasMKgiw\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "mhzXIuy7nao"
+            },
+            "snippet": {
+                "publishedAt": "2016-02-08T04:47:10.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Celebration Event - Jesse's Speech",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/mhzXIuy7nao/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/mhzXIuy7nao/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/mhzXIuy7nao/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/mTnHkCXWLCGfYCeaSkNpa5-fh6o\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "fWgjvjTuQek"
+            },
+            "snippet": {
+                "publishedAt": "2016-02-08T04:46:45.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Celebration Event - Appreciation Certificates",
+                "description": "Recorded on Saturday Feb. 6th, 2016 at 8:30 PM in Congregation Hochma U'Mussar, Brooklyn, NY, 11223.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/fWgjvjTuQek/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/fWgjvjTuQek/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/fWgjvjTuQek/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/KL_yH7dfKD-pyvJ3LQa65plZArI\"",
+            "id": {
+                "kind": "youtube#playlist",
+                "playlistId": "PLH9Ufrvy3Q2XR_waLu8ggHpM8FtfBOV21"
+            },
+            "snippet": {
+                "publishedAt": "2016-02-08T04:41:40.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Tanach Celebration Event & Siyum Nevi'im",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/mhzXIuy7nao/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/mhzXIuy7nao/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/mhzXIuy7nao/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/MsTW8hpy-5p8orR50iB4p1vewmA\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "EoE3Lu2E9qY"
+            },
+            "snippet": {
+                "publishedAt": "2016-01-05T12:33:26.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Nahum: Navi Sheker or Navi Emet?",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/EoE3Lu2E9qY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/EoE3Lu2E9qY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/EoE3Lu2E9qY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/hBG-epeTUJXC12UTuRGKBiAxjSU\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "d75qUhBMGJM"
+            },
+            "snippet": {
+                "publishedAt": "2015-12-23T12:32:33.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Esav & Edom: A Brother or Enemy?",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/d75qUhBMGJM/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/d75qUhBMGJM/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/d75qUhBMGJM/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/iOcFCDbCbO2ZpmZcz7m7qnZr5to\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "CC0Fqht-liU"
+            },
+            "snippet": {
+                "publishedAt": "2015-12-07T13:17:00.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Hayyim Angel - Amos: The Social Justice Prophet",
+                "description": "In this class, Rabbi Angel examines the central theme of Amos' prophecy, and compares it to that of Hoshea and some of the other major prophets. The rabbi ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CC0Fqht-liU/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CC0Fqht-liU/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CC0Fqht-liU/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/YndqV9us5iDE987q7ABT_Sq26uQ\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "nu-ICt2FXRA"
+            },
+            "snippet": {
+                "publishedAt": "2015-12-01T05:34:00.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Hoshea vs. Amos",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/nu-ICt2FXRA/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/nu-ICt2FXRA/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/nu-ICt2FXRA/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/MG0jXdxjyKZZODabuf7tB9AqBlM\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "L5qH4BpRH48"
+            },
+            "snippet": {
+                "publishedAt": "2015-11-25T07:25:41.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Contradictions in Yehezkel 44: Two Approaches",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/L5qH4BpRH48/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/L5qH4BpRH48/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/L5qH4BpRH48/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/h0-izPMAUsxoy5m4ZBKr0wjGpKM\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "4d9g9VxzV9c"
+            },
+            "snippet": {
+                "publishedAt": "2015-11-08T14:24:21.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Menachem Leibtag - Pirkei Ha'Mikdash: Why Are They a Fitting Conclusion for the Sefer?",
+                "description": "In this class, Rabbi Leibtag evaluates the prophecies of Yehekel through a brief analysis of the history of Yehezkel's time period. He discusses the importance of ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/4d9g9VxzV9c/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/4d9g9VxzV9c/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/4d9g9VxzV9c/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/ZIeeVrBHDh_8z8XJ0V1feIHalbs\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "gMveMDj9vtE"
+            },
+            "snippet": {
+                "publishedAt": "2015-11-03T21:48:56.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Properties of Yehezkel's Prophecies",
+                "description": "In this class, Rabbi Sutton examines two major aspects of Yehezkel's prophecy: Yehezkel's mission statement as a prophet and the manifestation of the symbolic ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/gMveMDj9vtE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/gMveMDj9vtE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/gMveMDj9vtE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/wdG0x4MQNZqqNCluPVM5Ddabzqg\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "wIL39kTcX3Y"
+            },
+            "snippet": {
+                "publishedAt": "2015-10-27T15:41:03.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Shilo Plesser - The First Wave of Assimilation",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/wIL39kTcX3Y/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/wIL39kTcX3Y/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/wIL39kTcX3Y/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/jxdomkvHagoQ4KryhGlFZ6tmnXw\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vfIkRSk7C_I"
+            },
+            "snippet": {
+                "publishedAt": "2015-10-20T15:22:52.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Yehezkel 24: The Silent Cry of Destruction",
+                "description": "In this class, Rabbi Sutton raises several questions on Yehezkel 24, discussing their theological as well as practical implications. In answering these questions, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vfIkRSk7C_I/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vfIkRSk7C_I/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vfIkRSk7C_I/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/9xpFnQO2bQUVn7dYmje3qavo7MU\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Ze7KgNABjG4"
+            },
+            "snippet": {
+                "publishedAt": "2015-10-16T05:41:37.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Dr. Joshua Berman - The Marriage of God and Israel in Yehezkel 16",
+                "description": "In this class, Rabbi Dr. Berman examines the political, theological, and social allegories presented in Yehezkel chapter 16. The rabbi shows the intricate ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Ze7KgNABjG4/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Ze7KgNABjG4/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Ze7KgNABjG4/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/j3C0EnH2xtYQEm7O0shI_kxEWb0\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "COnVVOPulGo"
+            },
+            "snippet": {
+                "publishedAt": "2015-09-21T23:55:41.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Harold Sutton - Ma'ase Merkava: The Different Approaches Within Medieval Hachamim",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/COnVVOPulGo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/COnVVOPulGo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/COnVVOPulGo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/G0G7jEZ-N3-VE5irk-N7T1NAPxc\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "LxGdhTkIkt8"
+            },
+            "snippet": {
+                "publishedAt": "2015-09-21T23:02:54.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi David Fohrman - Prophet on the Run: Yonah and Yom Kippur",
+                "description": "In this class, Rabbi Fohrman raises two major questions on the book of Yonah: 1) Why does Yonah run? Doesn't he know that running from God is futile, ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/LxGdhTkIkt8/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/LxGdhTkIkt8/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/LxGdhTkIkt8/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/SFfZPRTTWrZjr1KWxdWyhqkFFGc\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Awlro0y2F04"
+            },
+            "snippet": {
+                "publishedAt": "2015-08-05T12:43:30.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Destruction the Seed for Rebuilding: A Look into the Life of Baruch Ben Neryah",
+                "description": "Baruch Ben Neryah, Yirmiyahu's right hand and personal scribe seems to risk everything for the Navi. He came from a prestigious family yet at all/life's costs ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Awlro0y2F04/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Awlro0y2F04/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Awlro0y2F04/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/goVV2EinHVTy1OkEbMTy3h1M0jk\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "CCoAN0TbdZE"
+            },
+            "snippet": {
+                "publishedAt": "2015-08-05T12:42:18.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Yirmiyahu & Yehezkel - Fighting the Same Battles?",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/CCoAN0TbdZE/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/CCoAN0TbdZE/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/CCoAN0TbdZE/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/1vF39hTjv9_8YpoGPm3ystU5gEY\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "gfJqV5zaZ34"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-14T05:18:46.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Avi Harari - The \"Suffering Servant\" of Yeshayahu Perek 53",
+                "description": "In this class, Rabbi Harari reads and explains Yeshaya Perek 53 in light of interpretations of the chapter as a reference to a messiah. The rabbi reconciles ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/gfJqV5zaZ34/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/gfJqV5zaZ34/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/gfJqV5zaZ34/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/2anqNpBWhb2Dr5PhtUwY8jj1YKE\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "56d-oBUhu00"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-07T20:11:04.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi  Yaakov Beasley - How to Rebuild a People: A Study of Nehemia Chapter 9",
+                "description": "",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/56d-oBUhu00/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/56d-oBUhu00/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/56d-oBUhu00/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/YishnRfgeQcMlN18VL77JXsKRZk\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "ryxKxtHPMbY"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-07T20:05:04.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Albert Setton - Prophecy: Must It Come True? What Was Yeshayahu Referring To?",
+                "description": "Rabbi Setton grapples with the odd placement of the nation of Edom in several locations across Tanach and rabbinic sources, explaining the possibility of ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/ryxKxtHPMbY/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/ryxKxtHPMbY/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/ryxKxtHPMbY/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/FxjFCRMqCEMi_h_qnUGN2rs1928\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "6kVjb7M3Uzg"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-07T20:00:51.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Mrs. Shani Taragin - Sticks, Stones, & Sour Figs: Misinterpreting Messages of Nevuah",
+                "description": "In this class, Mrs. Taragin evaluates the nature of Yirmiyahu's mission in the context of other prophets and the setting of the Jewish communities in his time.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/6kVjb7M3Uzg/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/6kVjb7M3Uzg/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/6kVjb7M3Uzg/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/4n4IfLjwvfIgwAHXbzPUc2T2bp4\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "Ci4x6uPmR14"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-07T19:28:19.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi Yitzchak Etshalom - Eichah 5: Permission to Lament",
+                "description": "In this class, Rabbi Etshalom discusses the differences between the first four perakim and the last perek of Megillat Eichah. The different perspective and the ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/Ci4x6uPmR14/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/Ci4x6uPmR14/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/Ci4x6uPmR14/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/rwUcm7HPkYY2OjPXHYi9mrZ8Kfg\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "WYWq2feiZ6s"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-06T14:34:47.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Rabbi  Harold Sutton - Introduction to Sefer Yirmiyahu",
+                "description": "In this class, Rabbi Sutton analyzes the context for Sefer Yirmiyahu and explains the purpose Yirmiyahu serves at the end of the first Bet Hamikdash era.",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/WYWq2feiZ6s/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/WYWq2feiZ6s/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/WYWq2feiZ6s/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        },
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"gMxXHe-zinKdE9lTnzKu8vjcmDI/YELSfKw2Qzy8usdyb7FWcFV_E3c\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "7P_5PkHbjBo"
+            },
+            "snippet": {
+                "publishedAt": "2015-07-06T13:49:18.000Z",
+                "channelId": "UC0b52aDc7f8VTtxT-Ktfb6Q",
+                "title": "Dr. Yael Ziegler - Structure of Megilat Eicha",
+                "description": "In this class, Dr. Ziegler examines the poetic structure of Megilat Eicha and examines how the content of the book is brought out by the way in which it was ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/7P_5PkHbjBo/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/7P_5PkHbjBo/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/7P_5PkHbjBo/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "Tanach Study",
+                "liveBroadcastContent": "none"
+            }
+        }
+    ]
+}
