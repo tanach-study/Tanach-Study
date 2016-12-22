@@ -19,8 +19,6 @@ class Sefarim extends Component {
   }
 
   seferCardClick(i) {
-    // const perek = this.state.seferData[i];
-    // this.props.updateOverallState('activePerek', perek);
     browserHistory.push(`/perakim/${this.state.seferName}/${i}`);
   }
 
@@ -32,8 +30,8 @@ class Sefarim extends Component {
     .then(r => r.json())
     .then(data => {
       const seferObj = data.shift();
-      this.updateState('selectedSefer', seferObj)
-      this.updateState('seferData', data)
+      this.updateState('selectedSefer', seferObj);
+      this.updateState('seferData', data);
     })
     .catch(err => console.log(err));
   }

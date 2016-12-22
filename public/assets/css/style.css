@@ -48,6 +48,10 @@ p {
   }
 }
 
+.perek-card {
+  margin: 2% 4.16666%;
+}
+
 @media only screen and (max-width : 600px) {
   #index-banner .section {
     top: 0;
