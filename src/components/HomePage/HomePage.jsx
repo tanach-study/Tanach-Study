@@ -109,7 +109,7 @@ class HomePage extends Component {
   render() {
     return(
       <div>
-        <div id="index-banner">
+        <div id="index-banner" className="hide-on-med-and-up">
           <div className="section no-pad-top">
             <div className="container">
               <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
@@ -117,7 +117,7 @@ class HomePage extends Component {
                 <h5 className="header col s12 light">Fusing the most modern of technologies with the most ancient of texts</h5>
               </div>
               <div className="row center">
-                <a href="#" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">Sign Up Now!</a>
+                <a href="#" id="download-button" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</a>
               </div>
             </div>
           </div>

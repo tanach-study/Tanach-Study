@@ -1,0 +1,24 @@
+.modal {
+  position: absolute;
+  height: 80%;
+  z-index: 1000;
+  opacity: 0.95;
+  width: 30vw;
+  margin: 2.5% 35vw;
+  /*padding: 5%;*/
+}
+
+@media only screen and (max-width : 992px) {
+  .modal {
+    height: 85%;
+    width: 40vw;
+    margin: 2.5% 30vw;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  .modal {
+    width: 40vw;
+    margin: 2.5% 30vw;
+  }
+}
