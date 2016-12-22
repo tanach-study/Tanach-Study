@@ -7,6 +7,7 @@ const PerekList = (props) => {
       perek={perek}
       sefer={props.sefer}
       key={i}
+      index={i}
       click={(e) => props.click(i + 1)}
     />)
   return (

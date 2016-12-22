@@ -4,6 +4,7 @@ import styles from './Slider.css';
 const Slider = props => {
   return (
     <div className="slider">
+
       <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}>
         <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
         <div className="row center">
@@ -13,6 +14,7 @@ const Slider = props => {
           <a href="#" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</a>
         </div>
       </div>
+
       <ul className="slides">
         <li>
           <img src="/assets/images/background1.jpg" alt="Unsplashed background img 1" />

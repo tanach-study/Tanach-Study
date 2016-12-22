@@ -24,7 +24,6 @@ class Sefarim extends Component {
 
   componentDidMount() {
     const sefer = this.state.seferName;
-    console.log('sefer', sefer)
     if (!sefer) browserHistory.push('/');
     fetch(`/api/sefarim/${sefer}`)
     .then(r => r.json())
