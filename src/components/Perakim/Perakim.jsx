@@ -28,6 +28,7 @@ class Perakim extends Component {
   }
 
   componentDidMount() {
+    init(jQuery);
     fetch(`/api/perakim/${this.state.sefer}/${this.state.perek}`)
     .then(r => r.json())
     .then(data => this.updateState('activePerek', data))

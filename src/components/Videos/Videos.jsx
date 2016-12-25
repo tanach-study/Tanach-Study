@@ -6,6 +6,10 @@ class Videos extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    init(jQuery);
+  }
+
   render() {
     const vids = data.items.map((item, i) => {
       let id = item.id.videoId;

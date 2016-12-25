@@ -117,7 +117,7 @@ class HomePage extends Component {
                 <h5 className="header col s12 light">Fusing the most modern of technologies with the most ancient of texts</h5>
               </div>
               <div className="row center">
-                <a href="#" id="download-button" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</a>
+                <a href="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</a>
               </div>
             </div>
           </div>

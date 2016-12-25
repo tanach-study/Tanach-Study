@@ -7,6 +7,10 @@ class Navigation extends Component {
 
   }
 
+  componentDidMount() {
+    init(jQuery);
+  }
+
   render() {
     return (
       <nav className="white" role="navigation">
@@ -17,7 +21,7 @@ class Navigation extends Component {
             <ul className="right hide-on-med-and-down">
               <li><a href="#">About Us</a></li>
               <li><a href="#">Donate</a></li>
-              <li><Link to="/sefarim/yehoshua">Nevi'im Rishonim</Link></li>
+              <li><a href="/sefarim/yehoshua">Nevi'im Rishonim</a></li>
               <li><a href="#">Nevi'im Aharonim</a></li>
               <li><a href="#">Ketuvim</a></li>
               <li><a href="#">Videos</a></li>
@@ -26,10 +30,10 @@ class Navigation extends Component {
             </ul>
 
             <ul id="nav-mobile" className="side-nav">
-              <li><Link to="/">Home</Link></li>
+              <li><a href="/">Home</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="#">Donate</a></li>
-              <li><Link to="/sefarim/yehoshua">Nevi'im Rishonim</Link></li>
+              <li><a href="/sefarim/yehoshua">Nevi'im Rishonim</a></li>
               <li><a href="#">Nevi'im Aharonim</a></li>
               <li><a href="#">Ketuvim</a></li>
               <li><a href="#">Videos</a></li>

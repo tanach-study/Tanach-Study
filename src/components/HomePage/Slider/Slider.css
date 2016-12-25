@@ -1,6 +1,6 @@
 .modal {
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   opacity: 0.95;
   height: 70%;
   width: 36vw;
