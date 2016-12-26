@@ -19,26 +19,20 @@ class Navigation extends Component {
           </Link>
           <div className="nav-wrapper container">
             <ul className="right hide-on-med-and-down">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Donate</a></li>
-              <li><a href="/sefarim/yehoshua">Nevi'im Rishonim</a></li>
-              <li><a href="#">Nevi'im Aharonim</a></li>
-              <li><a href="#">Ketuvim</a></li>
-              <li><a href="#">Videos</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Upcoming Events</a></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/parts">Study a Perek</Link></li>
+              <li><Link to="/videos">Videos</Link></li>
+              <li><Link to="#">Donate</Link></li>
+              <li><Link to="#">Contact Us</Link></li>
             </ul>
 
             <ul id="nav-mobile" className="side-nav">
-              <li><a href="/">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Donate</a></li>
-              <li><a href="/sefarim/yehoshua">Nevi'im Rishonim</a></li>
-              <li><a href="#">Nevi'im Aharonim</a></li>
-              <li><a href="#">Ketuvim</a></li>
-              <li><a href="#">Videos</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Upcoming Events</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/parts">Study a Perek</Link></li>
+              <li><Link to="/videos">Videos</Link></li>
+              <li><Link to="#">Donate</Link></li>
+              <li><Link to="#">Contact Us</Link></li>
             </ul>
             <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
           </div>
