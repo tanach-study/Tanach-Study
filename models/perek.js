@@ -5,11 +5,16 @@ const getOnePerek = (req, res, next) => {
   const perek = req.params.perek;
   const query = `
     SELECT
-      teacher.bio,
-      teacher.title,
-      teacher.fname,
-      teacher.mname,
-      teacher.lname,
+      teacher.bio AS teacher_bio,
+      teacher.title AS teacher_title,
+      teacher.fname AS teacher_fname,
+      teacher.mname AS teacher_mname,
+      teacher.lname AS teacher_lname,
+      reader.bio AS reader_bio,
+      reader.title AS reader_title,
+      reader.fname AS reader_fname,
+      reader.mname AS reader_mname,
+      reader.lname AS reader_lname,
       part.part_id,
       part.name AS part_name,
       $1~.is_many_parts,
@@ -20,6 +25,8 @@ const getOnePerek = (req, res, next) => {
     FROM $1~
     LEFT JOIN teacher
       ON ($1~.teacher_id = teacher.teacher_id)
+    LEFT JOIN reader
+      ON ($1~.reader_id = reader.reader_id)
     INNER JOIN part
       ON ($1~.part_id = part.part_id)
     WHERE $1~.perek_id = $2;`;
