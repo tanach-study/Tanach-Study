@@ -13,7 +13,7 @@ class HomePage extends Component {
                 {
                   src: 'http://localhost:3000/assets/images/background1.jpg',
                   thumbnail: 'http://localhost:3000/assets/images/background1.jpg',
-                  caption: 'This is a caption. A ccaption is a line of text that describes a picture; this one describes the picture directly above you.'
+                  caption: 'This is a caption. A caption is a line of text that describes a picture; this one describes the picture directly above you.'
                 },
                 {
                   src: 'http://localhost:3000/assets/images/background2.jpg',
@@ -168,7 +168,7 @@ class HomePage extends Component {
           <div className="section no-pad-bot">
             <div className="container">
               <div className="row center">
-                <h5 className="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <h5 className="header col s12 light"></h5>
               </div>
             </div>
           </div>
@@ -181,7 +181,7 @@ class HomePage extends Component {
             <div className="row">
               <div className="col s12 center">
                 <h3><i className="mdi-content-send brown-text"></i></h3>
-                <h4>Contact Us</h4>
+                <h4>Sefarim</h4>
                 <div className="center-align light">
                     <Link to="/sefarim/yehoshua"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Yehoshua</div></Link>
                     <Link to="/sefarim/shofetim"><div className="col s12 m6 l3 card red lightn-2 btn waves-effect hoverable">Sefer Shofetim</div></Link>
@@ -228,7 +228,7 @@ class HomePage extends Component {
           <div className="section no-pad-bot">
             <div className="container">
               <div className="row center">
-                <h5 className="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                <h5 className="header col s12 light"></h5>
               </div>
             </div>
           </div>
@@ -238,36 +238,9 @@ class HomePage extends Component {
         </div>
 
         <footer className="page-footer teal">
-          <div className="container">
-            <div className="row">
-              <div className="col l6 s12">
-                <h5 className="white-text">Company Bio</h5>
-                <p className="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-              </div>
-              <div className="col l3 s12">
-                <h5 className="white-text">Settings</h5>
-                <ul>
-                  <li><a className="white-text" href="#!">Link 1</a></li>
-                  <li><a className="white-text" href="#!">Link 2</a></li>
-                  <li><a className="white-text" href="#!">Link 3</a></li>
-                  <li><a className="white-text" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-              <div className="col l3 s12">
-                <h5 className="white-text">Connect</h5>
-                <ul>
-                  <li><a className="white-text" href="#!">Link 1</a></li>
-                  <li><a className="white-text" href="#!">Link 2</a></li>
-                  <li><a className="white-text" href="#!">Link 3</a></li>
-                  <li><a className="white-text" href="#!">Link 4</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
           <div className="footer-copyright">
             <div className="container">
-            Made by <a className="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+            Made by <a className="brown-text text-lighten-3" href="http://joeyp.nyc">Joey Pinhas</a>
             </div>
           </div>
         </footer>
