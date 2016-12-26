@@ -3,7 +3,7 @@ import styles from './PerekItem.css';
 
 const PerekItem = (props) => {
   return (
-    <div onClick={props.click} className={`perek-card col ${props.index % 3 == 0 ? 'offset-l1' : ''} l3 m6 s12 card blue ligthen-4 hoverable`}>
+    <div onClick={props.click} className={`col ${props.index % 3 == 0 ? 'offset-l1' : ''} ${props.index % 2 == 0 ? 'offset-m1' : 'offset-m2'} l3 m4 s12 card blue lighten-5 hoverable`}>
       <div className="card-content">
         <p>Perek {props.perek.perek_id}</p>
 

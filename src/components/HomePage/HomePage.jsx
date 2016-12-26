@@ -68,6 +68,10 @@ class HomePage extends Component {
     this.gotoNext();
   }
 
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
     init(jQuery);
   }

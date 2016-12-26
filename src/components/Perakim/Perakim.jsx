@@ -29,6 +29,10 @@ class Perakim extends Component {
     });
   }
 
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
     init(jQuery);
     fetch(`/api/perakim/${this.state.sefer}/${this.state.perek}`)

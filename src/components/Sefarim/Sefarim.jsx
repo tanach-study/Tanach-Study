@@ -22,6 +22,10 @@ class Sefarim extends Component {
     browserHistory.push(`/perakim/${this.state.seferName}/${i}`);
   }
 
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
     init(jQuery);
     const sefer = this.state.seferName;
@@ -37,8 +41,19 @@ class Sefarim extends Component {
   }
 
   render() {
+    const act = this.state.seferData[0] || {};
     return (
       <div>
+        <div className="container">
+          <h2>Sefer {this.state.seferName.charAt(0).toUpperCase() + this.state.seferName.slice(1)}</h2>
+          <div className="card">
+            <div className="card-content">
+              <div className="card-title">{act.title} {act.fname} {act.mname || ''}{act.lname}</div>
+              <p>{act.bio}</p>
+              <a href="#">See {act.title} {act.lname}'s bio page</a>
+            </div>
+          </div>
+        </div>
         <PerekList
           perakim={this.state.seferData}
           sefer={this.state.selectedSefer}

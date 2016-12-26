@@ -6,6 +6,10 @@ class Videos extends Component {
     super(props);
   }
 
+  componentWillMount() {
+    window.scrollTo(0, 0);
+  }
+
   componentDidMount() {
     init(jQuery);
   }
