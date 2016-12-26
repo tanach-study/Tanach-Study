@@ -14,6 +14,7 @@ nav .brand-logo {
 nav .brand-logo {
   max-width: 10%;
   margin-left: 5vw;
+  z-index: 100;
 }
 
 p {
