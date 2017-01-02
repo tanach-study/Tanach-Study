@@ -19,18 +19,24 @@ class Videos extends Component {
       let id = item.id.videoId;
       if (id) {
         return (
-          <div>
-            <a href={`https://www.youtube.com/watch?v=${id}`}>
-              <img src={item.snippet.thumbnails.medium.url} alt=""/>
-              <h5>{item.snippet.title}</h5>
-            </a>
+          <div className="col l6">
+            <div className="card small center-align" key={i}>
+              <a href={`https://www.youtube.com/watch?v=${id}`}>
+                <div className="card-content black-text">
+                  <img className="" src={item.snippet.thumbnails.medium.url} alt=""/>
+                  <h5>{item.snippet.title}</h5>
+                </div>
+              </a>
+            </div>
           </div>
         )
       }
     })
     return (
-      <div>
-        {vids}
+      <div className="container">
+        <div className="row">
+          {vids}
+        </div>
       </div>
     )
   }
