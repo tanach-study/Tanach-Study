@@ -1,71 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import Lightbox from 'react-images';
+// import Lightbox from 'react-images';
 import Slider from './Slider/Slider.jsx';
 
 class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lightboxIsOpen: false,
-      currentImage: 0,
-      images: [
-                {
-                  src: 'http://localhost:3000/assets/images/background1.jpg',
-                  thumbnail: 'http://localhost:3000/assets/images/background1.jpg',
-                  caption: 'This is a caption. A caption is a line of text that describes a picture; this one describes the picture directly above you.'
-                },
-                {
-                  src: 'http://localhost:3000/assets/images/background2.jpg',
-                  thumbnail: 'http://localhost:3000/assets/images/background2.jpg',
-                  caption: 'background 2'
-                },
-                {
-                  src: 'http://localhost:3000/assets/images/background3.jpg',
-                  thumbnail: 'http://localhost:3000/assets/images/background3.jpg',
-                  caption: 'background 3'
-                }
-              ],
     }
-  }
-
-
-  openLightbox (index, e) {
-    e.preventDefault();
-    this.setState({
-      currentImage: index,
-      lightboxIsOpen: true,
-    });
-  }
-
-  closeLightbox () {
-    this.setState({
-      currentImage: 0,
-      lightboxIsOpen: false,
-    });
-  }
-
-  gotoPrevious () {
-    this.setState({
-      currentImage: this.state.currentImage - 1,
-    });
-  }
-
-  gotoNext () {
-    this.setState({
-      currentImage: this.state.currentImage + 1,
-    });
-  }
-
-  gotoImage (index) {
-    this.setState({
-      currentImage: index,
-    });
-  }
-
-  handleClickImage () {
-    if (this.state.currentImage === this.props.images.length - 1) return;
-    this.gotoNext();
   }
 
   componentWillMount() {
@@ -75,40 +17,6 @@ class HomePage extends Component {
   componentDidMount() {
     init(jQuery);
   }
-
-  renderGallery () {
-    const images = this.state.images;
-    if (!images) return;
-    const gallery = images.map((obj, i) =>
-        <a
-          href={obj.src}
-          key={i}
-          onClick={(e) => this.openLightbox(i, e)}
-        >
-          <img src={obj.thumbnail} />
-        </a>
-    );
-
-
-    return (
-      <div>
-        {gallery}
-      </div>
-    );
-  }
-
-// <img src="/assets/images/logo.png" alt="Logo" />
-          // {this.renderGallery()}
-          //   <Lightbox
-          //     images={this.state.images}
-          //     currentImage={this.state.currentImage}
-          //     backdropClosesModal={true}
-          //     isOpen={this.state.lightboxIsOpen}
-          //     onClickPrev={this.gotoPrevious.bind(this)}
-          //     onClickNext={this.gotoNext.bind(this)}
-          //     onClose={this.closeLightbox.bind(this)}
-          //   />
-
 
   render() {
     return(
@@ -172,7 +80,7 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
-          <div className="parallax"><img src="/assets/images/background2.jpg" alt="Unsplashed background img 2" /></div>
+          <div className="parallax"><img src="/assets/images/collage.png" alt="Collage of all educators" /></div>
         </div>
 
         <div className="container">
@@ -223,16 +131,17 @@ class HomePage extends Component {
         </div>
 
 
-        <div className="parallax-container valign-wrapper">
-          <div className="section no-pad-bot">
-            <div className="container">
-              <div className="row center">
-                <h5 className="header col s12 light"></h5>
-              </div>
-            </div>
+        <div className="parallax-container black">
+          <div className="row hide-on-small-only">
+            <div className="col l2 offset-l1 m3 offset-m1"><p><br/>"testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1"</p></div>
+            <div className="col l2 offset-l1 m3 offset-m1"><p><br/><br/><br/>"testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2"</p></div>
+            <div className="col l2 offset-l1 m3 offset-m1"><p><br/>"testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3"</p></div>
+            <div className="col l2 m3 offset-m2 hide-on-med-and-down"><p><br/><br/><br/><br/><br/><br/>"testimonial #4 testimonial #4 testimonial #4 testimonial #4 testimonial #4 testimonial #4"</p></div>
           </div>
-          <div className="parallax">
-<img src="/assets/images/background3.jpg" alt="Unsplashed background img 3" />
+          <div className="row hide-on-med-and-up">
+            <div className="col s12"><p>"testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1"</p></div>
+            <div className="col s12"><p>"testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2"</p></div>
+            <div className="col s12"><p>"testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3"</p></div>
           </div>
         </div>
 
