@@ -32,14 +32,14 @@ const getOnePerek = (req, res, next) => {
       ON ($1~.part_id = part.part_id)
     WHERE $1~.perek_id = $2;`;
   const values = [sefer, perek];
-  const hebrew = tanach[sefer].hebrew[perek - 1].join(' ') || null;
-  const english = tanach[sefer].english[perek - 1].join(' ') || null;
+  const hebArr = tanach[sefer].hebrew[perek - 1] || [];
+  const engArr = tanach[sefer].english[perek - 1] || [];
 
   db.one(query, values)
   .then(data => {
     res.data = data;
-    res.data.hebrew_text = hebrew;
-    res.data.english_text = english;
+    res.data.hebrew_text = hebArr;
+    res.data.english_text = engArr;
   })
   .then(() => next())
   .catch(err => next(err));
