@@ -1,4 +1,5 @@
 const db = require('../lib/dbConnection');
+const tanach = require('../lib/tanach.json');
 
 const getOnePerek = (req, res, next) => {
   const sefer = req.params.sefer;
@@ -31,9 +32,15 @@ const getOnePerek = (req, res, next) => {
       ON ($1~.part_id = part.part_id)
     WHERE $1~.perek_id = $2;`;
   const values = [sefer, perek];
+  const hebrew = tanach[sefer].hebrew[perek - 1].join(' ') || null;
+  const english = tanach[sefer].english[perek - 1].join(' ') || null;
 
   db.one(query, values)
-  .then(data => res.data = data)
+  .then(data => {
+    res.data = data;
+    res.data.hebrew_text = hebrew;
+    res.data.english_text = english;
+  })
   .then(() => next())
   .catch(err => next(err));
 }
