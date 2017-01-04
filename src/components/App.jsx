@@ -16,12 +16,13 @@ class App extends Component {
     });
   }
 
-  // componentDidMount() {
-  //   fetch('/api/sefarim')
-  //   .then(r => r.json())
-  //   .then(data => this.updateState('allSefarim', data))
-  //   .catch(err => console.log(err));
-  // }
+  componentDidMount() {
+    init(jQuery);
+    // fetch('/api/sefarim')
+    // .then(r => r.json())
+    // .then(data => this.updateState('allSefarim', data))
+    // .catch(err => console.log(err));
+  }
 
   render() {
     return (

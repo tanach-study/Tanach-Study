@@ -19,8 +19,8 @@ class Videos extends Component {
       let id = item.id.videoId;
       if (id) {
         return (
-          <div className="col l6">
-            <div className="card small center-align" key={i}>
+          <div className="col l6 m12 s12" key={i}>
+            <div className="card small center-align">
               <a href={`https://www.youtube.com/watch?v=${id}`}>
                 <div className="card-content black-text">
                   <img className="" src={item.snippet.thumbnails.medium.url} alt=""/>

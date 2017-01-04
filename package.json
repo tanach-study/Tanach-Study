@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf dist && rm -rf node_modules",
-    "build": "bash ./scripts/deployment_react.sh && bash ./scripts/deployment_cleanup.sh",
+    "build": "bash ./scripts/deployment_react.sh && bash ./scripts/deployment_cleanup.sh && npm i --only=prod",
     "start": "node server.js",
     "rebuild": "webpack -d --progress --colors",
     "watch": "webpack -d --progress --watch"
