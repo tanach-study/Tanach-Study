@@ -93,7 +93,9 @@ class Perakim extends Component {
           </div>
           <div className="row">
             <div className="card">
-              {this.showSefer()}
+              <div className="card-content">
+                {this.showSefer()}
+              </div>
             </div>
           </div>
         </div>
@@ -105,8 +107,23 @@ class Perakim extends Component {
     const hebArr = this.state.activePerek.hebrew_text || [];
     const engArr = this.state.activePerek.english_text || [];
 
-    const heb = hebArr.map((passuk, i) => <p key={i}><b>{gematriya(i + 1)}. </b>{passuk}<br/></p>);
-    const eng = engArr.map((passuk, i) => `${i + 1} ${passuk}`);
+    const heb = hebArr.map((passuk, i) => <p key={i}><b>{gematriya(i + 1)}. </b>{passuk}</p>);
+    const eng = engArr.map((passuk, i) => <p key={i}><b>{i + 1}. </b>{passuk}</p>);
+    let par = [];
+    for (let i = 0; i < hebArr.length && i < engArr.length; i++) {
+      par.push(
+        <div key={i}>
+          <div className="row valign-wrapper hide-on-small-only">
+            <div className="col l6 m12 s12 left-align valign"><p><b>{i + 1}. </b>{engArr[i]}</p></div>
+            <div className="col l6 m12 s12 rtl right-align valign"><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
+          </div>
+          <div className="hide-on-med-and-up">
+            <div className="row center-align rtl"><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
+            <div className="row center-align"><p><b>{i + 1}. </b>{engArr[i]}</p></div>
+          </div>
+        </div>
+      );
+    }
     if (this.state.show == "heb") {
       return (
         <div className="right-align rtl" id='hebText'>
@@ -116,18 +133,7 @@ class Perakim extends Component {
     } else if (this.state.show == "par") {
       return (
         <div id='parText'>
-          <div className="row">
-            <div className="col l5 offset-l6">
-              <div className="right-align rtl">
-                {heb}
-              </div>
-            </div>
-            <div className="col l5">
-              <div className="left-align">
-                {eng}
-              </div>
-            </div>
-          </div>
+          {par}
         </div>
       );
     } else if (this.state.show == "eng") {
