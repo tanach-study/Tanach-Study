@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
+import gematriya from '../../../lib/gematriya.js';
 
 function formatDir(passed) {
   let str;
@@ -101,22 +102,31 @@ class Perakim extends Component {
   }
 
   showSefer() {
-    const heb = this.state.activePerek.hebrew_text;
-    const eng = this.state.activePerek.english_text;
+    const hebArr = this.state.activePerek.hebrew_text || [];
+    const engArr = this.state.activePerek.english_text || [];
+
+    const heb = hebArr.map((passuk, i) => <p key={i}><b>{gematriya(i + 1)}. </b>{passuk}<br/></p>);
+    const eng = engArr.map((passuk, i) => `${i + 1} ${passuk}`);
     if (this.state.show == "heb") {
       return (
-        <div className="right-align" id='hebText'>
+        <div className="right-align rtl" id='hebText'>
           {heb}
         </div>
       );
     } else if (this.state.show == "par") {
       return (
         <div id='parText'>
-          <div className="right-align">
-            {heb}
-          </div>
-          <div className="left-align">
-            {eng}
+          <div className="row">
+            <div className="col l5 offset-l6">
+              <div className="right-align rtl">
+                {heb}
+              </div>
+            </div>
+            <div className="col l5">
+              <div className="left-align">
+                {eng}
+              </div>
+            </div>
           </div>
         </div>
       );

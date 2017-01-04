@@ -6,6 +6,10 @@
  * Made By MaterializeCSS.com
  */
 
+.rtl {
+  direction: rtl;
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
