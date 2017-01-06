@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import styles from './Slider.css';
 
 const Slider = props => {
@@ -11,7 +12,7 @@ const Slider = props => {
           <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
         </div>
         <div className="row center">
-          <a href="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</a>
+          <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
         </div>
       </div>
 
