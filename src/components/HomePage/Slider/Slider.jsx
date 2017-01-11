@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import styles from './Slider.css';
 
 const Slider = props => {
+  const imageComps = props.images.map((image, i) => <img src={image.url} alt=""/>)
   return (
     <div className="slider">
 
@@ -17,7 +18,8 @@ const Slider = props => {
       </div>
 
       <div className="image-container">
-        <img src={props.images[props.index].url} alt=""/>
+        {imageComps[props.index]}
+        }
       </div>
 
     </div>
@@ -25,6 +27,7 @@ const Slider = props => {
 }
 
 /*
+        <img src={props.images[props.index].url} alt=""/>
  <ul className="slides">
         <li>
           <img src="/assets/images/background1.jpg" alt="Unsplashed background img 1" />

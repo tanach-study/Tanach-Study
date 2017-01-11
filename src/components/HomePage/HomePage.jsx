@@ -31,11 +31,16 @@ class HomePage extends Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-    setInterval(this.startSlider.bind(this), 3000)
+    const interval = setInterval(this.startSlider.bind(this), 3000);
+    this.updateState('interval', interval);
   }
 
   componentDidMount() {
     init(jQuery);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
   }
 
   startSlider() {
