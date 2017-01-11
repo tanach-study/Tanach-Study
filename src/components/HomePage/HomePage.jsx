@@ -7,15 +7,44 @@ class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      images: [
+        {
+          url: '/assets/images/background1.jpg',
+          passuk_heb: 'Passuk 1 in English',
+          passuk_eng: 'passuk 2 in Hebrew',
+        },
+        {
+          url: '/assets/images/background2.jpg',
+          passuk_heb: 'Passuk 1 in English',
+          passuk_eng: 'passuk 2 in Hebrew',
+        },
+      ],
+      currentIndex: 0,
     }
+  }
+
+  updateState(key, value) {
+    this.setState({
+      [key]: value,
+    });
   }
 
   componentWillMount() {
     window.scrollTo(0, 0);
+    setInterval(this.startSlider.bind(this), 3000)
   }
 
   componentDidMount() {
     init(jQuery);
+  }
+
+  startSlider() {
+    const curr = this.state.currentIndex;
+    if (curr + 1 >= this.state.images.length) {
+      this.updateState('currentIndex', 0);
+    } else {
+      this.updateState('currentIndex', curr+1);
+    }
   }
 
   render() {
@@ -35,7 +64,7 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <Slider />
+        <Slider images={this.state.images} index={this.state.currentIndex} />
 
 
         <div className="container">

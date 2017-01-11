@@ -16,7 +16,16 @@ const Slider = props => {
         </div>
       </div>
 
-      <ul className="slides">
+      <div className="image-container">
+        <img src={props.images[props.index].url} alt=""/>
+      </div>
+
+    </div>
+  );
+}
+
+/*
+ <ul className="slides">
         <li>
           <img src="/assets/images/background1.jpg" alt="Unsplashed background img 1" />
         </li>
@@ -24,8 +33,6 @@ const Slider = props => {
           <img src="/assets/images/background2.jpg" alt="Unsplashed background img 2" />
         </li>
       </ul>
-    </div>
-  );
-}
+      */
 
 export default Slider;
