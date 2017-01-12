@@ -20,7 +20,7 @@ function login(req, res, next) {
   // execute query, expecting either one row or none - for emails that don't exist
   db.oneOrNone(query, values)
   .then((data) => {
-    // if email doesn;t exist, reject the user
+    // if email doesn't exist, reject the user
     if (!data) next(new Error('Invalid login credentials.'));
 
     // email definitely exists; next step:
@@ -101,20 +101,8 @@ function prepUserData(req, res, next) {
   }
 }
 
-function getUserServers(req, res, next) {
-  const userID = res.userData.user_id;
-  const query = `SELECT * FROM server INNER JOIN server_uuid_url ON server.server_uuid = server_uuid_url.server_uuid WHERE user_id = $1;`;
-  const values = [userID];
-
-  db.any(query, values)
-  .then(data => res.data = data)
-  .then(() => next())
-  .catch(err => next(err));
-}
-
 module.exports = {
   login,
   createUser,
   prepUserData,
-  getUserServers,
 }

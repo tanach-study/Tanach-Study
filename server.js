@@ -1,5 +1,6 @@
 'use strict';
-if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
+// if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
+require('dotenv').config({ silent: true });
 const express      = require('express');
 const logger       = require('morgan');
 const path         = require('path');

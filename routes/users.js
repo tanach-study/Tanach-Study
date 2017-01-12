@@ -6,9 +6,6 @@ function sendAsJSON(req, res, next) {
   res.json(res.data);
 }
 
-router.route('/servers')
-  .get(auth.authenticate, userModel.getUserServers, sendAsJSON);
-
 router.route('/login')
   .post(userModel.login, userModel.prepUserData, sendAsJSON);
 
