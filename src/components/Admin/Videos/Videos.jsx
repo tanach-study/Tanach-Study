@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 class Videos extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class Videos extends Component {
     fetch(`/api/videos/${currVideo.youtube_id}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
+        'Authorization_Token': token,
       }),
       method: 'PUT',
       body: JSON.stringify(currVideo),
@@ -35,6 +37,8 @@ class Videos extends Component {
   }
 
   componentDidMount() {
+    const token = localStorage.getItem('adminUserToken');
+    if (!token) browserHistory.push('/admin/login');
     fetch('/api/videos')
     .then(r => r.json())
     .then(videos => this.updateState('videos', videos))

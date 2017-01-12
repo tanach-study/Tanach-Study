@@ -31,26 +31,26 @@ class HomePage extends Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-    const interval = setInterval(this.startSlider.bind(this), 3000);
-    this.updateState('interval', interval);
+    // const interval = setInterval(this.startSlider.bind(this), 3000);
+    // this.updateState('interval', interval);
   }
 
   componentDidMount() {
     init(jQuery);
   }
 
-  componentWillUnmount() {
-    clearInterval(this.state.interval);
-  }
+  // componentWillUnmount() {
+  //   clearInterval(this.state.interval);
+  // }
 
-  startSlider() {
-    const curr = this.state.currentIndex;
-    if (curr + 1 >= this.state.images.length) {
-      this.updateState('currentIndex', 0);
-    } else {
-      this.updateState('currentIndex', curr+1);
-    }
-  }
+  // startSlider() {
+  //   const curr = this.state.currentIndex;
+  //   if (curr + 1 >= this.state.images.length) {
+  //     this.updateState('currentIndex', 0);
+  //   } else {
+  //     this.updateState('currentIndex', curr+1);
+  //   }
+  // }
 
   render() {
     return(
