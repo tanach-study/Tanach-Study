@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 class Admin extends Component {
   constructor(props) {
@@ -16,7 +17,17 @@ class Admin extends Component {
 
   componentWillMount() {
     const token = localStorage.getItem('adminUserToken');
-    if (token) this.updateState('isLoggedIn', true);
+    if (token) {
+      const timeLoggedIn = localStorage.getItem('timeLoggedIn');
+      if (Date.now() - timeLoggedIn > 14400000) {
+        localStorage.removeItem('adminUserToken');
+        localStorage.removeItem('timeLoggedIn');
+        browserHistory.push('/admin/login');
+      } else {
+        this.updateState('isLoggedIn', true);
+      }
+    }
+
   }
 
   componentDidMount() {
