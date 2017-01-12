@@ -26,6 +26,7 @@ module.exports = (
     <Route path='signup' component={Signup} />
     <Route path='admin' component={Admin}>
       <IndexRoute component={Dashboard} />
+      <Route path='dashboard' component={Dashboard} />
       <Route path='login' component={Login} />
       <Route path='videos' component={AdminVideos} />
     </Route>

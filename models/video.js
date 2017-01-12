@@ -1,6 +1,6 @@
 const db = require('../lib/dbConnection.js');
 
-const getAllVideos = (req, res, next) => {
+function getAllVideos (req, res, next) {
   let query = `
   SELECT
     *
@@ -14,7 +14,7 @@ const getAllVideos = (req, res, next) => {
 
 }
 
-const getOneVideo = (req, res, next) => {
+function getOneVideo (req, res, next) {
   const videoID = req.params.id;
   const query = `
   SELECT
@@ -30,7 +30,39 @@ const getOneVideo = (req, res, next) => {
   .catch(err => next(err));
 }
 
+function updateVideo (req, res, next) {
+  console.log(req.body);
+
+  const videoID = req.params.id;
+  const title = req.body.class_title;
+  const sponsor = req.body.sponsor;
+  const speaker = req.body.speaker;
+
+  const query = `
+  UPDATE video
+  SET
+    class_title = $2,
+    sponsor = $3,
+    speaker = $4
+  WHERE video.youtube_id = $1;`;
+
+  const values = [
+    videoID,
+    title,
+    sponsor,
+    speaker,
+  ];
+
+  console.log(values);
+
+  db.none(query, values)
+  .then(() => res.data = { status: 'updated successfully' })
+  .then(() => next())
+  .catch(err => next(err));
+}
+
 module.exports = {
   getAllVideos,
   getOneVideo,
+  updateVideo,
 };

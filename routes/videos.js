@@ -9,6 +9,7 @@ router.route('/')
   .get(videoModel.getAllVideos, sendAsJSON);
 
 router.route('/:id')
-  .get(videoModel.getOneVideo, sendAsJSON);
+  .get(videoModel.getOneVideo, sendAsJSON)
+  .put(videoModel.updateVideo, sendAsJSON);
 
 module.exports = router;
