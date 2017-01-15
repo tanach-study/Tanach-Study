@@ -23,6 +23,7 @@ class Videos extends Component {
 
   updateDB(index) {
     const currVideo = this.state.videos[index];
+    const token = localStorage.getItem('adminUserToken');
     fetch(`/api/videos/${currVideo.youtube_id}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
