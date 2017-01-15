@@ -19,8 +19,15 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <input type="text" placeholder="email" />
+      <div className="container">
+        <div className="section">
+          <form>
+            <input type="text" placeholder="first name" required />
+            <input type="text" placeholder="last name" required />
+            <input type="text" placeholder="email" required />
+            <a className="btn">Sign Up</a>
+          </form>
+        </div>
       </div>
     )
   }
