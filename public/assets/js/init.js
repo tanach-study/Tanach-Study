@@ -3,7 +3,7 @@ function init ($) {
 
     $('.button-collapse').sideNav();
     $('.parallax').parallax();
-    $('.slider').slider({indicators: false})
+    $('.slider').slider({indicators: false, interval: 5000})
 
   });
 }
