@@ -31,8 +31,6 @@ function getOneVideo (req, res, next) {
 }
 
 function updateVideo (req, res, next) {
-  console.log(req.body);
-
   const videoID = req.params.id;
   const title = req.body.class_title;
   const sponsor = req.body.sponsor;
@@ -52,8 +50,6 @@ function updateVideo (req, res, next) {
     sponsor,
     speaker,
   ];
-
-  console.log(values);
 
   db.none(query, values)
   .then(() => res.data = { status: 'updated successfully' })

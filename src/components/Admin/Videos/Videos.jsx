@@ -27,7 +27,7 @@ class Videos extends Component {
     fetch(`/api/videos/${currVideo.youtube_id}`, {
       headers: new Headers({
         'Content-Type': 'application/json',
-        'Authorization_Token': token,
+        'token_authorization': token,
       }),
       method: 'PUT',
       body: JSON.stringify(currVideo),

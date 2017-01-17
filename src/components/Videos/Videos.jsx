@@ -24,7 +24,7 @@ class Videos extends Component {
     fetch('/api/videos')
     .then(r => r.json())
     .then(data => this.updateState('videos', data))
-    .catch(err = console.log(err));
+    .catch(err => console.log(err));
   }
 
   title(video) {
@@ -44,6 +44,14 @@ class Videos extends Component {
     }
   }
 
+  sponsor(video) {
+    if (video.sponsor) {
+      return (
+        <h6>Sponsored by {video.sponsor}</h6>
+      );
+    }
+  }
+
   render() {
     const vids = this.state.videos.map((video, i) => {
       return (
@@ -53,6 +61,7 @@ class Videos extends Component {
               <div className="card-content black-text">
                 <img className="responsive-img" src={video.image_url} alt=""/>
                 {this.title(video)}
+                {this.sponsor(video)}
               </div>
             </a>
           </div>
