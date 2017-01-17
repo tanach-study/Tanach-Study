@@ -18,10 +18,13 @@ const Slider = props => {
 
       <ul className="slides">
         <li>
-          <img src="/assets/images/background1.jpg" alt="Unsplashed background img 1" />
+          <img src="/assets/images/ts_bg_1.JPG" alt="Unsplashed background img 1" />
         </li>
         <li>
-          <img src="/assets/images/background2.jpg" alt="Unsplashed background img 2" />
+          <img src="/assets/images/ts_bg_2.png" alt="Unsplashed background img 2" />
+        </li>
+        <li>
+          <img src="/assets/images/ts_bg_3.JPG" alt="Unsplashed background img 3" />
         </li>
       </ul>
 
