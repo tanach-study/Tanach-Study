@@ -7,6 +7,7 @@ import Parts from './components/Parts/Parts.jsx';
 import Sefarim from './components/Sefarim/Sefarim.jsx';
 import Perakim from './components/Perakim/Perakim.jsx';
 import Donate from './components/Donate/Donate.jsx';
+import Contact from './components/Contact/Contact.jsx';
 import Videos from './components/Videos/Videos.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Admin from './components/Admin/Admin.jsx';
@@ -22,6 +23,7 @@ module.exports = (
     <Route path='sefarim/:sefer' component={Sefarim} />
     <Route path='perakim/:sefer/:perek' component={Perakim} />
     <Route path='donate' component={Donate} />
+    <Route path='contact' component={Contact} />
     <Route path='videos' component={Videos} />
     <Route path='signup' component={Signup} />
     <Route path='admin' component={Admin}>

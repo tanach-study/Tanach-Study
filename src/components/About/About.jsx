@@ -5,6 +5,10 @@ class About extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    init(jQuery);
+  }
+
   render() {
     return (
       <div className="container">

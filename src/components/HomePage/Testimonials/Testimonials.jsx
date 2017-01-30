@@ -21,6 +21,7 @@ const Testimonials = props => {
         <div className={alignClass}>
           <p className="grey-text text-darken-2">{testimonial.Testimonial}</p>
           <p className="grey-text text-lighten-1">{testimonial.Name}</p>
+          <p className="grey-text text-lighten-1">{testimonial.Title}</p>
         </div>
       </li>
     );

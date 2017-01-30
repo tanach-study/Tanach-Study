@@ -23,7 +23,7 @@ class Navigation extends Component {
               <li><Link to="/parts">Study a Perek</Link></li>
               <li><Link to="/videos">Videos</Link></li>
               <li><Link to="/donate">Donate</Link></li>
-              <li><Link to="#">Contact Us</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
 
             <ul id="nav-mobile" className="side-nav">
@@ -32,7 +32,7 @@ class Navigation extends Component {
               <li><Link to="/parts">Study a Perek</Link></li>
               <li><Link to="/videos">Videos</Link></li>
               <li><Link to="/donate">Donate</Link></li>
-              <li><Link to="#">Contact Us</Link></li>
+              <li><Link to="/contact">Contact Us</Link></li>
             </ul>
             <a href="#" data-activates="nav-mobile" className="button-collapse"><i className="material-icons">menu</i></a>
           </div>

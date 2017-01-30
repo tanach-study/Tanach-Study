@@ -6,6 +6,10 @@ class Donate extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    init(jQuery);
+  }
+
   render() {
     const styling = {
       maxWidth: '500px',

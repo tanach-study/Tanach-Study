@@ -10,22 +10,29 @@ function camelize(str) {
 
 const PerekItem = (props) => {
   const part = camelize(props.sefer.part_name);
+  let perekName = '';
+  perekName = (props.perek.perek_id == 0 ? 'Introduction' : `Perek ${props.perek.perek_id}`);
   return (
     <div onClick={props.click} className="card hoverable">
       <div className="card-content">
-        <div>
-          <div className="left-align">
-            <p>Perek {props.perek.perek_id}</p>
+        <div className="row">
+          <div className="col l4 m4 s4 left-align">
+            <div className="col-content">
+              <p>{perekName}</p>
+            </div>
           </div>
-          <div className="center-align">
-            <audio src={`http://cdn.tanachstudy.com/archives/${part}/${props.sefer.book_name.charAt(0).toUpperCase() + props.sefer.book_name.slice(1)}/${props.sefer.book_name}-${props.perek.perek_id}.mp3`} controls></audio>
+          <div className="col l4 m4 s4 center-align">
+            <div className="col-content">
+              <audio src={`http://cdn.tanachstudy.com/archives/${part}/${props.sefer.book_name.charAt(0).toUpperCase() + props.sefer.book_name.slice(1)}/${props.sefer.book_name}-${props.perek.perek_id}.mp3`} controls></audio>
+            </div>
           </div>
-          <p className="right-align">
-            <img src="/assets/images/facebook.png" alt="facebook"/>
-            <img src="/assets/images/twitter.png" alt="facebook"/>
-            <i className="material-icons">share</i>
-            <i className="material-icons">file_download</i>
-          </p>
+          <div className="col l4 m4 s4 right-align">
+            <div className="col-content">
+              <img src="/assets/images/facebook.png" alt="facebook"/>
+              <img src="/assets/images/twitter.png" alt="facebook"/>
+              <i className="material-icons">share</i>
+            </div>
+          </div>
         </div>
       </div>
     </div>

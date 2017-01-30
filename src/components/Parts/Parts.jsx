@@ -151,6 +151,10 @@ class Parts extends Component {
     }
   }
 
+  componentDidMount() {
+    init(jQuery);
+  }
+
   render() {
     return (
       <div className="container">
