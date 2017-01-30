@@ -34,7 +34,9 @@ class Sefarim extends Component {
     .then(r => r.json())
     .then(data => {
       const seferObj = data.shift();
+      const teacherObj = data.shift();
       this.updateState('selectedSefer', seferObj);
+      this.updateState('allTeachers', teacherObj);
       this.updateState('seferData', data);
     })
     .catch(err => console.log(err));
@@ -49,7 +51,7 @@ class Sefarim extends Component {
           <div className="card">
             <div className="card-content">
               <div className="card-title">{act.title} {act.fname} {act.mname || ''}{act.lname}</div>
-              <p>{act.bio}</p>
+              <p>{act.long_bio || act.short_bio}</p>
               <a href="#">See {act.title} {act.lname}'s bio page</a>
             </div>
           </div>

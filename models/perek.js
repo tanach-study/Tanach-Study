@@ -6,7 +6,7 @@ const getOnePerek = (req, res, next) => {
   const perek = req.params.perek;
   const query = `
     SELECT
-      teacher.bio AS teacher_bio,
+      teacher.long_bio AS teacher_bio,
       teacher.title AS teacher_title,
       teacher.fname AS teacher_fname,
       teacher.mname AS teacher_mname,

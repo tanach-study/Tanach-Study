@@ -9,6 +9,6 @@ router.route('/')
   .get(seferModel.getAllSefarim, sendAsJSON);
 
 router.route('/:sefer')
-  .get(seferModel.getOneSefer, sendAsJSON);
+  .get(seferModel.getSeferMetadata, seferModel.getAllTeachers, seferModel.getAllPerakim, seferModel.prepareSeferResponse, sendAsJSON);
 
 module.exports = router;

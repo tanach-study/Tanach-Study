@@ -20,7 +20,7 @@ const getAllSefarim = (req, res, next) => {
 
 }
 
-const getOneSefer = (req, res, next) => {
+const getSeferMetadata = (req, res, next) => {
   const bookName = req.params.sefer;
   const query = `
   SELECT
@@ -32,8 +32,37 @@ const getOneSefer = (req, res, next) => {
   FROM book
   INNER JOIN part
     ON book.part_id = part.part_id
-  WHERE book.name = $1;
+  WHERE book.name = $1;`;
+  const values = [bookName];
 
+  db.any(query, values)
+  .then(data => res.seferMeta = data)
+  .then(() => next())
+  .catch(err => next(err));
+}
+
+const getAllTeachers = (req, res, next) => {
+  const bookName = req.params.sefer;
+  const query = `
+  WITH this_book AS (
+    SELECT * FROM book WHERE book.name = $1
+  )
+  SELECT *
+  FROM teacher
+  INNER JOIN book_teacher
+    ON teacher.teacher_id = book_teacher.teacher_id
+  WHERE book_teacher.book_id = (SELECT book_id FROM this_book);`;
+  const values = [bookName];
+
+  db.any(query, values)
+  .then(data => res.seferTeachers = data)
+  .then(() => next())
+  .catch(err => next(err));
+}
+
+const getAllPerakim = (req, res, next) => {
+  const bookName = req.params.sefer;
+  const query = `
   SELECT *
   FROM $1~
   LEFT JOIN teacher
@@ -41,12 +70,23 @@ const getOneSefer = (req, res, next) => {
   const values = [bookName];
 
   db.any(query, values)
-  .then(data => res.data = data)
+  .then(data => res.allPerakim = data)
   .then(() => next())
   .catch(err => next(err));
 }
 
+const prepareSeferResponse = (req, res, next) => {
+  res.data = {};
+  res.data.seferMeta = res.seferMeta[0];
+  res.data.seferTeachers = res.seferTeachers;
+  res.data.allPerakim = res.allPerakim;
+  next();
+}
+
 module.exports = {
   getAllSefarim,
-  getOneSefer,
+  getSeferMetadata,
+  getAllTeachers,
+  getAllPerakim,
+  prepareSeferResponse,
 };
