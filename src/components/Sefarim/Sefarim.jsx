@@ -46,7 +46,7 @@ class Sefarim extends Component {
       return (
         <div key={i} className="card">
           <div className="card-content">
-            <div className="card-title">{teacher.title} {teacher.fname} {teacher.mname || ''}{teacher.lname}</div>
+            <div className="card-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
             <p>{teacher.long_bio || teacher.short_bio}</p>
             <a href="#">See {teacher.title} {teacher.lname}'s bio page</a>
           </div>
@@ -63,7 +63,7 @@ class Sefarim extends Component {
     const teacherChips = teachers.map((teacher, i) => {
       return (
         <div key={i} className="chip pointer" onClick={(e) => this.updateState('activeIndex', i)}>
-          {teacher.title} {teacher.fname} {teacher.mname || ''}{teacher.lname}
+          {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
         </div>
       )
     });

@@ -58,8 +58,8 @@ class Parts extends Component {
           url: '/sefarim/amos',
         },
         {
-          name: 'Ovadiah',
-          url: '/sefarim/ovadiah',
+          name: 'Ovadia',
+          url: '/sefarim/ovadia',
         },
         {
           name: 'Yonah',
@@ -176,7 +176,7 @@ class Parts extends Component {
                     <Link to="/sefarim/hoshea"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Hoshea</div></div></Link>
                     <Link to="/sefarim/yoel"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Yoel</div></div></Link>
                     <Link to="/sefarim/amos"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Amos</div></div></Link>
-                    <Link to="/sefarim/ovadiah"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Ovadiah</div></div></Link>
+                    <Link to="/sefarim/ovadia"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Ovadia</div></div></Link>
                     <Link to="/sefarim/yonah"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Yonah</div></div></Link>
                     <Link to="/sefarim/michah"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Michah</div></div></Link>
                     <Link to="/sefarim/nahum"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Nahum</div></div></Link>

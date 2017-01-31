@@ -28,9 +28,7 @@ const PerekItem = (props) => {
           </div>
           <div className="col l4 m4 s4 right-align">
             <div className="col-content">
-              <img src="/assets/images/facebook.png" alt="facebook"/>
-              <img src="/assets/images/twitter.png" alt="facebook"/>
-              <i className="material-icons">share</i>
+
             </div>
           </div>
         </div>
@@ -40,3 +38,8 @@ const PerekItem = (props) => {
 }
 
 export default PerekItem;
+
+// FOR THE FUTURE
+// <img src="/assets/images/facebook.png" alt="facebook"/>
+// <img src="/assets/images/twitter.png" alt="facebook"/>
+// <i className="material-icons">share</i>
