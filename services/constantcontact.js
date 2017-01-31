@@ -7,8 +7,16 @@ function validateData (req, res, next) {
   const fname = req.body.firstName;
   const lname = req.body.lastName;
 
-  if (!(email && fname && lname)) next(new Error ('Please fill out all fields.'));
-  if (!isValidEmail(email)) next(new Error ('Please submit a valid email address.'));
+  if (!(email && fname && lname)) {
+    let err = new Error ('Please fill out all fields.');
+    err.status = 422;
+    next(err);
+  }
+  if (!isValidEmail(email)) {
+    let err = new Error ('Please submit a valid email address.');
+    err.status = 422;
+    next(err);
+  }
 
   // if we're here then all is good
   next();
@@ -32,7 +40,9 @@ function checkIfEmailExists (req, res, next) {
     if (data.results.length == 0) {
       next();
     } else {
-      next(new Error ('This email address is already registered.'));
+      let err = new Error ('This email address is already registered.');
+      err.status = 422;
+      next(err);
     }
   })
   .catch(err => next(err));
@@ -76,7 +86,9 @@ function registerEmail (req, res, next) {
       }
       next();
     } else {
-      next(new Error('Internal error.'));
+      let err = new Error('Internal server error.');
+      err.status = 500;
+      next(err);
     }
   })
   .catch(err => next(err));

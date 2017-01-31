@@ -28,15 +28,18 @@ class Signup extends Component {
 
   doSubmit(e) {
     e.preventDefault();
+    const email = this.state.email;
+    const firstName = this.state.firstName;
+    const lastName = this.state.lastName;
     fetch('/api/signup', {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json',
       }),
       body: JSON.stringify({
-        email: this.state.email,
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
       })
     })
     .then(r => r.json())

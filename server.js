@@ -32,4 +32,12 @@ app.use(history({ logger: logger }))
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((err, req, res, next) => {
+  if(err.status) {
+    res.status(err.status).json(err.message);
+  } else {
+    res.status(500).json(err.message);
+  }
+});
+
 app.listen(PORT, () => console.warn(`Server here! Listening on port ${PORT}!`));
