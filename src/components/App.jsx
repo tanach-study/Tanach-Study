@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation/Navigation.jsx';
+import Footer from './Footer/Footer.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -28,12 +29,15 @@ class App extends Component {
     return (
       <div>
         <Navigation />
-        {this.props.children && React.cloneElement(this.props.children, {
-          updateOverallState: (k, v) => this.updateState(k, v),
-          allSefarim: this.state.allSefarim,
-          activePerek: this.state.activePerek,
-        })
-        }
+          <div className="body">
+            {this.props.children && React.cloneElement(this.props.children, {
+              updateOverallState: (k, v) => this.updateState(k, v),
+              allSefarim: this.state.allSefarim,
+              activePerek: this.state.activePerek,
+            })
+            }
+          </div>
+        <Footer />
       </div>
     );
   }

@@ -139,14 +139,6 @@ class HomePage extends Component {
         <div className="parallax-container white container">
           <Testimonials testimonials={this.state.testimonials}/>
         </div>
-
-        <footer className="page-footer teal">
-          <div className="footer-copyright">
-            <div className="container">
-            Created by <a className="brown-text text-lighten-3" href="http://joeyp.nyc">Joey Pinhas</a>
-            </div>
-          </div>
-        </footer>
       </div>
     );
   }
