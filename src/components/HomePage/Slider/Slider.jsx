@@ -1,35 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router';
-import styles from './Slider.css';
+import React, { Component } from 'react';
 
-const Slider = props => {
-  return (
-    <div className="slider">
+class Slider extends Component {
+  constructor(props) {
+    super(props);
+    const slides = this.props.slides.map((slide, i) => {
+      return (
+        <li key={i}>
+          <img src={slide.url} alt=""/>
+          <div className="caption left-align">
+            <h5>{slide.captionLeft}</h5>
+          </div>
+          <div className="caption right-align">
+            <h5>{slide.captionRight}</h5>
+          </div>
+        </li>
+      )
+    });
+    this.state = {
+      activeIndex: 0,
+      allSlides: slides || [],
+      bgImage: '',
+    }
+  }
 
-      <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}>
-        <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
-        <div className="row center">
-          <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
-        </div>
-        <div className="row center">
-          <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
-        </div>
-      </div>
+  updateState(key, value) {
+    this.setState({
+      [key]: value,
+    });
+  }
 
+  render() {
+    return (
       <ul className="slides">
-        <li>
-          <img src="/assets/images/ts_bg_1.JPG" alt="Unsplashed background img 1" />
-        </li>
-        <li>
-          <img src="/assets/images/ts_bg_2.png" alt="Unsplashed background img 2" />
-        </li>
-        <li>
-          <img src="/assets/images/ts_bg_3.JPG" alt="Unsplashed background img 3" />
-        </li>
+        {this.state.allSlides[this.state.activeIndex]}
       </ul>
-
-    </div>
-  );
+    );
+  }
 }
 
 /*

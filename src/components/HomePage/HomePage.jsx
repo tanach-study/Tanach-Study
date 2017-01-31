@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-// import Lightbox from 'react-images';
 import Slider from './Slider/Slider.jsx';
 import Testimonials from './Testimonials/Testimonials.jsx';
 import testimonials from '../../../public/testimonials.json';
+import styles from './Slider/Slider.css';
 
 class HomePage extends Component {
   constructor(props) {
@@ -11,14 +11,19 @@ class HomePage extends Component {
     this.state = {
       images: [
         {
-          url: '/assets/images/background1.jpg',
-          passuk_heb: 'Passuk 1 in English',
-          passuk_eng: 'passuk 2 in Hebrew',
+          url: '/assets/images/ts_bg_1.JPG',
+          captionRight: 'Passuk 1 in Hebrew',
+          captionLeft: 'Passuk 1 in English',
         },
         {
-          url: '/assets/images/background2.jpg',
-          passuk_heb: 'Passuk 1 in English',
-          passuk_eng: 'passuk 2 in Hebrew',
+          url: '/assets/images/ts_bg_2.png',
+          captionRight: 'Passuk 2 in Hebrew',
+          captionLeft: 'Passuk 2 in English',
+        },
+        {
+          url: '/assets/images/ts_bg_3.JPG',
+          captionRight: 'Passuk 3 in Hebrew',
+          captionLeft: 'Passuk 3 in English',
         },
       ],
       currentIndex: 0,
@@ -72,7 +77,18 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <Slider images={this.state.images} index={this.state.currentIndex} />
+        <div className="slider">
+          <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}>
+          <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
+          <div className="row center">
+            <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
+          </div>
+          <div className="row center">
+            <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
+          </div>
+        </div>
+          <Slider slides={this.state.images} index={this.state.currentIndex} />
+        </div>
 
         <div className="container">
           <div className="section">
