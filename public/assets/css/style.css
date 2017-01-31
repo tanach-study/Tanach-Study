@@ -6,6 +6,10 @@
  * Made By MaterializeCSS.com
  */
 
+.pointer {
+  cursor: pointer;
+}
+
 .rtl {
   direction: rtl;
 }

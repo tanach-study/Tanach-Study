@@ -11,7 +11,7 @@ const PerekList = (props) => {
       click={(e) => props.click(i + 1)}
     />)
   return (
-    <div className="container">
+    <div>
       {mapped}
     </div>
   );

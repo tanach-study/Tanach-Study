@@ -8,7 +8,10 @@ class Sefarim extends Component {
     this.state = {
       seferName: this.props.params.sefer || '',
       selectedSefer: null,
-      seferData: [],
+      allTeachers: [],
+      allPerakim: [],
+      teacherCards: [],
+      activeIndex: 0,
     }
   }
 
@@ -33,34 +36,52 @@ class Sefarim extends Component {
     fetch(`/api/sefarim/${sefer}`)
     .then(r => r.json())
     .then(data => {
-      const seferObj = data.shift();
-      const teacherObj = data.shift();
+      const seferObj = data.seferMeta;
+      const teacherArr = data.seferTeachers;
+      const perakimArr = data.allPerakim;
       this.updateState('selectedSefer', seferObj);
-      this.updateState('allTeachers', teacherObj);
-      this.updateState('seferData', data);
+      this.updateState('allTeachers', teacherArr);
+      this.updateState('allPerakim', perakimArr);
+      const teacherCards = teacherArr.map((teacher, i) => {
+      return (
+        <div key={i} className="card">
+          <div className="card-content">
+            <div className="card-title">{teacher.title} {teacher.fname} {teacher.mname || ''}{teacher.lname}</div>
+            <p>{teacher.long_bio || teacher.short_bio}</p>
+            <a href="#">See {teacher.title} {teacher.lname}'s bio page</a>
+          </div>
+        </div>
+      )
+    });
+    this.updateState('teacherCards', teacherCards);
     })
     .catch(err => console.log(err));
   }
 
   render() {
-    const act = this.state.seferData[0] || {};
+    const teachers = this.state.allTeachers || [];
+    const teacherChips = teachers.map((teacher, i) => {
+      return (
+        <div key={i} className="chip pointer" onClick={(e) => this.updateState('activeIndex', i)}>
+          {teacher.title} {teacher.fname} {teacher.mname || ''}{teacher.lname}
+        </div>
+      )
+    });
+
     return (
       <div>
         <div className="container">
           <h2>Sefer {this.state.seferName.charAt(0).toUpperCase() + this.state.seferName.slice(1)}</h2>
-          <div className="card">
-            <div className="card-content">
-              <div className="card-title">{act.title} {act.fname} {act.mname || ''}{act.lname}</div>
-              <p>{act.long_bio || act.short_bio}</p>
-              <a href="#">See {act.title} {act.lname}'s bio page</a>
-            </div>
+          <div className="center">
+            {teacherChips}
           </div>
+          {this.state.teacherCards[this.state.activeIndex]}
+          <PerekList
+            perakim={this.state.allPerakim}
+            sefer={this.state.selectedSefer}
+            click={this.seferCardClick.bind(this)}
+          />
         </div>
-        <PerekList
-          perakim={this.state.seferData}
-          sefer={this.state.selectedSefer}
-          click={this.seferCardClick.bind(this)}
-        />
       </div>
     )
   }
