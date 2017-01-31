@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import PartsList from './PartsList/PartsList.jsx';
 
 class Parts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nr: [
+      books: [
         {
           name: 'Yehoshua',
           url: '/sefarim/yehoshua',
@@ -31,8 +30,6 @@ class Parts extends Component {
           name: 'Melachim 2',
           url: '/sefarim/melachim2',
         },
-      ],
-      na: [
         {
           name: 'Yeshayahu',
           url: '/sefarim/yeshayahu',
@@ -93,8 +90,6 @@ class Parts extends Component {
           name: 'Malachi',
           url: '/sefarim/malachi',
         },
-      ],
-      kt: [
         {
           name: 'Divre Hayamim 1',
           url: '/sefarim/divrehayamim1',
@@ -156,15 +151,63 @@ class Parts extends Component {
   }
 
   render() {
+    const mapped = this.state.books.map((book, i) => {
+      let classAdd = '';
+      const diff = this.state.books.length - i;
+      if (diff < 3 && diff > 0) {
+        if (this.state.books.length % 3 == 1 && i == this.state.books.length - 1) {
+          classAdd = i % 2 == 0 ? 'offset-l4 offset-m3' : 'offset-l4';
+        } else if (this.state.books.length % 3 == 2 && i == this.state.books.length - 2) {
+          classAdd = i % 2 == 0 ? 'offset-l2 offset-m3' : 'offset-l2';
+        }
+      }
+      return (
+        <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
+          <div className="card teal lighten-2 btn waves-effect hoverable full-width">
+            <div className="col-content">Sefer {book.name}</div>
+          </div>
+        </Link>
+      );
+    });
     return (
       <div className="container">
           <div className="section">
+            <div className="row center">
+              <h4>Sefarim</h4>
+              <div className="center center-align light">
+                {mapped}
+              </div>
+            </div>
+          </div>
+        </div>
+    );
+  }
 
-            <div className="row">
-              <div className="col s12 center">
-                <h4>Sefarim</h4>
-                <div className="center-align light">
-                    <Link to="/sefarim/yehoshua"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Yehoshua</div></div></Link>
+  // render() {
+  //   return(
+  //     <div className="container section">
+  //       <div className="row">
+  //         <h3>Nevi'im Rishonim</h3>
+  //         <PartsList books={this.state.nr} />
+  //       </div>
+  //       <div className="row">
+  //         <h3>Nevi'im Aharonim</h3>
+  //         <PartsList books={this.state.na} />
+  //       </div>
+  //       <div className="row">
+  //         <h3>Ketuvim</h3>
+  //         <PartsList books={this.state.kt} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
+
+}
+
+export default Parts;
+
+/*
+<Link to="/sefarim/yehoshua"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Yehoshua</div></div></Link>
                     <Link to="/sefarim/shofetim"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Shofetim</div></div></Link>
                     <Link to="/sefarim/shemuel1"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Shemuel 1</div></div></Link>
                     <Link to="/sefarim/shemuel2"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Shemuel 2</div></div></Link>
@@ -198,32 +241,5 @@ class Parts extends Component {
                     <Link to="/sefarim/daniel"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Daniel</div></div></Link>
                     <Link to="/sefarim/ezra"><div className="col s12 m6 l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Ezra</div></div></Link>
                     <Link to="/sefarim/nehemya"><div className="col s12 m6 l4 offset-l4 card teal lighten-2 btn waves-effect hoverable"><div className="valign col-content">Sefer Nehemya</div></div></Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-    );
-  }
 
-  // render() {
-  //   return(
-  //     <div className="container section">
-  //       <div className="row">
-  //         <h3>Nevi'im Rishonim</h3>
-  //         <PartsList books={this.state.nr} />
-  //       </div>
-  //       <div className="row">
-  //         <h3>Nevi'im Aharonim</h3>
-  //         <PartsList books={this.state.na} />
-  //       </div>
-  //       <div className="row">
-  //         <h3>Ketuvim</h3>
-  //         <PartsList books={this.state.kt} />
-  //       </div>
-  //     </div>
-  //   );
-  // }
-}
-
-export default Parts;
+                */
