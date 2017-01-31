@@ -1,5 +1,10 @@
 const router = require('express').Router();
+const ccService = require('../services/constantcontact.js');
 
-router.post('/', (req, res) => res.json('works!!'));
+function sendAsJSON(req, res, next) {
+  res.json(res.data);
+}
+
+router.post('/', ccService.validateData, ccService.checkIfEmailExists, ccService.registerEmail, sendAsJSON);
 
 module.exports = router;
