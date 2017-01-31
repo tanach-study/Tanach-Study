@@ -48,7 +48,10 @@ class Signup extends Component {
         // browserHistory.push('/signup/error')
       }
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+      console.log(err);
+      this.updateState('errorMsg', err.message);
+    });
   }
 
   render() {
@@ -66,9 +69,9 @@ class Signup extends Component {
               </div>
             </div>
             <div className="col l8 m10 s12 offset-l2 offset-m1">
+            <div className="red-text error">{this.state.errorMsg}</div>
               <div className="card">
                 <div className="card-content">
-                  <div className="error">{this.state.errorMsg}</div>
                   <form>
                     <input type="text" name="firstName" placeholder="first name" required autoFocus value={this.state.firstName} onChange={(e) => this.updateState('firstName', e.target.value)} />
                     <input type="text" name="lastName" placeholder="last name" required value={this.state.lastName} onChange={(e) => this.updateState('lastName', e.target.value)} />
