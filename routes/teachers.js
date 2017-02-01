@@ -9,6 +9,6 @@ router.route('/')
   .get(teacherModel.getAllTeacehrs, sendAsJSON);
 
 router.route('/:id')
-  .get(teacherModel.getOneTeacher, sendAsJSON);
+  .get(teacherModel.getOneTeacher, teacherModel.getBooksTeacherTaught, sendAsJSON);
 
 module.exports = router;

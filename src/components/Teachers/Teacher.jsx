@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Teacher extends Component {
   constructor(props) {
@@ -27,7 +28,21 @@ class Teacher extends Component {
   }
 
   render() {
-    const teacher = this.state.teacher;
+    const teacher = this.state.teacher.teacher_info || {};
+    const teacherBooks = this.state.teacher.teacher_books || [];
+    const mappedBooks = teacherBooks.map((book, i) => {
+      return (
+        <div className="col l4 m6 s12" key={i}>
+          <Link to={`/sefarim/${book.book_name}`}>
+            <div className="card hoverable full-width black-text">
+              <div className="card-content">
+                {book.book_name}
+              </div>
+            </div>
+          </Link>
+        </div>
+      );
+    })
     return (
       <div className="container">
         <div className="section">
@@ -48,6 +63,9 @@ class Teacher extends Component {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="row">
+            {mappedBooks}
           </div>
         </div>
       </div>
