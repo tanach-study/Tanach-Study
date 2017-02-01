@@ -34,10 +34,10 @@ class Teacher extends Component {
           <div className="card">
             <div className="card-content">
               <div className="row valign-wrapper">
-                <div className="col l3 m4 s12 valign">
+                <div className="col l3 m4 s12 offset-l1 valign">
                   <img src="/assets/images/background1.jpg" alt="" className="responsive-img full-width"/>
                 </div>
-                <div className="col l9 m8 s12 valign">
+                <div className="col l8 m8 s12 valign">
                   <h2 className="teacher-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</h2>
                   <div><i>{teacher.short_bio}</i></div>
                 </div>
