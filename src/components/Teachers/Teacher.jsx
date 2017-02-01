@@ -64,8 +64,13 @@ class Teacher extends Component {
               </div>
             </div>
           </div>
-          <div className="row">
-            {mappedBooks}
+          <div className="card">
+            <div className="card-content">
+              <div className="row">
+                <h4 className="col l12 m12 s12 left-align">Sefarim that {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname} Taught</h4>
+                {mappedBooks}
+              </div>
+            </div>
           </div>
         </div>
       </div>
