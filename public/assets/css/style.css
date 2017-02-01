@@ -6,6 +6,10 @@
 * Made By MaterializeCSS.com
 */
 
+.teacher-title {
+  margin: 0;
+}
+
 .body {
   min-height: 81vh;
 }
