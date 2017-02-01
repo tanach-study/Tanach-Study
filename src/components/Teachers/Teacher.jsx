@@ -31,18 +31,22 @@ class Teacher extends Component {
     return (
       <div className="container">
         <div className="section">
-          <div className="row valign-wrapper">
-            <div className="col l3 m4 s12 valign">
-              <img src="/assets/images/background1.jpg" alt="" className="responsive-img full-width"/>
-            </div>
-            <div className="col l9 m8 s12 valign">
-              <h2 className="teacher-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</h2>
-              <div><i>{teacher.short_bio}</i></div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col l10 m12 s12 offset-l1">
-              <p>{teacher.long_bio}</p>
+          <div className="card">
+            <div className="card-content">
+              <div className="row valign-wrapper">
+                <div className="col l3 m4 s12 valign">
+                  <img src="/assets/images/background1.jpg" alt="" className="responsive-img full-width"/>
+                </div>
+                <div className="col l9 m8 s12 valign">
+                  <h2 className="teacher-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</h2>
+                  <div><i>{teacher.short_bio}</i></div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col l10 m12 s12 offset-l1">
+                  <p>{teacher.long_bio}</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
