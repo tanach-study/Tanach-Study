@@ -12,6 +12,7 @@ import Videos from './components/Videos/Videos.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import SignupSuccess from './components/Signup/SignupSuccess/SignupSuccess.jsx';
 import SignupError from './components/Signup/SignupError/SignupError.jsx';
+import Teachers from './components/Teachers/Teachers.jsx';
 import Admin from './components/Admin/Admin.jsx';
 import Dashboard from './components/Admin/Dashboard/Dashboard.jsx';
 import Login from './components/Admin/Login/Login.jsx';
@@ -32,6 +33,7 @@ module.exports = (
       <Route path='success' component={SignupSuccess} />
       <Route path='error' component={SignupError} />
     </Route>
+    <Route path='teachers' component={Teachers} />
     <Route path='admin' component={Admin}>
       <IndexRoute component={Dashboard} />
       <Route path='dashboard' component={Dashboard} />

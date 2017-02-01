@@ -23,6 +23,7 @@ app.use((req, res, next) => {
 // build API routes
 app.use('/api/sefarim', require('./routes/sefarim.js'));
 app.use('/api/perakim', require('./routes/perakim.js'));
+app.use('/api/teachers', require('./routes/teachers.js'));
 app.use('/api/videos', require('./routes/videos.js'));
 app.use('/api/users', require('./routes/users.js'));
 app.use('/api/signup', require('./routes/signup.js'));
