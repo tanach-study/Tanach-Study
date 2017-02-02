@@ -86,9 +86,9 @@ class Perakim extends Component {
           <br className="hide-on-med-and-down" />
           <div className="row">
             <div className="center">
-              <a className="waves-effect waves-light btn col l2 m3 s12 offset-l2" onClick={() => this.updateState('show', 'heb')}>Hebrew</a>
-              <a className="waves-effect waves-light btn col l2 m4 s12 offset-l1 offset-m1" onClick={() => this.updateState('show', 'par')}>Hebrew/English</a>
-              <a className="waves-effect waves-light btn col l2 m3 s12 offset-l1 offset-m1" onClick={() => this.updateState('show', 'eng')}>English</a>
+              <a className="waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2" onClick={() => this.updateState('show', 'heb')}>Hebrew</a>
+              <a className="waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1" onClick={() => this.updateState('show', 'par')}>Hebrew/English</a>
+              <a className="waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1" onClick={() => this.updateState('show', 'eng')}>English</a>
             </div>
           </div>
           <div className="row">

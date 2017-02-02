@@ -25,11 +25,11 @@ class Contact extends Component {
     return (
       <div className="container">
         <div className="section">
-          <form>
+          <form className="tsblue-form">
             <input type="text" placeholder="first name" required />
             <input type="text" placeholder="last name" required />
             <input type="text" placeholder="email" required />
-            <a className="btn">Sign Up</a>
+            <a className="btn tsblue">Sign Up</a>
           </form>
         </div>
       </div>

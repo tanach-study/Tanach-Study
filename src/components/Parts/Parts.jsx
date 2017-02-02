@@ -163,7 +163,7 @@ class Parts extends Component {
       }
       return (
         <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-          <div className="card teal lighten-2 btn waves-effect hoverable full-width">
+          <div className="card tsblue btn waves-effect hoverable full-width">
             <div className="col-content">Sefer {book.name}</div>
           </div>
         </Link>

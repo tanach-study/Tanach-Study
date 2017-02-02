@@ -11,7 +11,7 @@ const PerekList = (props) => {
       click={props.click}
     />)
   return (
-    <div>
+    <div className="row">
       {mapped}
     </div>
   );

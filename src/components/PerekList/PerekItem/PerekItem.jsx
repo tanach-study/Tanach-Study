@@ -9,70 +9,22 @@ function camelize(str) {
 
 
 const PerekItem = (props) => {
-  const part = camelize(props.sefer.part_name);
   const perekName = (props.perek.perek_id == 0 ? 'Introduction' : `Perek ${props.perek.perek_id}`);
-  let audioURL = null;
-  let jsx = null;
+  let parts = null;
+  let partsBreakdown = null;
   if (props.perek.is_many_parts) {
-    const partsBreakdown = props.perek.parts_breakdown.split(',');
-    const perekParts = partsBreakdown.map((perekPart, i) => {
-      audioURL = `http://cdn.tanachstudy.com/archives/${part}/${props.sefer.book_name.charAt(0).toUpperCase() + props.sefer.book_name.slice(1)}/${props.sefer.book_name}-${props.perek.perek_id}${perekPart}.mp3`;
-      return (
-        <div key={i} onClick={(e) => props.click(props.perek.perek_id)} className="card hoverable">
-          <div className="card-content">
-            <div className="row">
-              <div className="col l4 m4 s4 left-align">
-                <div className="col-content">
-                  <p>{`${perekName} Part ${perekPart.toUpperCase()}`}</p>
-                </div>
-              </div>
-              <div className="col l4 m4 s4 center-align">
-                <div className="col-content">
-                  <audio src={audioURL} controls></audio>
-                </div>
-              </div>
-              <div className="col l4 m4 s4 right-align">
-                <div className="col-content">
-
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-      );
-    });
-    jsx = perekParts;
-  } else {
-    audioURL = `http://cdn.tanachstudy.com/archives/${part}/${props.sefer.book_name.charAt(0).toUpperCase() + props.sefer.book_name.slice(1)}/${props.sefer.book_name}-${props.perek.perek_id == 0 ? '0-intro' : props.perek.perek_id}.mp3`;
-    jsx = (
-      <div>
-        <div onClick={(e) => props.click(props.perek.perek_id)} className="card hoverable">
-          <div className="card-content">
-            <div className="row">
-              <div className="col l4 m4 s4 left-align">
-                <div className="col-content">
-                  <p>{perekName}</p>
-                </div>
-              </div>
-              <div className="col l4 m4 s4 center-align">
-                <div className="col-content">
-                  <audio src={audioURL} controls></audio>
-                </div>
-              </div>
-              <div className="col l4 m4 s4 right-align">
-                <div className="col-content">
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      );
+    partsBreakdown = props.perek.parts_breakdown.split(',');
+    parts = 'Parts ';
+    partsBreakdown.forEach((part) => parts += `${part.toUpperCase()}, `);
+    parts = parts.substring(0, parts.length - 2);
   }
   return (
-    <div>
-      {jsx}
+    <div className="col l4 m6 s12">
+      <div onClick={(e) => props.click(props.perek.perek_id)} className="card hoverable full-width">
+        <div className="card-content">
+          <p>{perekName} <span><i>{parts ? parts : ''}</i></span></p>
+        </div>
+      </div>
     </div>
   );
 }

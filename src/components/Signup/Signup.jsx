@@ -75,11 +75,11 @@ class Signup extends Component {
             <div className="red-text error">{this.state.errorMsg}</div>
               <div className="card">
                 <div className="card-content">
-                  <form>
-                    <input type="text" name="firstName" placeholder="first name" required autoFocus value={this.state.firstName} onChange={(e) => this.updateState('firstName', e.target.value)} />
-                    <input type="text" name="lastName" placeholder="last name" required value={this.state.lastName} onChange={(e) => this.updateState('lastName', e.target.value)} />
-                    <input type="email" name="email" placeholder="email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
-                    <button type="submit" className="btn" onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
+                  <form className="tsblue-form">
+                    <input type="text" name="firstName" placeholder="First Name" required autoFocus value={this.state.firstName} onChange={(e) => this.updateState('firstName', e.target.value)} />
+                    <input type="text" name="lastName" placeholder="Last Name" required value={this.state.lastName} onChange={(e) => this.updateState('lastName', e.target.value)} />
+                    <input type="email" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
+                    <button type="submit" className="btn tsblue" onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
                   </form>
                 </div>
               </div>

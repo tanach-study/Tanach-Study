@@ -6,6 +6,19 @@
 * Made By MaterializeCSS.com
 */
 
+.tsblue {
+  background-color: #009FC1 !important;
+}
+
+.tsblue-text {
+  color: #009FC1 !important;
+}
+
+.tsblue-form input:focus {
+  border-bottom: 1px solid #009FC1 !important;
+  box-shadow: 0 1px 0 0 #009FC1 !important;
+}
+
 .teacher-title {
   margin: 0;
 }

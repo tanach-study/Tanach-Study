@@ -66,7 +66,7 @@ class HomePage extends Component {
         <div id="index-banner" className="hide-on-med-and-up">
           <div className="section no-pad-top">
             <div className="container">
-              <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
+              <h1 className="header center tsblue-text">Tanach Study</h1>
               <div className="row center">
                 <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
               </div>
@@ -79,12 +79,12 @@ class HomePage extends Component {
 
         <div className="slider">
           <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}>
-          <h1 className="header center teal-text text-lighten-2">Tanach Study</h1>
+          <h1 className="header center tsblue-text">Tanach Study</h1>
           <div className="row center">
             <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
           </div>
           <div className="row center">
-            <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
+            <Link to="/signup" className="btn-large waves-effect waves-light tsblue hoverable">Sign Up Now!</Link>
           </div>
         </div>
           <Slider slides={this.state.images} index={this.state.currentIndex} />
@@ -96,7 +96,7 @@ class HomePage extends Component {
             <div className="row">
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center teal-text text-lighten-2"><i className="material-icons">headset</i></h2>
+                  <h2 className="center tsblue-text"><i className="material-icons">headset</i></h2>
                   <h5 className="center">Mode of Study</h5>
 
                   <p className="light center-align">A free digital Tanach study program that is all-encompassing and geared towards English-speaking communities around the world.</p>
@@ -105,7 +105,7 @@ class HomePage extends Component {
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center teal-text text-lighten-2"><span>&#128214;</span></h2>
+                  <h2 className="center tsblue-text"><span>&#128214;</span></h2>
                   <h5 className="center">Torah Content</h5>
 
                   <p className="light center-align">We offer you an  experience that allows you to become intimately familiar with the text, framework, and storyline of the Tanach. Every Sefer. Every Perek. Every Pasuk.</p>
@@ -114,7 +114,7 @@ class HomePage extends Component {
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center teal-text text-lighten-2"><span>&#10017;</span></h2>
+                  <h2 className="center tsblue-text"><span>&#10017;</span></h2>
                   <h5 className="center">Build Identity</h5>
                   <p className="light center-align">To increase knowledge of your ancestral Jewish history, to strengthen your sense of awe and love of God, and reinforce your personal and national Jewish identity.</p>
                 </div>
@@ -124,19 +124,12 @@ class HomePage extends Component {
         </div>
 
 
-        <div className="parallax-container valign-wrapper">
-          <div className="section no-pad-bot">
-            <div className="container">
-              <div className="row center">
-                <h5 className="header col s12 light"></h5>
-              </div>
-            </div>
-          </div>
-          <div className=""><img src="/assets/images/collage.png" alt="Collage of all educators" /></div>
+        <div className="responsive-img center">
+          <img src="/assets/images/collage.png" alt="Collage of all educators" />
         </div>
 
 
-        <div className="parallax-container white container">
+        <div className="white container">
           <Testimonials testimonials={this.state.testimonials}/>
         </div>
       </div>
