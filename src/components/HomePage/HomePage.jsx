@@ -130,8 +130,8 @@ class HomePage extends Component {
         </div>
 
 
-        <div className="responsive-img center">
-          <img src="/assets/images/collage.png" alt="Collage of all educators" />
+        <div className="center">
+          <img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" />
         </div>
 
 
