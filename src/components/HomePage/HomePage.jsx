@@ -28,6 +28,8 @@ class HomePage extends Component {
       ],
       currentIndex: 0,
       testimonials: testimonials,
+      leftCaptionDiv: '',
+      rightCaptionDiv: '',
     }
   }
 
@@ -59,7 +61,7 @@ class HomePage extends Component {
   //     this.updateState('currentIndex', curr+1);
   //   }
   // }
-          // <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}></div>
+
 
   render() {
     return(
@@ -81,7 +83,7 @@ class HomePage extends Component {
 
         <div className="slider hide-on-small-only">
           <div className="full-width row">
-            <div className="col l4 m3">{/* This is where passuk 1 will go*/}</div>
+            <div className="col l4 m3">{this.state.leftCaptionDiv}</div>
             <div className="col l4 m6">
                 <div className="card">
                   <div className="card-content center">
@@ -91,8 +93,11 @@ class HomePage extends Component {
                   </div>
                 </div>
               </div>
-            <div className="col l4 m3">{/* This is where passuk 2 will go*/}</div>
-            <Slider slides={this.state.images} index={this.state.currentIndex} />
+            <div className="col l4 m3">{this.state.rightCaptionDiv}</div>
+            <Slider
+              slides={this.state.images}
+              index={this.state.currentIndex}
+            />
           </div>
         </div>
 
@@ -159,92 +164,4 @@ export default HomePage;
             <div className="col s12"><p>"testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2"</p></div>
             <div className="col s12"><p>"testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3"</p></div>
           </div>
-
-testimonials: [
-        {
-          text: `The classes amaze me how history continuously repeats itself.  The people sinned, hashem turned his back on his people, other nations would wage war against us, And Israel would come back to Hashem.  I feel, even in today's times, we are going through the same cycle.`,
-          author: `Martin Hanan`,
-          title: `Property Manager`,
-        },
-        {
-          text: `Tanach Study offers all the benefits of learning in the best University in Israel, minus the jet lag! The world class teachers, cutting edge techniques and relevant lessons are what makes this first rate program so unique. Our community is very fortunate to have this wonderful academic experience available to us. `,
-          author: `Vivien Hidary`,
-          title: `Teacher at Allegra Franco Teachers Seminary`,
-        },
-        {
-          text: `Every morning I wake up and eagerly reach for my phone to see if the next perek from tanachstudy has been sent. It's the highlight of my day ... Learning my history and my heritage brings me closer to knowing my identity!`,
-          author: `Cindy Chabot`,
-          title: ``,
-        },
-        {
-          text: `Tanakh Study inspired me to see the  Tanakh as more than a story, and now I see it as a guide to me life, with warnings and tips for how to navigate the world.`,
-          author: `Danielle Ashkenazie`,
-          title: `Yeshivah of Flatbush SGO president`,
-        },
-        {
-          text: `Easy, Simple, and convenient! There's no reason why not to learn tanach everyday!`,
-          author: `Ezra Shaya`,
-          title: `Rabbi at Sephardic Rabbinical College`,
-        },
-        {
-          text: `From daily email reminders to audio recording of both the ta’amim and perekim in detail. I encourage all my friends to sign on and will continue to do so.`,
-          author: `Moshe Enayatian`,
-          title: `National Sales Director DILAMANI`,
-        },
-        {
-          text: `Tanach Study is something I look forward to each and every day. The variety of teachers makes it even more interesting. I am learning things I never learned before.`,
-          author: `Jack Shammah`,
-          title: `Principal at Best Silver Inc.`,
-        },
-        {
-          text: `This program is perfect for people interested in learning ALL of Tanakh for the first time. I love that the teachers not only present a literal explanation of the text, but also give some additional insights from other sources to elucidate some points.`,
-          author: `Dr. Joelle Saad-Lessler`,
-          title: `Associate Industry Professor of Economics, Stevens Institute of Technology School of Business`,
-        },
-        {
-          text: `I value the variety of teachers and approaches, who still all remain consistent with the mission of the organization - broadening Torah learning, increasing knowledge of our Jewish history, heightening our Yirat Shamayim and Ahavat Hashem, and strengthening our personal as well as our national identity. The ability to move sequentially, pasuq by pasuq, helps deepen my familiarity with the text. `,
-          author: `Gitta Jaroslawicz-Neufeld`,
-          title: `Director of Education, Allegra Franco School of Educational Leadership`,
-        },
-        {
-          text: `I have gained a better understanding of many different parts of nevvim and ketuvim…. You can accomplish a lot by learning a little each day. Commit yourself and you will see the results.`,
-          author: `Abraham Cohen`,
-          title: ``,
-        },
-        {
-          text: `It sets the tone for the rest of my day. The speakers are clear, concise and very easy to listen to. With devoting just ten minutes of my time while driving to work, I gain a great sense of accomplishment for the day ahead.`,
-          author: `Ikey Chera`,
-          title: `Principal at Crown Acquisitions Inc.`,
-        },
-        {
-          text: `Every occasion in which I have had the privilege of teaching the Tanach study group, I am inspired by the warmth, curiosity, and excitement that I encounter. This group of Tanakh enthusiasts are deeply committed to Tanakh learning, and have succeeded in forging a unique atmosphere of passion for text and interpretation. `,
-          author: `Dr. Yael Zeigler`,
-          title: `Lecturer in Bible at Herzog Academic College; Author of "Promises to Keep: The Oath in Biblical Narrative"`,
-        },
-        {
-          text: `Learning Tanach helps one connect deeper with ones religion, people and the land of Israel.  Its one of the most uplifting and bonding experiences... I think Audio with text is wonderful. The additional classes taped on video is also amazing and even better.`,
-          author: `Kamy Eliassi`,
-          title: `Torahversity`,
-        },
-        {
-          text: `It starts my day.. I have also used it to study with my grandkids. It's also enriching to have teachers, rabbis and laymen teaching from different backgrounds.`,
-          author: `Brenda Felman`,
-          title: `Biology and Tanakh Teacher`,
-        },
-        {
-          text: ``,
-          author: ``,
-          title: ``,
-        },
-        {
-          text: ``,
-          author: ``,
-          title: ``,
-        },
-        {
-          text: ``,
-          author: ``,
-          title: ``,
-        },
-      ],
       */

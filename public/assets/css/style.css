@@ -13,12 +13,6 @@
   z-index: -1;
 }
 
-@media only screen and (max-width : 600px) {
-  .slideshow {
-    /*position: initial;*/
-  }
-}
-
 .slide-item {
   position: absolute;
   left: 100%;

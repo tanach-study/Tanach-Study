@@ -40,16 +40,9 @@ class Slider extends Component {
         inactive: this.state.activeIndex != i,
       });
       return (
-        <div key={i} className={slideClass} style={style}>
-          <div className="caption left-align">
-            <h5>{slide.captionLeft}</h5>
-          </div>
-          <div className="caption right-align">
-            <h5>{slide.captionRight}</h5>
-          </div>
-        </div>
+        <div key={i} className={slideClass} style={style}></div>
       )
-    });
+    }, this);
     return (
       <div className="slideshow">
         {slides}
