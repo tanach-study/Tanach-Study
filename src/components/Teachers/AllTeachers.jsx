@@ -33,7 +33,7 @@ class Teachers extends Component {
           <Link to={`/teachers/${teacher.teacher_id}`} className="right-align">
             <div className="card small hoverable full-width black-text">
               <div className="card-image">
-                <img src="/assets/images/background2.jpg" alt=""/>
+                <img src={teacher.image_url} alt=""/>
               </div>
               <div className="card-content">
                 <div className="card-title left-align">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>

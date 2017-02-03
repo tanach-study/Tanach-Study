@@ -6,6 +6,14 @@
 * Made By MaterializeCSS.com
 */
 
+.nav-container {
+  height: 10vh;
+}
+
+.logo-container {
+  max-height: 10vh;
+}
+
 .slideshow {
   height: 400px;
   width: 100%;
@@ -122,9 +130,6 @@ p {
 
 
 @media only screen and (max-width : 992px) {
-  #index-banner .section {
-    top: 10%;
-  }
   nav .brand-logo {
     max-width: 18%;
     margin-left: 0;
@@ -132,9 +137,6 @@ p {
 }
 
 @media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
   nav .brand-logo {
     max-width: 30%;
   }
