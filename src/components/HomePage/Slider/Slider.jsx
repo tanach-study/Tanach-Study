@@ -18,7 +18,7 @@ class Slider extends Component {
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
-    }, 50000)
+    }, 5000)
   }
 
   advanceSlide() {

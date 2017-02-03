@@ -59,11 +59,12 @@ class HomePage extends Component {
   //     this.updateState('currentIndex', curr+1);
   //   }
   // }
+          // <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}></div>
 
   render() {
     return(
       <div>
-        <div id="index-banner" className="hide-on-med-and-up">
+        <div className="hide-on-med-and-up">
           <div className="section no-pad-top">
             <div className="container">
               <h1 className="header center tsblue-text">Tanach Study</h1>
@@ -74,20 +75,25 @@ class HomePage extends Component {
                 <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
               </div>
             </div>
+            <Slider slides={this.state.images} index={this.state.currentIndex} />
           </div>
         </div>
 
-        <div className="slider">
-          <div className={`${styles['modal']} card z-depth-5 hide-on-small-only`}>
-          <h1 className="header center tsblue-text">Tanach Study</h1>
-          <div className="row center">
-            <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
+        <div className="slider hide-on-small-only">
+          <div className="full-width row">
+            <div className="col l4 m3">{/* This is where passuk 1 will go*/}</div>
+            <div className="col l4 m6">
+                <div className="card">
+                  <div className="card-content center">
+                    <h1 className="header tsblue-text">Tanach Study</h1>
+                    <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
+                    <Link to="/signup" className="btn-large waves-effect waves-light tsblue hoverable">Sign Up Now!</Link>
+                  </div>
+                </div>
+              </div>
+            <div className="col l4 m3">{/* This is where passuk 2 will go*/}</div>
+            <Slider slides={this.state.images} index={this.state.currentIndex} />
           </div>
-          <div className="row center">
-            <Link to="/signup" className="btn-large waves-effect waves-light tsblue hoverable">Sign Up Now!</Link>
-          </div>
-        </div>
-          <Slider slides={this.state.images} index={this.state.currentIndex} />
         </div>
 
         <div className="container">
