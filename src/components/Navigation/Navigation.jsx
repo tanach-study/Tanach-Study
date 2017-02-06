@@ -20,6 +20,7 @@ class Navigation extends Component {
           <ul className="right hide-on-med-and-down">
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/parts">Study a Perek</Link></li>
+            <li><Link to="/teachers">Our Teachers</Link></li>
             <li><Link to="/videos">Videos</Link></li>
             <li><Link to="/donate">Donate</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
@@ -29,6 +30,7 @@ class Navigation extends Component {
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/parts">Study a Perek</Link></li>
+            <li><Link to="/teachers">Our Teachers</Link></li>
             <li><Link to="/videos">Videos</Link></li>
             <li><Link to="/donate">Donate</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
