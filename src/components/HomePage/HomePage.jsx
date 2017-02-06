@@ -8,28 +8,29 @@ import styles from './Slider/Slider.css';
 class HomePage extends Component {
   constructor(props) {
     super(props);
+    const images  = [
+      {
+        url: '/assets/images/ts_bg_1.JPG',
+        captionRight: 'Passuk 1 in Hebrew',
+        captionLeft: 'Passuk 1 in English',
+      },
+      {
+        url: '/assets/images/ts_bg_2.png',
+        captionRight: 'Passuk 2 in Hebrew',
+        captionLeft: 'Passuk 2 in English',
+      },
+      {
+        url: '/assets/images/ts_bg_3.JPG',
+        captionRight: 'Passuk 3 in Hebrew',
+        captionLeft: 'Passuk 3 in English',
+      },
+    ];
     this.state = {
-      images: [
-        {
-          url: '/assets/images/ts_bg_1.JPG',
-          captionRight: 'Passuk 1 in Hebrew',
-          captionLeft: 'Passuk 1 in English',
-        },
-        {
-          url: '/assets/images/ts_bg_2.png',
-          captionRight: 'Passuk 2 in Hebrew',
-          captionLeft: 'Passuk 2 in English',
-        },
-        {
-          url: '/assets/images/ts_bg_3.JPG',
-          captionRight: 'Passuk 3 in Hebrew',
-          captionLeft: 'Passuk 3 in English',
-        },
-      ],
+      images: images,
       currentIndex: 0,
       testimonials: testimonials,
-      leftCaptionDiv: '',
-      rightCaptionDiv: '',
+      leftCaptionDiv: images[0].captionLeft,
+      rightCaptionDiv: images[0].captionRight,
     }
   }
 
@@ -61,7 +62,12 @@ class HomePage extends Component {
                 <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
               </div>
             </div>
-            <Slider slides={this.state.images} index={this.state.currentIndex} />
+            <Slider
+              slides={this.state.images}
+              index={this.state.currentIndex}
+              left={(v) => this.updateState('leftCaptionDiv', v)}
+              right={(v) => this.updateState('rightCaptionDiv', v)}
+            />
           </div>
         </div>
 
@@ -81,6 +87,8 @@ class HomePage extends Component {
             <Slider
               slides={this.state.images}
               index={this.state.currentIndex}
+              left={(v) => this.updateState('leftCaptionDiv', v)}
+              right={(v) => this.updateState('rightCaptionDiv', v)}
             />
           </div>
         </div>
@@ -127,10 +135,12 @@ class HomePage extends Component {
           <div className="hide-on-med-and-up"><i>Guest lecturers sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a></i></div>
         </div>
 
-        <div className="section">
-          <div className="container valign-wrapper" style={{height: '400px'}}>
+        <div className="section row">
+          <div className="col l1 m1 s1 right-align"><i className="material-icons">format_quote</i></div>
+          <div className="col l10 m10 s10 valign-wrapper testimonial-container" style={{height: '400px'}}>
             <Testimonials testimonials={this.state.testimonials}/>
           </div>
+          <div className="col l1 m1 s1"><i className="material-icons">format_quote</i></div>
         </div>
 
         <div className="section">
