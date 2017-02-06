@@ -119,7 +119,7 @@ class HomePage extends Component {
         </div>
 
 
-        <div className="center collage-container row">
+        <div className="center collage-container">
           <img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" />
           <div className="in-memory white-text hide-on-small-only">
             Guest lecturers sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a>
@@ -127,10 +127,19 @@ class HomePage extends Component {
           <div className="hide-on-med-and-up"><i>Guest lecturers sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a></i></div>
         </div>
 
-
-        <div className="container valign-wrapper" style={{height: '400px'}}>
-          <Testimonials testimonials={this.state.testimonials}/>
+        <div className="section">
+          <div className="container valign-wrapper" style={{height: '400px'}}>
+            <Testimonials testimonials={this.state.testimonials}/>
+          </div>
         </div>
+
+        <div className="section">
+          <div className="center full-width">
+            <h4>Tanach Study Around the World</h4>
+            <img src="/assets/images/analytics.png" alt="" className="responsive-img"/>
+          </div>
+        </div>
+
       </div>
     );
   }
