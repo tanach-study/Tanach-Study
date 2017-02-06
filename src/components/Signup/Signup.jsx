@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Link, browserHistory } from 'react-router';
+import SignupForm from './SignupForm/SignupForm.jsx';
 
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      firstName: '',
-      lastName: '',
       errorMsg: null,
     }
   }
@@ -24,37 +22,6 @@ class Signup extends Component {
 
   componentDidMount() {
     init(jQuery);
-  }
-
-  doSubmit(e) {
-    e.preventDefault();
-    const email = this.state.email;
-    const firstName = this.state.firstName;
-    const lastName = this.state.lastName;
-    fetch('/api/signup', {
-      method: 'POST',
-      headers: new Headers({
-        'Content-Type': 'application/json',
-      }),
-      body: JSON.stringify({
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-      })
-    })
-    .then(r => r.json())
-    .then(resp => {
-      if (resp.status == 'OK') {
-        browserHistory.push('/signup/success/');
-      } else {
-        this.updateState('errorMsg', resp);
-        // browserHistory.push('/signup/error')
-      }
-    })
-    .catch(err => {
-      console.log(err);
-      this.updateState('errorMsg', err.message);
-    });
   }
 
   render() {
@@ -75,12 +42,7 @@ class Signup extends Component {
             <div className="red-text error">{this.state.errorMsg}</div>
               <div className="card">
                 <div className="card-content">
-                  <form className="tsblue-form">
-                    <input type="text" name="firstName" placeholder="First Name" required autoFocus value={this.state.firstName} onChange={(e) => this.updateState('firstName', e.target.value)} />
-                    <input type="text" name="lastName" placeholder="Last Name" required value={this.state.lastName} onChange={(e) => this.updateState('lastName', e.target.value)} />
-                    <input type="email" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
-                    <button type="submit" className="btn tsblue" onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
-                  </form>
+                  <SignupForm error={(msg) => this.updateState('errorMsg', msg)}/>
                 </div>
               </div>
             </div>

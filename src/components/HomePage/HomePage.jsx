@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import Slider from './Slider/Slider.jsx';
 import Testimonials from './Testimonials/Testimonials.jsx';
 import testimonials from '../../../public/testimonials.json';
-import styles from './Slider/Slider.css';
+import SignupForm from '../Signup/SignupForm/SignupForm.jsx';
 
 class HomePage extends Component {
   constructor(props) {
@@ -31,6 +31,7 @@ class HomePage extends Component {
       testimonials: testimonials,
       leftCaptionDiv: images[0].captionLeft,
       rightCaptionDiv: images[0].captionRight,
+      errorMsg: null,
     }
   }
 
@@ -147,6 +148,18 @@ class HomePage extends Component {
           <div className="center full-width">
             <h4>Tanach Study Around the World</h4>
             <img src="/assets/images/analytics.png" alt="" className="responsive-img"/>
+          </div>
+        </div>
+
+        <div className="section">
+          <div className="container">
+            <div className="card">
+              <div className="card-content center">
+                <h2>Sign Up Today!</h2>
+                <div className="red-text error">{this.state.errorMsg}</div>
+                <SignupForm error={(msg) => this.updateState('errorMsg', msg)} />
+              </div>
+            </div>
           </div>
         </div>
 
