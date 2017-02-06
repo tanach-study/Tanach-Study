@@ -41,27 +41,11 @@ class HomePage extends Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-    // const interval = setInterval(this.startSlider.bind(this), 3000);
-    // this.updateState('interval', interval);
   }
 
   componentDidMount() {
     init(jQuery);
   }
-
-  // componentWillUnmount() {
-  //   clearInterval(this.state.interval);
-  // }
-
-  // startSlider() {
-  //   const curr = this.state.currentIndex;
-  //   if (curr + 1 >= this.state.images.length) {
-  //     this.updateState('currentIndex', 0);
-  //   } else {
-  //     this.updateState('currentIndex', curr+1);
-  //   }
-  // }
-
 
   render() {
     return(
@@ -149,19 +133,3 @@ class HomePage extends Component {
 }
 
 export default HomePage;
-
-
-
-/*
-          <div className="row hide-on-small-only">
-            <div className="col l2 offset-l1 m3 offset-m1"><p><br/>"testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1"</p></div>
-            <div className="col l2 offset-l1 m3 offset-m1"><p><br/><br/><br/>"testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2"</p></div>
-            <div className="col l2 offset-l1 m3 offset-m1"><p><br/>"testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3"</p></div>
-            <div className="col l2 m3 offset-m2 hide-on-med-and-down"><p><br/><br/><br/><br/><br/><br/>"testimonial #4 testimonial #4 testimonial #4 testimonial #4 testimonial #4 testimonial #4"</p></div>
-          </div>
-          <div className="row hide-on-med-and-up">
-            <div className="col s12"><p>"testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1 testimonial #1"</p></div>
-            <div className="col s12"><p>"testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2 testimonial #2"</p></div>
-            <div className="col s12"><p>"testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3 testimonial #3"</p></div>
-          </div>
-      */

@@ -9,138 +9,172 @@ class Parts extends Component {
         {
           name: 'Yehoshua',
           url: '/sefarim/yehoshua',
-        },
+
+       disabled: false, },
         {
           name: 'Shofetim',
           url: '/sefarim/shofetim',
+          disabled: false,
         },
         {
           name: 'Shemuel 1',
           url: '/sefarim/shemuel1',
+          disabled: false,
         },
         {
           name: 'Shemuel 2',
           url: '/sefarim/shemuel2',
+          disabled: false,
         },
         {
           name: 'Melachim 1',
           url: '/sefarim/melachim1',
+          disabled: false,
         },
         {
           name: 'Melachim 2',
           url: '/sefarim/melachim2',
+          disabled: false,
         },
         {
           name: 'Yeshayahu',
           url: '/sefarim/yeshayahu',
+          disabled: false,
         },
         {
           name: 'Yirmiyahu',
           url: '/sefarim/yirmiyahu',
+          disabled: false,
         },
         {
           name: 'Yehezkel',
           url: '/sefarim/yehezkel',
+          disabled: false,
         },
         {
           name: 'Hoshea',
           url: '/sefarim/hoshea',
+          disabled: false,
         },
         {
           name: 'Yoel',
           url: '/sefarim/yoel',
+          disabled: false,
         },
         {
           name: 'Amos',
           url: '/sefarim/amos',
+          disabled: false,
         },
         {
           name: 'Ovadia',
           url: '/sefarim/ovadia',
+          disabled: false,
         },
         {
           name: 'Yonah',
           url: '/sefarim/yonah',
+          disabled: false,
         },
         {
           name: 'Michah',
           url: '/sefarim/michah',
+          disabled: false,
         },
         {
           name: 'Nahum',
           url: '/sefarim/nahum',
+          disabled: false,
         },
         {
           name: 'Habakuk',
           url: '/sefarim/habakuk',
+          disabled: false,
         },
         {
           name: 'Sephania',
           url: '/sefarim/sephania',
+          disabled: false,
         },
         {
           name: 'Hagai',
           url: '/sefarim/hagai',
+          disabled: false,
         },
         {
           name: 'Zecharia',
           url: '/sefarim/zecharia',
+          disabled: false,
         },
         {
           name: 'Malachi',
           url: '/sefarim/malachi',
+          disabled: false,
         },
         {
           name: 'Divre Hayamim 1',
           url: '/sefarim/divrehayamim1',
+          disabled: false,
         },
         {
           name: 'Divre Hayamim 2',
           url: '/sefarim/divrehayamim2',
+          disabled: false,
         },
         {
           name: 'Tehillim',
           url: '/sefarim/tehillim',
+          disabled: false,
         },
         {
           name: 'Mishle',
           url: '/sefarim/mishle',
+          disabled: false,
         },
         {
           name: 'Iyov',
           url: '/sefarim/iyov',
+          disabled: false,
         },
         {
           name: 'Shir Hashirim',
           url: '/sefarim/shirhashirim',
+          disabled: true,
         },
         {
           name: 'Ruth',
           url: '/sefarim/ruth',
+          disabled: true,
         },
         {
           name: 'Eicha',
           url: '/sefarim/eicha',
+          disabled: true,
         },
         {
           name: 'Kohelet',
           url: '/sefarim/kohelet',
+          disabled: true,
         },
         {
           name: 'Esther',
           url: '/sefarim/esther',
+          disabled: true,
         },
         {
           name: 'Daniel',
           url: '/sefarim/daniel',
+          disabled: true,
         },
         {
           name: 'Ezra',
           url: '/sefarim/ezra',
+          disabled: true,
         },
         {
           name: 'Nehemya',
           url: '/sefarim/nehemya',
+          disabled: true,
         },
       ],
     }
@@ -161,13 +195,26 @@ class Parts extends Component {
           classAdd = i % 2 == 0 ? 'offset-l2 offset-m3' : 'offset-l2';
         }
       }
-      return (
-        <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-          <div className="card tsblue btn waves-effect hoverable full-width">
-            <div className="col-content">Sefer {book.name}</div>
+      let jsx = null;
+
+      if (book.disabled) {
+        jsx = (
+          <div className={`col s12 m6 l4 ${classAdd}`} key={i}>
+            <div className="card tsblue btn waves-effect full-width disabled">
+              <div className="col-content">Sefer {book.name}</div>
+            </div>
           </div>
-        </Link>
-      );
+        );
+      } else {
+        jsx = (
+          <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
+            <div className="card tsblue btn waves-effect hoverable full-width">
+              <div className="col-content">Sefer {book.name}</div>
+            </div>
+          </Link>
+        );
+      }
+      return jsx;
     });
     return (
       <div className="container">

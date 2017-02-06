@@ -6,6 +6,7 @@ class Slider extends Component {
     super(props);
     this.state = {
       activeIndex: 0,
+      interval: null,
     }
   }
 
@@ -18,7 +19,12 @@ class Slider extends Component {
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
-    }, 5000)
+    }, 5000);
+    this.updateState('interval', interval);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
   }
 
   advanceSlide() {

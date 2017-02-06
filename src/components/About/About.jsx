@@ -13,7 +13,9 @@ class About extends Component {
     return (
       <div className="container">
         <h1 className="center">About Us</h1>
+
         <div className="divider"></div>
+
         <h3>Our Humble Beginnings</h3>
         <div className="valign-wrapper">
           <div className="valign">
@@ -23,7 +25,9 @@ class About extends Component {
             <p>Today we look back in amazement how a few inconsequential words and a strong will, turned into a long overdue Tanach study platform for the world to utilize.</p>
           </div>
         </div>
+
         <div className="divider"></div>
+
         <h3 className="right-align">Our Mission</h3>
         <div className="valign-wrapper">
           <div className="valign">
@@ -32,6 +36,7 @@ class About extends Component {
             <p>Our emergent objectives are to increase knowledge of our ancestral Jewish history, to strengthen our sense of awe and love of God, and reinforce our personal and national Jewish identity.</p>
           </div>
         </div>
+
         <h3>Core practices of the Tanach Study Experience</h3>
         <div className="">
           <p>The Tanach Study experience will consist of three components - a daily, weekly, and monthly - each with different purposes:</p>
@@ -52,8 +57,10 @@ class About extends Component {
           <i>By peshat we mean the clarification of what happened then with a focus on the past, while always being bound by the text itself. If the text is poetic we read it with the acuteness of a poem or song.</i>
           <i>We seek to study the grammar and philological meaning of the words, context of each pasuk, and structure of every paragraph.</i>
         </div>
+
         <div className="section"></div>
         <div className="section"></div>
+
       </div>
     );
   }
