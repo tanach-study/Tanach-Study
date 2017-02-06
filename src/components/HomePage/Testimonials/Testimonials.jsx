@@ -1,39 +1,65 @@
 import React, { Component } from 'react';
+import classNames from 'classnames';
 
-const Testimonials = props => {
-
-  const testimonials = props.testimonials.map((testimonial, i) => {
-    const rand = Math.floor(Math.random() * 3);
-    let alignClass;
-    switch (rand) {
-      case 0:
-        alignClass = 'caption left-align valign';
-        break;
-      case 1:
-        alignClass = 'caption center-align valign';
-        break;
-      case 2:
-        alignClass = 'caption right-align valign';
-        break;
+class Testimonials extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeIndex: 0,
+      interval: null,
     }
-    return (
-      <li key={i}>
-        <div className={alignClass}>
-          <p className="grey-text text-darken-2">{testimonial.Testimonial}</p>
-          <p className="grey-text text-lighten-1">{testimonial.Name}</p>
-          <p className="grey-text text-lighten-1">{testimonial.Title}</p>
-        </div>
-      </li>
-    );
-  })
+  }
 
-  return (
-    <div className="slider valign-wrapper" id="testimonial-slider">
-      <ul className="slides">
+  updateState(key, value) {
+    this.setState({
+      [key]: value,
+    });
+  }
+
+  componentDidMount() {
+    const interval = setInterval(() => {
+      this.advanceSlide();
+    }, 5000);
+    this.updateState('interval', interval);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.interval);
+  }
+
+  advanceSlide() {
+    const curr = this.state.activeIndex;
+    const numSlides = this.props.testimonials.length;
+    let next = curr + 1;
+    if (next >= numSlides) next = 0;
+    this.updateState('activeIndex', next);
+  }
+
+  render() {
+    const testimonials = this.props.testimonials.map((testimonial, i) => {
+      const slideClass = classNames({
+        'slide-item': true,
+        valign: true,
+        active: this.state.activeIndex == i,
+        inactive: this.state.activeIndex != i,
+      });
+      return (
+        <div key={i} className={slideClass}>
+          <div className="caption left-align valign">
+            <p className="grey-text text-darken-2">{testimonial.Testimonial}</p>
+            <p className="grey-text text-lighten-1">{testimonial.Name}</p>
+            <p className="grey-text text-lighten-1">{testimonial.Title}</p>
+          </div>
+        </div>
+        );
+    });
+
+    return (
+      <div className="slideshow">
         {testimonials}
-      </ul>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default Testimonials;

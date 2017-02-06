@@ -119,12 +119,16 @@ class HomePage extends Component {
         </div>
 
 
-        <div className="center">
+        <div className="center collage-container row">
           <img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" />
+          <div className="in-memory white-text hide-on-small-only">
+            Guest lecturers sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a>
+          </div>
+          <div className="hide-on-med-and-up"><i>Guest lecturers sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a></i></div>
         </div>
 
 
-        <div className="white container">
+        <div className="container valign-wrapper" style={{height: '400px'}}>
           <Testimonials testimonials={this.state.testimonials}/>
         </div>
       </div>
