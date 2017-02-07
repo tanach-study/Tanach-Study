@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
+import TeacherCard from './TeacherCard.jsx';
+import ReaderCard from './ReaderCard.jsx';
 import gematriya from '../../../lib/gematriya.js';
 
 function formatDir(passed) {
@@ -48,39 +50,14 @@ class Perakim extends Component {
     const fileName = `${this.state.sefer.replace(/ /g, '-')}-${this.state.perek}.mp3`;
     const teamimName = `${this.state.sefer.replace(/ /g, '-')}-${this.state.perek}-teamim.mp3`;
     const act = this.state.activePerek;
+    const hasTeamim = act.reader_id ? true : false;
     return (
       <div>
         <div className="container">
           <div className="row">
             <h2>Sefer {this.state.prettySefer} Perek {this.state.perek}</h2>
-            <div className="col l6 m12 s12">
-              <div className="card">
-                <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">Class given by {`${act.teacher_title} ${act.teacher_fname} ${act.teacher_mname || ''}${act.teacher_lname}`}<i className="material-icons right">more_vert</i></span>
-                  <br/>
-                  <audio src={`http://cdn.tanachstudy.com/archives/${partName}/${seferName}/${fileName}`} controls />
-                </div>
-                <div className="card-reveal">
-                  <span className="card-title grey-text text-darken-4">{`${act.teacher_title} ${act.teacher_fname} ${act.teacher_mname || ''}${act.teacher_lname}`}<i className="material-icons right">close</i></span>
-                  <p>{act.teacher_bio || 'This teacher doesn\'t have a bio'}</p>
-                  <a href="#">See {act.teacher_title} {act.teacher_lname}'s bio page</a>
-                </div>
-              </div>
-            </div>
-            <div className="col l6 m12 s12">
-              <div className="card">
-                <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">Perek read by {`${act.reader_title} ${act.reader_fname} ${act.reader_mname || ''}${act.reader_lname}`}<i className="material-icons right">more_vert</i></span>
-                  <br/>
-                  <audio src={`http://cdn.tanachstudy.com/archives/${partName}/${seferName}/recordings/${teamimName}`} controls />
-                </div>
-                <div className="card-reveal">
-                  <span className="card-title grey-text text-darken-4">{`${act.reader_title} ${act.reader_fname} ${act.reader_mname || ''}${act.reader_lname}`}<i className="material-icons right">close</i></span>
-                  <p>{act.reader_bio || 'This teacher doesn\'t have a bio'}</p>
-                  <a href="#">See {act.reader_title} {act.reader_lname}'s bio page</a>
-                </div>
-              </div>
-            </div>
+            <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
+            <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
           </div>
           <div className="divider hide-on-med-and-down"></div>
           <br className="hide-on-med-and-down" />

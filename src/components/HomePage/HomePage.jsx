@@ -42,11 +42,11 @@ class HomePage extends Component {
   }
 
   componentWillMount() {
-    window.scrollTo(0, 0);
   }
 
   componentDidMount() {
     init(jQuery);
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -162,6 +162,8 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
+
+        <div><i className="tsicons">scroll</i></div>
 
       </div>
     );

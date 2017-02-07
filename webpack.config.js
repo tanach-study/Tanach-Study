@@ -36,6 +36,7 @@ module.exports = {
       },
       links: [
         'https://fonts.googleapis.com/icon?family=Material+Icons',
+        '/assets/fonts/ts_fonts/ts_icons.ttf',
         '/assets/css/materialize.min.css',
         '/assets/css/style.css'
       ],
@@ -83,6 +84,18 @@ module.exports = {
       },
       {
         test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file-loader?name=/fonts/[name].[ext]'
+      },
+      {
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=100&mimetype=application/font-woff&name=/fonts/[name].[ext]'
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url-loader?limit=100&mimetype=application/octet-stream&name=/fonts/[name].[ext]'
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'file-loader?name=/fonts/[name].[ext]'
       }
     ]
