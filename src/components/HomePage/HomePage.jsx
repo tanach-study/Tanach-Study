@@ -12,17 +12,17 @@ class HomePage extends Component {
       {
         url: '/assets/images/ts_bg_1.JPG',
         captionRight: 'וְעַד יָם הָעֲרָבָה יָם-הַמֶּלַח מִזְרָחָה',
-        captionLeft: 'And unto the sea of the Arabah, even the Salt Sea, eastward',
+        captionLeftDisabled: 'And unto the sea of the Arabah, even the Salt Sea, eastward',
       },
       {
         url: '/assets/images/ts_bg_2.png',
         captionRight: 'הִנֵּה דָוִד, בְּמִדְבַּר עֵין גֶּדִי... עַל-פְּנֵי, צוּרֵי הַיְּעֵלִים',
-        captionLeft: 'Behold, David is in the wilderness of En-gedi... upon the rocks of the wild goats',
+        captionLeftDisabled: 'Behold, David is in the wilderness of En-gedi... upon the rocks of the wild goats',
       },
       {
         url: '/assets/images/ts_bg_3.JPG',
         captionRight: 'אֲשֶׁר-שָׁם, צִפֳּרִים יְקַנֵּנוּ;    חֲסִידָה, בְּרוֹשִׁים בֵּיתָהּ',
-        captionLeft: 'Wherein the birds make their nests; as for the stork, the fir-trees are her house',
+        captionLeftDisabled: 'Wherein the birds make their nests; as for the stork, the fir-trees are her house',
       },
     ];
 
@@ -68,7 +68,7 @@ class HomePage extends Component {
                 <h5 className="header col s12 light">Fusing modern technologies<br/>with ancient texts</h5>
               </div>
               <div className="row center">
-                <Link to="/signup" className="btn-large waves-effect waves-light teal lighten-1 hoverable">Sign Up Now!</Link>
+                <Link to="/signup" className="btn-large waves-effect waves-light tsblue hoverable">Sign Up Now!</Link>
               </div>
             </div>
             <Slider
@@ -81,8 +81,8 @@ class HomePage extends Component {
         </div>
 
         <div className="slider hide-on-small-only">
-          <div className="full-width row">
-            <div className="col l4 m3">{this.state.leftCaptionDiv}</div>
+          <div className="full-width full-height row">
+            <div className="col l4 m3 full-height slider-caption"><div className="left-caption">{this.state.leftCaptionDiv}</div></div>
             <div className="col l4 m6">
                 <div className="card">
                   <div className="card-content center">
@@ -92,7 +92,7 @@ class HomePage extends Component {
                   </div>
                 </div>
               </div>
-            <div className="col l4 m3">{this.state.rightCaptionDiv}</div>
+            <div className="col l4 m3 full-height slider-caption"><div className="right-caption">{this.state.rightCaptionDiv}</div></div>
             <Slider
               slides={this.state.images}
               index={this.state.currentIndex}
@@ -175,7 +175,7 @@ class HomePage extends Component {
           </div>
         </div>
 
-        <div><i className="tsicons">scroll</i></div>
+        <div><i className="tsicons">icon-scroll</i></div>
 
       </div>
     );
