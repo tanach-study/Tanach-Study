@@ -25,6 +25,14 @@ class HomePage extends Component {
         captionLeft: 'Wherein the birds make their nests; as for the stork, the fir-trees are her house',
       },
     ];
+
+    for (let i = testimonials.length; i > 0; i--) {
+      let j = Math.floor((Math.random() * i));
+      let temp = testimonials[i - 1];
+      testimonials[i - 1] = testimonials[j];
+      testimonials[j] = temp;
+    }
+
     this.state = {
       images: images,
       currentIndex: 0,
@@ -128,9 +136,9 @@ class HomePage extends Component {
         </div>
 
 
-        <Link to="/parts"></Link>
+
         <div className="center collage-container">
-            <img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" />
+            <Link to="/parts"><img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" /></Link>
 
           <div className="in-memory white-text hide-on-small-only">
             Guest lecturers sponsored in loving memory of <Link to="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</Link>

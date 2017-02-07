@@ -19,7 +19,7 @@ class Testimonials extends Component {
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
-    }, 30000);
+    }, 15000);
     this.updateState('interval', interval);
   }
 
@@ -46,7 +46,7 @@ class Testimonials extends Component {
   render() {
     const testimonials = this.props.testimonials.map((testimonial, i) => {
       const slideClass = classNames({
-        'slide-item': true,
+        'testimonial-slide-item': true,
         valign: true,
         active: this.state.activeIndex == i,
         inactive: this.state.activeIndex != i,
