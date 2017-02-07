@@ -128,15 +128,19 @@ class HomePage extends Component {
         </div>
 
 
+        <Link to="/parts"></Link>
         <div className="center collage-container">
-          <img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" />
+            <img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" />
+
           <div className="in-memory white-text hide-on-small-only">
-            Guest lecturers sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a>
+            Guest lecturers sponsored in loving memory of <Link to="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</Link>
           </div>
-          <div className="hide-on-med-and-up"><i>Guest lectures sponsored in loving memory of <a href="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</a></i></div>
+          <div className="hide-on-med-and-up"><i>Guest lectures sponsored in loving memory of <Link to="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</Link></i></div>
         </div>
 
+
         <div className="section row">
+          <h4 className="header center">Testimonials</h4>
           <div className="col l1 m1 s1 right-align"><i className="material-icons">format_quote</i></div>
           <div className="col l10 m10 s10 valign-wrapper testimonial-container" style={{height: '400px'}}>
             <Testimonials testimonials={this.state.testimonials}/>

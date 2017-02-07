@@ -48,7 +48,7 @@ class Sefarim extends Component {
           <div className="card-content">
             <div className="card-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
             <p>{teacher.long_bio || teacher.short_bio}</p>
-            <a href="#">See {teacher.title} {teacher.lname}'s bio page</a>
+            <a href={`/teachers/${teacher.teacher_id}`}>See {teacher.title} {teacher.lname}'s bio page</a>
           </div>
         </div>
       )

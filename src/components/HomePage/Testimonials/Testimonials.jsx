@@ -19,7 +19,7 @@ class Testimonials extends Component {
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
-    }, 5000);
+    }, 30000);
     this.updateState('interval', interval);
   }
 
@@ -32,6 +32,14 @@ class Testimonials extends Component {
     const numSlides = this.props.testimonials.length;
     let next = curr + 1;
     if (next >= numSlides) next = 0;
+    this.updateState('activeIndex', next);
+  }
+
+  recedeSlide() {
+    const curr = this.state.activeIndex;
+    const numSlides = this.props.testimonials.length;
+    let next = curr - 1;
+    if (next <= 0) next = numSlides;
     this.updateState('activeIndex', next);
   }
 

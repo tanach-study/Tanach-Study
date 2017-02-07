@@ -56,6 +56,8 @@ class Perakim extends Component {
         <div className="container">
           <div className="row">
             <h2>Sefer {this.state.prettySefer} Perek {this.state.perek}</h2>
+            <Link to={`/sefarim/${this.state.sefer}`} className="left"><i>Back to Sefer {this.state.prettySefer}</i></Link>
+            <div className="section"></div>
             <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
             <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
           </div>
