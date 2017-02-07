@@ -29,7 +29,8 @@ function getBooksTeacherTaught (req, res, next) {
   const teacherID = req.params.id;
   const query = `
   SELECT
-    book.name AS book_name
+    book.name AS book_name,
+    book.prettyEng AS pretty_eng
   FROM teacher
   INNER JOIN book_teacher
     ON teacher.teacher_id = book_teacher.teacher_id
