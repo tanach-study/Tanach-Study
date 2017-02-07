@@ -36,7 +36,7 @@ class Teacher extends Component {
           <Link to={`/sefarim/${book.book_name}`}>
             <div className="card hoverable full-width black-text">
               <div className="card-content">
-                {book.book_name}
+                {book.prettyEng}
               </div>
             </div>
           </Link>

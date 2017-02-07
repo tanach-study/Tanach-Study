@@ -36,7 +36,6 @@ module.exports = {
       },
       links: [
         'https://fonts.googleapis.com/icon?family=Material+Icons',
-        '/assets/fonts/ts_fonts/ts_icons.ttf',
         '/assets/css/materialize.min.css',
         '/assets/css/style.css'
       ],

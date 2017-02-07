@@ -8,11 +8,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('/assets/fonts/ts_fonts/ts_icons.eot?843vnw');
-  src:  url('assets/fonts/ts_fonts/ts_icons.eot?843vnw#iefix') format('embedded-opentype'),
-    url('assets/fonts/ts_fonts/ts_icons.ttf?843vnw') format('truetype'),
-    url('assets/fonts/ts_fonts/ts_icons.woff?843vnw') format('woff'),
-    url('assets/fonts/ts_fonts/ts_icons.svg?843vnw#icomoon') format('svg');
+  src:  url('/assets/fonts/ts_fonts/ts_icons.eot');
+  src:  url('assets/fonts/ts_fonts/ts_icons.eot') format('embedded-opentype'),
+    url('assets/fonts/ts_fonts/ts_icons.ttf') format('truetype'),
+    url('assets/fonts/ts_fonts/ts_icons.woff') format('woff'),
+    url('assets/fonts/ts_fonts/ts_icons.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
