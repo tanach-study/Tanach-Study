@@ -1,7 +1,7 @@
 const db = require('../lib/dbConnection');
 const tanach = require('../lib/tanach.json');
 
-const getOnePerek = (req, res, next) => {
+function getOnePerek (req, res, next) {
   const sefer = req.params.sefer;
   const perek = req.params.perek;
   const query = `
@@ -22,7 +22,17 @@ const getOnePerek = (req, res, next) => {
       $1~.parts_breakdown,
       $1~.perek_id,
       $1~.teacher_id,
-      $1~.reader_id
+      $1~.reader_id,
+      book.book_id AS book_id,
+      book.numChapters AS book_num_chapters,
+      book.prettyEng AS book_name_pretty_eng,
+      book.name AS book_name,
+      book.prev_book_id,
+      book.prev_book_name,
+      book.prev_book_num_chapters,
+      book.next_book_id,
+      book.next_book_name,
+      book.next_book_num_chapters
     FROM $1~
     LEFT JOIN teacher
       ON ($1~.teacher_id = teacher.teacher_id)
@@ -30,7 +40,10 @@ const getOnePerek = (req, res, next) => {
       ON ($1~.reader_id = reader.reader_id)
     INNER JOIN part
       ON ($1~.part_id = part.part_id)
-    WHERE $1~.perek_id = $2;`;
+    INNER JOIN book
+      ON (book.name = $1)
+    WHERE $1~.perek_id = $2;
+    `;
   const values = [sefer, perek];
   const hebArr = tanach[sefer].hebrew[perek - 1] || [];
   const engArr = tanach[sefer].english[perek - 1] || [];
@@ -44,6 +57,36 @@ const getOnePerek = (req, res, next) => {
   .then(() => next())
   .catch(err => next(err));
 }
+
+// function getSeferData(req, res, next) {
+//   const seferID = res.data.perek_data.book_id;
+//   const nextID = parseInt(seferID) + 1;
+//   const prevID = parseInt(seferID) - 1;
+
+//   const query = `
+//     SELECT
+//       book.book_id AS book_id,
+//       book.name AS book_name,
+//       book.numChapters AS num_chapters,
+//       book.prettyEng AS pretty_eng,
+//       book.part_id AS part_id
+//     FROM book
+//     WHERE book.book_id = $1 OR book.book_id = $2 OR book.book_id = $3;
+//   `;
+
+//   const values = [
+//     seferID,
+//     nextID,
+//     prevID,
+//   ];
+
+//   db.any(query, values)
+//   .then(seferData => {
+//     res.data.sefer_data = seferData;
+//   })
+//   .then(() => next())
+//   .catch(err => next(err));
+// }
 
 module.exports = {
   getOnePerek,

@@ -35,7 +35,7 @@ class Testimonials extends Component {
     this.updateState('activeIndex', next);
   }
 
-  recedeSlide() {
+  retractSlide() {
     const curr = this.state.activeIndex;
     const numSlides = this.props.testimonials.length;
     let next = curr - 1;

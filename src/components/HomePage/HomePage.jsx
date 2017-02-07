@@ -138,7 +138,7 @@ class HomePage extends Component {
 
 
         <div className="center collage-container">
-            <Link to="/parts"><img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img" /></Link>
+            <Link to="/parts"><img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img hoverable" /></Link>
 
           <div className="in-memory white-text hide-on-small-only">
             Guest lecturers sponsored in loving memory of <Link to="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</Link>
@@ -147,13 +147,13 @@ class HomePage extends Component {
         </div>
 
 
-        <div className="section row">
+        <div className="section row" style={{height: '400px'}}>
           <h4 className="header center">Testimonials</h4>
-          <div className="col l1 m1 s1 right-align"><i className="material-icons">format_quote</i></div>
-          <div className="col l10 m10 s10 valign-wrapper testimonial-container" style={{height: '400px'}}>
+          <div className="col l1 m1 s1 right-align full-height"><i className="material-icons">format_quote</i></div>
+          <div className="col l10 m10 s10 testimonial-container full-height valign-wrapper">
             <Testimonials testimonials={this.state.testimonials}/>
           </div>
-          <div className="col l1 m1 s1"><i className="material-icons">format_quote</i></div>
+          <div className="col l1 m1 s1 full-height"><i className="material-icons">format_quote</i></div>
         </div>
 
         <div className="section">

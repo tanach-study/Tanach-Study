@@ -37,10 +37,20 @@ class Perakim extends Component {
   }
 
   componentDidMount() {
+    this.initialize();
+  }
+
+  componentWillReceiveProps(props) {
+    this.updateState('sefer', props.params.sefer);
+    this.updateState('perek', props.params.perek);
+    this.initialize();
+  }
+
+  initialize() {
     init(jQuery);
     fetch(`/api/perakim/${this.state.sefer}/${this.state.perek}`)
     .then(r => r.json())
-    .then(data => this.updateState('activePerek', data))
+    .then(data => {this.updateState('activePerek', data); console.log(data)})
     .catch(err => console.log(err));
   }
 
@@ -51,15 +61,88 @@ class Perakim extends Component {
     const teamimName = `${this.state.sefer.replace(/ /g, '-')}-${this.state.perek}-teamim.mp3`;
     const act = this.state.activePerek;
     const hasTeamim = act.reader_id ? true : false;
+
+    // initialize null variables for the next and previous sefer and perek
+    let prevSeferName = null;
+    let nextSeferName = null;
+    let prevPerekNum = null;
+    let nextPerekNum = null;
+    // store the int of the current perek num in a var
+    const curPerekNum = parseInt(this.props.params.perek);
+    const curSeferName = this.props.params.sefer;
+
+    // if the current perek is the first of the book...
+    if (curPerekNum <= 1) {
+      // check if there is a book before this one (i.e. that this is not the first book)
+      if (act.prev_book_id) {
+        // if there is, then use that info for the previous perek
+        prevPerekNum = act.prev_book_num_chapters;
+        prevSeferName = act.prev_book_name;
+      } else {
+        // if it is the first book and perek, set these values to null
+        prevPerekNum = null;
+        prevSeferName = null;
+      }
+      // check to make sure that there is a next perek as well
+      if (curPerekNum >= act.book_num_chapters) {
+        if (act.next_book_id) {
+          nextPerekNum = 1;
+          nextSeferName = act.next_book_name;
+        }
+      } else {
+        nextPerekNum = curPerekNum + 1;
+        nextSeferName = curSeferName;
+      }
+    }
+
+    // if the current perek is the last of the sefer...
+    if (curPerekNum >= act.book_num_chapters) {
+      // check if there is a book after this one (i.e. that this is not the last book)
+      if (act.next_book_id) {
+        // if there is, then use that info for the next perek
+        nextPerekNum = 1;
+        nextSeferName = act.next_book_name;
+      } else {
+        // if it is the last book and perek, set these values to null
+        nextPerekNum = null;
+        nextPerekSefer = null;
+      }
+
+      if (curPerekNum <= 1) {
+        if (act.prev_book_id) {
+          prevPerekNum = act.prev_book_num_chapters;
+          prevSeferName = act.prev_book_name;
+        }
+      } else {
+        prevPerekNum = curPerekNum - 1;
+        prevSeferName = act.curSeferName;
+      }
+    }
+    // if the current perek is anywhere else in the middle, then just set the next and prev data to the current sefer, and simple math.
+    if (curPerekNum > 1 && curPerekNum < act.book_num_chapters) {
+      prevPerekNum = curPerekNum - 1;
+      prevSeferName = curSeferName;
+      nextSeferName = curSeferName;
+      nextPerekNum = curPerekNum + 1;
+    }
     return (
       <div>
         <div className="container">
           <div className="row">
-            <h2>Sefer {this.state.prettySefer} Perek {this.state.perek}</h2>
+            <h2>Sefer {this.state.sefer.charAt(0).toUpperCase() + this.state.sefer.slice(1)} Perek {this.state.perek}</h2>
             <Link to={`/sefarim/${this.state.sefer}`} className="left"><i>Back to Sefer {this.state.prettySefer}</i></Link>
             <div className="section"></div>
             <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
             <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
+          </div>
+          <div className="row center">
+            <div className="col l2 m2 s12">
+              <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
+            </div>
+            <div className="col l8 m8 hide-on-small-only"></div>
+            <div className="col l2 m2 s12">
+              <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
+            </div>
           </div>
           <div className="divider hide-on-med-and-down"></div>
           <br className="hide-on-med-and-down" />
