@@ -32,8 +32,8 @@ class Slider extends Component {
     const numSlides = this.props.slides.length;
     let next = curr + 1;
     if (next >= numSlides) next = 0;
-    const captionLeft = this.props.slides[this.state.activeIndex].captionLeft;
-    const captionRight = this.props.slides[this.state.activeIndex].captionRight;
+    const captionLeft = this.props.slides[next].captionLeft;
+    const captionRight = this.props.slides[next].captionRight;
     this.props.left(captionLeft);
     this.props.right(captionRight);
     this.updateState('activeIndex', next);

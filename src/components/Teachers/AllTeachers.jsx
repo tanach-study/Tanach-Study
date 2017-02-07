@@ -31,7 +31,7 @@ class Teachers extends Component {
       return (
         <div className="col l4 m6 s12" key={i}>
           <Link to={`/teachers/${teacher.teacher_id}`} className="right-align">
-            <div className="card small hoverable full-width black-text">
+            <div className="card medium hoverable full-width black-text">
               <div className="card-image">
                 <img src={teacher.image_url} alt=""/>
               </div>

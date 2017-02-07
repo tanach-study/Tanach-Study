@@ -11,18 +11,18 @@ class HomePage extends Component {
     const images  = [
       {
         url: '/assets/images/ts_bg_1.JPG',
-        captionRight: 'Passuk 1 in Hebrew',
-        captionLeft: 'Passuk 1 in English',
+        captionRight: 'וְעַד יָם הָעֲרָבָה יָם-הַמֶּלַח מִזְרָחָה',
+        captionLeft: 'And unto the sea of the Arabah, even the Salt Sea, eastward',
       },
       {
         url: '/assets/images/ts_bg_2.png',
-        captionRight: 'Passuk 2 in Hebrew',
-        captionLeft: 'Passuk 2 in English',
+        captionRight: 'הִנֵּה דָוִד, בְּמִדְבַּר עֵין גֶּדִי... עַל-פְּנֵי, צוּרֵי הַיְּעֵלִים',
+        captionLeft: 'Behold, David is in the wilderness of En-gedi... upon the rocks of the wild goats',
       },
       {
         url: '/assets/images/ts_bg_3.JPG',
-        captionRight: 'Passuk 3 in Hebrew',
-        captionLeft: 'Passuk 3 in English',
+        captionRight: 'אֲשֶׁר-שָׁם, צִפֳּרִים יְקַנֵּנוּ;    חֲסִידָה, בְּרוֹשִׁים בֵּיתָהּ',
+        captionLeft: 'Wherein the birds make their nests; as for the stork, the fir-trees are her house',
       },
     ];
     this.state = {
