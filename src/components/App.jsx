@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
+import DocumentMeta from 'react-document-meta';
 
 class App extends Component {
   constructor(props) {
@@ -26,6 +27,10 @@ class App extends Component {
   }
 
   render() {
+    const meta = {
+      title: 'Tanach Study',
+      description: 'Tanach Study is a web-based platform for learning Tanach, or the 24 books of the Old Testament',
+    }
     return (
       <div>
         <Navigation />

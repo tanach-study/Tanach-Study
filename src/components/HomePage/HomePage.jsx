@@ -117,7 +117,7 @@ class HomePage extends Component {
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center tsblue-text"><span>&#128214;</span></h2>
+                  <h2 className="center tsblue-text"><span className="tsblue-text tsicons icon-scroll"></span></h2>
                   <h5 className="center">Torah Content</h5>
 
                   <p className="light center-align">We offer you an  experience that allows you to become intimately familiar with the text, framework, and storyline of the Tanach. Every Sefer. Every Perek. Every Pasuk.</p>
@@ -126,7 +126,7 @@ class HomePage extends Component {
 
               <div className="col s12 m4">
                 <div className="icon-block">
-                  <h2 className="center tsblue-text"><span>&#10017;</span></h2>
+                  <h2 className="center tsblue-text"><span className="tsblue-text tsicons icon-star"></span></h2>
                   <h5 className="center">Build Identity</h5>
                   <p className="light center-align">To increase knowledge of your ancestral Jewish history, to strengthen your sense of awe and love of God, and reinforce your personal and national Jewish identity.</p>
                 </div>
@@ -174,8 +174,6 @@ class HomePage extends Component {
             </div>
           </div>
         </div>
-
-        <div><i className="tsicons">icon-scroll</i></div>
 
       </div>
     );
