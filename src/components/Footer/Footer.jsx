@@ -5,7 +5,7 @@ const Footer = props => {
     <footer className="tsblue page-footer">
       <div className="container">
       <div className="footer-copyright">
-        Created by <a className="brown-text text-lighten-3" href="http://joeyp.nyc">Joey Pinhas</a>
+        Created by <a className="brown-text text-lighten-3" href="https://www.linkedin.com/in/joeypinhas/" target="blank">Joey Pinhas</a>
         <div className="right-align white-text">
           <a href="https://www.facebook.com/tanachstudy"><i className="material-icons">facebook</i></a>
           <a href="https://www.instagram.com/tanach_study"><i className="material-icons">instagram</i></a>
