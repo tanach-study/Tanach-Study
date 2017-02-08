@@ -22,29 +22,6 @@ module.exports = {
     reasons: true
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Tanach Study',
-      xhtml: true,
-      inject: false,
-      template: require('html-webpack-template'),
-      appMountId: 'root-container',
-      meta: {
-        viewport: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no',
-        'http-equiv': 'Content-Type',
-        'content': 'text/html; charset=UTF-8',
-        description: 'test',
-      },
-      links: [
-        'https://fonts.googleapis.com/icon?family=Material+Icons',
-        '/assets/css/materialize.min.css',
-        '/assets/css/style.css'
-      ],
-      scripts: [
-        'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-        '/assets/js/materialize.min.js',
-        '/assets/js/init.js'
-      ]
-    }),
     new ExtractTextPlugin('/css/[name].css', {
       allChunks: true
     })
