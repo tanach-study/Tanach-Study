@@ -1,4 +1,5 @@
 const mailcomposer = require('mailcomposer');
+const gmailAuth = require('../lib/gmailAuth.js');
 
 function generateEmailString(auth, senderName, fromEmail, subject, message) {
   const emailObj = {
