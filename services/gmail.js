@@ -36,33 +36,33 @@ function generateEmailString(req, res, next) {
   });
 }
 
-function executeCB(err, response) {
-  if (err) {
-    console.log('The API returned an error: ' + err);
-    return next(err);
-  } else {
-    res.data = {
-      status: 'OK',
-      response: response,
-    };
-    next();
-  }
-}
-
 function sendEmail(req, res, next) {
   const auth = res.authObj;
   const base64Email = res.base64Email;
 
-  const gmail = google.gmail('v1');
-  const request = gmail.users.messages.send({
+  const requestObj = {
     auth: auth,
     userId: 'me',
     resource: {
       raw: base64Email,
     }
-  });
-  res.data = request;
-  next();
+  };
+
+  const executeCB = (err, response) => {
+    if (err) {
+      console.log('The API returned an error: ' + err);
+      return next(err);
+    } else {
+      res.data = {
+        status: 'OK',
+        response: response,
+      };
+      next();
+    }
+  };
+
+  const gmail = google.gmail('v1');
+  const request = gmail.users.messages.send(requestObj, executeCB);
 }
 
 module.exports = {
