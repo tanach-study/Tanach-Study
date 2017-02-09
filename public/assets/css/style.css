@@ -6,6 +6,43 @@
 * Made By MaterializeCSS.com
 */
 
+.tsnav {
+  min-height: 60px;
+  height: 10vh;
+}
+
+.tsnav a {
+  color: #444;
+}
+
+.mobile-nav-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.mobile-nav li {
+  width: 95%;
+  margin: 0 2.5%;
+  padding: 0;
+}
+
+.mobile-nav-outside {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.mobile-activator {
+  margin-left: 5vw;
+  cursor: pointer;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
 .slider-caption {
   position: relative;
   font-size: 2rem;
@@ -209,10 +246,6 @@
   color: white;
 }
 
-.nav-container {
-  height: 10vh;
-}
-
 .logo-container {
   max-height: 10vh;
 }
@@ -352,42 +385,14 @@
 
 
 
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
-nav .brand-logo {
-  max-width: 10%;
-  margin-left: 5vw;
-  z-index: 100;
-}
-
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #26a69a;
-}
 
 
-@media only screen and (max-width : 992px) {
-  nav .brand-logo {
-    max-width: 18%;
-    margin-left: 0;
-  }
-}
 
-@media only screen and (max-width : 600px) {
-  nav .brand-logo {
-    max-width: 30%;
-  }
-}
 
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
   font-size: inherit;
 }
