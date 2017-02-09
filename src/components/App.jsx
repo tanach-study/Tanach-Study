@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
 import DocumentMeta from 'react-document-meta';
+import styles from './App.css';
 
 class App extends Component {
   constructor(props) {

@@ -62,7 +62,7 @@ class Navigation extends Component {
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
-            <div className="col m7 s8 full-height pointer mobile-nav-outside" onClick={() => this.toggleMobileNav()}></div>
+            <div className="col m7 s4 full-height pointer mobile-nav-outside" onClick={() => this.toggleMobileNav()}></div>
           </div>
         </div>
 
