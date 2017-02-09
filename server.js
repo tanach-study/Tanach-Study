@@ -27,6 +27,7 @@ app.use('/api/teachers', require('./routes/teachers.js'));
 app.use('/api/videos', require('./routes/videos.js'));
 app.use('/api/users', require('./routes/users.js'));
 app.use('/api/signup', require('./routes/signup.js'));
+app.use('/api/contact', require('./routes/contact.js'));
 
 app.use(history({ logger: logger }))
 
@@ -37,8 +38,10 @@ app.use(express.static(path.join(__dirname, 'favicons')));
 app.use((err, req, res, next) => {
   if(err.status) {
     res.status(err.status).json(err.message);
-  } else {
+  } else if (err.message) {
     res.status(500).json(err.message);
+  } else {
+    res.status(500).json('Internal Server Error');
   }
 });
 
