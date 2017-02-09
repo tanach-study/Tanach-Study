@@ -30,14 +30,6 @@ class Admin extends Component {
 
   }
 
-  componentDidMount() {
-    init(jQuery);
-    // fetch('/api/sefarim')
-    // .then(r => r.json())
-    // .then(data => this.updateState('allSefarim', data))
-    // .catch(err => console.log(err));
-  }
-
   render() {
     return (
       <div>

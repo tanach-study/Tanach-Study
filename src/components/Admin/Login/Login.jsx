@@ -16,7 +16,8 @@ class Login extends Component {
     });
   }
 
-  doLogin() {
+  doLogin(e) {
+    e.preventDefault();
     const email = this.state.email;
     const password = this.state.password;
     this.updateState('email', '');
@@ -46,11 +47,11 @@ class Login extends Component {
       <div className="container">
         <div className="section">
           <div className="card small center center-align">
-            <div className="card-content valign">
+            <form className="card-content valign">
               <input type="text" placeholder="email" value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
               <input type="password" placeholder="password" value={this.state.password} onChange={(e) => this.updateState('password', e.target.value)} />
-              <a className="waves-effect waves-light btn" onClick={() => this.doLogin()}>Login</a>
-            </div>
+              <button type="submit" className="waves-effect waves-light btn" onClick={(e) => this.doLogin(e)}>Login</button>
+            </form>
           </div>
         </div>
       </div>

@@ -134,7 +134,7 @@ class HomePage extends Component {
 
 
         <div className="center collage-container">
-            <Link to="/parts"><img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img hoverable" /></Link>
+            <Link to="/videos"><img src="/assets/images/collage.png" alt="Collage of all educators" className="responsive-img hoverable" /></Link>
 
           <div className="in-memory white-text hide-on-small-only">
             Guest lecturers sponsored in loving memory of <Link to="http://www.rabbilabaton.com/" target="blank" className="in-memory-link tsblue-text">Rabbi Dr. Ezra Labaton A"H</Link>

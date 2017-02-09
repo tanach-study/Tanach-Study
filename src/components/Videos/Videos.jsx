@@ -68,6 +68,7 @@ class Videos extends Component {
     })
     return (
       <div className="container">
+        <h2 className="heading center">Guest Lectures</h2>
         <div className="row">
           {vids}
         </div>
