@@ -19,11 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    init(jQuery);
-    // fetch('/api/sefarim')
-    // .then(r => r.json())
-    // .then(data => this.updateState('allSefarim', data))
-    // .catch(err => console.log(err));
+    window.scrollTo(0, 0);
   }
 
   render() {

@@ -30,7 +30,6 @@ class Sefarim extends Component {
   }
 
   componentDidMount() {
-    init(jQuery);
     const sefer = this.state.seferName;
     if (!sefer) browserHistory.push('/');
     fetch(`/api/sefarim/${sefer}`)

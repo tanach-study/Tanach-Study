@@ -32,6 +32,7 @@ app.use(history({ logger: logger }))
 
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'favicons')));
 
 app.use((err, req, res, next) => {
   if(err.status) {

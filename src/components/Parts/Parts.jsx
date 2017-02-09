@@ -180,8 +180,8 @@ class Parts extends Component {
     }
   }
 
-  componentDidMount() {
-    init(jQuery);
+  componentWillMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {

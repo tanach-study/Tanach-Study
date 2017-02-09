@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import Slider from './Slider/Slider.jsx';
 import Testimonials from './Testimonials/Testimonials.jsx';
 import testimonials from '../../../public/testimonials.json';
-import SignupForm from '../Signup/SignupForm/SignupForm.jsx';
+import HomeSignupForm from './HomeSignupForm/HomeSignupForm.jsx';
 
 class HomePage extends Component {
   constructor(props) {
@@ -50,10 +50,6 @@ class HomePage extends Component {
   }
 
   componentWillMount() {
-  }
-
-  componentDidMount() {
-    init(jQuery);
     window.scrollTo(0, 0);
   }
 
@@ -169,7 +165,7 @@ class HomePage extends Component {
               <div className="card-content center">
                 <h2>Sign Up Today!</h2>
                 <div className="red-text error">{this.state.errorMsg}</div>
-                <SignupForm error={(msg) => this.updateState('errorMsg', msg)} />
+                <HomeSignupForm error={(msg) => this.updateState('errorMsg', msg)} />
               </div>
             </div>
           </div>

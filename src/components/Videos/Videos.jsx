@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import data from '../../../lib/data-1.json';
 
 class Videos extends Component {
   constructor(props) {
@@ -20,7 +19,6 @@ class Videos extends Component {
   }
 
   componentDidMount() {
-    init(jQuery);
     fetch('/api/videos')
     .then(r => r.json())
     .then(data => this.updateState('videos', data))

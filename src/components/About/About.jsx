@@ -5,8 +5,8 @@ class About extends Component {
     super(props);
   }
 
-  componentDidMount() {
-    init(jQuery);
+  componentWillMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {

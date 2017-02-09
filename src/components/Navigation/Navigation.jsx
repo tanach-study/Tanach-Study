@@ -16,10 +16,6 @@ class Navigation extends Component {
     });
   }
 
-  componentDidMount() {
-    init(jQuery);
-  }
-
   toggleMobileNav() {
     const hidden = this.state.hideMobile;
     this.updateState('hideMobile', !hidden);

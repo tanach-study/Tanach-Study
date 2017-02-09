@@ -17,10 +17,6 @@ class Contact extends Component {
     window.scrollTo(0, 0);
   }
 
-  componentDidMount() {
-    init(jQuery);
-  }
-
   render() {
     return (
       <div className="container">
