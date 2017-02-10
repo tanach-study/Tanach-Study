@@ -4,6 +4,10 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
     }
   }
 
@@ -15,6 +19,10 @@ class Contact extends Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
+  }
+
+  doSubmit(e) {
+    e.preventDefault();
   }
 
   render() {
@@ -39,11 +47,11 @@ class Contact extends Component {
                 <div className="card-content">
                   <h4 className="header">Send Us a Message!</h4>
                   <form className="tsblue-form">
-                    <input type="text" placeholder="Name" required />
-                    <input type="text" placeholder="Email" required />
-                    <input type="text" placeholder="Subject" required />
-                    <input type="text" placeholder="Message" required />
-                    <a className="btn tsblue">Send Us a Message</a>
+                    <input type="text" name="name" placeholder="Name" required autoFocus value={this.state.name} onChange={(e) => this.updateState('name', e.target.value)} />
+                    <input type="text" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
+                    <input type="text" name="subject" placeholder="Subject" required value={this.state.subject} onChange={(e) => this.updateState('subject', e.target.value)} />
+                    <input name="message" placeholder="Message" required value={this.state.message} onChange={(e) => this.updateState('message', e.target.value)} />
+                    <button type="submit" className="btn tsblue" onClick={(e) => this.doSubmit(e)}>Send Message</button>
                   </form>
                 </div>
               </div>

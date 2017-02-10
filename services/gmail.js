@@ -1,7 +1,8 @@
 const mailcomposer = require('mailcomposer');
 const google = require('googleapis');
-const gmailAuth = require('../lib/gmailAuth.js');
 const base64url = require('base64url');
+const gmailAuth = require('../lib/gmailAuth.js');
+const { isValidEmail } = require('../lib/lib.js');
 
 function getAuthObject(req, res, next) {
   gmailAuth.authorize()
@@ -17,6 +18,9 @@ function generateEmailString(req, res, next) {
   const fromEmail = req.body.email;
   const subject = req.body.subject;
   const message = req.body.message;
+
+  if (!(fromEmail && subject && message)) return next(new Error('Please fill out all the fields.'));
+  if (! isValidEmail(fromEmail)) return next(new Error('Invalid email.'));
 
   const toEmail = process.env.TO_EMAIL;
 
