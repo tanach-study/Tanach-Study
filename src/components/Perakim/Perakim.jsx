@@ -44,6 +44,7 @@ class Perakim extends Component {
     this.updateState('sefer', props.params.sefer);
     this.updateState('perek', props.params.perek);
     this.initialize();
+    this.prepareForRender();
   }
 
   initialize() {
@@ -53,7 +54,7 @@ class Perakim extends Component {
     .catch(err => console.log(err));
   }
 
-  render() {
+  prepareForRender() {
     const partName = encodeURIComponent(formatDir(this.state.activePerek.part_name));
     const seferName = encodeURIComponent(formatDir(this.state.sefer));
     const fileName = `${this.state.sefer.replace(/ /g, '-')}-${this.state.perek}.mp3`;
@@ -124,6 +125,22 @@ class Perakim extends Component {
       nextSeferName = curSeferName;
       nextPerekNum = curPerekNum + 1;
     }
+
+    const obj = {
+      partName,
+      seferName,
+      fileName,
+      prevSeferName,
+      prevPerekNum,
+      nextSeferName,
+      nextPerekNum,
+    }
+    this.updateState('perekVars', obj);
+  }
+
+  render() {
+    const act = this.state.activePerek;
+    const { partName, seferName, fileName, prevSeferName, prevPerekNum, nextSeferName, nextPerekNum } = this.state.perekVars;
     return (
       <div>
         <div className="container">
