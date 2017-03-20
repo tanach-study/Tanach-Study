@@ -41,7 +41,7 @@ class Navigation extends Component {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/parts">Study a Perek</Link></li>
               <li><Link to="/teachers">Our Teachers</Link></li>
-              <li><Link to="/videos">Videos</Link></li>
+              <li><a href="https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos" target="blank">Videos</a></li>
               <li><Link to="/donate">Donate</Link></li>
               <li><Link to="/contact">Contact Us</Link></li>
             </ul>
@@ -57,7 +57,7 @@ class Navigation extends Component {
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/parts">Study a Perek</Link></li>
                 <li><Link to="/teachers">Our Teachers</Link></li>
-                <li><Link to="/videos">Videos</Link></li>
+                <li><a href="https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos" target="blank">Videos</a></li>
                 <li><Link to="/donate">Donate</Link></li>
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul>
@@ -71,5 +71,7 @@ class Navigation extends Component {
     )
   }
 }
+
+// <li><Link to="/videos">Videos</Link></li>
 
 export default Navigation;

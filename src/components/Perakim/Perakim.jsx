@@ -23,6 +23,7 @@ class Perakim extends Component {
       prettySefer: this.props.params.sefer.charAt(0).toUpperCase() + this.props.params.sefer.slice(1),
       activePerek: {},
       show: 'heb',
+      perekVars: {},
     };
   }
 
@@ -37,29 +38,31 @@ class Perakim extends Component {
   }
 
   componentDidMount() {
-    this.initialize();
+    this.initialize(this.props.params.sefer, this.props.params.perek);
+    this.prepareForRender(this.props.params.sefer, this.props.params.perek);
   }
 
   componentWillReceiveProps(props) {
+    console.log('here', props.params);
     this.updateState('sefer', props.params.sefer);
     this.updateState('perek', props.params.perek);
-    this.initialize();
-    this.prepareForRender();
+    this.initialize(props.params.sefer, props.params.perek);
+    this.prepareForRender(props.params.sefer, props.params.perek);
   }
 
-  initialize() {
-    fetch(`/api/perakim/${this.state.sefer}/${this.state.perek}`)
+  initialize(sefer, perek) {
+    fetch(`/api/perakim/${sefer}/${perek}`)
     .then(r => r.json())
-    .then(data => {this.updateState('activePerek', data); console.log(data)})
+    .then(data => this.updateState('activePerek', data))
     .catch(err => console.log(err));
   }
 
-  prepareForRender() {
-    const partName = encodeURIComponent(formatDir(this.state.activePerek.part_name));
-    const seferName = encodeURIComponent(formatDir(this.state.sefer));
-    const fileName = `${this.state.sefer.replace(/ /g, '-')}-${this.state.perek}.mp3`;
-    const teamimName = `${this.state.sefer.replace(/ /g, '-')}-${this.state.perek}-teamim.mp3`;
+  prepareForRender(sefer, perek) {
     const act = this.state.activePerek;
+    const partName = encodeURIComponent(formatDir(act.part_name));
+    const seferName = encodeURIComponent(formatDir(sefer));
+    const fileName = `${sefer.replace(/ /g, '-')}-${perek}.mp3`;
+    const teamimName = `${sefer.replace(/ /g, '-')}-${perek}-teamim.mp3`;
     const hasTeamim = act.reader_id ? true : false;
 
     // initialize null variables for the next and previous sefer and perek
@@ -68,8 +71,8 @@ class Perakim extends Component {
     let prevPerekNum = null;
     let nextPerekNum = null;
     // store the int of the current perek num in a var
-    const curPerekNum = parseInt(this.props.params.perek);
-    const curSeferName = this.props.params.sefer;
+    const curPerekNum = parseInt(perek);
+    const curSeferName = sefer;
 
     // if the current perek is the first of the book...
     if (curPerekNum <= 1) {
@@ -130,22 +133,35 @@ class Perakim extends Component {
       partName,
       seferName,
       fileName,
+      teamimName,
       prevSeferName,
       prevPerekNum,
       nextSeferName,
       nextPerekNum,
-    }
+    };
+
     this.updateState('perekVars', obj);
   }
 
   render() {
     const act = this.state.activePerek;
-    const { partName, seferName, fileName, prevSeferName, prevPerekNum, nextSeferName, nextPerekNum } = this.state.perekVars;
+    const perekVars = this.state.perekVars;
+    const { partName, seferName, fileName, teamimName, prevSeferName, prevPerekNum, nextSeferName, nextPerekNum } = this.state.perekVars;
+    // const partName = perekVars.partName;
+    // const seferName = perekVars.seferName;
+    // const fileName = perekVars.fileName;
+    // const teamimName = perekVars.teamimName;
+    // const prevSeferName = perekVars.prevSeferName;
+    // const prevPerekNum = perekVars.prevPerekNum;
+    // const nextSeferName = perekVars.nextSeferName;
+    // const nextPerekNum = perekVars.nextPerekNum;
+    // const recording = perekVars.recording;
+    // console.log(partName, seferName, fileName, teamimName, prevSeferName, prevPerekNum, nextSeferName, nextPerekNum)
     return (
       <div>
         <div className="container">
           <div className="row">
-            <h2>Sefer {this.state.sefer.charAt(0).toUpperCase() + this.state.sefer.slice(1)} Perek {this.state.perek}</h2>
+            <h2>Sefer {this.state.prettySefer} Perek {this.state.perek}</h2>
             <Link to={`/sefarim/${this.state.sefer}`} className="left"><i>Back to Sefer {this.state.prettySefer}</i></Link>
             <div className="section"></div>
             <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
