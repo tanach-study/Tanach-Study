@@ -39,26 +39,29 @@ class Perakim extends Component {
 
   componentDidMount() {
     this.initialize(this.props.params.sefer, this.props.params.perek);
-    this.prepareForRender(this.props.params.sefer, this.props.params.perek);
   }
 
   componentWillReceiveProps(props) {
-    console.log('here', props.params);
     this.updateState('sefer', props.params.sefer);
     this.updateState('perek', props.params.perek);
     this.initialize(props.params.sefer, props.params.perek);
-    this.prepareForRender(props.params.sefer, props.params.perek);
   }
 
   initialize(sefer, perek) {
     fetch(`/api/perakim/${sefer}/${perek}`)
     .then(r => r.json())
-    .then(data => this.updateState('activePerek', data))
+    .then(data => {
+      this.updateState('activePerek', data);
+      this.updateState('prettySefer', (data.book_name.charAt(0).toUpperCase() + data.book_name.slice(1)));
+    })
     .catch(err => console.log(err));
   }
 
-  prepareForRender(sefer, perek) {
-    const act = this.state.activePerek;
+  render() {
+    let act = this.state.activePerek;
+    const sefer = this.props.params.sefer;
+    const perek = this.props.params.perek;
+
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));
     const fileName = `${sefer.replace(/ /g, '-')}-${perek}.mp3`;
@@ -129,34 +132,6 @@ class Perakim extends Component {
       nextPerekNum = curPerekNum + 1;
     }
 
-    const obj = {
-      partName,
-      seferName,
-      fileName,
-      teamimName,
-      prevSeferName,
-      prevPerekNum,
-      nextSeferName,
-      nextPerekNum,
-    };
-
-    this.updateState('perekVars', obj);
-  }
-
-  render() {
-    const act = this.state.activePerek;
-    const perekVars = this.state.perekVars;
-    const { partName, seferName, fileName, teamimName, prevSeferName, prevPerekNum, nextSeferName, nextPerekNum } = this.state.perekVars;
-    // const partName = perekVars.partName;
-    // const seferName = perekVars.seferName;
-    // const fileName = perekVars.fileName;
-    // const teamimName = perekVars.teamimName;
-    // const prevSeferName = perekVars.prevSeferName;
-    // const prevPerekNum = perekVars.prevPerekNum;
-    // const nextSeferName = perekVars.nextSeferName;
-    // const nextPerekNum = perekVars.nextPerekNum;
-    // const recording = perekVars.recording;
-    // console.log(partName, seferName, fileName, teamimName, prevSeferName, prevPerekNum, nextSeferName, nextPerekNum)
     return (
       <div>
         <div className="container">
