@@ -6,7 +6,6 @@ const TeacherCard = props => {
   let recording = null;
 
   if (act.is_many_parts) {
-      console.log('act is many parts')
       const partsBreakdown = act.parts_breakdown.split(',');
       let fileBase = props.fileName.replace('.mp3', '');
       recording = partsBreakdown.map((part, i) => {
