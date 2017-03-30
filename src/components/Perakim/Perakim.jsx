@@ -8,10 +8,12 @@ function formatDir(passed) {
   let str;
   if (passed) str = passed.toLowerCase();
   else return undefined;
-  return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (match, i) => {
+  const part1 = str.replace(/(?:^\w|[A-Z]|\b\w)/g, (match, i) => {
     if (+match === 0) return '';
     return match.toUpperCase();
   });
+  const part2 = part1.replace(/-/g, ' ');
+  return part2;
 }
 
 class Perakim extends Component {
