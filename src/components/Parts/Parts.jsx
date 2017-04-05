@@ -147,9 +147,9 @@ class Parts extends Component {
           disabled: false,
         },
         {
-          name: 'Megillat Eicha',
-          url: '/sefarim/eicha',
-          disabled: true,
+          name: 'Megillat Eichah',
+          url: '/sefarim/eichah',
+          disabled: false,
         },
         {
           name: 'Megillat Kohelet',
