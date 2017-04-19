@@ -154,7 +154,7 @@ class Parts extends Component {
         {
           name: 'Megillat Kohelet',
           url: '/sefarim/kohelet',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Megillat Esther',
