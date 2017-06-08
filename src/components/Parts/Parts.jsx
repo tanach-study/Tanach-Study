@@ -164,12 +164,12 @@ class Parts extends Component {
         {
           name: 'Sefer Daniel',
           url: '/sefarim/daniel',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Sefer Ezra',
           url: '/sefarim/ezra',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Sefer Nehemya',
