@@ -174,7 +174,7 @@ class Parts extends Component {
         {
           name: 'Sefer Nehemya',
           url: '/sefarim/nehemya',
-          disabled: true,
+          disabled: false,
         },
       ],
     }
