@@ -18,6 +18,7 @@ import Admin from './components/Admin/Admin.jsx';
 import Dashboard from './components/Admin/Dashboard/Dashboard.jsx';
 import Login from './components/Admin/Login/Login.jsx';
 import AdminVideos from './components/Admin/Videos/Videos.jsx';
+import Siyum from './components/Siyum/Siyum.jsx';
 
 module.exports = (
   <Route path='/' component={App}>
@@ -44,5 +45,6 @@ module.exports = (
       <Route path='login' component={Login} />
       <Route path='videos' component={AdminVideos} />
     </Route>
+    <Route path='siyum' component={Siyum} />
   </Route>
 );
