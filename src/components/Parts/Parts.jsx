@@ -113,12 +113,12 @@ class Parts extends Component {
         },
         {
           name: 'Sefer Divre Hayamim 1',
-          url: '/sefarim/divrehayamim1',
+          url: '/sefarim/divre-hayamim-1',
           disabled: false,
         },
         {
           name: 'Sefer Divre Hayamim 2',
-          url: '/sefarim/divrehayamim2',
+          url: '/sefarim/divre-hayamim-2',
           disabled: false,
         },
         {
@@ -138,7 +138,7 @@ class Parts extends Component {
         },
         {
           name: 'Megillat Shir Hashirim',
-          url: '/sefarim/shirhashirim',
+          url: '/sefarim/shir-hashirim',
           disabled: false,
         },
         {
@@ -169,12 +169,12 @@ class Parts extends Component {
         {
           name: 'Sefer Ezra',
           url: '/sefarim/ezra',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Sefer Nehemya',
           url: '/sefarim/nehemya',
-          disabled: true,
+          disabled: false,
         },
       ],
     }

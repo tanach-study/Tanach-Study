@@ -113,7 +113,7 @@ class Perakim extends Component {
       } else {
         // if it is the last book and perek, set these values to null
         nextPerekNum = null;
-        nextPerekSefer = null;
+        nextSeferName = null;
       }
 
       if (curPerekNum <= 1) {
