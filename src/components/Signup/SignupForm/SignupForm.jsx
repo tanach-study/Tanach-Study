@@ -35,10 +35,10 @@ class SignupForm extends Component {
     .then(r => r.json())
     .then(resp => {
       if (resp.status == 'OK') {
-        browserHistory.push('/signup/success/');
+        // this.props.history.push('/signup/success/');
       } else {
         this.props.error(resp);
-        // browserHistory.push('/signup/error')
+        // this.props.history.push('/signup/error')
       }
     })
     .catch(err => {

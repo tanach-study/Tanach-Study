@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory, Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import TeacherCard from './TeacherCard.jsx';
 import ReaderCard from './ReaderCard.jsx';
 import gematriya from '../../../lib/gematriya.js';

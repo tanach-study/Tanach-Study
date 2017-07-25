@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 
 class Videos extends Component {
   constructor(props) {
@@ -39,7 +38,7 @@ class Videos extends Component {
 
   componentDidMount() {
     const token = localStorage.getItem('adminUserToken');
-    if (!token) browserHistory.push('/admin/login');
+    if (!token) this.props.history.push('/admin/login');
     fetch('/api/videos')
     .then(r => r.json())
     .then(videos => this.updateState('videos', videos))

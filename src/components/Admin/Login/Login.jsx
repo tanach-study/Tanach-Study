@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 
 class Login extends Component {
   constructor(props) {
@@ -37,7 +36,7 @@ class Login extends Component {
       localStorage.setItem('adminUserToken', data.token);
       localStorage.setItem('timeLoggedIn', Date.now());
       this.props.updateAdminState('isLoggedIn', true);
-      browserHistory.push('/admin/dashboard')
+      this.props.history.push('/admin/dashboard')
     })
     .catch(err => console.log(err));
   }

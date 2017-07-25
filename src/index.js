@@ -1,11 +1,13 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory, Router } from 'react-router';
+import { Route, BrowserRouter } from 'react-router-dom';
+import App from './components/App.jsx';
 import 'whatwg-fetch';
-import routes from './routes';
 
 // mount a new router with the routes from the other file at #root-container
 ReactDOM.render(
-  <Router routes={routes} history={browserHistory} />,
+  <BrowserRouter>
+    <Route path='/' component={App} />
+  </BrowserRouter>,
   document.querySelector('#root-container')
 );

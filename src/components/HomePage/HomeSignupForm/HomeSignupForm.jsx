@@ -35,7 +35,7 @@ class HomeSignupForm extends Component {
     .then(r => r.json())
     .then(resp => {
       if (resp.status == 'OK') {
-        browserHistory.push('/signup/success/');
+        // browserHistory.push('/signup/success/');
       } else {
         this.props.error(resp);
         // browserHistory.push('/signup/error')

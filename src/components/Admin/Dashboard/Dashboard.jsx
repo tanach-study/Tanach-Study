@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, browserHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -7,13 +7,13 @@ class Dashboard extends Component {
   }
 
   componentWillMount() {
-    if (!this.props.isLoggedIn) browserHistory.push('/admin/login');
+    if (!this.props.isLoggedIn) this.props.history.push('/admin/login');
   }
 
   doLogout() {
     localStorage.removeItem('adminUserToken');
     localStorage.removeItem('timeLoggedIn');
-    browserHistory.push('/admin/login');
+    this.props.history.push('/admin/login');
   }
 
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Slider from './Slider/Slider.jsx';
 import Testimonials from './Testimonials/Testimonials.jsx';
 import testimonials from '../../../public/testimonials.json';

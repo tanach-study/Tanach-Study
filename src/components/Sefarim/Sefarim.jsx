@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { browserHistory, Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import PerekList from '../PerekList/PerekList.jsx';
 
 class Sefarim extends Component {
@@ -22,7 +22,7 @@ class Sefarim extends Component {
   }
 
   seferCardClick(i) {
-    browserHistory.push(`/perakim/${this.state.seferName}/${i}`);
+    this.props.history.push(`/perakim/${this.state.seferName}/${i}`);
   }
 
   componentWillMount() {
@@ -31,7 +31,7 @@ class Sefarim extends Component {
 
   componentDidMount() {
     const sefer = this.state.seferName;
-    if (!sefer) browserHistory.push('/');
+    if (!sefer) this.props.history.push('/');
     fetch(`/api/sefarim/${sefer}`)
     .then(r => r.json())
     .then(data => {
