@@ -58,35 +58,22 @@ function getOnePerek (req, res, next) {
   .catch(err => next(err));
 }
 
-// function getSeferData(req, res, next) {
-//   const seferID = res.data.perek_data.book_id;
-//   const nextID = parseInt(seferID) + 1;
-//   const prevID = parseInt(seferID) - 1;
-
-//   const query = `
-//     SELECT
-//       book.book_id AS book_id,
-//       book.name AS book_name,
-//       book.numChapters AS num_chapters,
-//       book.prettyEng AS pretty_eng,
-//       book.part_id AS part_id
-//     FROM book
-//     WHERE book.book_id = $1 OR book.book_id = $2 OR book.book_id = $3;
-//   `;
-
-//   const values = [
-//     seferID,
-//     nextID,
-//     prevID,
-//   ];
-
-//   db.any(query, values)
-//   .then(seferData => {
-//     res.data.sefer_data = seferData;
-//   })
-//   .then(() => next())
-//   .catch(err => next(err));
-// }
+function getOnePerekNew (req, res, next) {
+  const { sefer, perek } = req.params;
+  getDB().then(db => {
+    db.collection('perakim')
+    .findOne({
+      sefer: sefer,
+      perek: parseInt(perek),
+    })
+    .then(data => {
+      res.data = data;
+      next();
+    })
+    .catch(findErr => next(findErr));
+  })
+  .catch(dbErr => next(dbErr));
+}
 
 module.exports = {
   getOnePerek,

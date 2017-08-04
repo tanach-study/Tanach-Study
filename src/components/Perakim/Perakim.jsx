@@ -20,9 +20,9 @@ class Perakim extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sefer: this.props.params.sefer,
-      perek: this.props.params.perek,
-      prettySefer: this.props.params.sefer.charAt(0).toUpperCase() + this.props.params.sefer.slice(1),
+      sefer: this.props.match.params.sefer,
+      perek: this.props.match.params.perek,
+      prettySefer: this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1),
       activePerek: {},
       show: 'heb',
       perekVars: {},
@@ -40,13 +40,13 @@ class Perakim extends Component {
   }
 
   componentDidMount() {
-    this.initialize(this.props.params.sefer, this.props.params.perek);
+    this.initialize(this.props.match.params.sefer, this.props.match.params.perek);
   }
 
   componentWillReceiveProps(props) {
-    this.updateState('sefer', props.params.sefer);
-    this.updateState('perek', props.params.perek);
-    this.initialize(props.params.sefer, props.params.perek);
+    this.updateState('sefer', props.match.params.sefer);
+    this.updateState('perek', props.match.params.perek);
+    this.initialize(props.match.params.sefer, props.match.params.perek);
   }
 
   initialize(sefer, perek) {
@@ -61,8 +61,8 @@ class Perakim extends Component {
 
   render() {
     let act = this.state.activePerek;
-    const sefer = this.props.params.sefer;
-    const perek = this.props.params.perek;
+    const sefer = this.props.match.params.sefer;
+    const perek = this.props.match.params.perek;
 
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));

@@ -17,7 +17,13 @@ const getAllSefarim = (req, res, next) => {
   .then(data => res.data = data)
   .then(() => next())
   .catch(err => next(err));
+}
 
+function getAllSefarimNew(req, res, next) {
+  getDB().then(db => {
+    db.collection('sefarim')
+  })
+  .catch(dbErr => next(dbErr));
 }
 
 const getSeferMetadata = (req, res, next) => {

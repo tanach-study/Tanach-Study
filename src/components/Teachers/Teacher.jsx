@@ -5,7 +5,7 @@ class Teacher extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      teacherID: this.props.params.id,
+      teacherID: this.props.match.params.id,
       teacher: {},
     };
   }

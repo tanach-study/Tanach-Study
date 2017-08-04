@@ -6,7 +6,7 @@ class Sefarim extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seferName: this.props.params.sefer || '',
+      seferName: this.props.match.params.sefer || '',
       selectedSefer: null,
       allTeachers: [],
       allPerakim: [],
