@@ -30,7 +30,6 @@ app.use('/api', require('./routes/api.js'));
 app.use('/api/videos', require('./routes/videos.js'));
 
 // TODO: update these to use mongo
-app.use('/api/users', require('./routes/users.js'));
 app.use('/api/signup', require('./routes/signup.js'));
 app.use('/api/contact', require('./routes/contact.js'));
 

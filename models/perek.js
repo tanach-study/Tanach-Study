@@ -6,7 +6,7 @@ function getOnePerek (req, res, next) {
   getDB().then(db => {
     db.collection('perakim')
     .findOne({
-      sefer: sefer,
+      book_name: sefer,
       perek_id: parseInt(perek),
     }, {
       _id: 0,

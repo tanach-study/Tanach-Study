@@ -12,12 +12,12 @@ const TeacherCard = props => {
         return (
           <div key={i}>
             <h6>Part {part.toUpperCase()}</h6>
-            <audio src={`http://cdn.tanachstudy.com/archives/${props.partName}/${props.seferName}/${fileBase}${part}.mp3`} controls />
+            <audio src={`https://cdn.tanachstudy.com/archives/${props.partName}/${props.seferName}/${fileBase}${part}.mp3`} controls />
           </div>
         );
       });
     } else {
-      recording = <audio src={`http://cdn.tanachstudy.com/archives/${props.partName}/${props.seferName}/${props.fileName}`} controls />
+      recording = <audio src={`https://cdn.tanachstudy.com/archives/${props.partName}/${props.seferName}/${props.fileName}`} controls />
     }
 
   return (

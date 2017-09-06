@@ -27,8 +27,7 @@ class Teachers extends Component {
   }
 
   render() {
-    const mappedTeachers = this.state.teachers.map((rawTeacher, i) => {
-      const teacher = rawTeacher.teacher_info;
+    const mappedTeachers = this.state.teachers.map((teacher, i) => {
       return (
         <div className="col l4 m6 s12" key={i}>
           <Link to={`/teachers/${teacher.teacher_id}`} className="right-align">

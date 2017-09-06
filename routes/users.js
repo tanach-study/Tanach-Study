@@ -7,10 +7,9 @@ function sendAsJSON(req, res, next) {
 }
 
 router.route('/login')
-  .post(userModel.login, userModel.prepUserData, sendAsJSON);
+  .post(userModel.login, sendAsJSON);
 
 router.route('/')
-  .get(auth.authenticate, userModel.prepUserData, sendAsJSON)
-  .post(userModel.createUser, userModel.prepUserData, sendAsJSON);
+  .post(userModel.createUser, sendAsJSON);
 
 module.exports = router;

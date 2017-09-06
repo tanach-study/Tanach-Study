@@ -4,7 +4,7 @@ function getAllTeachers(req, res, next) {
   getDB().then(db => {
     db.collection('teachers')
     .find({}, { _id: 0 })
-    .sort({ 'teacher_info': 1 })
+    .sort({ teacher_id: 1 })
     .toArray()
     .then(teachers => {
       res.data = teachers;
@@ -19,7 +19,7 @@ function getOneTeacher(req, res, next) {
   const { id } = req.params;
   getDB().then(db => {
     db.collection('teachers')
-    .findOne({ 'teacher_info.teacher_id': parseInt(id) }, { _id: 0 })
+    .findOne({ teacher_id: parseInt(id) }, { _id: 0 })
     .then(teacher => {
       res.data = teacher;
       next();

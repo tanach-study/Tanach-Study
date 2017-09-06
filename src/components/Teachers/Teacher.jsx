@@ -28,7 +28,7 @@ class Teacher extends Component {
   }
 
   render() {
-    const teacher = this.state.teacher.teacher_info || {};
+    const teacher = this.state.teacher || {};
     const teacherBooks = this.state.teacher.teacher_books || [];
     const mappedBooks = teacherBooks.map((book, i) => {
       return (

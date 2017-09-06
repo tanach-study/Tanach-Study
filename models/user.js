@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const db = require('../lib/dbConnection.js');
+const { getDB } = require('../lib/dbConnection.js');
 const auth = require('../lib/auth.js');
 const { isValidEmail } = require('../lib/lib.js');
 
@@ -46,6 +46,40 @@ function login(req, res, next) {
   .catch(err => next(err));
 }
 
+function loginNew(req, res, next) {
+  const email = req.body.email.toLowerCase();
+  const password = req.body.password;
+  if (!email || !password) next(new Error('Logging in requires both an email and a password.'));
+
+  if (!isValidEmail(email)) next(new Error('Please submit a valid email address.'));
+
+  getDB().then(db => {
+    db.collection('users')
+    .findOne({ email: email })
+    .then(user => {
+      if (!user) next(new Error('Invalid login credentials'));
+
+      bcrypt.compare(password, user.password)
+      .then(hash => {
+        if (!hash) next(new(Error('Invalid login credentials')));
+        res.data = {};
+        res.data.fname = user.fname;
+        res.data.lname = user.lname;
+        res.data.email = user.email;
+        auth.getUserToken(res.data)
+        .then(token => {
+          res.data.token = token;
+          next();
+        })
+        .ctach(tokenErr => next(tokenErr));
+      })
+      .catch(compareErr => next(compareErr));
+    })
+    .catch(findErr => next(findErr));
+  })
+  .catch(dbErr => next(dbErr));
+}
+
 // copied from my previous project - see the original on GitHub here: https://github.com/joepin/project-3
 function createUser(req, res, next) {
   // get data
@@ -81,28 +115,41 @@ function createUser(req, res, next) {
   .catch(err => next(err));
 }
 
-// helper middleware that prepares res.data for sending. It serves two purposes:
-//  1) just copies res.userData to res.data, which allows us to just use the authenticate middleware to get generic user data
-//  2) builds out the res.data object from res.token and calling auth.getUserData on the token
-function prepUserData(req, res, next) {
-  if (res.token) {
-    auth.getUserData(res.token)
-    .then((userData) => {
-      res.data = {
-        token: res.token,
-        user_data: userData.data,
-      };
+function createUserNew(req, res, next) {
+  // get data
+  const first = req.body.firstName;
+  const last = req.body.lastName;
+  const email = req.body.email.toLowerCase();
+  const password = req.body.password;
+
+  // validate data
+  if (!(first || last || email || password)) next(new Error('Please check that all fields were filled out properly.'));
+  if (!isValidEmail(email)) next(new Error('Please submit a valid email address.'));
+
+  getDB().then(db => {
+    bcrypt.hash(password, SALTROUNDS)
+    .then(hash => {
+      if (!hash) next(new Error('Server error'));
+      db.collection('users')
+      .insertOne({
+        fname: first,
+        lname: last,
+        email: email,
+        password: hash,
+      })
+      .then(result => {
+        if (result.ok === 1)
+        res.data = result;
+        next();
+      })
+      .catch(insertErr => next(insertErr));
     })
-    .then(() => next())
-    .catch(err => next(err));
-  } else {
-    res.data = res.userData;
-    next();
-  }
+    .catch(hashErr => next(hashErr));
+  })
+  .catch(dbErr => next(dbErr));
 }
 
 module.exports = {
-  login,
-  createUser,
-  prepUserData,
+  login: loginNew,
+  createUser: createUserNew,
 }

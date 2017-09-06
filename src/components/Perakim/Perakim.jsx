@@ -53,6 +53,7 @@ class Perakim extends Component {
     fetch(`/api/perakim/${sefer}/${perek}`)
     .then(r => r.json())
     .then(data => {
+      console.log(data)
       this.updateState('activePerek', data);
       this.updateState('prettySefer', (data.book_name.charAt(0).toUpperCase() + data.book_name.slice(1)));
     })
