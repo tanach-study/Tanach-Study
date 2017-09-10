@@ -19,7 +19,7 @@ function getOneTeacher(req, res, next) {
   const { id } = req.params;
   getDB().then(db => {
     db.collection('teachers')
-    .findOne({ teacher_id: parseInt(id) }, { _id: 0 })
+    .findOne({ 'teacher_info.teacher_id': parseInt(id) }, { _id: 0 })
     .then(teacher => {
       res.data = teacher;
       next();

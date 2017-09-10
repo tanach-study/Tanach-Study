@@ -30,14 +30,14 @@ class Teachers extends Component {
     const mappedTeachers = this.state.teachers.map((teacher, i) => {
       return (
         <div className="col l4 m6 s12" key={i}>
-          <Link to={`/teachers/${teacher.teacher_id}`} className="right-align">
+          <Link to={`/teachers/${teacher.teacher_info.teacher_id}`} className="right-align">
             <div className="card medium hoverable full-width black-text">
               <div className="card-image">
-                <img src={teacher.image_url} alt=""/>
+                <img src={teacher.teacher_info.image_url} alt=""/>
               </div>
               <div className="card-content">
-                <div className="card-title left-align">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
-                <p className="left-align"><i>{teacher.short_bio}</i></p>
+                <div className="card-title left-align">{teacher.teacher_info.title} {teacher.teacher_info.fname}{teacher.teacher_info.mname ? ` ${teacher.teacher_info.mname} ` : ' '}{teacher.teacher_info.lname}</div>
+                <p className="left-align"><i>{teacher.teacher_info.short_bio}</i></p>
               </div>
             </div>
           </Link>

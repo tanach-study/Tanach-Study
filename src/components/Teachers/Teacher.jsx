@@ -11,6 +11,7 @@ class Teacher extends Component {
   }
 
   updateState(key, value) {
+    console.log(key, value)
     this.setState({
       [key]: value,
     });
@@ -29,6 +30,7 @@ class Teacher extends Component {
 
   render() {
     const teacher = this.state.teacher || {};
+    const info = teacher.teacher_info || {};
     const teacherBooks = this.state.teacher.teacher_books || [];
     const mappedBooks = teacherBooks.map((book, i) => {
       return (
@@ -50,16 +52,16 @@ class Teacher extends Component {
             <div className="card-content">
               <div className="row valign-wrapper">
                 <div className="col l3 m4 s12 offset-l1 valign">
-                  <img src={teacher.image_url} alt="" className="responsive-img full-width circle"/>
+                  <img src={info.image_url} alt="" className="responsive-img full-width circle"/>
                 </div>
                 <div className="col l8 m8 s12 valign">
-                  <h2 className="teacher-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</h2>
-                  <div><i>{teacher.short_bio}</i></div>
+                  <h2 className="teacher-title">{info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname}</h2>
+                  <div><i>{info.short_bio}</i></div>
                 </div>
               </div>
               <div className="row">
                 <div className="col l10 m12 s12 offset-l1">
-                  <p>{teacher.long_bio}</p>
+                  <p>{info.long_bio}</p>
                 </div>
               </div>
             </div>
@@ -67,7 +69,7 @@ class Teacher extends Component {
           <div className="card">
             <div className="card-content">
               <div className="row">
-                <h4 className="col l12 m12 s12 left-align">Sefarim that {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname} Taught</h4>
+                <h4 className="col l12 m12 s12 left-align">Sefarim that {info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname} Taught</h4>
                 {mappedBooks}
               </div>
             </div>
