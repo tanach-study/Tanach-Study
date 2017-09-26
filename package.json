@@ -35,7 +35,8 @@
     "morgan": "^1.8.2",
     "node-fetch": "^1.6.3",
     "path": "^0.12.7",
-    "pg-promise": "^6.3.5"
+    "pg-promise": "^6.3.5",
+    "react-ga": "^2.3.3"
   },
   "devDependencies": {
     "babel": "^6.23.0",
