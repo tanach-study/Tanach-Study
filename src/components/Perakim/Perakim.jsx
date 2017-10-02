@@ -27,12 +27,6 @@ class Perakim extends Component {
     };
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   componentWillMount() {
     window.scrollTo(0, 0);
   }
