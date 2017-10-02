@@ -7,18 +7,29 @@ import gematriya from '../../../lib/gematriya.js';
 class TorahPerek extends Component {
   constructor(props) {
     super(props);
+    const title = props.act.parts_breakdown ? props.act.parts_breakdown[0].title : null;
     this.state = {
       show: 'heb',
+      partNumber: 1,
+      partTitle: title ? title : '',
     }
+  }
+
+  selectPart(i, title) {
+    this.setState({
+      partNumber: i,
+      partTitle: title,
+    });
   }
 
   render() {
     const { act, formatDir, sefer, perek, prettySefer } = this.props;
+    const { partNumber } = this.state;
 
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));
-    const fileName = `${sefer.replace(/ /g, '-')}-${perek}.mp3`;
-    const teamimName = `${sefer.replace(/ /g, '-')}-${perek}-teamim.mp3`;
+    const fileName = `${sefer.replace(/ /g, '-')}-${partNumber}.mp3`;
+    const teamimName = `${sefer.replace(/ /g, '-')}-${partNumber}-teamim.mp3`;
     const hasTeamim = act.reader_id ? true : false;
 
     // initialize null variables for the next and previous sefer and perek
@@ -85,15 +96,36 @@ class TorahPerek extends Component {
       nextPerekNum = curPerekNum + 1;
     }
 
+    const parts_breakdown = act.parts_breakdown || [];
+    const parts = parts_breakdown.map((part, i) => {
+      return (
+        <div key={i} onClick={this.selectPart.bind(this, i + 1, part.title)} className='hoverable section'>
+          <b>Part {part.number}:</b><span className={`${this.state.partNumber === i + 1 ? 'bold' : ''}`}> {part.title}</span>
+        </div>
+      )
+    });
+
     return (
       <div>
         <div className="container">
-          <div className="row">
-            <h2>Sefer {prettySefer} Perek {perek}</h2>
+          <div className="section">
+            <h2 className="center">Sefer {prettySefer}</h2>
+            <h4 className="center">{act.sefer_sponsor}</h4>
+            <h3>Parashat {act.parasha_name_pretty_eng}</h3>
+            <h5>{act.parasha_sponsor}</h5>
             <Link to={`/sefarim/${sefer}`} className="left"><i>Back to Sefer {prettySefer}</i></Link>
-            <div className="section"></div>
-            <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
-            <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
+          </div>
+          <div className="section row">
+            <div className="col l8 m6 s12">
+              {parts}
+            </div>
+            <div className="col l4 m6 s12 card small">
+              <p className="card-title">Now Playing: Part {this.state.partNumber}</p>
+              <div className="card-content">
+                <p>{this.state.partTitle}</p>
+              </div>
+              <audio src={`https://cdn.tanachstudy.com/archives/${partName}/${seferName}/${fileName}`} controls />
+            </div>
           </div>
           <div className="row center">
             <div className="col l2 m2 s12">

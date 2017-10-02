@@ -3,11 +3,12 @@ const tanach = require('../lib/tanach.json');
 
 function getOnePerek (req, res, next) {
   const { sefer, perek } = req.params;
+  const queryPerek = String(parseInt(perek)) === 'NaN' ? perek : parseInt(perek);
   getDB().then(db => {
     db.collection('perakim')
     .findOne({
       book_name: sefer,
-      perek_id: parseInt(perek),
+      perek_id: queryPerek,
     }, {
       _id: 0,
     })
