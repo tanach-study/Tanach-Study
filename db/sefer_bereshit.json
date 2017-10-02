@@ -1,0 +1,54 @@
+{
+  "seferMeta" : {
+    "book_id" : 35,
+    "book_name" : "bereshit",
+    "numchapters" : 12,
+    "part_id" : 5,
+    "part_name" : "torah"
+  },
+  "seferTeachers" : [
+    {
+      "teacher_id" : 1030,
+      "title" : "Rabbi",
+      "fname" : "Alex",
+      "mname" : null,
+      "lname" : "Israel",
+      "short_bio" : "Rabbi at Yeshivat Eretz Hatzvi & Matan",
+      "long_bio" : "Rabbi Alex Israel teaches Tanakh at Yeshivat Eretz Hatzvi and Matan, and is Director of Community Education at the Pardes Institute. Born and raised in London, Rabbi Israel moved to Israel in 1991 and gained rabbinic ordination from the Israeli Chief Rabbinate following several years of study at Yeshivat Har Etzion. Rabbi Israel holds degrees from London School of Economics, the Institute of Education, London, and Bar Ilan University. His first book \"I Kings - Torn in Two\" was published in 2013. See his shiurim and his weekly \"Parsha Discussion\" at www.alexisrael.org. Rabbi Israel has lectured widely at campuses and communities on five continents.",
+      "image_url" : "http://cdn.tanachstudy.com/assets/images/Rabbi_Alex_Israel.jpg",
+      "book_id": 1
+    }
+  ],
+  "allPerakim" : [
+    {
+      "perek_id" : "bereshit",
+      "teacher_id" : 1030,
+      "reader_id" : null,
+      "is_many_parts" : false,
+      "parts_breakdown" : null,
+      "part_id" : 5,
+      "title" : "Rabbi",
+      "fname" : "Alex",
+      "mname" : null,
+      "lname" : "Israel",
+      "short_bio" : "Rabbi at Yeshivat Eretz Hatzvi & Matan",
+      "long_bio" : "Rabbi Alex Israel teaches Tanakh at Yeshivat Eretz Hatzvi and Matan, and is Director of Community Education at the Pardes Institute. Born and raised in London, Rabbi Israel moved to Israel in 1991 and gained rabbinic ordination from the Israeli Chief Rabbinate following several years of study at Yeshivat Har Etzion. Rabbi Israel holds degrees from London School of Economics, the Institute of Education, London, and Bar Ilan University. His first book \"I Kings - Torn in Two\" was published in 2013. See his shiurim and his weekly \"Parsha Discussion\" at www.alexisrael.org. Rabbi Israel has lectured widely at campuses and communities on five continents.",
+      "image_url" : "http://cdn.tanachstudy.com/assets/images/Rabbi_Alex_Israel.jpg"
+    },
+    {
+      "perek_id" : "noah",
+      "teacher_id" : 1030,
+      "reader_id" : null,
+      "is_many_parts" : false,
+      "parts_breakdown" : null,
+      "part_id" : 5,
+      "title" : "Rabbi",
+      "fname" : "Alex",
+      "mname" : null,
+      "lname" : "Israel",
+      "short_bio" : "Rabbi at Yeshivat Eretz Hatzvi & Matan",
+      "long_bio" : "Rabbi Alex Israel teaches Tanakh at Yeshivat Eretz Hatzvi and Matan, and is Director of Community Education at the Pardes Institute. Born and raised in London, Rabbi Israel moved to Israel in 1991 and gained rabbinic ordination from the Israeli Chief Rabbinate following several years of study at Yeshivat Har Etzion. Rabbi Israel holds degrees from London School of Economics, the Institute of Education, London, and Bar Ilan University. His first book \"I Kings - Torn in Two\" was published in 2013. See his shiurim and his weekly \"Parsha Discussion\" at www.alexisrael.org. Rabbi Israel has lectured widely at campuses and communities on five continents.",
+      "image_url" : "http://cdn.tanachstudy.com/assets/images/Rabbi_Alex_Israel.jpg"
+    }
+  ]
+}
