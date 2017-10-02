@@ -4,8 +4,6 @@ dist/
 
 .env
 
-public/tanach
-
 sftp-config.json
 
 client_secret.json
