@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import NachPerek from './NachPerek.jsx';
 import TorahPerek from './TorahPerek.jsx';
 
@@ -29,6 +29,9 @@ class Perakim extends Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
+    if (this.state.sefer === 'bereshit' && parseInt(this.state.perek) === 1) {
+      this.props.history.push('/perakim/bereshit/bereshit');
+    }
   }
 
   componentDidMount() {

@@ -44,7 +44,6 @@ class App extends Component {
       <div>
         <Navigation />
           <div className='body'>
-            <Redirect from='/perakim/bereshit/1' to='/perakim/bereshit/bereshit' />
             <Switch>
               <Route exact path='/siyum' component={Siyum} />
               <Route exact path='/admin' component={Admin} />
