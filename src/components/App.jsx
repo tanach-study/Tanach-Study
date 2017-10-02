@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
 import DocumentMeta from 'react-document-meta';
@@ -44,6 +44,7 @@ class App extends Component {
       <div>
         <Navigation />
           <div className='body'>
+            <Redirect from='/perakim/bereshit/1' to='/perakim/bereshit/bereshit' />
             <Switch>
               <Route exact path='/siyum' component={Siyum} />
               <Route exact path='/admin' component={Admin} />

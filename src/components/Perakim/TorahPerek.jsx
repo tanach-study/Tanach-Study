@@ -127,15 +127,18 @@ class TorahPerek extends Component {
               <audio src={`https://cdn.tanachstudy.com/archives/${partName}/${seferName}/${fileName}`} controls />
             </div>
           </div>
-          <div className="row center">
-            <div className="col l2 m2 s12">
-              <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
+          {
+            prevPerekNum && nextPerekNum &&
+            <div className="row center">
+              <div className="col l2 m2 s12">
+                <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
+              </div>
+              <div className="col l8 m8 hide-on-small-only"></div>
+              <div className="col l2 m2 s12">
+                <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
+              </div>
             </div>
-            <div className="col l8 m8 hide-on-small-only"></div>
-            <div className="col l2 m2 s12">
-              <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
-            </div>
-          </div>
+          }
           <div className="divider hide-on-med-and-down"></div>
           <br className="hide-on-med-and-down" />
           <div className="row">
@@ -160,23 +163,48 @@ class TorahPerek extends Component {
   showSefer() {
     const hebArr = this.props.act.hebrew_text || [];
     const engArr = this.props.act.english_text || [];
+    let gen = Date.now();
 
-    const heb = hebArr.map((passuk, i) => <p key={i}><b>{gematriya(i + 1)}. </b>{passuk}</p>);
-    const eng = engArr.map((passuk, i) => <p key={i}><b>{i + 1}. </b>{passuk}</p>);
+    const heb = [];
+    const eng = [];
+    hebArr.forEach((perek, i) => {
+      heb.push(<b key={gen++}>פרק {gematriya(i + 1)}</b>)
+      perek.forEach((passuk, j) => heb.push(<p key={gen++}><b>{gematriya(j + 1)}. </b>{passuk}</p>));
+    });
+    engArr.forEach((perek, i) => {
+      eng.push(<b key={gen++}>Perek {(i + 1)}</b>)
+      perek.forEach((passuk, j) => eng.push(<p key={gen++}><b>{i + 1}. </b>{passuk}</p>));
+    });
     let par = [];
     for (let i = 0; i < hebArr.length && i < engArr.length; i++) {
+      let currHeb = hebArr[i];
+      let currEng = engArr[i];
       par.push(
-        <div key={i}>
+        <div key={gen++}>
           <div className="row valign-wrapper hide-on-small-only">
-            <div className="col l6 m12 s12 left-align valign"><p><b>{i + 1}. </b>{engArr[i]}</p></div>
-            <div className="col l6 m12 s12 rtl right-align valign"><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
+            <div className="col l6 m12 s12 left-align valign"><b>Perek {i + 1}</b></div>
+            <div className="col l6 m12 s12 rtl right-align valign"><b>פרק {gematriya(i + 1)}</b></div>
           </div>
           <div className="hide-on-med-and-up">
-            <div className="row center-align rtl"><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
-            <div className="row center-align"><p><b>{i + 1}. </b>{engArr[i]}</p></div>
+            <div className="row center-align rtl"><b>פרק {gematriya(i + 1)}</b></div>
+            <div className="row center-align"><b>Perek {i + 1}</b></div>
           </div>
         </div>
       );
+      for(let j = 0; j < currHeb.length && i < currEng.length; j++) {
+        par.push(
+          <div key={gen++}>
+            <div className="row valign-wrapper hide-on-small-only">
+              <div className="col l6 m12 s12 left-align valign"><p><b>{j + 1}. </b>{currEng[j]}</p></div>
+              <div className="col l6 m12 s12 rtl right-align valign"><p><b>{gematriya(j + 1)}. </b>{currHeb[j]}</p></div>
+            </div>
+            <div className="hide-on-med-and-up">
+              <div className="row center-align rtl"><p><b>{gematriya(j + 1)}. </b>{currHeb[j]}</p></div>
+              <div className="row center-align"><p><b>{j + 1}. </b>{currEng[j]}</p></div>
+            </div>
+          </div>
+        );
+      }
     }
     if (this.state.show == "heb") {
       return (
