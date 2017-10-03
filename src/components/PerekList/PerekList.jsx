@@ -1,7 +1,9 @@
 import React from 'react';
-import PerekItem from './PerekItem/PerekItem.jsx';
+import NachPerekItem from './NachPerekItem/NachPerekItem.jsx';
+import TorahPerekItem from './TorahPerekItem/TorahPerekItem.jsx';
 
 const PerekList = (props) => {
+  const PerekItem = props.sefer.part_name === 'torah' ? TorahPerekItem : NachPerekItem;
   const mapped = props.perakim.map((perek, i) =>
     <PerekItem
       perek={perek}

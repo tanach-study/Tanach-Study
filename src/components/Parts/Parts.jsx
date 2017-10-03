@@ -1,11 +1,70 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
+
+function bookMapper (book, i, books) {
+  let classAdd = '';
+  const diff = books.length - i;
+  if (diff < 3 && diff > 0) {
+    if (books.length % 3 == 1 && i == books.length - 1) {
+      classAdd = i % 2 == 0 ? 'offset-l4 offset-m3' : 'offset-l4';
+    } else if (books.length % 3 == 2 && i == books.length - 2) {
+      classAdd = i % 2 == 0 ? 'offset-l2 offset-m3' : 'offset-l2';
+    }
+  }
+  let jsx = null;
+
+  if (book.disabled) {
+    jsx = (
+      <div className={`col s12 m6 l4 ${classAdd}`} key={i}>
+        <div className="card tsblue btn waves-effect full-width disabled">
+          <div className="col-content">{book.name}</div>
+        </div>
+      </div>
+    );
+  } else {
+    jsx = (
+      <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
+        <div className="card tsblue btn waves-effect hoverable full-width">
+          <div className="col-content">{book.name}</div>
+        </div>
+      </Link>
+    );
+  }
+  return jsx;
+}
 
 class Parts extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      books: [
+      torah: [
+        {
+          name: 'Sefer Bereshit',
+          url: '/sefarim/bereshit',
+          disabled: false,
+        },
+        {
+          name: 'Sefer Shemot',
+          url: '/sefarim/shemot',
+          disabled: true,
+        },
+        {
+          name: 'Sefer Vayikra',
+          url: '/sefarim/vayikra',
+          disabled: true,
+        },
+        {
+          name: 'Sefer Bemidbar',
+          url: '/sefarim/bemidbar',
+          disabled: true,
+        },
+        {
+          name: 'Sefer Devarim',
+          url: '/sefarim/devarim',
+          disabled: true,
+        },
+      ],
+      neviim: [
         {
           name: 'Sefer Yehoshua',
           url: '/sefarim/yehoshua',
@@ -111,6 +170,8 @@ class Parts extends Component {
           url: '/sefarim/malachi',
           disabled: false,
         },
+      ],
+      ketuvim: [
         {
           name: 'Sefer Divre Hayamim 1',
           url: '/sefarim/divre-hayamim-1',
@@ -185,44 +246,29 @@ class Parts extends Component {
   }
 
   render() {
-    const mapped = this.state.books.map((book, i) => {
-      let classAdd = '';
-      const diff = this.state.books.length - i;
-      if (diff < 3 && diff > 0) {
-        if (this.state.books.length % 3 == 1 && i == this.state.books.length - 1) {
-          classAdd = i % 2 == 0 ? 'offset-l4 offset-m3' : 'offset-l4';
-        } else if (this.state.books.length % 3 == 2 && i == this.state.books.length - 2) {
-          classAdd = i % 2 == 0 ? 'offset-l2 offset-m3' : 'offset-l2';
-        }
-      }
-      let jsx = null;
-
-      if (book.disabled) {
-        jsx = (
-          <div className={`col s12 m6 l4 ${classAdd}`} key={i}>
-            <div className="card tsblue btn waves-effect full-width disabled">
-              <div className="col-content">{book.name}</div>
-            </div>
-          </div>
-        );
-      } else {
-        jsx = (
-          <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-            <div className="card tsblue btn waves-effect hoverable full-width">
-              <div className="col-content">{book.name}</div>
-            </div>
-          </Link>
-        );
-      }
-      return jsx;
-    });
+    const mappedTorah = this.state.torah.map(bookMapper.bind(this));
+    const mappedNeviim = this.state.neviim.map(bookMapper.bind(this));
+    const mappedKetuvim = this.state.ketuvim.map(bookMapper.bind(this));
     return (
       <div className="container">
-          <div className="section">
+          <div className="section center">
+            <h4>Sefarim</h4>
             <div className="row center">
-              <h4>Sefarim</h4>
               <div className="center center-align light">
-                {mapped}
+                <h5>Torah</h5>
+                {mappedTorah}
+              </div>
+            </div>
+            <div className="row center">
+              <div className="center center-align light">
+                <h5>Nevi'im</h5>
+                {mappedNeviim}
+              </div>
+            </div>
+            <div className="row center">
+              <div className="center center-align light">
+                <h5>Ketuvim</h5>
+                {mappedKetuvim}
               </div>
             </div>
           </div>

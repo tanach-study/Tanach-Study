@@ -13,20 +13,23 @@ const PORT         = process.argv[2] || process.env.PORT || 3000;
 app.use(logger('dev'));
 app.use(bodyParser.json());
 
+// disable headers related to the server for security purposes
+app.disable('x-powered-by');
+app.disable('Server');
+
 // allow CORS on the entire site
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, token_authorization");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, token_authorization');
   next();
 });
 
 // build API routes
-app.use('/api/sefarim', require('./routes/sefarim.js'));
-app.use('/api/perakim', require('./routes/perakim.js'));
-app.use('/api/teachers', require('./routes/teachers.js'));
+app.use('/api', require('./routes/api.js'));
 app.use('/api/videos', require('./routes/videos.js'));
-app.use('/api/users', require('./routes/users.js'));
+
+// TODO: update these to use mongo
 app.use('/api/signup', require('./routes/signup.js'));
 app.use('/api/contact', require('./routes/contact.js'));
 

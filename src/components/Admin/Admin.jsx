@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
+
+import Dashboard from './Dashboard/Dashboard.jsx';
+import Login from './Login/Login.jsx';
+import Videos from './Videos/Videos.jsx';
 
 class Admin extends Component {
   constructor(props) {
@@ -22,7 +26,7 @@ class Admin extends Component {
       if (Date.now() - timeLoggedIn > 14400000) {
         localStorage.removeItem('adminUserToken');
         localStorage.removeItem('timeLoggedIn');
-        browserHistory.push('/admin/login');
+        this.props.history.push('/admin/login');
       } else {
         this.updateState('isLoggedIn', true);
       }
@@ -33,11 +37,16 @@ class Admin extends Component {
   render() {
     return (
       <div>
-        {this.props.children && React.cloneElement(this.props.children, {
-          updateAdminState: (k, v) => this.updateState(k, v),
-          isLoggedIn: this.state.isLoggedIn,
-        })
-        }
+        <Switch>
+          <Route exact path='/admin/videos' component={Videos} />
+          <Route exact path='/admin/login' component={Login} />
+          <Route exact path='/admin/dashboard' render={props => (
+            <Dashboard
+              {...props}
+              isLoggedIn={this.state.isLoggedIn}
+            />
+          )} />
+        </Switch>
       </div>
     );
   }

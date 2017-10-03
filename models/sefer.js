@@ -1,92 +1,35 @@
-const db = require('../lib/dbConnection.js');
+const { getDB } = require('../lib/dbConnection.js');
 
-const getAllSefarim = (req, res, next) => {
-  let query = `
-  SELECT
-    book.book_id AS book_id,
-    book.name AS book_name,
-    book.numchapters,
-    book.part_id,
-    part.name AS part_name
-  FROM book
-  INNER JOIN part
-    ON book.part_id = part.part_id
-  ORDER BY book.book_id ASC;`;
-
-  db.any(query)
-  .then(data => res.data = data)
-  .then(() => next())
-  .catch(err => next(err));
-
+function getAllSefarim(req, res, next) {
+  getDB().then(db => {
+    db.collection('books')
+    .find({}, { _id: 0 })
+    .sort({ 'seferMeta.book_id': 1 })
+    .toArray()
+    .then(sefarim => {
+      res.data = sefarim;
+      next();
+    })
+    .catch(findErr => next(findErr));
+  })
+  .catch(dbErr => next(dbErr));
 }
 
-const getSeferMetadata = (req, res, next) => {
-  const bookName = req.params.sefer;
-  const query = `
-  SELECT
-    book.book_id AS book_id,
-    book.name AS book_name,
-    book.numchapters,
-    book.part_id,
-    part.name AS part_name
-  FROM book
-  INNER JOIN part
-    ON book.part_id = part.part_id
-  WHERE book.name = $1;`;
-  const values = [bookName];
-
-  db.any(query, values)
-  .then(data => res.seferMeta = data)
-  .then(() => next())
-  .catch(err => next(err));
-}
-
-const getAllTeachers = (req, res, next) => {
-  const bookName = req.params.sefer;
-  const query = `
-  WITH this_book AS (
-    SELECT * FROM book WHERE book.name = $1
-  )
-  SELECT *
-  FROM teacher
-  INNER JOIN book_teacher
-    ON teacher.teacher_id = book_teacher.teacher_id
-  WHERE book_teacher.book_id = (SELECT book_id FROM this_book);`;
-  const values = [bookName];
-
-  db.any(query, values)
-  .then(data => res.seferTeachers = data)
-  .then(() => next())
-  .catch(err => next(err));
-}
-
-const getAllPerakim = (req, res, next) => {
-  const bookName = req.params.sefer;
-  const query = `
-  SELECT *
-  FROM $1~
-  LEFT JOIN teacher
-    ON ($1~.teacher_id = teacher.teacher_id);`;
-  const values = [bookName];
-
-  db.any(query, values)
-  .then(data => res.allPerakim = data)
-  .then(() => next())
-  .catch(err => next(err));
-}
-
-const prepareSeferResponse = (req, res, next) => {
-  res.data = {};
-  res.data.seferMeta = res.seferMeta[0];
-  res.data.seferTeachers = res.seferTeachers;
-  res.data.allPerakim = res.allPerakim;
-  next();
+function getOneSefer(req, res, next) {
+  const { sefer } = req.params;
+  getDB().then(db => {
+    db.collection('books')
+    .findOne({ 'seferMeta.book_name': sefer }, { _id: 0 })
+    .then(data => {
+      res.data = data;
+      next();
+    })
+    .catch(findErr => next(findErr));
+  })
+  .catch(dbErr => next(dbErr));
 }
 
 module.exports = {
   getAllSefarim,
-  getSeferMetadata,
-  getAllTeachers,
-  getAllPerakim,
-  prepareSeferResponse,
+  getOneSefer,
 };

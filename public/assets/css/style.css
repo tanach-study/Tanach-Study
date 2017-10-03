@@ -400,3 +400,8 @@
 footer.page-footer {
   margin: 0;
 }
+
+
+.bold {
+  font-weight: bold;
+}

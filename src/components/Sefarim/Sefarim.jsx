@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { browserHistory, Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import PerekList from '../PerekList/PerekList.jsx';
 
 class Sefarim extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      seferName: this.props.params.sefer || '',
-      selectedSefer: null,
+      seferName: this.props.match.params.sefer || '',
+      selectedSefer: {},
       allTeachers: [],
       allPerakim: [],
       teacherCards: [],
@@ -15,14 +15,8 @@ class Sefarim extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   seferCardClick(i) {
-    browserHistory.push(`/perakim/${this.state.seferName}/${i}`);
+    this.props.history.push(`/perakim/${this.state.seferName}/${i}`);
   }
 
   componentWillMount() {
@@ -31,16 +25,18 @@ class Sefarim extends Component {
 
   componentDidMount() {
     const sefer = this.state.seferName;
-    if (!sefer) browserHistory.push('/');
+    if (!sefer) this.props.history.push('/');
     fetch(`/api/sefarim/${sefer}`)
     .then(r => r.json())
     .then(data => {
       const seferObj = data.seferMeta;
       const teacherArr = data.seferTeachers;
       const perakimArr = data.allPerakim;
-      this.updateState('selectedSefer', seferObj);
-      this.updateState('allTeachers', teacherArr);
-      this.updateState('allPerakim', perakimArr);
+      this.setState({
+        selectedSefer: seferObj,
+        allTeachers: teacherArr,
+        allPerakim: perakimArr,
+      });
       const teacherCards = teacherArr.map((teacher, i) => {
       return (
         <div key={i} className="card">
@@ -52,16 +48,16 @@ class Sefarim extends Component {
         </div>
       )
     });
-    this.updateState('teacherCards', teacherCards);
+    this.setState({ teacherCards: teacherCards });
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error(err));
   }
 
   render() {
     const teachers = this.state.allTeachers || [];
     const teacherChips = teachers.map((teacher, i) => {
       return (
-        <div key={i} className="chip pointer" onClick={(e) => this.updateState('activeIndex', i)}>
+        <div key={i} className="chip pointer" onClick={(e) => this.setState({activeIndex: i})}>
           {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
         </div>
       )
@@ -71,13 +67,14 @@ class Sefarim extends Component {
       <div>
         <div className="container">
           <h2>Sefer {this.state.seferName.charAt(0).toUpperCase() + this.state.seferName.slice(1)}</h2>
+          {this.state.selectedSefer.book_sponsor && <h3>{this.state.selectedSefer.book_sponsor}</h3>}
           <div className="center">
             {teacherChips}
           </div>
           {this.state.teacherCards[this.state.activeIndex]}
           <PerekList
             perakim={this.state.allPerakim}
-            sefer={this.state.selectedSefer}
+            sefer={this.state.selectedSefer || {}}
             click={this.seferCardClick.bind(this)}
           />
         </div>
