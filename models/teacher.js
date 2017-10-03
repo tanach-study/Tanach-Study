@@ -4,7 +4,7 @@ function getAllTeachers(req, res, next) {
   getDB().then(db => {
     db.collection('teachers')
     .find({}, { _id: 0 })
-    .sort({ teacher_id: 1 })
+    .sort({ 'teacher_info.lname': 1 })
     .toArray()
     .then(teachers => {
       res.data = teachers;
