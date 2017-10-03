@@ -6,9 +6,13 @@ function camelize(str) {
   })
 }
 
+function toTitleCase(str) {
+  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+}
 
-const PerekItem = (props) => {
-  const perekName = (props.perek.perek_id == 0 ? 'Introduction' : `Perek ${props.perek.perek_id}`);
+
+const TorahPerekItem = (props) => {
+  const perekName = `Parashat ${toTitleCase(props.perek.perek_id)}`;
   let parts = null;
   let partsBreakdown = null;
   if (props.perek.is_many_parts) {
@@ -28,7 +32,7 @@ const PerekItem = (props) => {
   );
 }
 
-export default PerekItem;
+export default TorahPerekItem;
 
 // FOR THE FUTURE
 // <img src="/assets/images/facebook.png" alt="facebook"/>
