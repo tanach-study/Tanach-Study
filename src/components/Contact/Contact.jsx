@@ -11,12 +11,6 @@ class Contact extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   componentWillMount() {
     window.scrollTo(0, 0);
   }
@@ -36,7 +30,7 @@ class Contact extends Component {
                   <h4 className="header">Contact Information</h4>
                   <div>Tanach Study</div>
                   <div>718 Avenue S Brooklyn, NY, 11223</div>
-                  <div>info@tanachstudy.com</div>
+                  <div><a href="mailto:info@tanachstudy.com">info@tanachstudy.com</a></div>
                   <br/>
                   <i>Tanach Study is a registered 501(c)(3) organization.</i>
                 </div>
@@ -47,10 +41,10 @@ class Contact extends Component {
                 <div className="card-content">
                   <h4 className="header">Send Us a Message!</h4>
                   <form className="tsblue-form">
-                    <input type="text" name="name" placeholder="Name" required autoFocus value={this.state.name} onChange={(e) => this.updateState('name', e.target.value)} />
-                    <input type="text" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
-                    <input type="text" name="subject" placeholder="Subject" required value={this.state.subject} onChange={(e) => this.updateState('subject', e.target.value)} />
-                    <input name="message" placeholder="Message" required value={this.state.message} onChange={(e) => this.updateState('message', e.target.value)} />
+                    <input type="text" name="name" placeholder="Name" required autoFocus value={this.state.name} onChange={(e) => this.setState({ name: e.target.value })} />
+                    <input type="text" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
+                    <input type="text" name="subject" placeholder="Subject" required value={this.state.subject} onChange={(e) => this.setState({ subject: e.target.value })} />
+                    <input name="message" placeholder="Message" required value={this.state.message} onChange={(e) => this.setState({ message: e.target.value })} />
                     <button type="submit" className="btn tsblue" onClick={(e) => this.doSubmit(e)}>Send Message</button>
                   </form>
                 </div>
