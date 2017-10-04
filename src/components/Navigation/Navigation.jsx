@@ -10,15 +10,9 @@ class Navigation extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   toggleMobileNav() {
     const hidden = this.state.hideMobile;
-    this.updateState('hideMobile', !hidden);
+    this.setState({ hideMobile: !hidden });
   }
 
   render() {
@@ -38,6 +32,7 @@ class Navigation extends Component {
           </div>
           <div className="col l7 right-align valign">
             <ul className="right">
+              <li><Link to="/signup">Sign Up</Link></li>
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/parts">Study a Perek</Link></li>
               <li><Link to="/teachers">Our Teachers</Link></li>
@@ -54,6 +49,7 @@ class Navigation extends Component {
             <div className="col m5 s8 full-height white">
               <ul className="mobile-nav tsblue-text" onClick={() => this.toggleMobileNav()}>
                 <li><Link to="/">Home</Link></li>
+                <li><Link to="/signup">Sign Up</Link></li>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/parts">Study a Perek</Link></li>
                 <li><Link to="/teachers">Our Teachers</Link></li>
