@@ -28,8 +28,8 @@ class TorahPerek extends Component {
 
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));
-    const fileName = `${sefer.replace(/ /g, '-')}-${partNumber}.mp3`;
-    const teamimName = `${sefer.replace(/ /g, '-')}-${partNumber}-teamim.mp3`;
+    const fileName = `${perek.replace(/ /g, '-')}-${partNumber}.mp3`;
+    const teamimName = `${perek.replace(/ /g, '-')}-${partNumber}-teamim.mp3`;
     const hasTeamim = act.reader_id ? true : false;
 
     // initialize null variables for the next and previous sefer and perek
