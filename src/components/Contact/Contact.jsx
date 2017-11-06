@@ -29,7 +29,6 @@ class Contact extends Component {
                 <div className="card-content">
                   <h4 className="header">Contact Information</h4>
                   <div>Tanach Study</div>
-                  <div>718 Avenue S Brooklyn, NY, 11223</div>
                   <div><a href="mailto:info@tanachstudy.com">info@tanachstudy.com</a></div>
                   <br/>
                   <i>Tanach Study is a registered 501(c)(3) organization.</i>
