@@ -27,7 +27,7 @@ class Navigation extends Component {
         <div className="row no-margin-bottom full-height full-width hide-on-med-and-down">
           <div className="col l2 m1 s3 offset-l1 offset-m1 offset-s1 full-height">
             <Link to="/" className="full-height valign">
-              <img className="full-height" src="/assets/images/logo.png" alt="Tanach Study Logo"/>
+              <img className="full-height" src="https://cdn.tanachstudy.com/assets/images/logo.png" alt="Tanach Study Logo"/>
             </Link>
           </div>
           <div className="col l7 right-align valign">

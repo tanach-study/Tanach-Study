@@ -35,6 +35,6 @@ const TorahPerekItem = (props) => {
 export default TorahPerekItem;
 
 // FOR THE FUTURE
-// <img src="/assets/images/facebook.png" alt="facebook"/>
-// <img src="/assets/images/twitter.png" alt="facebook"/>
+// <img src="https://cdn.tanachstudy.com/assets/images/facebook.png" alt="facebook"/>
+// <img src="https://cdn.tanachstudy.com/assets/images/twitter.png" alt="facebook"/>
 // <i className="material-icons">share</i>
