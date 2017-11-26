@@ -10,7 +10,7 @@ class HomePage extends Component {
     super(props);
     const images  = [
       {
-        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_1.JPG',
+        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_1.jpg',
         captionRight: 'וְעַד יָם הָעֲרָבָה יָם-הַמֶּלַח מִזְרָחָה',
         captionLeftDisabled: 'And unto the sea of the Arabah, even the Salt Sea, eastward',
       },
@@ -20,7 +20,7 @@ class HomePage extends Component {
         captionLeftDisabled: 'Behold, David is in the wilderness of En-gedi... upon the rocks of the wild goats',
       },
       {
-        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_3.JPG',
+        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_3.jpg',
         captionRight: 'אֲשֶׁר-שָׁם, צִפֳּרִים יְקַנֵּנוּ;    חֲסִידָה, בְּרוֹשִׁים בֵּיתָהּ',
         captionLeftDisabled: 'Wherein the birds make their nests; as for the stork, the fir-trees are her house',
       },
