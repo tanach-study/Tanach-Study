@@ -46,22 +46,22 @@ class Parts extends Component {
         {
           name: 'Sefer Shemot',
           url: '/sefarim/shemot',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Sefer Vayikra',
           url: '/sefarim/vayikra',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Sefer Bemidbar',
           url: '/sefarim/bemidbar',
-          disabled: true,
+          disabled: false,
         },
         {
           name: 'Sefer Devarim',
           url: '/sefarim/devarim',
-          disabled: true,
+          disabled: false,
         },
       ],
       neviim: [
