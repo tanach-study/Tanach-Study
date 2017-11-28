@@ -12,7 +12,7 @@ function toTitleCase(str) {
 
 
 const TorahPerekItem = (props) => {
-  const perekName = `Parashat ${toTitleCase(props.perek.perek_id)}`;
+  const perekName = `Parashat ${toTitleCase(props.perek.pretty_name)}`;
   let parts = null;
   let partsBreakdown = null;
   if (props.perek.is_many_parts) {
