@@ -174,19 +174,22 @@ class TorahPerek extends Component {
     const eng = [];
     hebArr.forEach((perek, i) => {
       const perek_num = start_chapter != null ? start_chapter + i : i + 1;
+      const passuk_num = i === 0 && start_verse != null ? start_verse : 1;
 
       heb.push(<b key={gen++}>פרק {gematriya(perek_num)}</b>)
-      perek.forEach((passuk, j) => heb.push(<p key={gen++}><b>{gematriya(j + 1)}. </b>{passuk}</p>));
+      perek.forEach((passuk, j) => heb.push(<p key={gen++}><b>{gematriya(passuk_num + j)}. </b>{passuk}</p>));
     });
     engArr.forEach((perek, i) => {
       const perek_num = start_chapter != null ? start_chapter + i : i + 1;
+      const passuk_num = i === 0 && start_verse != null ? start_verse : 1;
 
       eng.push(<b key={gen++}>Perek {perek_num}</b>)
-      perek.forEach((passuk, j) => eng.push(<p key={gen++}><b>{i + 1}. </b>{passuk}</p>));
+      perek.forEach((passuk, j) => eng.push(<p key={gen++}><b>{passuk_num + j}. </b>{passuk}</p>));
     });
     let par = [];
     for (let i = 0; i < hebArr.length && i < engArr.length; i++) {
       const perek_num = start_chapter != null ? start_chapter + i : i + 1;
+      const passuk_num = i === 0 && start_verse != null ? start_verse : 1;
 
       let currHeb = hebArr[i];
       let currEng = engArr[i];
@@ -206,12 +209,12 @@ class TorahPerek extends Component {
         par.push(
           <div key={gen++}>
             <div className="row valign-wrapper hide-on-small-only">
-              <div className="col l6 m12 s12 left-align valign"><p><b>{j + 1}. </b>{currEng[j]}</p></div>
-              <div className="col l6 m12 s12 rtl right-align valign"><p><b>{gematriya(j + 1)}. </b>{currHeb[j]}</p></div>
+              <div className="col l6 m12 s12 left-align valign"><p><b>{passuk_num + j}. </b>{currEng[j]}</p></div>
+              <div className="col l6 m12 s12 rtl right-align valign"><p><b>{gematriya(passuk_num + j)}. </b>{currHeb[j]}</p></div>
             </div>
             <div className="hide-on-med-and-up">
-              <div className="row center-align rtl"><p><b>{gematriya(j + 1)}. </b>{currHeb[j]}</p></div>
-              <div className="row center-align"><p><b>{j + 1}. </b>{currEng[j]}</p></div>
+              <div className="row center-align rtl"><p><b>{gematriya(passuk_num + j)}. </b>{currHeb[j]}</p></div>
+              <div className="row center-align"><p><b>{passuk_num + j}. </b>{currEng[j]}</p></div>
             </div>
           </div>
         );
