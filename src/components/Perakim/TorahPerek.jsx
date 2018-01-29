@@ -98,9 +98,11 @@ class TorahPerek extends Component {
 
     const parts_breakdown = act.parts_breakdown || [];
     const parts = parts_breakdown.map((part, i) => {
+      const textString = part.start_chapter === part.end_chapter ? `(${part.start_chapter}:${part.start_verse}-${part.end_verse})` : `(${part.start_chapter}:${part.start_verse} - ${part.end_chapter}:${part.end_verse})`;
+      const title = part.title.includes('(') ? part.title : `${part.title} ${textString}`;
       return (
         <div key={i} onClick={this.selectPart.bind(this, i + 1, part.title)} className='hoverable section'>
-          <b>Part {part.number}:</b><span className={`${this.state.partNumber === i + 1 ? 'bold' : ''}`}> {part.title}</span>
+          <b>Part {part.number}:</b><span className={`${this.state.partNumber === i + 1 ? 'bold' : ''}`}> {part.title !== '' ? title : ''}</span>
         </div>
       )
     });
