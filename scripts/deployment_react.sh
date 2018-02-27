@@ -1,19 +1,28 @@
 #!/bin/bash
-# @author Jason Seminara for General Assembly, 2016
-# NPM has some weird ideas about which scripts it likes to fire off when deploying.
-# Let's just do exactly what we want to deploy this React app.
+# script to build the webpack bundle and push it up to S3
+# steps:
+# 1. bump up the version number
+# 2. bundle the source code with webpack
+# 3. push the new bundle up to S3 for serving
 
-# NOTE: the env is already set to PRODUCTION
+########################################################################
+#                               Step 1                                 #
+########################################################################
 
-# Let's clean up anything we did before
-npm run clean -s
 
-# Go get all the npm assets we'll need which include all the devDependencies
-# Don't invoke the npm lifecycle methods
+
+########################################################################
+#                               Step 2                                 #
+########################################################################
+
+# remove old files
+npm run clean
+
+# install dev dependencies, ignoring scripts - see here: http://blog.npmjs.org/post/141702881055/package-install-scripts-vulnerability
 npm i --only=dev --ignore-scripts
 
-# build out webpack assets
-webpack -p --progress
+# build out the bundle using the production flags (can use -p as shortcut, but we like being verbose)
+webpack --optimize-minimize --define process.env.NODE_ENV="production" --progress
 
-# Remove the DEV version of node modules
+# remove dev dependencies - no need to have them lying around
 rm -rf node_modules
