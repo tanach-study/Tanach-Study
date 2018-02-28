@@ -6,14 +6,101 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BUILD_DIR = path.join(__dirname, './dist');
 const APP_DIR = path.join(__dirname, './src');
 
+// this should be the new version number; webpack should be run after the version was bumped up
+const version = process.env.npm_package_version;
+
 const plugins = [
   new ExtractTextPlugin({
-    filename: '/css/[name].css',
+    filename: `css/[name].${version}.css`,
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
     fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
- }),
+  }),
+  new HtmlWebpackPlugin({
+    inject: false,
+    template: require('html-webpack-template'),
+    appMountId: 'root-container',
+    meta: [
+      {
+        charset: 'utf-8',
+      },
+      {
+        content: 'ie=edge',
+        'http-equiv': 'x-ua-compatible'
+      },
+      {
+        content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no',
+        name: 'viewport'
+      },
+      {
+        content: 'Content-Type',
+        name: 'http-equiv'
+      },
+      {
+        content: 'text/html; charset=UTF-8',
+        name: 'content'
+      },
+      {
+        property: 'og:title',
+        content: 'Tanach Study'
+      },
+      {
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        property: 'og:url',
+        content: 'https://tanachstudy.com'
+      },
+      {
+        property: 'og:image',
+        content: 'https://tanachstudy.com/original-favicon.png'
+      },
+      {
+        property: 'og:description',
+        content: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach'
+      },
+      {
+        name: 'theme-color',
+        content: '#009fc1'
+      }
+    ],
+    mobile: false,
+    lang: 'en-US',
+    links: [
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-32x32.png',
+        sizes: '32x32',
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon-16x16.png',
+        sizes: '16x16',
+      },
+      {
+        rel: 'manifest',
+        href: '/manifest.json',
+      },
+      {
+        rel: 'mask-icon',
+        href: '/safari-pinned-tab.svg',
+        color: '#009fc1',
+      },
+      'https://fonts.googleapis.com/icon?family=Material+Icons',
+      'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css',
+      '/assets/css/style.css',
+    ],
+    title: 'Tanach Study',
+  })
 ];
 
 // Common rules
@@ -76,7 +163,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     publicPath: '/',
-    filename: 'js/[name].bundle.js',
+    filename: `js/[name].${version}.bundle.js`,
   },
   module: {
     rules,
