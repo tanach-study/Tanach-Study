@@ -6,12 +6,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BUILD_DIR = path.join(__dirname, './dist');
 const APP_DIR = path.join(__dirname, './src');
 
-// this should be the new version number; webpack should be run after the version was bumped up
+// when deploying, this should be the new version number; webpack should be run after the version was bumped up
 const version = process.env.npm_package_version;
 
 const plugins = [
   new ExtractTextPlugin({
-    filename: `css/[name].${version}.css`,
+    filename: `[name].${version}.css`,
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
@@ -163,7 +163,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     publicPath: '/',
-    filename: `js/[name].${version}.bundle.js`,
+    filename: `[name].${version}.js`,
   },
   module: {
     rules,
