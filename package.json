@@ -8,7 +8,7 @@
     "build": "NODE_ENV=production webpack -p --progress --colors && rm -rf node_modules/ && rm -f package-lock.json && npm i --only=prod",
     "deploy": "npm run clean && npm i --only=dev && webpack -p --progress && rm -rf node_modules/ && rm -f package-lock.json && npm i --only=prod",
     "start": "node server.js",
-    "rebuild": "webpack -d --progress --colors",
+    "rebuild": "NODE_ENV=production webpack -d --progress --colors",
     "watch": "webpack -d --progress --watch"
   },
   "repository": {
