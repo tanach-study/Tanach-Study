@@ -9,8 +9,15 @@ const APP_DIR = path.join(__dirname, './src');
 // when deploying, this should be the new version number; webpack should be run after the version was bumped up
 const version = process.env.npm_package_version;
 
+// get the node enc used to run the script with;
+const nodeEnv = process.env.NODE_ENV;
+// set the public paths for style sheets and scripts, using the cdn if deploying to production
+const publicStylePath = nodeEnv === 'production' ? 'https://cdn.tanachstudy.com/assets/css' : '/';
+const publicScriptPath = nodeEnv === 'production' ? 'https://cdn.tanachstudy.com/assets/js' : '/';
+
 const plugins = [
   new ExtractTextPlugin({
+    publicPath: publicStylePath,
     filename: `[name].${version}.css`,
     allChunks: true,
   }),
@@ -162,7 +169,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: BUILD_DIR,
-    publicPath: '/',
+    publicPath: publicScriptPath,
     filename: `[name].${version}.js`,
   },
   module: {

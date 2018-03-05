@@ -35,7 +35,7 @@ npm run clean
 npm i --only=dev --ignore-scripts
 
 # # build out the bundle using the production flags (can use -p as shortcut, but we like being verbose)
-webpack --optimize-minimize --define process.env.NODE_ENV="production" --progress
+NODE_ENV=production webpack --optimize-minimize --define process.env.NODE_ENV="production" --progress
 
 # # remove dev dependencies - no need to have them lying around
 rm -rf node_modules
