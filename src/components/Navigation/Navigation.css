@@ -1,0 +1,36 @@
+.tsnav {
+  min-height: 60px;
+  height: 10vh;
+}
+
+.tsnav a {
+  color: #444;
+}
+
+.mobile-nav-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+.mobile-nav li {
+  width: 95%;
+  margin: 0 2.5%;
+  padding: 0;
+}
+
+.mobile-nav-outside {
+  background-color: rgba(0,0,0,0.7);
+}
+
+.mobile-activator {
+  margin-left: 5vw;
+  cursor: pointer;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 
+import styles from './Navigation.css';
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
@@ -17,14 +19,14 @@ class Navigation extends Component {
 
   render() {
     const mobileNavClass = classNames({
-      'mobile-nav-container': true,
+      [styles['mobile-nav-container']]: true,
       'hide-on-large-only': true,
       'hide': this.state.hideMobile,
     });
     return (
-      <nav className="white tsnav valign-wrapper" role="navigation">
-        <div className="mobile-activator hide-on-large-only tsblue-text valign" onClick={() => this.toggleMobileNav()}><i className="material-icons">menu</i></div>
-        <div className="row no-margin-bottom full-height full-width hide-on-med-and-down">
+      <nav className={`white ${styles['tsnav']} valign-wrapper`} role="navigation">
+        <div className={`${styles['mobile-activator']} hide-on-large-only tsblue-text valign`} onClick={() => this.toggleMobileNav()}><i className="material-icons">menu</i></div>
+        <div className={`row ${styles['no-margin-bottom']} full-height full-width hide-on-med-and-down`}>
           <div className="col l2 m1 s3 offset-l1 offset-m1 offset-s1 full-height">
             <Link to="/" className="full-height valign">
               <img className="full-height" src="https://cdn.tanachstudy.com/assets/images/logo.png" alt="Tanach Study Logo"/>
@@ -47,7 +49,7 @@ class Navigation extends Component {
         <div className={mobileNavClass}>
           <div className="row full-height">
             <div className="col m5 s8 full-height white">
-              <ul className="mobile-nav tsblue-text" onClick={() => this.toggleMobileNav()}>
+              <ul className={`${styles['mobile-nav']} tsblue-text`} onClick={() => this.toggleMobileNav()}>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/signup">Sign Up</Link></li>
                 <li><Link to="/about">About Us</Link></li>
@@ -58,7 +60,7 @@ class Navigation extends Component {
                 <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
-            <div className="col m7 s4 full-height pointer mobile-nav-outside" onClick={() => this.toggleMobileNav()}></div>
+            <div className={`col m7 s4 full-height pointer ${styles['mobile-nav-outside']}`} onClick={() => this.toggleMobileNav()}></div>
           </div>
         </div>
 
