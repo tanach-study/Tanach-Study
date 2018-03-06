@@ -102,7 +102,6 @@ const plugins = [
       },
       'https://fonts.googleapis.com/icon?family=Material+Icons',
       'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css',
-      '/assets/css/style.css',
     ],
     title: 'Tanach Study',
   })
@@ -111,10 +110,17 @@ const plugins = [
 // Common rules
 const rules = [
   {
-    test: /\.css$/,
+    test: /\b(?!global\.)(\w+(?:-\w+)*)(?=\.css\b)/,
     loader: ExtractTextPlugin.extract({
       fallback: 'style-loader',
       use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+    })
+  },
+  {
+    test: /\.global\.css$/,
+    loader: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: 'css-loader'
     })
   },
   {

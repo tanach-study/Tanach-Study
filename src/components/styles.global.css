@@ -1,3 +1,5 @@
+/* GLOBAL STYLES */
+
 .tsblue {
   background-color: #009FC1 !important;
 }
@@ -34,3 +36,5 @@
 .bold {
   font-weight: bold;
 }
+
+/* END GLOBAL STYLES */
