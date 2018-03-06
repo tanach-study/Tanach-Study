@@ -49,3 +49,7 @@
 .in-memory-link:visited {
   color: white;
 }
+
+.icon-block {
+  padding: 0 15px;
+}

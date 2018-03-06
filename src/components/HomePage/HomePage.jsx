@@ -106,7 +106,7 @@ class HomePage extends Component {
 
             <div className="row">
               <div className="col s12 m4">
-                <div className="icon-block">
+                <div className={styles['icon-block']}>
                   <h2 className="center tsblue-text"><i className="material-icons">headset</i></h2>
                   <h5 className="center">Mode of Study</h5>
 
@@ -115,7 +115,7 @@ class HomePage extends Component {
               </div>
 
               <div className="col s12 m4">
-                <div className="icon-block">
+                <div className={styles['icon-block']}>
                   <h2 className="center tsblue-text"><span className={`tsblue-text ${icons['tsicons']} ${icons['icon-scroll']}`}></span></h2>
                   <h5 className="center">Torah Content</h5>
 
@@ -124,7 +124,7 @@ class HomePage extends Component {
               </div>
 
               <div className="col s12 m4">
-                <div className="icon-block">
+                <div className={styles['icon-block']}>
                   <h2 className="center tsblue-text"><span className={`tsblue-text ${icons['tsicons']} ${icons['icon-star']}`}></span></h2>
                   <h5 className="center">Build Identity</h5>
                   <p className="light center-align">To increase knowledge of your ancestral Jewish history, to strengthen your sense of awe and love of God, and reinforce your personal and national Jewish identity.</p>
