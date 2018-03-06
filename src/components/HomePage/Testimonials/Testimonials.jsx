@@ -12,17 +12,11 @@ class Testimonials extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
     }, 15000);
-    this.updateState('interval', interval);
+    this.setState({ interval: interval });
   }
 
   componentWillUnmount() {
@@ -34,7 +28,7 @@ class Testimonials extends Component {
     const numSlides = this.props.testimonials.length;
     let next = curr + 1;
     if (next >= numSlides) next = 0;
-    this.updateState('activeIndex', next);
+    this.setState({ activeIndex: next });
   }
 
   retractSlide() {
@@ -42,7 +36,7 @@ class Testimonials extends Component {
     const numSlides = this.props.testimonials.length;
     let next = curr - 1;
     if (next <= 0) next = numSlides;
-    this.updateState('activeIndex', next);
+    this.setState({ activeIndex: next });
   }
 
   render() {
