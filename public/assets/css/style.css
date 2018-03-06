@@ -1,7 +1,3 @@
-.logo-container {
-  max-height: 10vh;
-}
-
 .tsblue {
   background-color: #009FC1 !important;
 }
@@ -33,4 +29,8 @@
 
 .rtl {
   direction: rtl;
+}
+
+.bold {
+  font-weight: bold;
 }
