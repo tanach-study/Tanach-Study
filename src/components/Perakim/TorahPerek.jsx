@@ -4,6 +4,8 @@ import TeacherCard from './TeacherCard.jsx';
 import ReaderCard from './ReaderCard.jsx';
 import gematriya from '../../../lib/gematriya.js';
 
+import styles from './TorahPerek.css';
+
 class TorahPerek extends Component {
   constructor(props) {
     super(props);
@@ -102,7 +104,7 @@ class TorahPerek extends Component {
       const title = part.title.includes('(') ? part.title : `${part.title} ${textString}`;
       return (
         <div key={i} onClick={this.selectPart.bind(this, i + 1, part.title)} className='hoverable section'>
-          <b>Part {part.number}:</b><span className={`${this.state.partNumber === i + 1 ? 'bold' : ''}`}> {part.title !== '' ? title : ''}</span>
+          <b>Part {part.number}:</b><span className={`${this.state.partNumber === i + 1 ? styles['bold'] : ''}`}> {part.title !== '' ? title : ''}</span>
         </div>
       )
     });
