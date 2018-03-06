@@ -107,7 +107,7 @@ class HomePage extends Component {
             <div className="row">
               <div className="col s12 m4">
                 <div className={styles['icon-block']}>
-                  <h2 className="center tsblue-text"><i className="material-icons">headset</i></h2>
+                  <h2 className="center tsblue-text"><i className={`${styles['material-icons']} material-icons`}>headset</i></h2>
                   <h5 className="center">Mode of Study</h5>
 
                   <p className="light center-align">A free digital Tanach study program that is all-encompassing and geared towards English-speaking communities around the world.</p>
