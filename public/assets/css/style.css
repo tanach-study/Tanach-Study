@@ -1,6 +1,3 @@
-
-
-
 .logo-container {
   max-height: 10vh;
 }
@@ -38,35 +35,6 @@
   direction: rtl;
 }
 
-
-
-footer.page-footer {
-  margin: 0;
-}
-
-
 .bold {
   font-weight: bold;
-}
-
-.footer-container {
-  height: 10vh;
-  min-height: 80px;
-}
-
-.footer-wrapper {
-  height: 100%;
-  margin-bottom: 0;
-}
-
-.social-icons {
-  padding: 0;
-  margin: 0 0 0 5px;
-  height: 32px;
-  width: 32px;
-}
-
-.social-icons img {
-  height: 32px;
-  width: 32px;
 }
