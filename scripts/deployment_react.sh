@@ -11,7 +11,7 @@
 
 # first we need to bump the package version
 # TODO: add the ability to bumo up a minor or major version
-# npm --no-git-tag-version version patch
+npm --no-git-tag-version version patch
 
 # get the new version number from the package file
 # not needed
