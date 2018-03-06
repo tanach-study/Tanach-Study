@@ -12,17 +12,11 @@ class Slider extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
     }, 5000);
-    this.updateState('interval', interval);
+    this.setState({ interval: interval });
   }
 
   componentWillUnmount() {
@@ -38,7 +32,7 @@ class Slider extends Component {
     const captionRight = this.props.slides[next].captionRight;
     this.props.left(captionLeft);
     this.props.right(captionRight);
-    this.updateState('activeIndex', next);
+    this.setState({ activeIndex: next });
   }
 
   render() {
