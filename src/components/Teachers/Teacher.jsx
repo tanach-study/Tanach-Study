@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import styles from './Teacher.css';
+
 class Teacher extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,7 @@ class Teacher extends Component {
                   <img src={info.image_url} alt="" className="responsive-img full-width circle"/>
                 </div>
                 <div className="col l8 m8 s12 valign">
-                  <h2 className="teacher-title">{info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname}</h2>
+                  <h2 className={styles['teacher-title']}>{info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname}</h2>
                   <div><i>{info.short_bio}</i></div>
                 </div>
               </div>

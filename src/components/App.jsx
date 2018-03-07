@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
+
+// import global styles
+import './styles.global.css';
+
+import DocumentMeta from 'react-document-meta';
+
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
-import DocumentMeta from 'react-document-meta';
-import styles from './App.css';
-
 import HomePage from './HomePage/HomePage.jsx';
 import About from './About/About.jsx';
 import Parts from './Parts/Parts.jsx';
@@ -23,6 +26,7 @@ import Dashboard from './Admin/Dashboard/Dashboard.jsx';
 import Login from './Admin/Login/Login.jsx';
 import AdminVideos from './Admin/Videos/Videos.jsx';
 import Siyum from './Siyum/Siyum.jsx';
+
 
 class App extends Component {
   constructor(props) {

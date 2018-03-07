@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
+import styles from './Slider.css';
+
 class Slider extends Component {
   constructor(props) {
     super(props);
@@ -10,17 +12,11 @@ class Slider extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
     }, 5000);
-    this.updateState('interval', interval);
+    this.setState({ interval: interval });
   }
 
   componentWillUnmount() {
@@ -36,7 +32,7 @@ class Slider extends Component {
     const captionRight = this.props.slides[next].captionRight;
     this.props.left(captionLeft);
     this.props.right(captionRight);
-    this.updateState('activeIndex', next);
+    this.setState({ activeIndex: next });
   }
 
   render() {
@@ -45,16 +41,16 @@ class Slider extends Component {
         backgroundImage: `url(${slide.url})`,
       }
       const slideClass = classNames({
-        'slide-item': true,
-        active: this.state.activeIndex == i,
-        inactive: this.state.activeIndex != i,
+        [styles['slide-item']]: true,
+        [styles['active']]: this.state.activeIndex == i,
+        [styles['inactive']]: this.state.activeIndex != i,
       });
       return (
         <div key={i} className={slideClass} style={style}></div>
       )
     }, this);
     return (
-      <div className="slideshow">
+      <div className={styles['slideshow']}>
         {slides}
       </div>
     );
