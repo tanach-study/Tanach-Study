@@ -26,6 +26,7 @@ import Dashboard from './Admin/Dashboard/Dashboard.jsx';
 import Login from './Admin/Login/Login.jsx';
 import AdminVideos from './Admin/Videos/Videos.jsx';
 import Siyum from './Siyum/Siyum.jsx';
+import Yerushalmi from './Yerushalmi/Yerushalmi.jsx';
 
 
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
           <div className='body'>
             <Switch>
               <Route exact path='/siyum' component={Siyum} />
+              <Route exact path='/yerushalmi' component={Yerushalmi} />
               <Route exact path='/admin' component={Admin} />
               <Route exact path='/teachers/:id' component={Teacher} />
               <Route exact path='/teachers' component={AllTeachers} />

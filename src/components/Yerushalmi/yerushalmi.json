@@ -1,0 +1,73 @@
+{
+  "torah": [
+    {
+      "sefer": "bereshit",
+      "chapters": [12, 13, 14, 15, 16, 18, 19, 27, 28, 29]
+    },
+    {
+      "sefer": "shemot",
+      "chapters": [19, 20]
+    },
+    {
+      "sefer": "vayikra",
+      "chapters": [19, 25]
+    },
+    {
+      "sefer": "devarim",
+      "chapters": [20, 21, 33, 34]
+    }
+  ],
+  "neviim": [
+    {
+      "sefer": "yehoshua",
+      "chapters": [1, 2, 3, 4, 5]
+    },
+    {
+      "sefer": "shofetim",
+      "chapters": [6, 7, 8, 9, 17, 18]
+    },
+    {
+      "sefer": "shemuel1",
+      "chapters": [1, 2, 17]
+    },
+    {
+      "sefer": "shemuel2",
+      "chapters": [11, 12]
+    },
+    {
+      "sefer": "melachim1",
+      "chapters": [17, 18, 19]
+    },
+    {
+      "sefer": "yeshayahu",
+      "chapters": [1, 2, 11, 36, 37, 40]
+    },
+    {
+      "sefer": "yirmiyahu",
+      "chapters": [26, 31, 32]
+    },
+    {
+      "sefer": "michah",
+      "chapters": [3, 4, 5]
+    }
+  ],
+  "ketuvim": [
+    {
+      "sefer": "tehillim",
+      "chapters": [1, 8, 74]
+    },
+    {
+      "sefer": "ruth",
+      "chapters": [1, 2, 3, 4]
+    },
+    {
+      "sefer": "ezra",
+      "chapters": [7, 8, 9],
+      "notes": "The test does not cover the Aramaic parts or the lists of people"
+    },
+    {
+      "sefer": "nehemya",
+      "chapters": [1, 2, 4, 5]
+    }
+  ]
+}
