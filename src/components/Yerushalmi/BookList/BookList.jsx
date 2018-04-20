@@ -4,7 +4,7 @@ import BookItem from './BookItem.jsx';
 
 function BookList (props) {
   const { section, title } = props;
-  const bookItems = section.map((book, i) => <BookItem key={`${title}-${i}`} {...book} />);
+  const bookItems = section.map((book, i) => <BookItem key={`${section}-${i}`} {...book} />);
   return (
     <div className='row'>
       <div className='light'>
