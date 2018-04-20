@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import BookList from './BookList/BookList.jsx';
+
 import data from './yerushalmi.json';
 
 function bookMapper (book, i, books) {
@@ -16,8 +18,8 @@ function bookMapper (book, i, books) {
 
   return (
     <Link to={`/sefarim/${book.sefer}`} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-      <div className="card tsblue btn waves-effect hoverable full-width">
-        <div className="col-content">{book.sefer}</div>
+      <div className='card tsblue btn waves-effect hoverable full-width'>
+        <div className='col-content'>{book.sefer}</div>
       </div>
     </Link>
   );
@@ -38,31 +40,22 @@ class Yerushalmi extends Component {
   }
 
   render() {
-    const mappedTorah = this.state.torah.map(bookMapper.bind(this));
-    const mappedNeviim = this.state.neviim.map(bookMapper.bind(this));
-    const mappedKetuvim = this.state.ketuvim.map(bookMapper.bind(this));
     return (
-      <div className="container">
-          <div className="section center">
-            <h4>Sefarim</h4>
-            <div className="row center">
-              <div className="center center-align light">
-                <h5>Torah</h5>
-                {mappedTorah}
-              </div>
-            </div>
-            <div className="row center">
-              <div className="center center-align light">
-                <h5>Nevi'im</h5>
-                {mappedNeviim}
-              </div>
-            </div>
-            <div className="row center">
-              <div className="center center-align light">
-                <h5>Ketuvim</h5>
-                {mappedKetuvim}
-              </div>
-            </div>
+      <div className='container'>
+          <div className='section'>
+            <h3 className='center'>Sefarim</h3>
+            <BookList
+              title='Torah'
+              section={this.state.torah}
+            />
+            <BookList
+              title='Neviim'
+              section={this.state.neviim}
+            />
+            <BookList
+              title='Ketuvim'
+              section={this.state.ketuvim}
+            />
           </div>
         </div>
     );

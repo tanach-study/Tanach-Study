@@ -1,72 +1,88 @@
 {
   "torah": [
     {
-      "sefer": "bereshit",
+      "name": "bereshit",
+      "title": "Bereshit",
       "chapters": [12, 13, 14, 15, 16, 18, 19, 27, 28, 29]
     },
     {
-      "sefer": "shemot",
+      "name": "shemot",
+      "title": "Shemot",
       "chapters": [19, 20]
     },
     {
-      "sefer": "vayikra",
+      "name": "vayikra",
+      "title": "Vayikra",
       "chapters": [19, 25]
     },
     {
-      "sefer": "devarim",
+      "name": "devarim",
+      "title": "Devarim",
       "chapters": [20, 21, 33, 34]
     }
   ],
   "neviim": [
     {
-      "sefer": "yehoshua",
+      "name": "yehoshua",
+      "title": "Yehoshua",
       "chapters": [1, 2, 3, 4, 5]
     },
     {
-      "sefer": "shofetim",
+      "name": "shofetim",
+      "title": "Shofetim",
       "chapters": [6, 7, 8, 9, 17, 18]
     },
     {
-      "sefer": "shemuel1",
+      "name": "shemuel1",
+      "title": "Shemuel 1",
       "chapters": [1, 2, 17]
     },
     {
-      "sefer": "shemuel2",
+      "name": "shemuel2",
+      "title": "Shemuel 2",
       "chapters": [11, 12]
     },
     {
-      "sefer": "melachim1",
+      "name": "melachim1",
+      "title": "Melachim 1",
       "chapters": [17, 18, 19]
     },
     {
-      "sefer": "yeshayahu",
+      "name": "yeshayahu",
+      "title": "Yeshayahu",
       "chapters": [1, 2, 11, 36, 37, 40]
     },
     {
-      "sefer": "yirmiyahu",
+      "name": "yirmiyahu",
+      "title": "Yirmiyahu",
       "chapters": [26, 31, 32]
     },
     {
-      "sefer": "michah",
+      "name": "michah",
+      "title": "Michah",
       "chapters": [3, 4, 5]
     }
   ],
   "ketuvim": [
     {
-      "sefer": "tehillim",
+      "name": "tehillim",
+      "title": "Tehillim",
       "chapters": [1, 8, 74]
     },
     {
-      "sefer": "ruth",
+      "name": "ruth",
+      "title": "Ruth",
       "chapters": [1, 2, 3, 4]
     },
     {
-      "sefer": "ezra",
+      "name": "ezra",
+      "title": "Ezra",
       "chapters": [7, 8, 9],
       "notes": "The test does not cover the Aramaic parts or the lists of people"
     },
     {
-      "sefer": "nehemya",
+      "name": "nehemya",
+      "title": "Nehemya",
       "chapters": [1, 2, 4, 5]
     }
   ]
