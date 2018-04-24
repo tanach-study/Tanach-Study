@@ -1,0 +1,12 @@
+.active-li {
+  background-color: rgba(0,159,193,0.1);
+  outline: none;
+  transition: background-color 1.5s ease !important;
+}
+
+.active-link {
+  font-weight: 600;
+  font-size: 16px !important;
+  border-bottom: 3px solid rgba(0,159,193,0.8) !important;
+  transition: font-size .5s ease !important;
+}
