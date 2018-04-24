@@ -60,7 +60,7 @@ class App extends Component {
               <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
               <Route exact path='/sefarim/:sefer' component={Sefarim} />
               <Route exact path='/parts' component={Parts} />
-              <Route exact path='/about' component={About} />
+              <Route path='/about' component={About} />
               <Route path='/' component={HomePage} />
             </Switch>
           </div>
