@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Mission from './Mission.jsx';
 import Practices from './Practices.jsx';
@@ -20,22 +20,13 @@ class About extends Component {
       <div className='container'>
         <h1 className='center'>About Us</h1>
 
-        <div className='divider'></div>
-
-        <Mission />
-
-        <div className='divider'></div>
-
-        <Practices />
-
-        <div className='divider'></div>
-
-        <History />
-
-        <div className='divider'></div>
-
-        <FAQs />
-
+        <Switch>
+          <Route exact path='/about/mission' component={Mission} />
+          <Route exact path='/about/practices' component={Practices} />
+          <Route exact path='/about/history' component={History} />
+          <Route exact path='/about/faqs' component={FAQs} />
+          <Redirect from='/about' to='/about/mission' />
+        </Switch>
       </div>
     );
   }
