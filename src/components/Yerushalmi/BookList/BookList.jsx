@@ -8,7 +8,7 @@ function BookList (props) {
   return (
     <div className='row'>
       <div className='light'>
-        <h4 className='center center-align'>{title}</h4>
+        <h4>{title}</h4>
         {bookItems}
       </div>
     </div>
