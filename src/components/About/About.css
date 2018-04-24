@@ -10,3 +10,13 @@
   border-bottom: 3px solid rgba(0,159,193,0.8) !important;
   transition: font-size .5s ease !important;
 }
+
+.mobile-li {
+  margin-bottom: 10px;
+}
+
+.mobile-link {
+  font-weight: 600;
+  font-size: 16px !important;
+  transition: font-size .5s ease !important;
+}
