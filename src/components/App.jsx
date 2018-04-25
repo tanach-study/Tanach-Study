@@ -21,11 +21,6 @@ import SignupSuccess from './Signup/SignupSuccess/SignupSuccess.jsx';
 import SignupError from './Signup/SignupError/SignupError.jsx';
 import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
-import Admin from './Admin/Admin.jsx';
-import Dashboard from './Admin/Dashboard/Dashboard.jsx';
-import Login from './Admin/Login/Login.jsx';
-import AdminVideos from './Admin/Videos/Videos.jsx';
-import Siyum from './Siyum/Siyum.jsx';
 
 
 class App extends Component {
@@ -49,8 +44,6 @@ class App extends Component {
         <Navigation />
           <div className='body'>
             <Switch>
-              <Route exact path='/siyum' component={Siyum} />
-              <Route exact path='/admin' component={Admin} />
               <Route exact path='/teachers/:id' component={Teacher} />
               <Route exact path='/teachers' component={AllTeachers} />
               <Route exact path='/signup' component={Signup} />
