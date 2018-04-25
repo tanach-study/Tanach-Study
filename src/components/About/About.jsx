@@ -6,6 +6,7 @@ import Mission from './Mission.jsx';
 import Practices from './Practices.jsx';
 import History from './History.jsx';
 import FAQs from './FAQs.jsx';
+import Yerushalmi from './Yerushalmi/Yerushalmi.jsx';
 
 class About extends Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class About extends Component {
           <Route exact path='/about/practices' component={Practices} />
           <Route exact path='/about/history' component={History} />
           <Route exact path='/about/faqs' component={FAQs} />
+          <Route exact path='/about/yerushalmi' component={Yerushalmi} />
           <Redirect from='/about' to='/about/mission' />
         </Switch>
       </div>

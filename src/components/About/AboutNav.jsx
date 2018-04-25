@@ -19,6 +19,9 @@ function AboutNav (props) {
         <li className={`tab ${props.path === '/about/faqs' ? styles['active-li'] : ''}`}>
           <Link to='/about/faqs' className={`tsblue-text ${props.path === '/about/faqs' ? styles['active-link'] : '' }`}>FAQ's</Link>
         </li>
+        <li className={`tab ${props.path === '/about/yerushalmi' ? styles['active-li'] : ''}`}>
+          <Link to='/about/yerushalmi' className={`tsblue-text ${props.path === '/about/yerushalmi' ? styles['active-link'] : '' }`}>Yerushalmi</Link>
+        </li>
       </ul>
       <ul className='row hide-on-med-and-up'>
         <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
@@ -32,6 +35,9 @@ function AboutNav (props) {
         </li>
         <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
           <Link to='/about/faqs' className={`white-text col s10 offset-s1 ${props.path === '/about/faqs' ? styles['mobile-link'] : ''}`}>FAQ's</Link>
+        </li>
+        <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
+          <Link to='/about/yerushalmi' className={`white-text col s10 offset-s1 ${props.path === '/about/yerushalmi' ? styles['mobile-link'] : ''}`}>Yerushalmi</Link>
         </li>
       </ul>
     </div>
