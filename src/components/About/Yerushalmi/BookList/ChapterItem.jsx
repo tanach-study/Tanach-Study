@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function ChapterItem (props) {
-  const { bookName, chapter, length, i } = props;
+  const { bookName, length, i } = props;
+  const { number, path } = props.chapter;
   let classAdd = '';
   const diff = length - i;
 
@@ -20,12 +21,12 @@ function ChapterItem (props) {
     }
   }
 
-  const link = props.link ? props.link : `/perakim/${bookName}/${chapter}`;
+  const link = path ? path : `/perakim/${bookName}/${number}`;
 
   return (
-    <Link to={link} className={`col s12 m6 l4 ${classAdd}`} key={`${bookName}-${chapter}-${i}`}>
+    <Link to={link} className={`col s12 m6 l4 ${classAdd}`} key={`${bookName}-${number}-${i}`}>
       <div className='card tsblue btn waves-effect hoverable full-width'>
-        <div className='col-content'>{bookName} {chapter}</div>
+        <div className='col-content'>{bookName} {number}</div>
       </div>
     </Link>
   );

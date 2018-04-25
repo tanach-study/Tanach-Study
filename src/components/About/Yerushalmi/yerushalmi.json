@@ -3,87 +3,166 @@
     {
       "name": "bereshit",
       "title": "Bereshit",
-      "chapters": [12, 13, 14, 15, 16, 18, 19, 27, 28, 29]
+      "chapters": [
+        { "number": 12, "path": "/perakim/bereshit/lech-lecha" },
+        { "number": 13, "path": "/perakim/bereshit/lech-lecha" },
+        { "number": 14, "path": "/perakim/bereshit/lech-lecha" },
+        { "number": 15, "path": "/perakim/bereshit/lech-lecha" },
+        { "number": 16, "path": "/perakim/bereshit/lech-lecha" },
+        { "number": 18, "path": "/perakim/bereshit/vayera" },
+        { "number": 19, "path": "/perakim/bereshit/vayera" },
+        { "number": 27, "path": "/perakim/bereshit/toledot" },
+        { "number": 28, "path": "/perakim/bereshit/toledot" },
+        { "number": 29, "path": "/perakim/bereshit/vayetze" }
+      ]
     },
     {
       "name": "shemot",
       "title": "Shemot",
-      "chapters": [19, 20]
+      "chapters": [
+        { "number": 19, "path": "/perakim/shemot/yitro" },
+        { "number": 20, "path": "/perakim/shemot/yitro" }
+      ]
     },
     {
       "name": "vayikra",
       "title": "Vayikra",
-      "chapters": [19, 25]
+      "chapters": [
+        { "number": 19, "path": "/perakim/vayikra/kedoshim" },
+        { "number": 25, "path": "/perakim/vayikra/behar" }
+      ]
     },
     {
       "name": "devarim",
       "title": "Devarim",
-      "chapters": [20, 21, 33, 34]
+      "chapters": [
+        { "number": 20, "path": "/perakim/devarim/shofetim" },
+        { "number": 21, "path": "/perakim/devarim/ki-tetze" },
+        { "number": 33, "path": "/perakim/devarim/vezot-haberacha" },
+        { "number": 34, "path": "/perakim/devarim/vezot-haberacha" }
+      ]
     }
   ],
   "neviim": [
     {
       "name": "yehoshua",
       "title": "Yehoshua",
-      "chapters": [1, 2, 3, 4, 5]
+      "chapters": [
+        { "number": 1, "path": null },
+        { "number": 2, "path": null },
+        { "number": 3, "path": null },
+        { "number": 4, "path": null },
+        { "number": 5, "path": null }
+      ]
     },
     {
       "name": "shofetim",
       "title": "Shofetim",
-      "chapters": [6, 7, 8, 9, 17, 18]
+      "chapters": [
+        { "number": 6, "path": null },
+        { "number": 7, "path": null },
+        { "number": 8, "path": null },
+        { "number": 9, "path": null },
+        { "number": 17, "path": null },
+        { "number": 18, "path": null }
+      ]
     },
     {
       "name": "shemuel1",
       "title": "Shemuel 1",
-      "chapters": [1, 2, 17]
+      "chapters":  [
+        { "number": 1, "path": null },
+        { "number": 2, "path": null },
+        { "number": 17, "path": null }
+      ]
     },
     {
       "name": "shemuel2",
       "title": "Shemuel 2",
-      "chapters": [11, 12]
+      "chapters": [
+        { "number": 11, "path": null },
+        { "number": 12, "path": null }
+      ]
     },
     {
       "name": "melachim1",
       "title": "Melachim 1",
-      "chapters": [17, 18, 19]
+      "chapters": [
+        { "number": 17, "path": null },
+        { "number": 18, "path": null },
+        { "number": 19, "path": null }
+      ]
     },
     {
       "name": "yeshayahu",
       "title": "Yeshayahu",
-      "chapters": [1, 2, 11, 36, 37, 40]
+      "chapters":  [
+        { "number": 1, "path": null },
+        { "number": 2, "path": null },
+        { "number": 11, "path": null },
+        { "number": 36, "path": null },
+        { "number": 37, "path": null },
+        { "number": 40, "path": null }
+      ]
     },
     {
       "name": "yirmiyahu",
       "title": "Yirmiyahu",
-      "chapters": [26, 31, 32]
+      "chapters": [
+        { "number": 26, "path": null },
+        { "number": 31, "path": null },
+        { "number": 32, "path": null }
+      ]
     },
     {
       "name": "michah",
       "title": "Michah",
-      "chapters": [3, 4, 5]
+      "chapters": [
+        { "number": 3, "path": null },
+        { "number": 4, "path": null },
+        { "number": 5, "path": null }
+      ]
     }
   ],
   "ketuvim": [
     {
       "name": "tehillim",
       "title": "Tehillim",
-      "chapters": [1, 8, 74]
+      "chapters":  [
+        { "number": 1, "path": null },
+        { "number": 8, "path": null },
+        { "number": 74, "path": null }
+      ]
     },
     {
       "name": "ruth",
       "title": "Ruth",
-      "chapters": [1, 2, 3, 4]
+      "chapters": [
+        { "number": 1, "path": null },
+        { "number": 2, "path": null },
+        { "number": 3, "path": null },
+        { "number": 4, "path": null }
+      ]
     },
     {
       "name": "ezra",
       "title": "Ezra",
-      "chapters": [7, 8, 9],
+      "chapters": [
+        { "number": 7, "path": null },
+        { "number": 8, "path": null },
+        { "number": 9, "path": null }
+      ],
       "notes": "The test does not cover the Aramaic parts or the lists of people."
     },
     {
       "name": "nehemya",
       "title": "Nehemya",
-      "chapters": [1, 2, 4, 5]
+      "chapters": [
+        { "number": 1, "path": null },
+        { "number": 2, "path": null },
+        { "number": 4, "path": null },
+        { "number": 5, "path": null }
+      ]
     }
   ]
 }
