@@ -29,9 +29,6 @@ class Perakim extends Component {
 
   componentWillMount() {
     window.scrollTo(0, 0);
-    if (this.state.sefer === 'bereshit' && parseInt(this.state.perek) === 1) {
-      this.props.history.push('/perakim/bereshit/bereshit');
-    }
   }
 
   componentDidMount() {

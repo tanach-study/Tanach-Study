@@ -87,35 +87,35 @@ class NachPerek extends Component {
 
     return (
       <div>
-        <div className="container">
-          <div className="row">
+        <div className='container'>
+          <div className='row'>
             <h2>Sefer {prettySefer} Perek {perek}</h2>
-            <Link to={`/sefarim/${sefer}`} className="left"><i>Back to Sefer {prettySefer}</i></Link>
-            <div className="section"></div>
+            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {prettySefer}</i></Link>
+            <div className='section'></div>
             <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
             <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
           </div>
-          <div className="row center">
-            <div className="col l2 m2 s12">
+          <div className='row center'>
+            <div className='col l2 m2 s12'>
               <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
             </div>
-            <div className="col l8 m8 hide-on-small-only"></div>
-            <div className="col l2 m2 s12">
+            <div className='col l8 m8 hide-on-small-only'></div>
+            <div className='col l2 m2 s12'>
               <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
             </div>
           </div>
-          <div className="divider hide-on-med-and-down"></div>
-          <br className="hide-on-med-and-down" />
-          <div className="row">
-            <div className="center">
-              <a className="waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2" onClick={() => this.setState({ show: 'heb' })}>Hebrew</a>
-              <a className="waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1" onClick={() => this.setState({ show: 'par' })}>Hebrew/English</a>
-              <a className="waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1" onClick={() => this.setState({ show: 'eng' })}>English</a>
+          <div className='divider hide-on-med-and-down'></div>
+          <br className='hide-on-med-and-down' />
+          <div className='row'>
+            <div className='center'>
+              <a className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2' onClick={() => this.setState({ show: 'heb' })}>Hebrew</a>
+              <a className='waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'par' })}>Hebrew/English</a>
+              <a className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'eng' })}>English</a>
             </div>
           </div>
-          <div className="row">
-            <div className="card">
-              <div className="card-content">
+          <div className='row'>
+            <div className='card'>
+              <div className='card-content'>
                 {this.showSefer()}
               </div>
             </div>
@@ -135,32 +135,32 @@ class NachPerek extends Component {
     for (let i = 0; i < hebArr.length && i < engArr.length; i++) {
       par.push(
         <div key={i}>
-          <div className="row valign-wrapper hide-on-small-only">
-            <div className="col l6 m12 s12 left-align valign"><p><b>{i + 1}. </b>{engArr[i]}</p></div>
-            <div className="col l6 m12 s12 rtl right-align valign"><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
+          <div className='row valign-wrapper hide-on-small-only'>
+            <div className='col l6 m12 s12 left-align valign'><p><b>{i + 1}. </b>{engArr[i]}</p></div>
+            <div className='col l6 m12 s12 rtl right-align valign'><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
           </div>
-          <div className="hide-on-med-and-up">
-            <div className="row center-align rtl"><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
-            <div className="row center-align"><p><b>{i + 1}. </b>{engArr[i]}</p></div>
+          <div className='hide-on-med-and-up'>
+            <div className='row center-align rtl'><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
+            <div className='row center-align'><p><b>{i + 1}. </b>{engArr[i]}</p></div>
           </div>
         </div>
       );
     }
-    if (this.state.show == "heb") {
+    if (this.state.show == 'heb') {
       return (
-        <div className="right-align rtl" id='hebText'>
+        <div className='right-align rtl' id='hebText'>
           {heb}
         </div>
       );
-    } else if (this.state.show == "par") {
+    } else if (this.state.show == 'par') {
       return (
         <div id='parText'>
           {par}
         </div>
       );
-    } else if (this.state.show == "eng") {
+    } else if (this.state.show == 'eng') {
       return (
-        <div className="left-align" id='engText'>
+        <div className='left-align' id='engText'>
           {eng}
         </div>
       );
