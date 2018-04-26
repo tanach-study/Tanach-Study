@@ -15,7 +15,6 @@ import Sefarim from './Sefarim/Sefarim.jsx';
 import Perakim from './Perakim/Perakim.jsx';
 import Donate from './Donate/Donate.jsx';
 import Contact from './Contact/Contact.jsx';
-import Videos from './Videos/Videos.jsx';
 import Signup from './Signup/Signup.jsx';
 import SignupSuccess from './Signup/SignupSuccess/SignupSuccess.jsx';
 import SignupError from './Signup/SignupError/SignupError.jsx';
@@ -47,7 +46,6 @@ class App extends Component {
               <Route exact path='/teachers/:id' component={Teacher} />
               <Route exact path='/teachers' component={AllTeachers} />
               <Route exact path='/signup' component={Signup} />
-              <Route exact path='/videos' component={Videos} />
               <Route exact path='/contact' component={Contact} />
               <Route exact path='/donate' component={Donate} />
               <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
