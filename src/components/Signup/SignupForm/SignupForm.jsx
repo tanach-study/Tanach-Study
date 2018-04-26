@@ -10,12 +10,6 @@ class SignupForm extends Component {
     }
   }
 
-  updateState(key, value) {
-    this.setState({
-      [key]: value,
-    });
-  }
-
   doSubmit(e) {
     e.preventDefault();
     const email = this.state.email;
@@ -49,11 +43,11 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <form className="tsblue-form">
-        <input type="text" name="firstName" placeholder="First Name" required autoFocus value={this.state.firstName} onChange={(e) => this.updateState('firstName', e.target.value)} />
-        <input type="text" name="lastName" placeholder="Last Name" required value={this.state.lastName} onChange={(e) => this.updateState('lastName', e.target.value)} />
-        <input type="email" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
-        <button type="submit" className="btn tsblue" onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
+      <form className='tsblue-form'>
+        <input type='text' name='firstName' placeholder='First Name' required autoFocus value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} />
+        <input type='text' name='lastName' placeholder='Last Name' required value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} />
+        <input type='email' name='email' placeholder='Email' required value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
+        <button type='submit' className='btn tsblue' onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
       </form>
     );
   }

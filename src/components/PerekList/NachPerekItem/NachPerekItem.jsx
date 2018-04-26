@@ -18,9 +18,9 @@ const NachPerekItem = (props) => {
     parts = parts.substring(0, parts.length - 2);
   }
   return (
-    <div className="col l4 m6 s12">
-      <div onClick={(e) => props.click(props.perek.perek_id)} className="card hoverable full-width">
-        <div className="card-content">
+    <div className='col l4 m6 s12'>
+      <div onClick={(e) => props.click(props.perek.perek_id)} className='card hoverable full-width'>
+        <div className='card-content'>
           <p>{perekName} <span><i>{parts ? parts : ''}</i></span></p>
         </div>
       </div>
@@ -31,6 +31,6 @@ const NachPerekItem = (props) => {
 export default NachPerekItem;
 
 // FOR THE FUTURE
-// <img src="https://cdn.tanachstudy.com/assets/images/facebook.png" alt="facebook"/>
-// <img src="https://cdn.tanachstudy.com/assets/images/twitter.png" alt="facebook"/>
-// <i className="material-icons">share</i>
+// <img src='https://cdn.tanachstudy.com/assets/images/facebook.png' alt='facebook'/>
+// <img src='https://cdn.tanachstudy.com/assets/images/twitter.png' alt='facebook'/>
+// <i className='material-icons'>share</i>
