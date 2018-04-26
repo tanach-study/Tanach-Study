@@ -1,0 +1,164 @@
+{
+  "torah": [
+    {
+      "name": "Sefer Bereshit",
+      "url": "/sefarim/bereshit"
+    },
+    {
+      "name": "Sefer Shemot",
+      "url": "/sefarim/shemot"
+    },
+    {
+      "name": "Sefer Vayikra",
+      "url": "/sefarim/vayikra"
+    },
+    {
+      "name": "Sefer Bemidbar",
+      "url": "/sefarim/bemidbar"
+    },
+    {
+      "name": "Sefer Devarim",
+      "url": "/sefarim/devarim"
+    }
+  ],
+  "neviim": [
+    {
+      "name": "Sefer Yehoshua",
+      "url": "/sefarim/yehoshua"
+    },
+    {
+      "name": "Sefer Shofetim",
+      "url": "/sefarim/shofetim"
+    },
+    {
+      "name": "Sefer Shemuel 1",
+      "url": "/sefarim/shemuel1"
+    },
+    {
+      "name": "Sefer Shemuel 2",
+      "url": "/sefarim/shemuel2"
+    },
+    {
+      "name": "Sefer Melachim 1",
+      "url": "/sefarim/melachim1"
+    },
+    {
+      "name": "Sefer Melachim 2",
+      "url": "/sefarim/melachim2"
+    },
+    {
+      "name": "Sefer Yeshayahu",
+      "url": "/sefarim/yeshayahu"
+    },
+    {
+      "name": "Sefer Yirmiyahu",
+      "url": "/sefarim/yirmiyahu"
+    },
+    {
+      "name": "Sefer Yehezkel",
+      "url": "/sefarim/yehezkel"
+    },
+    {
+      "name": "Sefer Hoshea",
+      "url": "/sefarim/hoshea"
+    },
+    {
+      "name": "Sefer Yoel",
+      "url": "/sefarim/yoel"
+    },
+    {
+      "name": "Sefer Amos",
+      "url": "/sefarim/amos"
+    },
+    {
+      "name": "Sefer Ovadia",
+      "url": "/sefarim/ovadia"
+    },
+    {
+      "name": "Sefer Yonah",
+      "url": "/sefarim/yonah"
+    },
+    {
+      "name": "Sefer Michah",
+      "url": "/sefarim/michah"
+    },
+    {
+      "name": "Sefer Nahum",
+      "url": "/sefarim/nahum"
+    },
+    {
+      "name": "Sefer Habakuk",
+      "url": "/sefarim/habakuk"
+    },
+    {
+      "name": "Sefer Sephania",
+      "url": "/sefarim/sephania"
+    },
+    {
+      "name": "Sefer Hagai",
+      "url": "/sefarim/hagai"
+    },
+    {
+      "name": "Sefer Zecharia",
+      "url": "/sefarim/zecharia"
+    },
+    {
+      "name": "Sefer Malachi",
+      "url": "/sefarim/malachi"
+    }
+  ],
+  "ketuvim": [
+    {
+      "name": "Sefer Divre Hayamim 1",
+      "url": "/sefarim/divre-hayamim-1"
+    },
+    {
+      "name": "Sefer Divre Hayamim 2",
+      "url": "/sefarim/divre-hayamim-2"
+    },
+    {
+      "name": "Sefer Tehillim",
+      "url": "/sefarim/tehillim"
+    },
+    {
+      "name": "Sefer Mishle",
+      "url": "/sefarim/mishle"
+    },
+    {
+      "name": "Sefer Iyov",
+      "url": "/sefarim/iyov"
+    },
+    {
+      "name": "Megillat Shir Hashirim",
+      "url": "/sefarim/shir-hashirim"
+    },
+    {
+      "name": "Megillat Ruth",
+      "url": "/sefarim/ruth"
+    },
+    {
+      "name": "Megillat Eichah",
+      "url": "/sefarim/eichah"
+    },
+    {
+      "name": "Megillat Kohelet",
+      "url": "/sefarim/kohelet"
+    },
+    {
+      "name": "Megillat Esther",
+      "url": "/sefarim/esther"
+    },
+    {
+      "name": "Sefer Daniel",
+      "url": "/sefarim/daniel"
+    },
+    {
+      "name": "Sefer Ezra",
+      "url": "/sefarim/ezra"
+    },
+    {
+      "name": "Sefer Nehemya",
+      "url": "/sefarim/nehemya"
+    }
+  ]
+}
