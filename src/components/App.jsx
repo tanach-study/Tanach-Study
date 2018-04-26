@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import global styles
@@ -22,43 +22,31 @@ import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
+function App (props) {
+  const meta = {
+    title: 'Tanach Study',
+    description: 'Tanach Study is a web-based platform for learning Tanach, or the 24 books of the Old Testament',
   }
-
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
-  render() {
-    const meta = {
-      title: 'Tanach Study',
-      description: 'Tanach Study is a web-based platform for learning Tanach, or the 24 books of the Old Testament',
-    }
-    return (
-      <div>
-        <Navigation />
-          <div className='body'>
-            <Switch>
-              <Route exact path='/teachers/:id' component={Teacher} />
-              <Route exact path='/teachers' component={AllTeachers} />
-              <Route exact path='/signup' component={Signup} />
-              <Route exact path='/contact' component={Contact} />
-              <Route exact path='/donate' component={Donate} />
-              <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
-              <Route exact path='/sefarim/:sefer' component={Sefarim} />
-              <Route exact path='/parts' component={Parts} />
-              <Route path='/about' component={About} />
-              <Route path='/' component={HomePage} />
-            </Switch>
-          </div>
-        <Footer />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Navigation />
+        <div className='body'>
+          <Switch>
+            <Route exact path='/teachers/:id' component={Teacher} />
+            <Route exact path='/teachers' component={AllTeachers} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/donate' component={Donate} />
+            <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
+            <Route exact path='/sefarim/:sefer' component={Sefarim} />
+            <Route exact path='/parts' component={Parts} />
+            <Route path='/about' component={About} />
+            <Route path='/' component={HomePage} />
+          </Switch>
+        </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default App;
