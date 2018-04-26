@@ -39,9 +39,9 @@ class Sefarim extends Component {
       });
       const teacherCards = teacherArr.map((teacher, i) => {
       return (
-        <div key={i} className="card">
-          <div className="card-content">
-            <div className="card-title">{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
+        <div key={i} className='card'>
+          <div className='card-content'>
+            <div className='card-title'>{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
             <p>{teacher.long_bio || teacher.short_bio}</p>
             <a href={`/teachers/${teacher.teacher_id}`}>See {teacher.title} {teacher.lname}'s bio page</a>
           </div>
@@ -57,7 +57,7 @@ class Sefarim extends Component {
     const teachers = this.state.allTeachers || [];
     const teacherChips = teachers.map((teacher, i) => {
       return (
-        <div key={i} className="chip pointer" onClick={(e) => this.setState({activeIndex: i})}>
+        <div key={i} className='chip pointer' onClick={(e) => this.setState({activeIndex: i})}>
           {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
         </div>
       )
@@ -65,10 +65,10 @@ class Sefarim extends Component {
 
     return (
       <div>
-        <div className="container">
+        <div className='container'>
           <h2>Sefer {this.state.seferName.charAt(0).toUpperCase() + this.state.seferName.slice(1)}</h2>
           {this.state.selectedSefer.book_sponsor && <h3>{this.state.selectedSefer.book_sponsor}</h3>}
-          <div className="center">
+          <div className='center'>
             {teacherChips}
           </div>
           {this.state.teacherCards[this.state.activeIndex]}
