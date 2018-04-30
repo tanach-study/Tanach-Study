@@ -18,28 +18,26 @@ class Teacher extends Component {
 
   componentDidMount() {
     fetch(`/api/teachers/${this.state.teacherID}`)
-    .then(r => r.json())
-    .then(data => this.setState({ teacher: data }))
-    .catch(err => console.log(err));
+      .then(r => r.json())
+      .then(data => this.setState({ teacher: data }))
+      .catch(err => console.log(err));
   }
 
   render() {
     const teacher = this.state.teacher || {};
     const info = teacher.teacher_info || {};
     const teacherBooks = this.state.teacher.teacher_books || [];
-    const mappedBooks = teacherBooks.map((book, i) => {
-      return (
-        <div className='col l4 m6 s12' key={i}>
-          <Link to={`/sefarim/${book.book_name}`}>
-            <div className='card hoverable full-width black-text'>
-              <div className='card-content'>
-                {book.pretty_eng}
-              </div>
+    const mappedBooks = teacherBooks.map(book => (
+      <div className='col l4 m6 s12' key={book.book_name}>
+        <Link to={`/sefarim/${book.book_name}`}>
+          <div className='card hoverable full-width black-text'>
+            <div className='card-content'>
+              {book.pretty_eng}
             </div>
-          </Link>
-        </div>
-      );
-    })
+          </div>
+        </Link>
+      </div>
+    ));
     return (
       <div className='container'>
         <div className='section'>
@@ -47,7 +45,7 @@ class Teacher extends Component {
             <div className='card-content'>
               <div className='row valign-wrapper'>
                 <div className='col l3 m4 s12 offset-l1 valign'>
-                  <img src={info.image_url} alt='' className='responsive-img full-width circle'/>
+                  <img src={info.image_url} alt='' className='responsive-img full-width circle' />
                 </div>
                 <div className='col l8 m8 s12 valign'>
                   <h2 className={styles['teacher-title']}>{info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname}</h2>

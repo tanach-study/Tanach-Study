@@ -1,3 +1,17 @@
 {
-    "extends": "airbnb"
+  "extends": "airbnb",
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-single"],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to" ],
+      "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }],
+    "react/prop-types": "off"
+  }
 }
