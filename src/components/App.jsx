@@ -7,20 +7,20 @@ import './styles.global.css';
 // TODO: switch to react-helmet package
 import DocumentMeta from 'react-document-meta';
 
-import Navigation from './Navigation/Navigation';
-import Footer from './Footer/Footer';
-import HomePage from './HomePage/HomePage';
-import About from './About/About';
-import Parts from './Parts/Parts';
-import Sefarim from './Sefarim/Sefarim';
-import Perakim from './Perakim/Perakim';
-import Donate from './Donate/Donate';
-import Contact from './Contact/Contact';
-import Signup from './Signup/Signup';
-import SignupSuccess from './Signup/SignupSuccess/SignupSuccess';
-import SignupError from './Signup/SignupError/SignupError';
-import AllTeachers from './Teachers/AllTeachers';
-import Teacher from './Teachers/Teacher';
+import Navigation from './Navigation/Navigation.jsx';
+import Footer from './Footer/Footer.jsx';
+import HomePage from './HomePage/HomePage.jsx';
+import About from './About/About.jsx';
+import Parts from './Parts/Parts.jsx';
+import Sefarim from './Sefarim/Sefarim.jsx';
+import Perakim from './Perakim/Perakim.jsx';
+import Donate from './Donate/Donate.jsx';
+import Contact from './Contact/Contact.jsx';
+import Signup from './Signup/Signup.jsx';
+import SignupSuccess from './Signup/SignupSuccess/SignupSuccess.jsx';
+import SignupError from './Signup/SignupError/SignupError.jsx';
+import AllTeachers from './Teachers/AllTeachers.jsx';
+import Teacher from './Teachers/Teacher.jsx';
 
 
 function App(props) {

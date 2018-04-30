@@ -12,6 +12,9 @@
       "specialLink": [ "to" ],
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
     }],
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "import/extensions": ["error", {
+      "jsx": "always"
+    }]
   }
 }
