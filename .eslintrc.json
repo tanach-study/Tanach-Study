@@ -16,6 +16,7 @@
     "import/extensions": ["error", {
       "jsx": "always"
     }],
-    "jsx-a11y/media-has-caption": ["off"]
+    "jsx-a11y/media-has-caption": ["off"],
+    "jsx-a11y/click-events-have-key-events": "off"
   }
 }
