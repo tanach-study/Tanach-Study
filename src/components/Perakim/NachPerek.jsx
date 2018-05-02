@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import TeacherCard from './TeacherCard.jsx';
 import ReaderCard from './ReaderCard.jsx';
 import Tanach from '../Tanach/Tanach.jsx';
-import gematriya from '../../../lib/gematriya.js';
 
 class NachPerek extends Component {
   constructor(props) {
@@ -28,7 +27,7 @@ class NachPerek extends Component {
     let prevPerekNum = null;
     let nextPerekNum = null;
     // store the int of the current perek num in a var
-    const curPerekNum = parseInt(perek);
+    const curPerekNum = parseInt(perek, 10);
     const curSeferName = sefer;
 
     // if the current perek is the first of the book...
@@ -92,20 +91,30 @@ class NachPerek extends Component {
           <div className='row'>
             <h2>Sefer {prettySefer} Perek {perek}</h2>
             <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {prettySefer}</i></Link>
-            <div className='section'></div>
-            <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
-            <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
+            <div className='section' />
+            <TeacherCard
+              activePerek={act}
+              partName={partName}
+              seferName={seferName}
+              fileName={fileName}
+            />
+            <ReaderCard
+              activePerek={act}
+              partName={partName}
+              seferName={seferName}
+              teamimName={teamimName}
+            />
           </div>
           <div className='row center'>
             <div className='col l2 m2 s12'>
               <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
             </div>
-            <div className='col l8 m8 hide-on-small-only'></div>
+            <div className='col l8 m8 hide-on-small-only' />
             <div className='col l2 m2 s12'>
               <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
             </div>
           </div>
-          <div className='divider hide-on-med-and-down'></div>
+          <div className='divider hide-on-med-and-down' />
           <br className='hide-on-med-and-down' />
           <div className='row'>
             <div className='center'>
@@ -121,6 +130,7 @@ class NachPerek extends Component {
                   sefer={sefer}
                   perek={perek}
                   show={this.state.show}
+                  part={act.part_name}
                 />
               </div>
             </div>
