@@ -20,6 +20,8 @@ function ReaderCard(props) {
         </div>
       </div>
     );
+  } else {
+    return null;
   }
 }
 

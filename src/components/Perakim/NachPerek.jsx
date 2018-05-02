@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TeacherCard from './TeacherCard.jsx';
 import ReaderCard from './ReaderCard.jsx';
+import Tanach from '../Tanach/Tanach.jsx';
 import gematriya from '../../../lib/gematriya.js';
 
 class NachPerek extends Component {
@@ -116,55 +117,17 @@ class NachPerek extends Component {
           <div className='row'>
             <div className='card'>
               <div className='card-content'>
-                {this.showSefer()}
+                <Tanach
+                  sefer={sefer}
+                  perek={perek}
+                  show={this.state.show}
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
     );
-  }
-
-  showSefer() {
-    const hebArr = this.props.act.hebrew_text || [];
-    const engArr = this.props.act.english_text || [];
-
-    const heb = hebArr.map((passuk, i) => <p key={i}><b>{gematriya(i + 1)}. </b>{passuk}</p>);
-    const eng = engArr.map((passuk, i) => <p key={i}><b>{i + 1}. </b>{passuk}</p>);
-    let par = [];
-    for (let i = 0; i < hebArr.length && i < engArr.length; i++) {
-      par.push(
-        <div key={i}>
-          <div className='row valign-wrapper hide-on-small-only'>
-            <div className='col l6 m12 s12 left-align valign'><p><b>{i + 1}. </b>{engArr[i]}</p></div>
-            <div className='col l6 m12 s12 rtl right-align valign'><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
-          </div>
-          <div className='hide-on-med-and-up'>
-            <div className='row center-align rtl'><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
-            <div className='row center-align'><p><b>{i + 1}. </b>{engArr[i]}</p></div>
-          </div>
-        </div>
-      );
-    }
-    if (this.state.show == 'heb') {
-      return (
-        <div className='right-align rtl' id='hebText'>
-          {heb}
-        </div>
-      );
-    } else if (this.state.show == 'par') {
-      return (
-        <div id='parText'>
-          {par}
-        </div>
-      );
-    } else if (this.state.show == 'eng') {
-      return (
-        <div className='left-align' id='engText'>
-          {eng}
-        </div>
-      );
-    }
   }
 }
 
