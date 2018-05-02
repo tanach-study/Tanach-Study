@@ -7,7 +7,7 @@ class Signup extends Component {
     super(props);
     this.state = {
       errorMsg: null,
-    }
+    };
   }
 
   componentWillMount() {
@@ -29,17 +29,17 @@ class Signup extends Component {
               </div>
             </div>
             <div className='col l8 m10 s12 offset-l2 offset-m1'>
-            <div className='red-text error'>{this.state.errorMsg}</div>
+              <div className='red-text error'>{this.state.errorMsg}</div>
               <div className='card'>
                 <div className='card-content'>
-                  <SignupForm error={(msg) => this.setState({ errorMsg: msg })}/>
+                  <SignupForm error={msg => this.setState({ errorMsg: msg })} />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

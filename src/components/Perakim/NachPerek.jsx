@@ -9,7 +9,7 @@ class NachPerek extends Component {
     super(props);
     this.state = {
       show: 'heb',
-    }
+    };
   }
 
   render() {

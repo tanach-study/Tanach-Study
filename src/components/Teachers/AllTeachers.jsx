@@ -6,7 +6,7 @@ class Teachers extends Component {
     super(props);
     this.state = {
       teachers: [],
-    }
+    };
   }
 
   componentWillMount() {
@@ -15,29 +15,27 @@ class Teachers extends Component {
 
   componentDidMount() {
     fetch('/api/teachers')
-    .then(r => r.json())
-    .then(data => this.setState({ teachers: data }))
-    .catch(err => console.log(err));
+      .then(r => r.json())
+      .then(data => this.setState({ teachers: data }))
+      .catch(err => console.log(err));
   }
 
   render() {
-    const mappedTeachers = this.state.teachers.map((teacher, i) => {
-      return (
-        <div className='col l4 m6 s12' key={i}>
-          <Link to={`/teachers/${teacher.teacher_info.teacher_id}`} className='right-align'>
-            <div className='card medium hoverable full-width black-text'>
-              <div className='card-image'>
-                <img src={teacher.teacher_info.image_url} alt=''/>
-              </div>
-              <div className='card-content'>
-                <div className='card-title left-align'>{teacher.teacher_info.title} {teacher.teacher_info.fname}{teacher.teacher_info.mname ? ` ${teacher.teacher_info.mname} ` : ' '}{teacher.teacher_info.lname}</div>
-                <p className='left-align'><i>{teacher.teacher_info.short_bio}</i></p>
-              </div>
+    const mappedTeachers = this.state.teachers.map(teacher => (
+      <div className='col l4 m6 s12' key={teacher.teacher_info.teacher_id}>
+        <Link to={`/teachers/${teacher.teacher_info.teacher_id}`} className='right-align'>
+          <div className='card medium hoverable full-width black-text'>
+            <div className='card-image'>
+              <img src={teacher.teacher_info.image_url} alt='' />
             </div>
-          </Link>
-        </div>
-      );
-    });
+            <div className='card-content'>
+              <div className='card-title left-align'>{teacher.teacher_info.title} {teacher.teacher_info.fname}{teacher.teacher_info.mname ? ` ${teacher.teacher_info.mname} ` : ' '}{teacher.teacher_info.lname}</div>
+              <p className='left-align'><i>{teacher.teacher_info.short_bio}</i></p>
+            </div>
+          </div>
+        </Link>
+      </div>
+    ));
     return (
       <div className='container'>
         <div className='section center'>
@@ -52,7 +50,7 @@ class Teachers extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

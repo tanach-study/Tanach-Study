@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import PerekList from '../PerekList/PerekList.jsx';
 
 class Sefarim extends Component {
@@ -12,11 +11,7 @@ class Sefarim extends Component {
       allPerakim: [],
       teacherCards: [],
       activeIndex: 0,
-    }
-  }
-
-  seferCardClick(i) {
-    this.props.history.push(`/perakim/${this.state.seferName}/${i}`);
+    };
   }
 
   componentWillMount() {
@@ -27,41 +22,41 @@ class Sefarim extends Component {
     const sefer = this.state.seferName;
     if (!sefer) this.props.history.push('/');
     fetch(`/api/sefarim/${sefer}`)
-    .then(r => r.json())
-    .then(data => {
-      const seferObj = data.seferMeta;
-      const teacherArr = data.seferTeachers;
-      const perakimArr = data.allPerakim;
-      this.setState({
-        selectedSefer: seferObj,
-        allTeachers: teacherArr,
-        allPerakim: perakimArr,
-      });
-      const teacherCards = teacherArr.map((teacher, i) => {
-      return (
-        <div key={i} className='card'>
-          <div className='card-content'>
-            <div className='card-title'>{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
-            <p>{teacher.long_bio || teacher.short_bio}</p>
-            <a href={`/teachers/${teacher.teacher_id}`}>See {teacher.title} {teacher.lname}'s bio page</a>
+      .then(r => r.json())
+      .then((data) => {
+        const seferObj = data.seferMeta;
+        const teacherArr = data.seferTeachers;
+        const perakimArr = data.allPerakim;
+        this.setState({
+          selectedSefer: seferObj,
+          allTeachers: teacherArr,
+          allPerakim: perakimArr,
+        });
+        const teacherCards = teacherArr.map(teacher => (
+          <div key={`${teacher.title}-${teacher.fname}-${teacher.lname}-card`} className='card'>
+            <div className='card-content'>
+              <div className='card-title'>{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
+              <p>{teacher.long_bio || teacher.short_bio}</p>
+              <a href={`/teachers/${teacher.teacher_id}`}>See {teacher.title} {teacher.lname}&apos;s bio page</a>
+            </div>
           </div>
-        </div>
-      )
-    });
-    this.setState({ teacherCards: teacherCards });
-    })
-    .catch(err => console.error(err));
+        ));
+        this.setState({ teacherCards });
+      })
+      .catch(err => console.error(err));
+  }
+
+  seferCardClick(i) {
+    this.props.history.push(`/perakim/${this.state.seferName}/${i}`);
   }
 
   render() {
     const teachers = this.state.allTeachers || [];
-    const teacherChips = teachers.map((teacher, i) => {
-      return (
-        <div key={i} className='chip pointer' onClick={(e) => this.setState({activeIndex: i})}>
-          {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
-        </div>
-      )
-    });
+    const teacherChips = teachers.map((teacher, i) => (
+      <div key={`${teacher.title}-${teacher.fname}-${teacher.lname}-chip`} className='chip pointer' onClick={(e) => this.setState({activeIndex: i})}>
+        {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
+      </div>
+    ));
 
     return (
       <div>
@@ -79,7 +74,7 @@ class Sefarim extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }
 
