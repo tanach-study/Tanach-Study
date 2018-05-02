@@ -3,23 +3,31 @@ import Nach from './Nach.jsx';
 import Torah from './Torah.jsx';
 
 import gematriya from '../../../lib/gematriya.js';
-import tanach from '../../../lib/tanach.json';
+import tanach from '../../../public/tanach/tanach.json';
 
 function Tanach(props) {
-  const { sefer, perek, show, part } = props;
+  const { sefer, perek, show, part } = props || '';
+
   const seferText = tanach[sefer] || {};
   const hebrewText = seferText.hebrew || [];
   const englishText = seferText.english || [];
-  const hebrewChapter = hebrewText[parseInt(perek, 10) - 1] || [];
-  const englishChapter = englishText[parseInt(perek, 10) - 1] || [];
 
-  const Text = part && part === 'torah' ? Nach : Torah;
+  const toPass = {};
+  let Text;
+
+  if (part === 'torah') {
+    Text = Torah;
+  } else {
+    Text = Nach;
+    toPass.perek = perek;
+  }
 
   return (
     <Text
-      hebrew={hebrewChapter}
-      english={englishChapter}
+      hebrew={hebrewText}
+      english={englishText}
       show={show}
+      {...toPass}
     />
   );
 }
