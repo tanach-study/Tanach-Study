@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PartList from './PartList.jsx';
 
 import data from './parts.json';
 
-function Parts (props) {
+function Parts(props) {
   return (
     <div className='container'>
       <div className='section center'>
