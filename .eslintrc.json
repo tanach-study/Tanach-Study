@@ -3,6 +3,9 @@
   "env": {
     "browser": true
   },
+  "globals": {
+    "API_URL": true
+  },
   "rules": {
     "quotes": ["error", "single"],
     "jsx-quotes": ["error", "prefer-single"],
@@ -17,6 +20,7 @@
       "jsx": "always"
     }],
     "jsx-a11y/media-has-caption": ["off"],
-    "jsx-a11y/click-events-have-key-events": "off"
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   }
 }

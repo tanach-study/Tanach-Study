@@ -43,7 +43,7 @@ class Perakim extends Component {
   }
 
   initialize(sefer, perek) {
-    fetch(`/api/perakim/${sefer}/${perek}`)
+    fetch(`${API_URL}/perakim/${sefer}/${perek}`)
       .then(r => r.json())
       .then(data => this.setState({
         activePerek: data,

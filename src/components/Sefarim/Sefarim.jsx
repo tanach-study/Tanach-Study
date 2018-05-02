@@ -21,7 +21,7 @@ class Sefarim extends Component {
   componentDidMount() {
     const sefer = this.state.seferName;
     if (!sefer) this.props.history.push('/');
-    fetch(`/api/sefarim/${sefer}`)
+    fetch(`${API_URL}/sefarim/${sefer}`)
       .then(r => r.json())
       .then((data) => {
         const seferObj = data.seferMeta;
