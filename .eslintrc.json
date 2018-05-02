@@ -15,6 +15,7 @@
     "react/prop-types": "off",
     "import/extensions": ["error", {
       "jsx": "always"
-    }]
+    }],
+    "jsx-a11y/media-has-caption": ["off"]
   }
 }

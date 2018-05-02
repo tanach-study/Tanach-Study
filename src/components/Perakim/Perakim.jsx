@@ -44,38 +44,33 @@ class Perakim extends Component {
 
   initialize(sefer, perek) {
     fetch(`/api/perakim/${sefer}/${perek}`)
-    .then(r => r.json())
-    .then(data => {
-      this.setState({
+      .then(r => r.json())
+      .then(data => this.setState({
         activePerek: data,
         prettySefer: (data.book_name.charAt(0).toUpperCase() + data.book_name.slice(1)),
-      });
-    })
-    .catch(err => console.error(err));
+      }))
+      .catch(err => console.error(err));
   }
 
   render() {
-    if (this.state.activePerek.part_name === 'torah') {
-      return (
-        <TorahPerek
-          act={this.state.activePerek}
-          formatDir={formatDir}
-          sefer={this.props.match.params.sefer}
-          perek={this.props.match.params.perek}
-          prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
-        />
-      );
-    } else {
-      return (
-        <NachPerek
-          act={this.state.activePerek}
-          formatDir={formatDir}
-          sefer={this.props.match.params.sefer}
-          perek={this.props.match.params.perek}
-          prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
-        />
-      )
-    }
+    const jsx = this.state.activePerek.part_name === 'torah' ? (
+      <TorahPerek
+        act={this.state.activePerek}
+        formatDir={formatDir}
+        sefer={this.props.match.params.sefer}
+        perek={this.props.match.params.perek}
+        prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
+      />
+    ) : (
+      <NachPerek
+        act={this.state.activePerek}
+        formatDir={formatDir}
+        sefer={this.props.match.params.sefer}
+        perek={this.props.match.params.perek}
+        prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
+      />
+    );
+    return jsx;
   }
 }
 
