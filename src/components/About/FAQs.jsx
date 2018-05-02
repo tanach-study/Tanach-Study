@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function FAQs (props) {
+function FAQs(props) {
   return (
     <div className='section'>
       <h3 className='left-align'>FAQ's</h3>

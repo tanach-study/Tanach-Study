@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function ChapterItem (props) {
+function ChapterItem(props) {
   const { bookName, length, i } = props;
   const { number, path } = props.chapter;
   let classAdd = '';
@@ -21,7 +21,7 @@ function ChapterItem (props) {
     }
   }
 
-  const link = path ? path : `/perakim/${bookName}/${number}`;
+  const link = path || `/perakim/${bookName}/${number}`;
 
   return (
     <Link to={link} className={`col s12 m6 l4 ${classAdd}`} key={`${bookName}-${number}-${i}`}>

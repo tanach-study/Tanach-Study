@@ -1,10 +1,10 @@
 import React from 'react';
 
-function History (props) {
+function History(props) {
   return (
     <div>
       <div className='center section'>
-        <iframe width='560' height='315' src='https://www.youtube.com/embed/RrTA85DLeZ4?rel=0' frameborder='1' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+        <iframe width='560' height='315' src='https://www.youtube.com/embed/RrTA85DLeZ4?rel=0' frameBorder='1' allow='autoplay; encrypted-media' allowFullScreen title='about-tanach-study-video' />
       </div>
       <h3>Our Humble Beginnings</h3>
       <p>It became apparent that our most important work to our nation had started to become neglected on some level. We all knew the Tanach was the backbone to our identity, but no one knew how to increase its study in a serious and sanctified manner.</p>

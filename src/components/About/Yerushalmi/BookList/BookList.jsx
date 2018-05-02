@@ -2,7 +2,7 @@ import React from 'react';
 
 import BookItem from './BookItem.jsx';
 
-function BookList (props) {
+function BookList(props) {
   const { section, title } = props;
   const bookItems = section.map((book, i) => <BookItem key={`${section}-${i}`} {...book} />);
   return (
@@ -12,7 +12,7 @@ function BookList (props) {
         {bookItems}
       </div>
     </div>
-  )
+  );
 }
 
 export default BookList;
