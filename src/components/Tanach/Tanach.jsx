@@ -6,7 +6,7 @@ import gematriya from '../../../lib/gematriya.js';
 import tanach from '../../../public/tanach/tanach.json';
 
 function Tanach(props) {
-  const { sefer, perek, show, part } = props || '';
+  const { sefer, show, part } = props || '';
 
   const seferText = tanach[sefer] || {};
   const hebrewText = seferText.hebrew || [];
@@ -17,9 +17,10 @@ function Tanach(props) {
 
   if (part === 'torah') {
     Text = Torah;
+    toPass.parasha = props.parasha;
   } else {
     Text = Nach;
-    toPass.perek = perek;
+    toPass.perek = props.perek;
   }
 
   return (

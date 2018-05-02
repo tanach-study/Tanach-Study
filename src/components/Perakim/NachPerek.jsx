@@ -127,10 +127,10 @@ class NachPerek extends Component {
             <div className='card'>
               <div className='card-content'>
                 <Tanach
+                  part={act.part_name}
                   sefer={sefer}
                   perek={perek}
                   show={this.state.show}
-                  part={act.part_name}
                 />
               </div>
             </div>
