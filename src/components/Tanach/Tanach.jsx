@@ -6,6 +6,8 @@ import Spinner from '../Spinner/Spinner.jsx';
 
 // import tanach from '../../../public/tanach/tanach.json';
 
+import styles from './Tanach.css';
+
 class Tanach extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +15,10 @@ class Tanach extends Component {
       show: 'heb',
       haveTanach: false,
       tanach: {},
+      part: props.selectedPart || 1,
     };
     this.selectLanguage = this._selectLanguage.bind(this);
+    this.selectPart = this._selectPart.bind(this);
   }
 
   componentDidMount() {
@@ -29,9 +33,24 @@ class Tanach extends Component {
       .catch(err => console.error(err));
   }
 
+  componentWillReceiveProps(newProps) {
+    const { part } = this.state;
+    if (newProps.selectedPart !== part) {
+      this.setState({
+        part: newProps.selectedPart,
+      });
+    }
+  }
+
   _selectLanguage(lang) {
     this.setState({
       show: lang,
+    });
+  }
+
+  _selectPart(id) {
+    this.setState({
+      part: id,
     });
   }
 
@@ -46,7 +65,18 @@ class Tanach extends Component {
       const englishText = seferText.english || [];
 
       if (part === 'torah') {
-        const tabs = this.props.partsBreakdown.map(torahPart => <li key={`tab-${torahPart.number}`} className='tab tsblue-text col l2 m2 s2'>Part {torahPart.number}</li>);
+        const { partsBreakdown } = this.props || [];
+        const tabs = partsBreakdown.map(torahPart => (
+          <li
+            key={`tab-${torahPart.number}`}
+            className={`tab ${styles['part-tab']} tsblue-text ${this.state.part === torahPart.number ? styles['active-part'] : ''} clickable`}
+            onClick={() => this.selectPart(torahPart.number)}
+          >
+            Part {torahPart.number}
+          </li>
+        ));
+
+        const thisPart = partsBreakdown[this.state.part - 1] || {};
 
         return (
           <div>
@@ -54,7 +84,7 @@ class Tanach extends Component {
             <div className='row'>
               <div className='card'>
                 <div className='card-content'>
-                  <ul className='tabs row'>
+                  <ul className='tabs center'>
                     {tabs}
                   </ul>
                   <Torah
@@ -62,9 +92,11 @@ class Tanach extends Component {
                     english={englishText}
                     show={this.state.show}
                     sefer={sefer}
-                    parasha={this.props.parasha}
-                    partsBreakdown={this.props.partsBreakdown}
-                    selectedPart={this.props.selectedPart}
+                    parasha={this.props.parasha.id}
+                    startChapter={thisPart.start_chapter}
+                    startVerse={thisPart.start_verse}
+                    endChapter={thisPart.end_chapter}
+                    endVerse={thisPart.end_verse}
                   />
                 </div>
               </div>

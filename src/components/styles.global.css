@@ -37,4 +37,7 @@
   font-weight: bold;
 }
 
+.clickable {
+  cursor: pointer;
+}
 /* END GLOBAL STYLES */
