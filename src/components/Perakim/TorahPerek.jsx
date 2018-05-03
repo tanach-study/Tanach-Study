@@ -10,26 +10,14 @@ class TorahPerek extends Component {
     this.state = {
       partNumber: 1,
       partTitle: title || '',
-      startChapter: props.act.start_chapter,
-      startVerse: props.act.start_verse,
-      endChapter: props.act.end_chapter,
-      endVerse: props.act.end_verse,
-      selectedTab: 0,
-      parts: props.act.parts_breakdown || [],
     };
     this.selectPart = this._selectPart.bind(this);
   }
 
   _selectPart(i, title) {
-    const part = this.state.parts[i - 1];
     this.setState({
       partNumber: i,
       partTitle: title,
-      startChapter: part.start_chapter,
-      startVerse: part.start_verse,
-      endChapter: part.end_chapter,
-      endVerse: part.end_verse,
-      selectedTab: i,
     });
   }
 
@@ -119,6 +107,14 @@ class TorahPerek extends Component {
       />
     ));
 
+    const parasha = {
+      id: perek,
+      startChapter: this.props.act.start_chapter || null,
+      startVerse: this.props.act.start_verse || null,
+      endChapter: this.props.act.end_chapter || null,
+      endVerse: this.props.act.end_verse || null,
+    };
+
     return (
       <div>
         <div className='container'>
@@ -158,13 +154,9 @@ class TorahPerek extends Component {
           <Tanach
             part={act.part_name}
             sefer={sefer}
-            parasha={perek}
-            startChapter={this.state.startChapter || null}
-            startVerse={this.state.startVerse || null}
-            endChapter={this.state.endChapter || null}
-            endVerse={this.state.endVerse || null}
-            amountOfParts={partsBreakdown.length}
-            selectedTab={this.state.selectedTab}
+            parasha={parasha}
+            partsBreakdown={partsBreakdown}
+            selectedPart={this.state.partNumber}
           />
         </div>
       </div>

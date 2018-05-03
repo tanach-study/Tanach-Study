@@ -45,38 +45,51 @@ class Tanach extends Component {
       const hebrewText = seferText.hebrew || [];
       const englishText = seferText.english || [];
 
-      const toPass = {};
-      let Text;
-
       if (part === 'torah') {
-        Text = Torah;
-        toPass.sefer = sefer;
-        toPass.parasha = this.props.parasha;
-        toPass.startChapter = this.props.startChapter;
-        toPass.startVerse = this.props.startVerse;
-        toPass.endChapter = this.props.endChapter;
-        toPass.endVerse = this.props.endVerse;
-      } else {
-        Text = Nach;
-        toPass.perek = this.props.perek;
-      }
-      return (
-        <div>
-          <LanguageSelector clickHandler={this.selectLanguage} />
-          <div className='row'>
-            <div className='card'>
-              <div className='card-content'>
-                <Text
-                  hebrew={hebrewText}
-                  english={englishText}
-                  show={this.state.show}
-                  {...toPass}
-                />
+        const tabs = this.props.partsBreakdown.map(torahPart => <li key={`tab-${torahPart.number}`} className='tab tsblue-text col l2 m2 s2'>Part {torahPart.number}</li>);
+
+        return (
+          <div>
+            <LanguageSelector clickHandler={this.selectLanguage} />
+            <div className='row'>
+              <div className='card'>
+                <div className='card-content'>
+                  <ul className='tabs row'>
+                    {tabs}
+                  </ul>
+                  <Torah
+                    hebrew={hebrewText}
+                    english={englishText}
+                    show={this.state.show}
+                    sefer={sefer}
+                    parasha={this.props.parasha}
+                    partsBreakdown={this.props.partsBreakdown}
+                    selectedPart={this.props.selectedPart}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      );
+        );
+      } else {
+        return (
+          <div>
+            <LanguageSelector clickHandler={this.selectLanguage} />
+            <div className='row'>
+              <div className='card'>
+                <div className='card-content'>
+                  <Nach
+                    hebrew={hebrewText}
+                    english={englishText}
+                    show={this.state.show}
+                    perek={this.props.perek}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
     }
     return (
       <div className='row center'>
