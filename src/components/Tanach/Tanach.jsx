@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nach from './Nach.jsx';
 import Torah from './Torah.jsx';
 import LanguageSelector from './LanguageSelector.jsx';
+import Spinner from '../Spinner/Spinner.jsx';
 
 // import tanach from '../../../public/tanach/tanach.json';
 
@@ -78,7 +79,11 @@ class Tanach extends Component {
       );
     }
     return (
-      <div>Loading...</div>
+      <div className='row center'>
+        <div className='col l12 m12 s12'>
+          <Spinner />
+        </div>
+      </div>
     );
   }
 }

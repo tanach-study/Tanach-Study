@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import NachPerek from './NachPerek.jsx';
 import TorahPerek from './TorahPerek.jsx';
+import Spinner from '../Spinner/Spinner.jsx';
 
 function formatDir(passed) {
   let str;
@@ -78,7 +79,11 @@ class Perakim extends Component {
       );
     }
     return (
-      <div>Loading...</div>
+      <div className='row center'>
+        <div className='col l12 m12 s12'>
+          <Spinner />
+        </div>
+      </div>
     );
   }
 }
