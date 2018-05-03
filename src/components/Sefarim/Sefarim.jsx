@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PerekList from '../PerekList/PerekList.jsx';
+import Spinner from '../Spinner/Spinner.jsx';
 
 class Sefarim extends Component {
   constructor(props) {
@@ -7,8 +8,8 @@ class Sefarim extends Component {
     this.state = {
       seferName: this.props.match.params.sefer || '',
       selectedSefer: {},
-      allPerakim: [],
       activeIndex: 0,
+      haveData: false,
     };
   }
 
@@ -23,6 +24,7 @@ class Sefarim extends Component {
       .then(r => r.json())
       .then((data) => {
         this.setState({
+          haveData: true,
           selectedSefer: data,
         });
       })
@@ -34,7 +36,7 @@ class Sefarim extends Component {
   }
 
   render() {
-    const { selectedSefer } = this.state || {};
+    const { selectedSefer } = this.state;
     const seferMeta = selectedSefer.seferMeta || {};
     const seferTeachers = selectedSefer.seferTeachers || [];
     const allPerakim = selectedSefer.allPerakim || [];
@@ -53,20 +55,29 @@ class Sefarim extends Component {
       </div>
     ));
 
-    return (
-      <div>
-        <div className='container'>
-          <h2>Sefer {seferMeta.book_name_pretty_eng}</h2>
-          {seferMeta.book_sponsor && <h3>{seferMeta.book_sponsor}</h3>}
-          <div className='center'>
-            {teacherChips}
+    if (this.state.haveData) {
+      return (
+        <div>
+          <div className='container'>
+            <h2>Sefer {seferMeta.book_name_pretty_eng}</h2>
+            {seferMeta.book_sponsor && <h3>{seferMeta.book_sponsor}</h3>}
+            <div className='center'>
+              {teacherChips}
+            </div>
+            {teacherCards[this.state.activeIndex]}
+            <PerekList
+              perakim={allPerakim}
+              sefer={seferMeta}
+              click={this.seferCardClick.bind(this)}
+            />
           </div>
-          {teacherCards[this.state.activeIndex]}
-          <PerekList
-            perakim={allPerakim}
-            sefer={selectedSefer}
-            click={this.seferCardClick.bind(this)}
-          />
+        </div>
+      );
+    }
+    return (
+      <div className='row center'>
+        <div className='col l12 m12 s12'>
+          <Spinner />
         </div>
       </div>
     );
