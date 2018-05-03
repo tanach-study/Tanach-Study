@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TeacherCard from './TeacherCard.jsx';
-import ReaderCard from './ReaderCard.jsx';
 import Tanach from '../Tanach/Tanach.jsx';
-import gematriya from '../../../lib/gematriya.js';
 
 class TorahPerek extends Component {
   constructor(props) {

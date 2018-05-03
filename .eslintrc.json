@@ -16,9 +16,7 @@
       "aspects": [ "noHref", "invalidHref", "preferButton" ]
     }],
     "react/prop-types": "off",
-    "import/extensions": ["error", {
-      "jsx": "always"
-    }],
+    "import/extensions": ["off"],
     "jsx-a11y/media-has-caption": ["off"],
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
