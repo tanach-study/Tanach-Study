@@ -15,14 +15,17 @@ class Tanach extends Component {
       show: 'heb',
       haveTanach: false,
       tanach: {},
-      part: props.selectedPart || 1,
+      selectedPart: props.selectedPart || 1,
     };
     this.selectLanguage = this._selectLanguage.bind(this);
     this.selectPart = this._selectPart.bind(this);
   }
 
   componentDidMount() {
-    fetch(`${TANACH_URL}/tanach.json`)
+    const { part } = this.props;
+    const fileName = `${part.replace(' ', '_')}.json`;
+
+    fetch(`${TANACH_URL}/${fileName}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({
@@ -34,10 +37,10 @@ class Tanach extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const { part } = this.state;
-    if (newProps.selectedPart !== part) {
+    const { selectedPart } = this.state;
+    if (newProps.selectedPart !== selectedPart) {
       this.setState({
-        part: newProps.selectedPart,
+        selectedPart: newProps.selectedPart,
       });
     }
   }
@@ -50,7 +53,7 @@ class Tanach extends Component {
 
   _selectPart(id) {
     this.setState({
-      part: id,
+      selectedPart: id,
     });
   }
 
@@ -69,14 +72,14 @@ class Tanach extends Component {
         const tabs = partsBreakdown.map(torahPart => (
           <li
             key={`tab-${torahPart.number}`}
-            className={`tab ${styles['part-tab']} tsblue-text ${this.state.part === torahPart.number ? styles['active-part'] : ''} clickable`}
+            className={`tab ${styles['part-tab']} tsblue-text ${this.state.selectedPart === torahPart.number ? styles['active-part'] : ''} clickable`}
             onClick={() => this.selectPart(torahPart.number)}
           >
             Part {torahPart.number}
           </li>
         ));
 
-        const thisPart = partsBreakdown[this.state.part - 1] || {};
+        const thisPart = partsBreakdown[this.state.selectedPart - 1] || {};
 
         return (
           <div>
