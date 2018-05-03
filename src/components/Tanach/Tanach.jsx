@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Nach from './Nach.jsx';
 import Torah from './Torah.jsx';
+import LanguageSelector from './LanguageSelector.jsx';
 
-import gematriya from '../../../lib/gematriya.js';
 import tanach from '../../../public/tanach/tanach.json';
 
 class Tanach extends Component {
@@ -11,6 +11,15 @@ class Tanach extends Component {
     this.state = {
       show: 'heb',
     };
+    this.selectLanguage = this._selectLanguage.bind(this);
+  }
+
+  _selectLanguage(lang) {
+    this.setState({
+      show: lang,
+      haveTanach: false,
+      tanach: {},
+    });
   }
 
   render() {
@@ -38,13 +47,7 @@ class Tanach extends Component {
 
     return (
       <div>
-        <div className='row'>
-          <div className='center'>
-            <button className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2' onClick={() => this.setState({ show: 'heb' })}>Hebrew</button>
-            <button className='waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'par' })}>Hebrew/English</button>
-            <button className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'eng' })}>English</button>
-          </div>
-        </div>
+        <LanguageSelector clickHandler={this.selectLanguage} />
         <div className='row'>
           <div className='card'>
             <div className='card-content'>

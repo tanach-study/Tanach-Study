@@ -10,6 +10,11 @@ class TorahPerek extends Component {
     this.state = {
       partNumber: 1,
       partTitle: title || '',
+      startChapter: props.act.start_chapter,
+      startVerse: props.act.start_verse,
+      endChapter: props.act.end_chapter,
+      endVerse: props.act.end_verse,
+      selectedTab: 0,
     };
     this.selectPart = this._selectPart.bind(this);
   }
@@ -147,10 +152,12 @@ class TorahPerek extends Component {
             part={act.part_name}
             sefer={sefer}
             parasha={perek}
-            startChapter={this.props.act.start_chapter || null}
-            startVerse={this.props.act.start_verse || null}
-            endChapter={this.props.act.end_chapter || null}
-            endVerse={this.props.act.end_verse || null}
+            startChapter={this.state.startChapter || null}
+            startVerse={this.state.startVerse || null}
+            endChapter={this.state.endChapter || null}
+            endVerse={this.state.endVerse || null}
+            amountOfParts={partsBreakdown.length}
+            selectedTab={this.state.selectedTab}
           />
         </div>
       </div>
