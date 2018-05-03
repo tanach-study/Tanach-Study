@@ -79,7 +79,18 @@ class Tanach extends Component {
           </li>
         ));
 
-        const thisPart = partsBreakdown[this.state.selectedPart - 1] || {};
+        const { selectedPart } = this.state;
+        let thisPart;
+        if (selectedPart === 0) {
+          thisPart = {
+            start_chapter: this.props.parasha.startChapter,
+            start_verse: this.props.parasha.startVerse,
+            end_chapter: this.props.parasha.endChapter,
+            end_verse: this.props.parasha.endVerse,
+          };
+        } else {
+          thisPart = partsBreakdown[this.state.selectedPart - 1] || {};
+        }
 
         return (
           <div>
@@ -88,6 +99,12 @@ class Tanach extends Component {
               <div className='card'>
                 <div className='card-content'>
                   <ul className='tabs center'>
+                    <li
+                      className={`tab ${styles['part-tab']} tsblue-text ${this.state.selectedPart === 0 ? styles['active-part'] : ''} clickable`}
+                      onClick={() => this.selectPart(0)}
+                    >
+                      Entire Parasha
+                    </li>
                     {tabs}
                   </ul>
                   <Torah
