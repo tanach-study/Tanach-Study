@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Tanach from '../Tanach/Tanach.jsx';
+import PartItem from './TorahPartItem.jsx';
 
 class TorahPerek extends Component {
   constructor(props) {
@@ -10,9 +11,10 @@ class TorahPerek extends Component {
       partNumber: 1,
       partTitle: title || '',
     };
+    this.selectPart = this._selectPart.bind(this);
   }
 
-  selectPart(i, title) {
+  _selectPart(i, title) {
     this.setState({
       partNumber: i,
       partTitle: title,
@@ -93,16 +95,17 @@ class TorahPerek extends Component {
       nextPerekNum = curPerekNum + 1;
     }
 
-    const parts_breakdown = act.parts_breakdown || [];
-    const parts = parts_breakdown.map((part, i) => {
-      const textString = part.start_chapter === part.end_chapter ? `(${part.start_chapter}:${part.start_verse}-${part.end_verse})` : `(${part.start_chapter}:${part.start_verse} - ${part.end_chapter}:${part.end_verse})`;
-      const title = part.title.includes('(') ? part.title : `${part.title} ${textString}`;
-      return (
-        <div key={i} onClick={this.selectPart.bind(this, i + 1, part.title)} className='hoverable section'>
-          <b>Part {part.number}:</b><span className={`${this.state.partNumber === i + 1 ? 'bold' : ''}`}> {part.title !== '' ? title : ''}</span>
-        </div>
-      );
-    });
+    const partsBreakdown = act.parts_breakdown || [];
+    /* eslint react/no-array-index-key: "off" */
+    const parts = partsBreakdown.map((part, i) => (
+      <PartItem
+        key={`torah-parts-breakdown-${sefer}-${perek}-${i}`}
+        part={part}
+        index={i}
+        currentPart={this.state.partNumber}
+        clickHandler={this.selectPart}
+      />
+    ));
 
     return (
       <div>
@@ -132,7 +135,7 @@ class TorahPerek extends Component {
               <div className='col l2 m2 s12'>
                 <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
               </div>
-              <div className='col l8 m8 hide-on-small-only'></div>
+              <div className='col l8 m8 hide-on-small-only' />
               <div className='col l2 m2 s12'>
                 <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
               </div>
