@@ -15,14 +15,21 @@ class TorahPerek extends Component {
       endChapter: props.act.end_chapter,
       endVerse: props.act.end_verse,
       selectedTab: 0,
+      parts: props.act.parts_breakdown || [],
     };
     this.selectPart = this._selectPart.bind(this);
   }
 
   _selectPart(i, title) {
+    const part = this.state.parts[i - 1];
     this.setState({
       partNumber: i,
       partTitle: title,
+      startChapter: part.start_chapter,
+      startVerse: part.start_verse,
+      endChapter: part.end_chapter,
+      endVerse: part.end_verse,
+      selectedTab: i,
     });
   }
 
