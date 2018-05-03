@@ -157,12 +157,11 @@ class TorahPerek extends Component {
                 <Tanach
                   part={act.part_name}
                   sefer={sefer}
-                  parasha={{
-                    startChapter: this.props.act.start_chapter || null,
-                    startVerse: this.props.act.start_verse || null,
-                    endChapter: this.props.act.end_chapter || null,
-                    endVerse: this.props.act.end_verse || null,
-                  }}
+                  parasha={perek}
+                  startChapter={this.props.act.start_chapter || null}
+                  startVerse={this.props.act.start_verse || null}
+                  endChapter={this.props.act.end_chapter || null}
+                  endVerse={this.props.act.end_verse || null}
                   show={this.state.show}
                 />
               </div>

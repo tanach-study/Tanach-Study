@@ -18,6 +18,11 @@ function Tanach(props) {
   if (part === 'torah') {
     Text = Torah;
     toPass.parasha = props.parasha;
+    toPass.sefer = sefer;
+    toPass.startChapter = props.startChapter;
+    toPass.startVerse = props.startVerse;
+    toPass.endChapter = props.endChapter;
+    toPass.endVerse = props.endVerse;
   } else {
     Text = Nach;
     toPass.perek = props.perek;
