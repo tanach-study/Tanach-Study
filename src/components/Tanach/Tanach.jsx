@@ -4,8 +4,6 @@ import Torah from './Torah.jsx';
 import LanguageSelector from './LanguageSelector.jsx';
 import Spinner from '../Spinner/Spinner.jsx';
 
-// import tanach from '../../../public/tanach/tanach.json';
-
 import styles from './Tanach.css';
 
 class Tanach extends Component {
