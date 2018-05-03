@@ -8,7 +8,6 @@ class NachPerek extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: 'heb',
     };
   }
 
@@ -116,25 +115,11 @@ class NachPerek extends Component {
           </div>
           <div className='divider hide-on-med-and-down' />
           <br className='hide-on-med-and-down' />
-          <div className='row'>
-            <div className='center'>
-              <button className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2' onClick={() => this.setState({ show: 'heb' })}>Hebrew</button>
-              <button className='waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'par' })}>Hebrew/English</button>
-              <button className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'eng' })}>English</button>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='card'>
-              <div className='card-content'>
-                <Tanach
-                  part={act.part_name}
-                  sefer={sefer}
-                  perek={perek}
-                  show={this.state.show}
-                />
-              </div>
-            </div>
-          </div>
+          <Tanach
+            part={act.part_name}
+            sefer={sefer}
+            perek={perek}
+          />
         </div>
       </div>
     );

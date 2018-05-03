@@ -10,7 +10,6 @@ class TorahPerek extends Component {
     super(props);
     const title = props.act.parts_breakdown ? props.act.parts_breakdown[0].title : null;
     this.state = {
-      show: 'heb',
       partNumber: 1,
       partTitle: title || '',
     };
@@ -142,31 +141,17 @@ class TorahPerek extends Component {
               </div>
             </div>
           }
-          <div className='divider hide-on-med-and-down'></div>
+          <div className='divider hide-on-med-and-down' />
           <br className='hide-on-med-and-down' />
-          <div className='row'>
-            <div className='center'>
-              <a className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2' onClick={() => this.setState({ show: 'heb' })}>Hebrew</a>
-              <a className='waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'par' })}>Hebrew/English</a>
-              <a className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'eng' })}>English</a>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='card'>
-              <div className='card-content'>
-                <Tanach
-                  part={act.part_name}
-                  sefer={sefer}
-                  parasha={perek}
-                  startChapter={this.props.act.start_chapter || null}
-                  startVerse={this.props.act.start_verse || null}
-                  endChapter={this.props.act.end_chapter || null}
-                  endVerse={this.props.act.end_verse || null}
-                  show={this.state.show}
-                />
-              </div>
-            </div>
-          </div>
+          <Tanach
+            part={act.part_name}
+            sefer={sefer}
+            parasha={perek}
+            startChapter={this.props.act.start_chapter || null}
+            startVerse={this.props.act.start_verse || null}
+            endChapter={this.props.act.end_chapter || null}
+            endVerse={this.props.act.end_verse || null}
+          />
         </div>
       </div>
     );
