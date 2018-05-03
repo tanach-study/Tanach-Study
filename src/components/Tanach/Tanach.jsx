@@ -3,64 +3,82 @@ import Nach from './Nach.jsx';
 import Torah from './Torah.jsx';
 import LanguageSelector from './LanguageSelector.jsx';
 
-import tanach from '../../../public/tanach/tanach.json';
+// import tanach from '../../../public/tanach/tanach.json';
 
 class Tanach extends Component {
   constructor(props) {
     super(props);
     this.state = {
       show: 'heb',
+      haveTanach: false,
+      tanach: {},
     };
     this.selectLanguage = this._selectLanguage.bind(this);
+  }
+
+  componentDidMount() {
+    fetch(`/tanach/tanach.json`)
+      .then(r => r.json())
+      .then((data) => {
+        this.setState({
+          haveTanach: true,
+          tanach: data,
+        });
+      })
+      .catch(err => console.error(err));
   }
 
   _selectLanguage(lang) {
     this.setState({
       show: lang,
-      haveTanach: false,
-      tanach: {},
     });
   }
 
   render() {
-    const { sefer, part } = this.props || '';
+    if (this.state.haveTanach) {
+      const { sefer, part } = this.props || '';
 
-    const seferText = tanach[sefer] || {};
-    const hebrewText = seferText.hebrew || [];
-    const englishText = seferText.english || [];
+      const { tanach } = this.state;
 
-    const toPass = {};
-    let Text;
+      const seferText = tanach[sefer] || {};
+      const hebrewText = seferText.hebrew || [];
+      const englishText = seferText.english || [];
 
-    if (part === 'torah') {
-      Text = Torah;
-      toPass.sefer = sefer;
-      toPass.parasha = this.props.parasha;
-      toPass.startChapter = this.props.startChapter;
-      toPass.startVerse = this.props.startVerse;
-      toPass.endChapter = this.props.endChapter;
-      toPass.endVerse = this.props.endVerse;
-    } else {
-      Text = Nach;
-      toPass.perek = this.props.perek;
-    }
+      const toPass = {};
+      let Text;
 
-    return (
-      <div>
-        <LanguageSelector clickHandler={this.selectLanguage} />
-        <div className='row'>
-          <div className='card'>
-            <div className='card-content'>
-              <Text
-                hebrew={hebrewText}
-                english={englishText}
-                show={this.state.show}
-                {...toPass}
-              />
+      if (part === 'torah') {
+        Text = Torah;
+        toPass.sefer = sefer;
+        toPass.parasha = this.props.parasha;
+        toPass.startChapter = this.props.startChapter;
+        toPass.startVerse = this.props.startVerse;
+        toPass.endChapter = this.props.endChapter;
+        toPass.endVerse = this.props.endVerse;
+      } else {
+        Text = Nach;
+        toPass.perek = this.props.perek;
+      }
+      return (
+        <div>
+          <LanguageSelector clickHandler={this.selectLanguage} />
+          <div className='row'>
+            <div className='card'>
+              <div className='card-content'>
+                <Text
+                  hebrew={hebrewText}
+                  english={englishText}
+                  show={this.state.show}
+                  {...toPass}
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      );
+    }
+    return (
+      <div>Loading...</div>
     );
   }
 }
