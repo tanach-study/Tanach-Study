@@ -3,15 +3,11 @@ import React from 'react';
 import gematriya from '../../../lib/gematriya.js';
 
 function Torah(props) {
-  console.log(props);
-
   const { hebrew, english, sefer, parasha } = props;
 
   const { show } = props;
 
   const { startChapter, startVerse, endChapter, endVerse } = props || null;
-
-  let gen = Date.now();
 
   const heb = [];
   const eng = [];
@@ -54,6 +50,7 @@ function Torah(props) {
       ));
     }
   }
+
   if (show === 'heb') {
     return (
       <div className='right-align rtl' id='hebText'>
