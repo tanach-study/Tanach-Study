@@ -4,7 +4,8 @@
     "browser": true
   },
   "globals": {
-    "API_URL": true
+    "API_URL": true,
+    "TANACH_URL": true
   },
   "rules": {
     "quotes": ["error", "single"],

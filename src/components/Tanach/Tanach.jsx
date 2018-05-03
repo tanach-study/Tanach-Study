@@ -18,7 +18,7 @@ class Tanach extends Component {
   }
 
   componentDidMount() {
-    fetch(`/tanach/tanach.json`)
+    fetch(`${TANACH_URL}/tanach.json`)
       .then(r => r.json())
       .then((data) => {
         this.setState({

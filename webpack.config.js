@@ -14,6 +14,7 @@ const nodeEnv = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
 // set the public path, using the cdn if deploying to production
 const publicPath = nodeEnv === 'production' ? 'https://cdn.tanachstudy.com/assets' : '/';
 const apiURL = nodeEnv === 'production' ? JSON.stringify('/api') : JSON.stringify('https://api.tanachstudy.com');
+const tanachURL = nodeEnv === 'production' ? JSON.stringify('https://cdn.tanachstudy.com/assets/tanach') : JSON.stringify('/tanach');
 
 const plugins = [
   new ExtractTextPlugin({
@@ -25,6 +26,7 @@ const plugins = [
   }),
   new webpack.DefinePlugin({
     API_URL: apiURL,
+    TANACH_URL: tanachURL,
   }),
   new HtmlWebpackPlugin({
     inject: false,
