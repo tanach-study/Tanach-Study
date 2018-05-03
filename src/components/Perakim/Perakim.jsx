@@ -56,7 +56,6 @@ class Perakim extends Component {
   render() {
     if (this.state.haveData) {
       const { sefer } = this.props.match.params;
-      const prettySefer = sefer.charAt(0).toUpperCase() + sefer.slice(1);
       if (this.state.activePerek.part_name === 'torah') {
         const params = this.getQueryParams();
         return (
@@ -65,7 +64,6 @@ class Perakim extends Component {
             formatDir={formatDir}
             sefer={this.props.match.params.sefer}
             perek={this.props.match.params.perek}
-            prettySefer={prettySefer}
             queryParams={params}
           />
         );
@@ -76,7 +74,6 @@ class Perakim extends Component {
           formatDir={formatDir}
           sefer={this.props.match.params.sefer}
           perek={this.props.match.params.perek}
-          prettySefer={prettySefer}
         />
       );
     }

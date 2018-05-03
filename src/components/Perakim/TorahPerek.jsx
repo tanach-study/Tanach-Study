@@ -23,7 +23,7 @@ class TorahPerek extends Component {
   }
 
   render() {
-    const { act, formatDir, sefer, perek, prettySefer } = this.props;
+    const { act, formatDir, sefer, perek } = this.props;
     const { partNumber } = this.state;
 
     const partName = encodeURIComponent(formatDir(act.part_name));
@@ -120,11 +120,11 @@ class TorahPerek extends Component {
       <div>
         <div className='container'>
           <div className='section'>
-            <h2 className='center'>Sefer {prettySefer}</h2>
+            <h2 className='center'>Sefer {act.book_name_pretty_eng}</h2>
             <h4 className='center'>{act.sefer_sponsor}</h4>
             <h3>Parashat {act.parasha_name_pretty_eng}</h3>
             <h5>{act.parasha_sponsor}</h5>
-            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {prettySefer}</i></Link>
+            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {act.book_name_pretty_eng}</i></Link>
           </div>
           <div className='section row'>
             <div className='col l8 m6 s12'>

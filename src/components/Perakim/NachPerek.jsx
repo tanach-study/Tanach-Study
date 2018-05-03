@@ -12,7 +12,7 @@ class NachPerek extends Component {
   }
 
   render() {
-    const { act, formatDir, sefer, perek, prettySefer } = this.props;
+    const { act, formatDir, sefer, perek } = this.props;
 
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));
@@ -88,8 +88,8 @@ class NachPerek extends Component {
       <div>
         <div className='container'>
           <div className='row'>
-            <h2>Sefer {prettySefer} Perek {perek}</h2>
-            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {prettySefer}</i></Link>
+            <h2>Sefer {act.book_name_pretty_eng} Perek {perek}</h2>
+            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {act.book_name_pretty_eng}</i></Link>
             <div className='section' />
             <TeacherCard
               activePerek={act}
