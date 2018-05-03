@@ -2,18 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TeacherCard from './TeacherCard.jsx';
 import ReaderCard from './ReaderCard.jsx';
-import gematriya from '../../../lib/gematriya.js';
+import Tanach from '../Tanach/Tanach.jsx';
 
 class NachPerek extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: 'heb',
     };
   }
 
   render() {
-    const { act, formatDir, sefer, perek, prettySefer } = this.props;
+    const { act, formatDir, sefer, perek } = this.props;
 
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));
@@ -27,7 +26,7 @@ class NachPerek extends Component {
     let prevPerekNum = null;
     let nextPerekNum = null;
     // store the int of the current perek num in a var
-    const curPerekNum = parseInt(perek);
+    const curPerekNum = parseInt(perek, 10);
     const curSeferName = sefer;
 
     // if the current perek is the first of the book...
@@ -89,82 +88,41 @@ class NachPerek extends Component {
       <div>
         <div className='container'>
           <div className='row'>
-            <h2>Sefer {prettySefer} Perek {perek}</h2>
-            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {prettySefer}</i></Link>
-            <div className='section'></div>
-            <TeacherCard activePerek={act} partName={partName} seferName={seferName} fileName={fileName} />
-            <ReaderCard activePerek={act} partName={partName} seferName={seferName} teamimName={teamimName} />
+            <h2>Sefer {act.book_name_pretty_eng} Perek {perek}</h2>
+            <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {act.book_name_pretty_eng}</i></Link>
+            <div className='section' />
+            <TeacherCard
+              activePerek={act}
+              partName={partName}
+              seferName={seferName}
+              fileName={fileName}
+            />
+            <ReaderCard
+              activePerek={act}
+              partName={partName}
+              seferName={seferName}
+              teamimName={teamimName}
+            />
           </div>
           <div className='row center'>
             <div className='col l2 m2 s12'>
               <Link to={`/perakim/${prevSeferName}/${prevPerekNum}`}>Previous Perek</Link>
             </div>
-            <div className='col l8 m8 hide-on-small-only'></div>
+            <div className='col l8 m8 hide-on-small-only' />
             <div className='col l2 m2 s12'>
               <Link to={`/perakim/${nextSeferName}/${nextPerekNum}`}>Next Perek</Link>
             </div>
           </div>
-          <div className='divider hide-on-med-and-down'></div>
+          <div className='divider hide-on-med-and-down' />
           <br className='hide-on-med-and-down' />
-          <div className='row'>
-            <div className='center'>
-              <a className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l2' onClick={() => this.setState({ show: 'heb' })}>Hebrew</a>
-              <a className='waves-effect waves-light btn tsblue col l2 m4 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'par' })}>Hebrew/English</a>
-              <a className='waves-effect waves-light btn tsblue col l2 m3 s12 offset-l1 offset-m1' onClick={() => this.setState({ show: 'eng' })}>English</a>
-            </div>
-          </div>
-          <div className='row'>
-            <div className='card'>
-              <div className='card-content'>
-                {this.showSefer()}
-              </div>
-            </div>
-          </div>
+          <Tanach
+            part={act.part_name}
+            sefer={sefer}
+            perek={perek}
+          />
         </div>
       </div>
     );
-  }
-
-  showSefer() {
-    const hebArr = this.props.act.hebrew_text || [];
-    const engArr = this.props.act.english_text || [];
-
-    const heb = hebArr.map((passuk, i) => <p key={i}><b>{gematriya(i + 1)}. </b>{passuk}</p>);
-    const eng = engArr.map((passuk, i) => <p key={i}><b>{i + 1}. </b>{passuk}</p>);
-    let par = [];
-    for (let i = 0; i < hebArr.length && i < engArr.length; i++) {
-      par.push(
-        <div key={i}>
-          <div className='row valign-wrapper hide-on-small-only'>
-            <div className='col l6 m12 s12 left-align valign'><p><b>{i + 1}. </b>{engArr[i]}</p></div>
-            <div className='col l6 m12 s12 rtl right-align valign'><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
-          </div>
-          <div className='hide-on-med-and-up'>
-            <div className='row center-align rtl'><p><b>{gematriya(i + 1)}. </b>{hebArr[i]}</p></div>
-            <div className='row center-align'><p><b>{i + 1}. </b>{engArr[i]}</p></div>
-          </div>
-        </div>
-      );
-    }
-    if (this.state.show == 'heb') {
-      return (
-        <div className='right-align rtl' id='hebText'>
-          {heb}
-        </div>
-      );
-    } else if (this.state.show == 'par') {
-      return (
-        <div id='parText'>
-          {par}
-        </div>
-      );
-    } else if (this.state.show == 'eng') {
-      return (
-        <div className='left-align' id='engText'>
-          {eng}
-        </div>
-      );
-    }
   }
 }
 

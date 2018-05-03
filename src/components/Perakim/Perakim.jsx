@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import NachPerek from './NachPerek.jsx';
 import TorahPerek from './TorahPerek.jsx';
+import Spinner from '../Spinner/Spinner.jsx';
 
 function formatDir(passed) {
   let str;
   if (passed) str = passed.toLowerCase();
   else return undefined;
-  const part1 = str.replace(/(?:^\w|[A-Z]|\b\w)/g, (match, i) => {
+  const part1 = str.replace(/(?:^\w|[A-Z]|\b\w)/g, (match) => {
     if (+match === 0) return '';
     return match.toUpperCase();
   });
@@ -19,11 +19,8 @@ class Perakim extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sefer: this.props.match.params.sefer,
-      perek: this.props.match.params.perek,
-      prettySefer: this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1),
+      haveData: false,
       activePerek: {},
-      show: 'heb',
     };
   }
 
@@ -32,45 +29,61 @@ class Perakim extends Component {
   }
 
   componentDidMount() {
-    this.initialize(this.props.match.params.sefer, this.props.match.params.perek);
-  }
-
-  componentWillReceiveProps(props) {
-    this.setState({
-      sefer: props.match.params.sefer,
-      perek: props.match.params.perek,
-    }, this.initialize(props.match.params.sefer, props.match.params.perek));
-  }
-
-  initialize(sefer, perek) {
-    fetch(`/api/perakim/${sefer}/${perek}`)
+    const { sefer, perek } = this.props.match.params;
+    fetch(`${API_URL}/perakim/${sefer}/${perek}`)
       .then(r => r.json())
       .then(data => this.setState({
+        haveData: true,
         activePerek: data,
-        prettySefer: (data.book_name.charAt(0).toUpperCase() + data.book_name.slice(1)),
       }))
       .catch(err => console.error(err));
   }
 
+  getQueryParams() {
+    const queryString = this.props.location.search;
+    if (queryString) {
+      const pairs = queryString.slice(1).split('&');
+      const params = {};
+      for (let i = 0; i < pairs.length; i++) {
+        const kv = pairs[i].split('=');
+        params[kv[0]] = kv[1];
+      }
+      return params;
+    }
+    return {};
+  }
+
   render() {
-    const jsx = this.state.activePerek.part_name === 'torah' ? (
-      <TorahPerek
-        act={this.state.activePerek}
-        formatDir={formatDir}
-        sefer={this.props.match.params.sefer}
-        perek={this.props.match.params.perek}
-        prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
-      />
-    ) : (
-      <NachPerek
-        act={this.state.activePerek}
-        formatDir={formatDir}
-        sefer={this.props.match.params.sefer}
-        perek={this.props.match.params.perek}
-        prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
-      />
+    if (this.state.haveData) {
+      const { sefer } = this.props.match.params;
+      if (this.state.activePerek.part_name === 'torah') {
+        const params = this.getQueryParams();
+        return (
+          <TorahPerek
+            act={this.state.activePerek}
+            formatDir={formatDir}
+            sefer={this.props.match.params.sefer}
+            perek={this.props.match.params.perek}
+            queryParams={params}
+          />
+        );
+      }
+      return (
+        <NachPerek
+          act={this.state.activePerek}
+          formatDir={formatDir}
+          sefer={this.props.match.params.sefer}
+          perek={this.props.match.params.perek}
+        />
+      );
+    }
+    return (
+      <div className='row center'>
+        <div className='col l12 m12 s12'>
+          <Spinner />
+        </div>
+      </div>
     );
-    return jsx;
   }
 }
 

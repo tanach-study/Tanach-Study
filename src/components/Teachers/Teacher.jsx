@@ -17,7 +17,7 @@ class Teacher extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api/teachers/${this.state.teacherID}`)
+    fetch(`${API_URL}/teachers/${this.state.teacherID}`)
       .then(r => r.json())
       .then(data => this.setState({ teacher: data }))
       .catch(err => console.log(err));

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PerekList from '../PerekList/PerekList.jsx';
+import Spinner from '../Spinner/Spinner.jsx';
 
 class Sefarim extends Component {
   constructor(props) {
@@ -7,10 +8,8 @@ class Sefarim extends Component {
     this.state = {
       seferName: this.props.match.params.sefer || '',
       selectedSefer: {},
-      allTeachers: [],
-      allPerakim: [],
-      teacherCards: [],
       activeIndex: 0,
+      haveData: false,
     };
   }
 
@@ -19,29 +18,15 @@ class Sefarim extends Component {
   }
 
   componentDidMount() {
-    const sefer = this.state.seferName;
+    const { sefer } = this.props.match.params || '';
     if (!sefer) this.props.history.push('/');
-    fetch(`/api/sefarim/${sefer}`)
+    fetch(`${API_URL}/sefarim/${sefer}`)
       .then(r => r.json())
       .then((data) => {
-        const seferObj = data.seferMeta;
-        const teacherArr = data.seferTeachers;
-        const perakimArr = data.allPerakim;
         this.setState({
-          selectedSefer: seferObj,
-          allTeachers: teacherArr,
-          allPerakim: perakimArr,
+          haveData: true,
+          selectedSefer: data,
         });
-        const teacherCards = teacherArr.map(teacher => (
-          <div key={`${teacher.title}-${teacher.fname}-${teacher.lname}-card`} className='card'>
-            <div className='card-content'>
-              <div className='card-title'>{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
-              <p>{teacher.long_bio || teacher.short_bio}</p>
-              <a href={`/teachers/${teacher.teacher_id}`}>See {teacher.title} {teacher.lname}&apos;s bio page</a>
-            </div>
-          </div>
-        ));
-        this.setState({ teacherCards });
       })
       .catch(err => console.error(err));
   }
@@ -51,27 +36,48 @@ class Sefarim extends Component {
   }
 
   render() {
-    const teachers = this.state.allTeachers || [];
-    const teacherChips = teachers.map((teacher, i) => (
+    const { selectedSefer } = this.state;
+    const seferMeta = selectedSefer.seferMeta || {};
+    const seferTeachers = selectedSefer.seferTeachers || [];
+    const allPerakim = selectedSefer.allPerakim || [];
+    const teacherChips = seferTeachers.map((teacher, i) => (
       <div key={`${teacher.title}-${teacher.fname}-${teacher.lname}-chip`} className='chip pointer' onClick={(e) => this.setState({activeIndex: i})}>
         {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
       </div>
     ));
+    const teacherCards = seferTeachers.map(teacher => (
+      <div key={`${teacher.title}-${teacher.fname}-${teacher.lname}-card`} className='card'>
+        <div className='card-content'>
+          <div className='card-title'>{teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}</div>
+          <p>{teacher.long_bio || teacher.short_bio}</p>
+          <a href={`/teachers/${teacher.teacher_id}`}>See {teacher.title} {teacher.lname}&apos;s bio page</a>
+        </div>
+      </div>
+    ));
 
-    return (
-      <div>
-        <div className='container'>
-          <h2>Sefer {this.state.seferName.charAt(0).toUpperCase() + this.state.seferName.slice(1)}</h2>
-          {this.state.selectedSefer.book_sponsor && <h3>{this.state.selectedSefer.book_sponsor}</h3>}
-          <div className='center'>
-            {teacherChips}
+    if (this.state.haveData) {
+      return (
+        <div>
+          <div className='container'>
+            <h2>Sefer {seferMeta.book_name_pretty_eng}</h2>
+            {seferMeta.book_sponsor && <h3>{seferMeta.book_sponsor}</h3>}
+            <div className='center'>
+              {teacherChips}
+            </div>
+            {teacherCards[this.state.activeIndex]}
+            <PerekList
+              perakim={allPerakim}
+              sefer={seferMeta}
+              click={this.seferCardClick.bind(this)}
+            />
           </div>
-          {this.state.teacherCards[this.state.activeIndex]}
-          <PerekList
-            perakim={this.state.allPerakim}
-            sefer={this.state.selectedSefer || {}}
-            click={this.seferCardClick.bind(this)}
-          />
+        </div>
+      );
+    }
+    return (
+      <div className='row center'>
+        <div className='col l12 m12 s12'>
+          <Spinner />
         </div>
       </div>
     );

@@ -21,7 +21,7 @@ class HomeSignupForm extends Component {
     const email = this.state.email;
     const firstName = this.state.firstName;
     const lastName = this.state.lastName;
-    fetch('/api/signup', {
+    fetch(`${API_URL}/signup`, {
       method: 'POST',
       headers: new Headers({
         'Content-Type': 'application/json',
