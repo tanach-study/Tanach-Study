@@ -19,6 +19,7 @@ class Perakim extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      haveData: false,
       sefer: this.props.match.params.sefer,
       perek: this.props.match.params.perek,
       prettySefer: this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1),
@@ -46,6 +47,7 @@ class Perakim extends Component {
     fetch(`${API_URL}/perakim/${sefer}/${perek}`)
       .then(r => r.json())
       .then(data => this.setState({
+        haveData: true,
         activePerek: data,
         prettySefer: (data.book_name.charAt(0).toUpperCase() + data.book_name.slice(1)),
       }))
@@ -53,24 +55,31 @@ class Perakim extends Component {
   }
 
   render() {
-    const jsx = this.state.activePerek.part_name === 'torah' ? (
-      <TorahPerek
-        act={this.state.activePerek}
-        formatDir={formatDir}
-        sefer={this.props.match.params.sefer}
-        perek={this.props.match.params.perek}
-        prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
-      />
-    ) : (
-      <NachPerek
-        act={this.state.activePerek}
-        formatDir={formatDir}
-        sefer={this.props.match.params.sefer}
-        perek={this.props.match.params.perek}
-        prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
-      />
+    if (this.state.haveData) {
+      if (this.state.activePerek.part_name === 'torah') {
+        return (
+          <TorahPerek
+            act={this.state.activePerek}
+            formatDir={formatDir}
+            sefer={this.props.match.params.sefer}
+            perek={this.props.match.params.perek}
+            prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
+          />
+        );
+      }
+      return (
+        <NachPerek
+          act={this.state.activePerek}
+          formatDir={formatDir}
+          sefer={this.props.match.params.sefer}
+          perek={this.props.match.params.perek}
+          prettySefer={this.props.match.params.sefer.charAt(0).toUpperCase() + this.props.match.params.sefer.slice(1)}
+        />
+      );
+    }
+    return (
+      <div>Loading...</div>
     );
-    return jsx;
   }
 }
 
