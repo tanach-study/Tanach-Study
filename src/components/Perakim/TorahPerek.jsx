@@ -7,8 +7,9 @@ class TorahPerek extends Component {
   constructor(props) {
     super(props);
     const title = props.act.parts_breakdown ? props.act.parts_breakdown[0].title : null;
+    const partNumber = props.queryParams.part ? props.queryParams.part : 1;
     this.state = {
-      partNumber: 1,
+      partNumber,
       partTitle: title || '',
     };
     this.selectPart = this._selectPart.bind(this);
