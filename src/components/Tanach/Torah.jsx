@@ -13,8 +13,8 @@ function Torah(props) {
   const eng = [];
   const par = [];
   for (let i = startChapter - 1; i < endChapter; i++) {
-    const hebrewChapter = hebrew[i];
-    const englishChapter = english[i];
+    const hebrewChapter = hebrew[i] || [];
+    const englishChapter = english[i] || [];
 
     heb.push(<b key={`torah-text-hebrew-perek-${sefer}-${parasha}-${i}`}>פרק {gematriya(i + 1)}</b>);
     eng.push(<b key={`torah-text-english-perek-${sefer}-${parasha}-${i}`}>Perek {i + 1}</b>);

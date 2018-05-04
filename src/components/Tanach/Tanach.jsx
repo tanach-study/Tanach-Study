@@ -57,9 +57,12 @@ class Tanach extends Component {
 
   render() {
     if (this.state.haveTanach) {
-      const { sefer, part } = this.props || '';
+      const sefer = this.props.sefer || '';
+      const part = this.props.part || '';
 
       const { tanach } = this.state;
+
+      const whatIWant = part ? part : 'Cookies!';
 
       const seferText = tanach[sefer] || {};
       const hebrewText = seferText.hebrew || [];
