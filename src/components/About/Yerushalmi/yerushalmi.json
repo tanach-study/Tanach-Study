@@ -4,20 +4,20 @@
       "name": "bereshit",
       "title": "Bereshit",
       "chapters": [
-        { "number": 12, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 13, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 14, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 15, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 18, "path": "/perakim/bereshit/vayera" },
-        { "number": 19, "path": "/perakim/bereshit/vayera" }
+        { "number": 12, "path": "/perakim/bereshit/lech-lecha?part=1" },
+        { "number": 13, "path": "/perakim/bereshit/lech-lecha?part=2" },
+        { "number": 14, "path": "/perakim/bereshit/lech-lecha?part=3" },
+        { "number": 15, "path": "/perakim/bereshit/lech-lecha?part=4" },
+        { "number": 18, "path": "/perakim/bereshit/vayera?part=1" },
+        { "number": 19, "path": "/perakim/bereshit/vayera?part=2" }
       ]
     },
     {
       "name": "shemot",
       "title": "Shemot",
       "chapters": [
-        { "number": 19, "path": "/perakim/shemot/yitro" },
-        { "number": 20, "path": "/perakim/shemot/yitro" }
+        { "number": 19, "path": "/perakim/shemot/yitro?part=3" },
+        { "number": 20, "path": "/perakim/shemot/yitro?part=4" }
       ]
     },
     {
