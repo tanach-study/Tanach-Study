@@ -4,9 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 // import global styles
 import './styles.global.css';
 
-// TODO: switch to react-helmet package
-import DocumentMeta from 'react-document-meta';
-
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
 import HomePage from './HomePage/HomePage.jsx';
@@ -24,10 +21,6 @@ import Teacher from './Teachers/Teacher.jsx';
 
 
 function App(props) {
-  const meta = {
-    title: 'Tanach Study',
-    description: 'Tanach Study is a web-based platform for learning Tanach, or the 24 books of the Old Testament',
-  };
   return (
     <div>
       <Navigation />
