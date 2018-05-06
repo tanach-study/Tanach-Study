@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TeacherCard from './TeacherCard.jsx';
-import ReaderCard from './ReaderCard.jsx';
+import TeamimCard from './TeamimCard.jsx';
 import Tanach from '../Tanach/Tanach.jsx';
 
 class NachPerek extends Component {
@@ -17,8 +17,6 @@ class NachPerek extends Component {
     const partName = encodeURIComponent(formatDir(act.part_name));
     const seferName = encodeURIComponent(formatDir(sefer));
     const fileName = `${sefer.replace(/ /g, '-')}-${perek}.mp3`;
-    const teamimName = `${sefer.replace(/ /g, '-')}-${perek}-teamim.mp3`;
-    const hasTeamim = act.reader_id ? true : false;
 
     // initialize null variables for the next and previous sefer and perek
     let prevSeferName = null;
@@ -84,6 +82,14 @@ class NachPerek extends Component {
       nextPerekNum = curPerekNum + 1;
     }
 
+    const teamim = act.teamim || {
+      reader_title: 'Mr.',
+      reader_fname: 'Abe',
+      reader_mname: 'D.',
+      reader_lname: 'Dweck',
+      url: 'https://cdn.tanachstudy.com/archives/Ketuvim/Tehillim/recordings/tehillim-1-teamim.mp3',
+    };
+
     return (
       <div>
         <div className='container'>
@@ -97,11 +103,8 @@ class NachPerek extends Component {
               seferName={seferName}
               fileName={fileName}
             />
-            <ReaderCard
-              activePerek={act}
-              partName={partName}
-              seferName={seferName}
-              teamimName={teamimName}
+            <TeamimCard
+              teamim={teamim}
             />
           </div>
           <div className='row center'>
