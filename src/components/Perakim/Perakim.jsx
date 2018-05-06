@@ -22,6 +22,8 @@ class Perakim extends Component {
       haveData: false,
       activePerek: {},
     };
+
+    this.initialize = this._initialize.bind(this);
   }
 
   componentWillMount() {
@@ -30,13 +32,18 @@ class Perakim extends Component {
 
   componentDidMount() {
     const { sefer, perek } = this.props.match.params;
-    fetch(`${API_URL}/perakim/${sefer}/${perek}`)
-      .then(r => r.json())
-      .then(data => this.setState({
-        haveData: true,
-        activePerek: data,
-      }))
-      .catch(err => console.error(err));
+    this.initialize(sefer, perek);
+  }
+
+  componentDidUpdate(prevProps) {
+    const newSefer = this.props.match.params.sefer;
+    const newPerek = this.props.match.params.perek;
+    const oldSefer = prevProps.match.params.sefer;
+    const oldPerek = prevProps.match.params.perek;
+
+    if (newSefer !== oldSefer || newPerek !== oldPerek) {
+      this.initialize(newSefer, newPerek);
+    }
   }
 
   getQueryParams() {
@@ -51,6 +58,16 @@ class Perakim extends Component {
       return params;
     }
     return {};
+  }
+
+  _initialize(sefer, perek) {
+    fetch(`${API_URL}/perakim/${sefer}/${perek}`)
+      .then(r => r.json())
+      .then(data => this.setState({
+        haveData: true,
+        activePerek: data,
+      }))
+      .catch(err => console.error(err));
   }
 
   render() {
