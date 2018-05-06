@@ -153,10 +153,6 @@ const rules = [
     loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
   },
   {
-    test: /\.json$/,
-    loader: 'json-loader'
-  },
-  {
     test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
     loader: 'file-loader?name=/fonts/[name].[ext]'
   },
@@ -186,7 +182,7 @@ module.exports = {
     rules,
   },
   resolve: {
-    extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx'],
+    extensions: ['.webpack-loader.js', '.web-loader.js', '.loader.js', '.js', '.jsx', '.json'],
     modules: [
       path.resolve(__dirname, 'node_modules'),
       APP_DIR,
