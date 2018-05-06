@@ -22,7 +22,7 @@ const plugins = [
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
-    fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch'
+    fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
   }),
   new webpack.DefinePlugin({
     API_URL: apiURL,
@@ -38,44 +38,44 @@ const plugins = [
       },
       {
         content: 'ie=edge',
-        'http-equiv': 'x-ua-compatible'
+        'http-equiv': 'x-ua-compatible',
       },
       {
         content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no',
-        name: 'viewport'
+        name: 'viewport',
       },
       {
         content: 'Content-Type',
-        name: 'http-equiv'
+        name: 'http-equiv',
       },
       {
         content: 'text/html; charset=UTF-8',
-        name: 'content'
+        name: 'content',
       },
       {
         property: 'og:title',
-        content: 'Tanach Study'
+        content: 'Tanach Study',
       },
       {
         property: 'og:type',
-        content: 'website'
+        content: 'website',
       },
       {
         property: 'og:url',
-        content: 'https://tanachstudy.com'
+        content: 'https://tanachstudy.com',
       },
       {
         property: 'og:image',
-        content: 'https://tanachstudy.com/original-favicon.png'
+        content: 'https://tanachstudy.com/original-favicon.png',
       },
       {
         property: 'og:description',
-        content: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach'
+        content: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach',
       },
       {
         name: 'theme-color',
-        content: '#009fc1'
-      }
+        content: '#009fc1',
+      },
     ],
     mobile: false,
     lang: 'en-US',
@@ -110,7 +110,7 @@ const plugins = [
       'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css',
     ],
     title: 'Tanach Study',
-  })
+  }),
 ];
 
 // Common rules
@@ -120,14 +120,14 @@ const rules = [
     loader: ExtractTextPlugin.extract({
       fallback: 'style-loader',
       use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-    })
+    }),
   },
   {
     test: /\.global\.css$/,
     loader: ExtractTextPlugin.extract({
       fallback: 'style-loader',
-      use: 'css-loader'
-    })
+      use: 'css-loader',
+    }),
   },
   {
     test: /\.(js|jsx)$/,
@@ -138,36 +138,36 @@ const rules = [
   },
   {
     test: /\.svg$/,
-    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
+    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]',
   },
   {
     test: /\.gif$/,
-    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
+    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]',
   },
   {
     test: /\.jpg$/,
-    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
+    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]',
   },
   {
     test: /\.png$/,
-    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]'
+    loader: 'file-loader?name=/img/[name].[hash:base64:5].[ext]',
   },
   {
     test: /\.otf(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'file-loader?name=/fonts/[name].[ext]'
+    loader: 'file-loader?name=/fonts/[name].[ext]',
   },
   {
     test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'url-loader?limit=100&mimetype=application/font-woff&name=/fonts/[name].[ext]'
+    loader: 'url-loader?limit=100&mimetype=application/font-woff&name=/fonts/[name].[ext]',
   },
   {
     test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'url-loader?limit=100&mimetype=application/octet-stream&name=/fonts/[name].[ext]'
+    loader: 'url-loader?limit=100&mimetype=application/octet-stream&name=/fonts/[name].[ext]',
   },
   {
     test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'file-loader?name=/fonts/[name].[ext]'
-  }
+    loader: 'file-loader?name=/fonts/[name].[ext]',
+  },
 ];
 
 module.exports = {
@@ -175,7 +175,7 @@ module.exports = {
   entry: './index.js',
   output: {
     path: BUILD_DIR,
-    publicPath: publicPath,
+    publicPath,
     filename: `js/[name].${version}.js`,
   },
   module: {
