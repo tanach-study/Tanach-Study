@@ -4,24 +4,20 @@
       "name": "bereshit",
       "title": "Bereshit",
       "chapters": [
-        { "number": 12, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 13, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 14, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 15, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 16, "path": "/perakim/bereshit/lech-lecha" },
-        { "number": 18, "path": "/perakim/bereshit/vayera" },
-        { "number": 19, "path": "/perakim/bereshit/vayera" },
-        { "number": 27, "path": "/perakim/bereshit/toledot" },
-        { "number": 28, "path": "/perakim/bereshit/toledot" },
-        { "number": 29, "path": "/perakim/bereshit/vayetze" }
+        { "number": 12, "path": "/perakim/bereshit/lech-lecha?part=1" },
+        { "number": 13, "path": "/perakim/bereshit/lech-lecha?part=2" },
+        { "number": 14, "path": "/perakim/bereshit/lech-lecha?part=3" },
+        { "number": 15, "path": "/perakim/bereshit/lech-lecha?part=4" },
+        { "number": 18, "path": "/perakim/bereshit/vayera?part=1" },
+        { "number": 19, "path": "/perakim/bereshit/vayera?part=2" }
       ]
     },
     {
       "name": "shemot",
       "title": "Shemot",
       "chapters": [
-        { "number": 19, "path": "/perakim/shemot/yitro" },
-        { "number": 20, "path": "/perakim/shemot/yitro" }
+        { "number": 19, "path": "/perakim/shemot/yitro?part=3" },
+        { "number": 20, "path": "/perakim/shemot/yitro?part=4" }
       ]
     },
     {
@@ -37,9 +33,7 @@
       "title": "Devarim",
       "chapters": [
         { "number": 20, "path": "/perakim/devarim/shofetim" },
-        { "number": 21, "path": "/perakim/devarim/ki-tetze" },
-        { "number": 33, "path": "/perakim/devarim/vezot-haberacha" },
-        { "number": 34, "path": "/perakim/devarim/vezot-haberacha" }
+        { "number": 21, "path": "/perakim/devarim/ki-tetze" }
       ]
     }
   ],
@@ -51,20 +45,7 @@
         { "number": 1 },
         { "number": 2 },
         { "number": 3 },
-        { "number": 4 },
-        { "number": 5 }
-      ]
-    },
-    {
-      "name": "shofetim",
-      "title": "Shofetim",
-      "chapters": [
-        { "number": 6 },
-        { "number": 7 },
-        { "number": 8 },
-        { "number": 9 },
-        { "number": 17 },
-        { "number": 18 }
+        { "number": 4 }
       ]
     },
     {
@@ -72,16 +53,7 @@
       "title": "Shemuel 1",
       "chapters":  [
         { "number": 1 },
-        { "number": 2 },
-        { "number": 17 }
-      ]
-    },
-    {
-      "name": "shemuel2",
-      "title": "Shemuel 2",
-      "chapters": [
-        { "number": 11 },
-        { "number": 12 }
+        { "number": 2 }
       ]
     },
     {
@@ -97,30 +69,15 @@
       "name": "yeshayahu",
       "title": "Yeshayahu",
       "chapters":  [
-        { "number": 1 },
         { "number": 2 },
-        { "number": 11 },
-        { "number": 36 },
-        { "number": 37 },
-        { "number": 40 }
+        { "number": 11 }
       ]
     },
     {
       "name": "yirmiyahu",
       "title": "Yirmiyahu",
       "chapters": [
-        { "number": 26 },
-        { "number": 31 },
-        { "number": 32 }
-      ]
-    },
-    {
-      "name": "michah",
-      "title": "Michah",
-      "chapters": [
-        { "number": 3 },
-        { "number": 4 },
-        { "number": 5 }
+        { "number": 26 }
       ]
     }
   ],
@@ -131,37 +88,15 @@
       "chapters":  [
         { "number": 1 },
         { "number": 8 },
-        { "number": 74 }
+        { "number": 23 }
       ]
     },
     {
       "name": "ruth",
       "title": "Ruth",
       "chapters": [
-        { "number": 1 },
         { "number": 2 },
-        { "number": 3 },
-        { "number": 4 }
-      ]
-    },
-    {
-      "name": "ezra",
-      "title": "Ezra",
-      "chapters": [
-        { "number": 7 },
-        { "number": 8 },
-        { "number": 9 }
-      ],
-      "notes": "The test does not cover the Aramaic parts or the lists of people."
-    },
-    {
-      "name": "nehemya",
-      "title": "Nehemya",
-      "chapters": [
-        { "number": 1 },
-        { "number": 2 },
-        { "number": 4 },
-        { "number": 5 }
+        { "number": 3 }
       ]
     }
   ]
