@@ -82,13 +82,7 @@ class NachPerek extends Component {
       nextPerekNum = curPerekNum + 1;
     }
 
-    const teamim = act.teamim || {
-      reader_title: 'Mr.',
-      reader_fname: 'Abe',
-      reader_mname: 'D.',
-      reader_lname: 'Dweck',
-      url: 'https://cdn.tanachstudy.com/archives/Ketuvim/Tehillim/recordings/tehillim-1-teamim.mp3',
-    };
+    const teamim = act.teamim || null;
 
     return (
       <div>
