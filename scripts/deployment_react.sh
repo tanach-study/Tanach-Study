@@ -46,5 +46,5 @@ rm -rf node_modules
 
 # in order for this to work, there should be a user profile with s3 permissions in the awscli configuration
 
-aws s3 cp ./dist/js/*.js s3://cdn.tanachstudy.com/assets/js/ --profile ts-s3-upload
-aws s3 cp ./dist/css/*.css s3://cdn.tanachstudy.com/assets/css/ --profile ts-s3-upload
+aws s3 cp ./dist/js/* s3://cdn.tanachstudy.com/assets/js/ --profile ts-s3-upload --recursive
+aws s3 cp ./dist/css/* s3://cdn.tanachstudy.com/assets/css/ --profile ts-s3-upload --recursive
