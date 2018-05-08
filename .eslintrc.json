@@ -26,6 +26,11 @@
     }],
     "no-underscore-dangle": ["error", {
       "allowAfterThis": true
+    }],
+    "no-multi-spaces": ["error", { 
+      "exceptions": { 
+        "VariableDeclarator": true 
+      } 
     }]
   }
 }

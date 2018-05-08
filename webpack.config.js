@@ -2,12 +2,10 @@ const webpack           = require('webpack');
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const htmlTemplate      = require('html-webpack-template');
 
 const BUILD_DIR = path.join(__dirname, './dist');
 const APP_DIR = path.join(__dirname, './src');
-
-// when deploying, this should be the new version number; webpack should be run after the version was bumped up
-const version = process.env.npm_package_version;
 
 // get the node env used to run the script with, and set to development if undefined
 const nodeEnv = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
@@ -18,7 +16,7 @@ const tanachURL = nodeEnv === 'production' ? JSON.stringify('https://cdn.tanachs
 
 const plugins = [
   new ExtractTextPlugin({
-    filename: `css/[name].${version}.css`,
+    filename: 'css/[name].css',
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
@@ -30,7 +28,7 @@ const plugins = [
   }),
   new HtmlWebpackPlugin({
     inject: false,
-    template: require('html-webpack-template'),
+    template: htmlTemplate,
     appMountId: 'root-container',
     meta: [
       {
@@ -119,7 +117,7 @@ const rules = [
     test: /\b(?!global\.)(\w+(?:-\w+)*)(?=\.css\b)/,
     loader: ExtractTextPlugin.extract({
       fallback: 'style-loader',
-      use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+      use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
     }),
   },
   {
@@ -176,7 +174,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     publicPath,
-    filename: `js/[name].${version}.js`,
+    filename: 'js/[name].js',
   },
   module: {
     rules,
