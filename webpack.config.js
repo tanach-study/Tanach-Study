@@ -30,6 +30,7 @@ const plugins = [
     inject: false,
     template: htmlTemplate,
     appMountId: 'root-container',
+    excludeChunks: ['sw'],
     meta: [
       {
         charset: 'utf-8',
@@ -170,7 +171,10 @@ const rules = [
 
 module.exports = {
   context: APP_DIR,
-  entry: './index.js',
+  entry: {
+    main: './index.js',
+    sw: './serviceWorker.js',
+  },
   output: {
     path: BUILD_DIR,
     publicPath,
