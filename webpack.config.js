@@ -18,7 +18,7 @@ const tanachURL = nodeEnv === 'production' ? JSON.stringify('https://cdn.tanachs
 
 const plugins = [
   new ExtractTextPlugin({
-    filename: `bundle/[name].${version}.css`,
+    filename: `[name].${version}.css`,
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
@@ -30,7 +30,7 @@ const plugins = [
   }),
   new HtmlWebpackPlugin({
     inject: false,
-    filename: 'html/index.html',
+    filename: 'index.html',
     template: require('html-webpack-template'),
     appMountId: 'root-container',
     meta: [
@@ -177,7 +177,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     publicPath,
-    filename: `bundle/[name].${version}.js`,
+    filename: `[name].${version}.js`,
   },
   module: {
     rules,
