@@ -4,24 +4,12 @@ node_js:
 cache:
   directories:
     - node_modules
-
+install:
+  - npm install
+  - pip install awscli
 script:
   - npm run build
-
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: "cdn.tanachstudy.com"
+  - provider: script
+    script: "scripts/deployment_travis.sh"
     skip_cleanup: true
-    region: us-east-1
-    local_dir: dist/bundle
-    upload-dir: travis-dist
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
-    bucket: "tanachstudy.com"
-    skip_cleanup: true
-    region: us-east-1
-    local_dir: dist/html
-    upload-dir: travis-dist
