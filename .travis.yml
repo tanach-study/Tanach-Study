@@ -15,7 +15,7 @@ deploy:
     bucket: "cdn.tanachstudy.com"
     skip_cleanup: true
     region: us-east-1
-    local_dir: dist_bundles
+    local_dir: dist/bundle
     upload-dir: travis-dist
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY
@@ -23,5 +23,5 @@ deploy:
     bucket: "tanachstudy.com"
     skip_cleanup: true
     region: us-east-1
-    local_dir: dist_html
+    local_dir: dist/html
     upload-dir: travis-dist
