@@ -10,16 +10,16 @@ script:
 
 deploy:
   - provider: s3
-    access_key_id: "AWS ACCESS KEY"
-    secret_access_key: "AWS SECRET KEY"
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
     bucket: "cdn.tanachstudy.com"
     skip_cleanup: true
     region: us-east-1
     local_dir: dist_bundles
     upload-dir: travis-dist
   - provider: s3
-    access_key_id: "AWS ACCESS KEY"
-    secret_access_key: "AWS SECRET KEY"
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
     bucket: "tanachstudy.com"
     skip_cleanup: true
     region: us-east-1
