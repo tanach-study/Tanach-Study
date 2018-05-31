@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import global styles
 import './styles.global.css';
@@ -35,6 +35,7 @@ function App(props) {
           <Route exact path='/sefarim/:sefer' component={Sefarim} />
           <Route exact path='/parts' component={Parts} />
           <Route path='/about' component={About} />
+          <Redirect from='/parasha' to='/perakim/bemidbar/behaalotecha' />
           <Route path='/' component={HomePage} />
         </Switch>
       </div>
