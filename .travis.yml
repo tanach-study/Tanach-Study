@@ -14,4 +14,4 @@ deploy:
     script: bash scripts/deployment_travis.sh
     skip_cleanup: true
     on:
-      branch: "ci"
+      all_branches: true
