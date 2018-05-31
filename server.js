@@ -15,7 +15,8 @@ app.disable('Server');
 
 app.use(history({ logger: logger }))
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'dist/html/')));
+app.use(express.static(path.join(__dirname, 'dist/')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/favicons')));
 
