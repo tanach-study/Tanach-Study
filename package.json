@@ -9,7 +9,8 @@
     "deploy": "npm run clean && npm i --only=dev && NODE_ENV=production webpack --mode production --progress && rm -rf node_modules/ && rm -f package-lock.json && npm i --only=prod",
     "start": "node server.js",
     "rebuild": "NODE_ENV=production webpack --mode production --progress --colors",
-    "watch": "webpack --mode development --progress --watch"
+    "watch": "webpack --mode development --progress --watch",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
