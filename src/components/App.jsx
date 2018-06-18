@@ -35,7 +35,7 @@ function App(props) {
           <Route exact path='/sefarim/:sefer' component={Sefarim} />
           <Route exact path='/parts' component={Parts} />
           <Route path='/about' component={About} />
-          <Redirect from='/parasha' to='/perakim/bemidbar/korah' />
+          <Redirect from='/parasha' to='/perakim/bemidbar/hukat' />
           <Route path='/' component={HomePage} />
         </Switch>
       </div>
