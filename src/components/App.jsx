@@ -19,8 +19,44 @@ import SignupError from './Signup/SignupError/SignupError.jsx';
 import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
 
+function getParasha() {
+  const today = new Date();
+  const month = today.getMonth(); // 0-11
+  const date = today.getDate(); // 1-31
+
+  const AUGUST = 7;
+  const SEPTEMBER = 8;
+
+  let parasha = '';
+
+  if (month === AUGUST) {
+    if (date < 5) { // ekev is july 29 - august 4, inclusive
+      parasha = 'ekev';
+    } else if (date < 12) { // re'e is august 5-11, inclusive
+      parasha = 're\'e';
+    } else if (date < 19) { // shofetim is august 12-18, inclusive
+      parasha = 'shofetim';
+    } else if (date < 26) { // ki tetze is august 19-25, inclusive
+      parasha = 'ki-tetze';
+    } else if (date < 32) { // ki tavo is august 26 september 1, inclusive
+      parasha = 'ki-tavo';
+    }
+  } else if (month === SEPTEMBER) {
+    if (date < 9) { // nitzavim is september 2-8, inclusive
+      parasha = 'nitzavim';
+    } else if (date < 16) { // vayelech is september 9-15, inclusive
+      parasha = 'vayelech';
+    } else if (date < 23) { // haazinu is september 16-22, inclusive
+      parasha = 'haazinu';
+    } else if (date < 32) { // vezot haberacha is september 23-29, inclusive
+      parasha = 'vezot-haberacha';
+    }
+  }
+  return parasha;
+}
 
 function App(props) {
+  const parasha = getParasha();
   return (
     <div>
       <Navigation />
@@ -35,7 +71,7 @@ function App(props) {
           <Route exact path='/sefarim/:sefer' component={Sefarim} />
           <Route exact path='/parts' component={Parts} />
           <Route path='/about' component={About} />
-          <Redirect from='/parasha' to='/perakim/bemidbar/behaalotecha' />
+          <Redirect from='/parasha' to={`/perakim/devarim/${parasha}`} />
           <Route path='/' component={HomePage} />
         </Switch>
       </div>
