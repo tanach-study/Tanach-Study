@@ -19,6 +19,7 @@ import SignupError from './Signup/SignupError/SignupError.jsx';
 import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
 
+
 function getParasha() {
   const today = new Date();
   const month = today.getMonth(); // 0-11
