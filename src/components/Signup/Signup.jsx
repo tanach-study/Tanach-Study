@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SignupForm from './SignupForm/SignupForm.jsx';
+import SignupForm from './SignupForm.jsx';
+import SignupSuccess from './SignupSuccess.jsx';
+import SignupError from './SignupError.jsx';
 
 class Signup extends Component {
   constructor(props) {
