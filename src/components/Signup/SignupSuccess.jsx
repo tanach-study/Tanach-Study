@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignupSuccess = props => {
-  // const greeting = props.message ? `Welcome ${props.message}` : 'Thank You For Registering!';
+  const message = props.message || {};
+  const greeting = props.message ? `Welcome, ${message.fname}!` : 'Thank You For Registering!';
   return (
     <div>
-      <h2 className='card-title'>Thank You For Registering!</h2>
-      {props.message && <p>This message confirms that you have successfully registered the email <b>{props.message}</b> to our list.</p>}
+      <h2 className='card-title'>{greeting}</h2>
+      {props.message && <p>This message confirms that the email <b>{message.email}</b> has been added to our list.</p>}
       <br/>
       <p>You should receive a welcome email within the next few minutes, and you will begin to recieve all of our emails.</p>
       <br/>

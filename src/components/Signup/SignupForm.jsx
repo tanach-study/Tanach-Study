@@ -35,7 +35,12 @@ class SignupForm extends Component {
     .then(r => r.json())
     .then(resp => {
       if (resp.status == 'OK') {
-        this.props.response(false, resp.email)
+        const obj = {
+          email: resp.email,
+          fname: resp.first_name,
+          lname: resp.last_name,
+        };
+        this.props.response(false, obj);
       } else {
         this.props.response(true, resp);
       }
