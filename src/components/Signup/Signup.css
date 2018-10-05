@@ -1,0 +1,4 @@
+.ts-checkbox:checked+label:before {
+  border-right: 2px solid #009FC1;
+  border-bottom: 2px solid #009FC1;
+}
