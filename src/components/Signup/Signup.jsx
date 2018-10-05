@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import SignupContainer from './SignupContainer.jsx';
 import SignupForm from './SignupForm.jsx';
 import SignupSuccess from './SignupSuccess.jsx';
@@ -11,14 +10,14 @@ class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      errorMessage: null,
-      isFetching: false;
-      isError: false;
-      didFetch: false;
-      email: null;
+      message: null,
+      isFetching: false,
+      isError: false,
+      didFetch: false,
     };
     this.setResponse = this.setResponse.bind(this);
     this.setFetchingStatus = this.setFetchingStatus.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   componentWillMount() {
@@ -26,19 +25,12 @@ class Signup extends Component {
   }
 
   setResponse(isError, message) {
-    if (isError) {
-      this.setState({ 
-        isError: true,
-        errorMessage: message,
-        isFetching: false,
-      });
-    } else {
-      this.setState({ 
-        isError: false,
-        errorMessage: message,
-        isFetching: false,
-      });
-    }
+    this.setState({ 
+      isError: isError,
+      message: message,
+      isFetching: false,
+      didFetch: true,
+    });
   }
 
   setFetchingStatus(bool) {
@@ -47,8 +39,17 @@ class Signup extends Component {
     });
   }
 
+  resetForm() {
+    this.setState({
+      message: null,
+      isFetching: false,
+      isError: false,
+      didFetch: false,
+    });
+  }
+
   render() {
-    const { errorMessage, isFetching, isError, didFetch } = this.state;
+    const { message, isFetching, isError, didFetch } = this.state;
 
     // if we're currently fetching data, display a spinner
     if (isFetching) {
@@ -57,6 +58,7 @@ class Signup extends Component {
       // isFetching is always flase here
       // if we haven't done a fetch yet, we want to display the form
       if (!didFetch) {
+        console.log("here");
         return (
           <SignupContainer 
             showHeader={true}
@@ -73,7 +75,7 @@ class Signup extends Component {
             <SignupContainer 
               showHeader={true}
               child={<SignupError
-                message={this.state.errorMessage}
+                message={this.state.message}
                 resetForm={this.resetForm}
               />}
             />

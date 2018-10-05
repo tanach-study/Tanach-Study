@@ -3,6 +3,7 @@ import SignupHeader from './SignupHeader.jsx';
 
 function SignupContainer(props) {
   const { showHeader, child } = props;
+  console.log("1", child);
   return (
     <div className='container'>
       <div className='section center'>
@@ -21,4 +22,4 @@ function SignupContainer(props) {
   );
 }
 
-export default SignupHeader;
+export default SignupContainer;
