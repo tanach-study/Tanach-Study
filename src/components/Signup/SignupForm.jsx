@@ -11,10 +11,16 @@ class SignupForm extends Component {
   }
 
   doSubmit(e) {
+    // stop default form action
     e.preventDefault();
+    // tell parent that we're fetching
+    this.props.fetching(true);
+    // get the data from state
     const email = this.state.email;
     const firstName = this.state.firstName;
     const lastName = this.state.lastName;
+    // TODO: validate data
+    // make the call
     fetch(`${API_URL}/signup`, {
       method: 'POST',
       headers: new Headers({
@@ -29,15 +35,13 @@ class SignupForm extends Component {
     .then(r => r.json())
     .then(resp => {
       if (resp.status == 'OK') {
-        // this.props.history.push('/signup/success/');
+        this.props.response(false, resp.email)
       } else {
-        this.props.error(resp);
-        // this.props.history.push('/signup/error')
+        this.props.response(true, resp);
       }
     })
     .catch(err => {
-      console.log(err);
-      this.props.error(err.message);
+      this.props.response(true, err.message);
     });
   }
 
