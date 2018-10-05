@@ -2,3 +2,7 @@
   border-right: 2px solid #009FC1;
   border-bottom: 2px solid #009FC1;
 }
+
+.checkbox-label {
+  color: rgba(0,0,0,0.87);
+}

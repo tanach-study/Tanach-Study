@@ -73,7 +73,7 @@ class SignupForm extends Component {
               checked={this.state.list1}
               onChange={(e) => this.setState({ list1: !this.state.list1 })}
             />
-            <label htmlFor='list1'>Daily Torah</label>
+            <label htmlFor='list1' className={styles['checkbox-label']}>Daily Torah</label>
           </div>
           <div className='col l3 m3 s6'>
             <input
@@ -83,7 +83,7 @@ class SignupForm extends Component {
               checked={this.state.list2}
               onChange={(e) => this.setState({ list2: !this.state.list2 })}
             />
-            <label htmlFor='list2'>Daily Nach</label>
+            <label htmlFor='list2' className={styles['checkbox-label']}>Daily Nach</label>
           </div>
           <div className='col l3 m3 s6'>
             <input
@@ -93,7 +93,7 @@ class SignupForm extends Component {
               checked={this.state.list3}
               onChange={(e) => this.setState({ list3: !this.state.list3 })}
             />
-            <label htmlFor='list3'>Events Only</label>
+            <label htmlFor='list3' className={styles['checkbox-label']}>Events Only</label>
           </div>
           <div className='col l3 m3 s6'>
             <input
@@ -103,7 +103,7 @@ class SignupForm extends Component {
               checked={this.state.list4}
               onChange={(e) => this.setState({ list4: !this.state.list4 })}
             />
-            <label htmlFor='list4'>MishnaStudy</label>
+            <label htmlFor='list4' className={styles['checkbox-label']}>MishnaStudy</label>
           </div>
         </div>
         <button type='submit' className='btn tsblue' onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
