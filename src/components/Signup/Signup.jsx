@@ -86,7 +86,7 @@ class Signup extends Component {
             <SignupContainer 
               showHeader={true}
               child={<SignupSuccess
-                email={this.state.email}
+                message={this.state.message}
               />}
             />
           );
