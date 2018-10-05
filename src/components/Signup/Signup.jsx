@@ -58,7 +58,6 @@ class Signup extends Component {
       // isFetching is always flase here
       // if we haven't done a fetch yet, we want to display the form
       if (!didFetch) {
-        console.log("here");
         return (
           <SignupContainer 
             showHeader={true}
