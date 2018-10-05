@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import SignupHeader from './SignupHeader.jsx';
+import SignupContainer from './SignupContainer.jsx';
 import SignupForm from './SignupForm.jsx';
 import SignupSuccess from './SignupSuccess.jsx';
 import SignupError from './SignupError.jsx';
+
+import Spinner from '../Spinner/Spinner.jsx';
 
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: null,
+      errorMessage: null,
       isFetching: false;
       isError: false;
+      didFetch: false;
+      email: null;
     };
     this.setResponse = this.setResponse.bind(this);
     this.setFetchingStatus = this.setFetchingStatus.bind(this);
@@ -21,36 +25,17 @@ class Signup extends Component {
     window.scrollTo(0, 0);
   }
 
-  _getContent(component) {
-    return (
-      <div className='container'>
-        <div className='section center'>
-          <SignupHeader />
-          <div className='row'>
-            <div className='col l8 m10 s12 offset-l2 offset-m1'>
-              <div className='card'>
-                <div className='card-content'>
-                  {component}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   setResponse(isError, message) {
     if (isError) {
       this.setState({ 
         isError: true,
-        message: message,
+        errorMessage: message,
         isFetching: false,
       });
     } else {
       this.setState({ 
         isError: false,
-        message: message,
+        errorMessage: message,
         isFetching: false,
       });
     }
@@ -63,12 +48,48 @@ class Signup extends Component {
   }
 
   render() {
-    const { message, isFetching, isError } = this.state;
-    if (!isFetching && !isError) {
-      return this._getContent(<SignupForm response={this.setResponse} fetching={this.setFetchingStatus} />);
-    } else if (message && !isFetching) {
-      return this._getContent(<SignupForm error={msg => this.setState({ errorMsg: msg })} />);
+    const { errorMessage, isFetching, isError, didFetch } = this.state;
 
+    // if we're currently fetching data, display a spinner
+    if (isFetching) {
+      return <Spinner />;
+    } else {
+      // isFetching is always flase here
+      // if we haven't done a fetch yet, we want to display the form
+      if (!didFetch) {
+        return (
+          <SignupContainer 
+            showHeader={true}
+            child={<SignupForm 
+              response={this.setResponse}
+              fetching={this.setFetchingStatus}
+            />}
+          />
+        );
+      } else {
+        // did a fetch already, so we need to update state
+        if (isError) {
+          return (
+            <SignupContainer 
+              showHeader={true}
+              child={<SignupError
+                message={this.state.errorMessage}
+                resetForm={this.resetForm}
+              />}
+            />
+          );
+        } else {
+          // no error, we have a successful submission
+          return (
+            <SignupContainer 
+              showHeader={true}
+              child={<SignupSuccess
+                email={this.state.email}
+              />}
+            />
+          );
+        }
+      }
     }
   }
 }
