@@ -6,7 +6,7 @@ const SignupSuccess = props => {
   return (
     <div>
       <h2 className='card-title'>Thank You For Registering!</h2>
-      {props.message && <p>This message confirms that you have successfully registered the email <b>props.message</b> to our list.</p>}
+      {props.message && <p>This message confirms that you have successfully registered the email <b>{props.message}</b> to our list.</p>}
       <br/>
       <p>You should receive a welcome email within the next few minutes, and you will begin to recieve all of our emails.</p>
       <br/>
