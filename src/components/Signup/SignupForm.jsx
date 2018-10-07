@@ -63,9 +63,10 @@ class SignupForm extends Component {
         <input type='email' name='email' placeholder='Email' required value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
         <div className='row'>
           <p className='center-align'>Please select which lists you'd like to subscribe to:</p>
+          <i>If you wish to be notified of events & lectures, please also select the events list; this is managed separately from our daily emails.</i>
         </div>
         <div className='row'>
-          <div className='col l6 m6 s6'>
+          <div className='col l12 m12 s12 left-align'>
             <input
               type='checkbox'
               id='list1'
@@ -73,9 +74,11 @@ class SignupForm extends Component {
               checked={this.state.list1}
               onChange={(e) => this.setState({ list1: !this.state.list1 })}
             />
-            <label htmlFor='list1' className={styles['checkbox-label']}>Parashat Hashavua</label>
+            <label htmlFor='list1' className={styles['checkbox-label']}><b>Parashat Hashavua:</b> Daily email with classes of each week's parasha</label>
           </div>
-          <div className='col l6 m6 s6'>
+        </div>
+        <div className='row'>
+          <div className='col l12 m12 s12 left-align'>
             <input
               type='checkbox'
               id='list2'
@@ -83,9 +86,11 @@ class SignupForm extends Component {
               checked={this.state.list2}
               onChange={(e) => this.setState({ list2: !this.state.list2 })}
             />
-            <label htmlFor='list2' className={styles['checkbox-label']}>Nevi'im & Ketuvim</label>
+            <label htmlFor='list2' className={styles['checkbox-label']}><b>Nevi'im & Ketuvim:</b> Daily email methodically studying a perek a day of Nach</label>
           </div>
-          <div className='col l6 m6 s6'>
+          </div>
+        <div className='row'>
+          <div className='col l12 m12 s12 left-align'>
             <input
               type='checkbox'
               id='list3'
@@ -93,9 +98,11 @@ class SignupForm extends Component {
               checked={this.state.list3}
               onChange={(e) => this.setState({ list3: !this.state.list3 })}
             />
-            <label htmlFor='list3' className={styles['checkbox-label']}>Events</label>
+            <label htmlFor='list3' className={styles['checkbox-label']}><b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam (coming soon)</label>
           </div>
-          <div className='col l6 m6 s6'>
+        </div>
+        <div className='row'>
+          <div className='col l12 m12 s12 left-align'>
             <input
               type='checkbox'
               id='list4'
@@ -103,7 +110,7 @@ class SignupForm extends Component {
               checked={this.state.list4}
               onChange={(e) => this.setState({ list4: !this.state.list4 })}
             />
-            <label htmlFor='list4' className={styles['checkbox-label']}>MishnaStudy</label>
+            <label htmlFor='list4' className={styles['checkbox-label']}><b>Events:</b> Periodic email regarding upcoming events and lectures</label>
           </div>
         </div>
         <button type='submit' className='btn tsblue' onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
