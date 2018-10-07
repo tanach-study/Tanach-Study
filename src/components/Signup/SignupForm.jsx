@@ -8,10 +8,10 @@ class SignupForm extends Component {
       email: '',
       firstName: '',
       lastName: '',
-      list1: false,
-      list2: false,
-      list3: false,
-      list4: false,
+      list1: false, // parasha
+      list2: false, // nach
+      list3: false, // mishna
+      list4: true, // events
     }
   }
 
@@ -24,6 +24,12 @@ class SignupForm extends Component {
     const email = this.state.email;
     const firstName = this.state.firstName;
     const lastName = this.state.lastName;
+    const { list1, list2, list3, list4 } = this.state;
+    if (!(list1 && list2 && list3 && list4)) {
+      // TODO: tell the user
+      return;
+    }
+    const lists = [list1, list2, list3, list4];
     // TODO: validate data
     // make the call
     fetch(`${API_URL}/signup`, {
@@ -35,6 +41,7 @@ class SignupForm extends Component {
         email: email,
         firstName: firstName,
         lastName: lastName,
+        emailLists: JSON.stringify(lists),
       })
     })
     .then(r => r.json())
@@ -44,7 +51,9 @@ class SignupForm extends Component {
           email: resp.email,
           fname: resp.first_name,
           lname: resp.last_name,
+          lists: resp.email_lists,
         };
+        console.log(obj)
         this.props.response(false, obj);
       } else {
         this.props.response(true, resp);
