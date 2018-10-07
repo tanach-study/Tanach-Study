@@ -25,7 +25,7 @@ class SignupForm extends Component {
     const firstName = this.state.firstName;
     const lastName = this.state.lastName;
     const { list1, list2, list3, list4 } = this.state;
-    if (!(list1 && list2 && list3 && list4)) {
+    if (!(list1 || list2 || list3 || list4)) {
       // TODO: tell the user
       return;
     }
@@ -53,7 +53,6 @@ class SignupForm extends Component {
           lname: resp.last_name,
           lists: resp.email_lists,
         };
-        console.log(obj)
         this.props.response(false, obj);
       } else {
         this.props.response(true, resp);
