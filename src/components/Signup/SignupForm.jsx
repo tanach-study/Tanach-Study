@@ -12,6 +12,55 @@ class SignupForm extends Component {
       list2: false, // nach
       list3: false, // mishna
       list4: true, // events
+      all: false,
+    }
+    this.setAllLists = this.setAllLists.bind(this);
+    this.setOneList = this.setOneList.bind(this);
+  }
+
+  setAllLists(e) {
+    if (!this.state.all) {
+      this.setState({
+        list1: true,
+        list2: true,
+        list3: true,
+        list4: true,
+        all: true,
+      });
+    }
+  }
+
+  setOneList(e, key) {
+    if (this.state.all) {
+      this.setState({
+        all: false,
+        [key]: !this.state[key],
+      });
+    } else {
+      let thisKeyVal = false;
+      let otherKeyVals = true;
+      for (let i = 1; i < 5 && otherKeyVals; i++) {
+        if (key === `list${i}`) {
+          thisKeyVal = this.state[key];
+        } else if (!this.state[`list${i}`]) {
+            otherKeyVals = false;
+        } else {
+          otherKeyVals = true;
+        }
+      }
+      if (!thisKeyVal && otherKeyVals) {
+        this.setState({
+          list1: true,
+          list2: true,
+          list3: true,
+          list4: true,
+          all: true,
+        });
+      } else {
+        this.setState({
+          [key]: !this.state[key],
+        });
+      }
     }
   }
 
@@ -77,10 +126,22 @@ class SignupForm extends Component {
           <div className='col l12 m12 s12 left-align'>
             <input
               type='checkbox'
+              id='allLists'
+              className={styles['ts-checkbox']}
+              checked={this.state.all}
+              onChange={this.setAllLists}
+            />
+            <label htmlFor='allLists' className={styles['checkbox-label']}><b>All:</b> Sign up to all of our email lists!</label>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col l12 m12 s12 left-align'>
+            <input
+              type='checkbox'
               id='list1'
               className={styles['ts-checkbox']}
               checked={this.state.list1}
-              onChange={(e) => this.setState({ list1: !this.state.list1 })}
+              onChange={(e) => this.setOneList(e, 'list1')}
             />
             <label htmlFor='list1' className={styles['checkbox-label']}><b>Parashat Hashavua:</b> Daily email with classes of each week's parasha</label>
           </div>
@@ -92,7 +153,7 @@ class SignupForm extends Component {
               id='list2'
               className={styles['ts-checkbox']}
               checked={this.state.list2}
-              onChange={(e) => this.setState({ list2: !this.state.list2 })}
+              onChange={(e) => this.setOneList(e, 'list2')}
             />
             <label htmlFor='list2' className={styles['checkbox-label']}><b>Nevi'im & Ketuvim:</b> Daily email methodically studying a perek a day of Nach</label>
           </div>
@@ -104,7 +165,7 @@ class SignupForm extends Component {
               id='list3'
               className={styles['ts-checkbox']}
               checked={this.state.list3}
-              onChange={(e) => this.setState({ list3: !this.state.list3 })}
+              onChange={(e) => this.setOneList(e, 'list3')}
             />
             <label htmlFor='list3' className={styles['checkbox-label']}><b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam (coming soon)</label>
           </div>
@@ -116,7 +177,7 @@ class SignupForm extends Component {
               id='list4'
               className={styles['ts-checkbox']}
               checked={this.state.list4}
-              onChange={(e) => this.setState({ list4: !this.state.list4 })}
+              onChange={(e) => this.setOneList(e, 'list4')}
             />
             <label htmlFor='list4' className={styles['checkbox-label']}><b>Events:</b> Periodic email regarding upcoming events and lectures</label>
           </div>
