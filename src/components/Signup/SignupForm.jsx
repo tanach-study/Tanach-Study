@@ -62,10 +62,10 @@ class SignupForm extends Component {
         <input type='text' name='lastName' placeholder='Last Name' required value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} />
         <input type='email' name='email' placeholder='Email' required value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
         <div className='row'>
-          <p className='center-align'>Please select which lists you's like to subscribe to:</p>
+          <p className='center-align'>Please select which lists you'd like to subscribe to:</p>
         </div>
         <div className='row'>
-          <div className='col l3 m3 s6'>
+          <div className='col l6 m6 s6'>
             <input
               type='checkbox'
               id='list1'
@@ -73,9 +73,9 @@ class SignupForm extends Component {
               checked={this.state.list1}
               onChange={(e) => this.setState({ list1: !this.state.list1 })}
             />
-            <label htmlFor='list1' className={styles['checkbox-label']}>Daily Torah</label>
+            <label htmlFor='list1' className={styles['checkbox-label']}>Parashat Hashavua</label>
           </div>
-          <div className='col l3 m3 s6'>
+          <div className='col l6 m6 s6'>
             <input
               type='checkbox'
               id='list2'
@@ -83,9 +83,9 @@ class SignupForm extends Component {
               checked={this.state.list2}
               onChange={(e) => this.setState({ list2: !this.state.list2 })}
             />
-            <label htmlFor='list2' className={styles['checkbox-label']}>Daily Nach</label>
+            <label htmlFor='list2' className={styles['checkbox-label']}>Nevi'im & Ketuvim</label>
           </div>
-          <div className='col l3 m3 s6'>
+          <div className='col l6 m6 s6'>
             <input
               type='checkbox'
               id='list3'
@@ -93,9 +93,9 @@ class SignupForm extends Component {
               checked={this.state.list3}
               onChange={(e) => this.setState({ list3: !this.state.list3 })}
             />
-            <label htmlFor='list3' className={styles['checkbox-label']}>Events Only</label>
+            <label htmlFor='list3' className={styles['checkbox-label']}>Events</label>
           </div>
-          <div className='col l3 m3 s6'>
+          <div className='col l6 m6 s6'>
             <input
               type='checkbox'
               id='list4'
