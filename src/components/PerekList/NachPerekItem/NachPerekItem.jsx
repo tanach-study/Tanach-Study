@@ -1,7 +1,7 @@
 import React from 'react';
 
 const NachPerekItem = (props) => {
-  const perekName = (props.perek.perek_id === 0 ? 'Introduction' : `Perek ${props.perek.perek_id}`);
+  const perekName = (props.perek.perek_id === 0 ? 'Introduction' : props.perek.perek_title ? `Perek ${props.perek.perek_id}: ${props.perek.perek_title}` : `Perek ${props.perek.perek_id}`);
   let finalParts = null;
   let partsBreakdown = null;
   if (props.perek.is_many_parts) {
