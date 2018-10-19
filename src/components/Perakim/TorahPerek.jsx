@@ -117,7 +117,7 @@ class TorahPerek extends Component {
     };
 
     const bookSponsor = Array.isArray(act.sefer_sponsor) ? act.sefer_sponsor.map((l, i) => <div key={`sefer-sponsor-in-perek-${sefer}-${perek}-${i}`}>{l}</div>) : act.sefer_sponsor;
-
+    const perekSponsor = Array.isArray(act.parasha_sponsor) ? act.parasha_sponsor.map((l, i) => <div key={`sefer-sponsor-in-perek-${sefer}-${perek}-${i}`}>{l}</div>) : act.parasha_sponsor;
 
     return (
       <div>
@@ -126,7 +126,7 @@ class TorahPerek extends Component {
             <h2 className='center'>Sefer {act.book_name_pretty_eng}</h2>
             {act.sefer_sponsor && <h4 className='center'>{bookSponsor}</h4>}
             <h3>Parashat {act.parasha_name_pretty_eng}</h3>
-            <h5>{act.parasha_sponsor}</h5>
+            {act.parasha_sponsor && <h5>{perekSponsor}</h5>}
             <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {act.book_name_pretty_eng}</i></Link>
           </div>
           <div className='section row'>
