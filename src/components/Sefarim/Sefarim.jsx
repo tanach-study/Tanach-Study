@@ -40,6 +40,7 @@ class Sefarim extends Component {
     const seferMeta = selectedSefer.seferMeta || {};
     const seferTeachers = selectedSefer.seferTeachers || [];
     const allPerakim = selectedSefer.allPerakim || [];
+    const sponsor = Array.isArray(seferMeta.book_sponsor) ? seferMeta.book_sponsor.map((l, i) => <div key={`sefer-sponsor-${selectedSefer}-${i}`}>{l}</div>) : seferMeta.book_sponsor;
     const teacherChips = seferTeachers.map((teacher, i) => (
       <div key={`${teacher.title}-${teacher.fname}-${teacher.lname}-chip`} className='chip pointer' onClick={(e) => this.setState({activeIndex: i})}>
         {teacher.title} {teacher.fname}{teacher.mname ? ` ${teacher.mname} ` : ' '}{teacher.lname}
@@ -60,7 +61,7 @@ class Sefarim extends Component {
         <div>
           <div className='container'>
             <h2>Sefer {seferMeta.book_name_pretty_eng}</h2>
-            {seferMeta.book_sponsor && <h3>{seferMeta.book_sponsor}</h3>}
+            {seferMeta.book_sponsor && <h3>{sponsor}</h3>}
             <div className='center'>
               {teacherChips}
             </div>

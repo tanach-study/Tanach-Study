@@ -14,8 +14,6 @@ import Perakim from './Perakim/Perakim.jsx';
 import Donate from './Donate/Donate.jsx';
 import Contact from './Contact/Contact.jsx';
 import Signup from './Signup/Signup.jsx';
-import SignupSuccess from './Signup/SignupSuccess/SignupSuccess.jsx';
-import SignupError from './Signup/SignupError/SignupError.jsx';
 import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
 

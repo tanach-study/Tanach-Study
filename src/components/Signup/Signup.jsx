@@ -1,45 +1,97 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import SignupForm from './SignupForm/SignupForm.jsx';
+import SignupContainer from './SignupContainer.jsx';
+import SignupForm from './SignupForm.jsx';
+import SignupSuccess from './SignupSuccess.jsx';
+import SignupError from './SignupError.jsx';
+
+import Spinner from '../Spinner/Spinner.jsx';
 
 class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      errorMsg: null,
+      message: null,
+      isFetching: false,
+      isError: false,
+      didFetch: false,
     };
+    this.setResponse = this.setResponse.bind(this);
+    this.setFetchingStatus = this.setFetchingStatus.bind(this);
+    this.resetForm = this.resetForm.bind(this);
   }
 
   componentWillMount() {
     window.scrollTo(0, 0);
   }
 
+  setResponse(isError, message) {
+    this.setState({ 
+      isError: isError,
+      message: message,
+      isFetching: false,
+      didFetch: true,
+    });
+  }
+
+  setFetchingStatus(bool) {
+    this.setState({ 
+      isFetching: bool,
+    });
+  }
+
+  resetForm() {
+    this.setState({
+      message: null,
+      isFetching: false,
+      isError: false,
+      didFetch: false,
+    });
+  }
+
   render() {
-    return (
-      <div className='container'>
-        <div className='section center'>
-          <div className='row'>
-            <div className='col l8 m10 s12 offset-l2 offset-m1'>
-              <div className='card'>
-                <div className='card-content'>
-                  <h2>Join Our Mailing List!</h2>
-                  <p>Become a part of the movement that is reshaping the study of Tanach by signing up below!</p>
-                  <p>We <b>never</b> use your email for anything other than daily emails and event notifications. If you have any questions feel free to <Link to='/contact'>contact us</Link> at your leisure.</p>
-                </div>
-              </div>
-            </div>
-            <div className='col l8 m10 s12 offset-l2 offset-m1'>
-              <div className='red-text error'>{this.state.errorMsg}</div>
-              <div className='card'>
-                <div className='card-content'>
-                  <SignupForm error={msg => this.setState({ errorMsg: msg })} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+    const { message, isFetching, isError, didFetch } = this.state;
+
+    // if we're currently fetching data, display a spinner
+    if (isFetching) {
+      return <Spinner />;
+    } else {
+      // isFetching is always flase here
+      // if we haven't done a fetch yet, we want to display the form
+      if (!didFetch) {
+        return (
+          <SignupContainer 
+            showHeader={true}
+            child={<SignupForm 
+              response={this.setResponse}
+              fetching={this.setFetchingStatus}
+            />}
+          />
+        );
+      } else {
+        // did a fetch already, so we need to update state
+        if (isError) {
+          return (
+            <SignupContainer 
+              showHeader={true}
+              child={<SignupError
+                message={this.state.message}
+                resetForm={this.resetForm}
+              />}
+            />
+          );
+        } else {
+          // no error, we have a successful submission
+          return (
+            <SignupContainer 
+              showHeader={true}
+              child={<SignupSuccess
+                message={this.state.message}
+              />}
+            />
+          );
+        }
+      }
+    }
   }
 }
 

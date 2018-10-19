@@ -89,6 +89,7 @@ class NachPerek extends Component {
         <div className='container'>
           <div className='row'>
             <h2>Sefer {act.book_name_pretty_eng} Perek {perek}</h2>
+            {act.perek_title && <h4>{act.perek_title}</h4>}
             <Link to={`/sefarim/${sefer}`} className='left'><i>Back to Sefer {act.book_name_pretty_eng}</i></Link>
             <div className='section' />
             <TeacherCard
