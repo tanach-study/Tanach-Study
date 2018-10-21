@@ -6,9 +6,6 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const BUILD_DIR = path.join(__dirname, './dist');
 const APP_DIR = path.join(__dirname, './src');
 
-// when deploying, this should be the new version number; webpack should be run after the version was bumped up
-const version = process.env.npm_package_version;
-
 // get the node env used to run the script with, and set to development if undefined
 const nodeEnv = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
 // set the public path, using the cdn if deploying to production
@@ -19,7 +16,7 @@ const tanachURL = nodeEnv === 'production' ? JSON.stringify('https://cdn.tanachs
 
 const plugins = [
   new ExtractTextPlugin({
-    filename: `[name].${version}.css`,
+    filename: '[name].css',
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
@@ -178,7 +175,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     publicPath,
-    filename: `[name].${version}.js`,
+    filename: '[name].js',
   },
   module: {
     rules,
