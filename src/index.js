@@ -1,7 +1,7 @@
 import React    from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter } from 'react-router-dom';
-import App from './components/App.jsx';
+import App from './App.jsx';
 import 'whatwg-fetch';
 
 import ReactGA from 'react-ga';

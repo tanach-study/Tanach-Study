@@ -25,12 +25,12 @@ class About extends Component {
         <AboutNav path={this.props.location.pathname} />
 
         <Switch>
+          <Route exact path='/about' component={Mission} />
           <Route exact path='/about/mission' component={Mission} />
           <Route exact path='/about/practices' component={Practices} />
           <Route exact path='/about/history' component={History} />
           <Route exact path='/about/faqs' component={FAQs} />
           <Route exact path='/about/yerushalmi' component={Yerushalmi} />
-          <Redirect from='/about' to='/about/mission' />
         </Switch>
       </div>
     );
