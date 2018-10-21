@@ -20,7 +20,7 @@ const plugins = [
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
-    fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
+    fetch: 'exports-loader?self.fetch!whatwg-fetch/dist/fetch.umd',
   }),
   new webpack.DefinePlugin({
     API_URL: apiURL,
