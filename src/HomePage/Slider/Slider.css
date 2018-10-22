@@ -30,7 +30,6 @@
 
 }
 
-/*TODO: why is the slide animation defined twice?! */
 @keyframes slide {
   0% {
     left: 100%;
