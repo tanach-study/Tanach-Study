@@ -49,22 +49,3 @@
     opacity: 0;
   }
 }
-
-@keyframes slide {
-  0% {
-    left: 100%;
-    opacity: 0;
-  }
-  10% {
-    left: 0;
-    opacity: 1;
-  }
-  95% {
-    left: 0;
-    opacity: 1;
-  }
-  100% {
-    left: -100%;
-    opacity: 0;
-  }
-}

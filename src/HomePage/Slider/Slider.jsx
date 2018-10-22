@@ -39,8 +39,8 @@ class Slider extends Component {
       }
       const slideClass = classNames({
         [styles['slide-item']]: true,
-        [styles['active']]: this.state.activeIndex == i,
-        [styles['inactive']]: this.state.activeIndex != i,
+        [styles['active']]: this.state.activeIndex === i,
+        [styles['inactive']]: this.state.activeIndex !== i,
       });
       return (
         <div key={`homepage-slider-slide-${i}`} className={slideClass} style={style}></div>
