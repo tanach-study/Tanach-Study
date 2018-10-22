@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Slider from './Slider/Slider.jsx';
 import Testimonials from './Testimonials/Testimonials.jsx';
 import testimonials from './Testimonials/testimonials.json';
-import HomeSignupForm from './HomeSignupForm/HomeSignupForm.jsx';
 
 import styles from './HomePage.css';
 import icons from '../icons.css';
@@ -131,12 +130,12 @@ class HomePage extends Component {
 
 
         <div className={`center ${styles['collage-container']}`}>
-            <Link to='/videos'><img src='https://cdn.tanachstudy.com/assets/images/collage.png' alt='Collage of all educators' className='responsive-img hoverable' /></Link>
+            <a href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos' target='blank'><img src='https://cdn.tanachstudy.com/assets/images/collage.png' alt='Collage of all educators' className='responsive-img hoverable' /></a>
 
           <div className={`${styles['in-memory']} white-text hide-on-small-only`}>
-            Guest lecturers sponsored in loving memory of <Link to='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} tsblue-text`}>Rabbi Dr. Ezra Labaton A'H</Link>
+            Guest lecturers sponsored in loving memory of <a href='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} tsblue-text`}>Rabbi Dr. Ezra Labaton A'H</a>
           </div>
-          <div className='hide-on-med-and-up'><i>Guest lectures sponsored in loving memory of <Link to='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} tsblue-text`}>Rabbi Dr. Ezra Labaton A'H</Link></i></div>
+          <div className='hide-on-med-and-up'><i>Guest lectures sponsored in loving memory of <a href='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} tsblue-text`}>Rabbi Dr. Ezra Labaton A'H</a></i></div>
         </div>
 
 
@@ -155,19 +154,6 @@ class HomePage extends Component {
             <img src='https://cdn.tanachstudy.com/assets/images/analytics.png' alt='' className='responsive-img'/>
           </div>
         </div>
-
-        <div className='section'>
-          <div className='container'>
-            <div className='card'>
-              <div className='card-content center'>
-                <h2>Sign Up Today!</h2>
-                <div className='red-text error'>{this.state.errorMsg}</div>
-                <HomeSignupForm error={(msg) => this.setState({ errorMsg: msg })} />
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     );
   }
