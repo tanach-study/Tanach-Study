@@ -24,10 +24,7 @@ class Slider extends Component {
   }
 
   advanceSlide() {
-    const curr = this.state.activeIndex;
-    const numSlides = this.props.slides.length;
-    let next = curr + 1;
-    if (next >= numSlides) next = 0;
+    let next = (this.state.activeIndex + 1) % this.props.slides.length;
     const captionLeft = this.props.slides[next].captionLeft;
     const captionRight = this.props.slides[next].captionRight;
     this.props.left(captionLeft);
@@ -46,7 +43,7 @@ class Slider extends Component {
         [styles['inactive']]: this.state.activeIndex != i,
       });
       return (
-        <div key={i} className={slideClass} style={style}></div>
+        <div key={`homepage-slider-slide-${i}`} className={slideClass} style={style}></div>
       )
     }, this);
     return (
