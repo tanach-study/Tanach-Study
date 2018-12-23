@@ -3,14 +3,15 @@ import NachPerekItem from './NachPerekItem/NachPerekItem.jsx';
 import TorahPerekItem from './TorahPerekItem/TorahPerekItem.jsx';
 
 const PerekList = (props) => {
-  const PerekItem = props.sefer.part_name === 'torah' ? TorahPerekItem : NachPerekItem;
-  const mapped = props.perakim.map((perek, i) => (
+  const { sefer, perakim, click } = props;
+  const PerekItem = sefer.part_name === 'torah' ? TorahPerekItem : NachPerekItem;
+  const mapped = perakim.map((perek, i) => (
     <PerekItem
       perek={perek}
-      sefer={props.sefer}
-      key={`${props.sefer}-${perek.perek_id}`}
+      sefer={sefer}
+      key={`${sefer}-${perek.perek_id}`}
       index={i}
-      click={props.click}
+      click={click}
     />));
   return (
     <div className='row'>
