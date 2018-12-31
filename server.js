@@ -1,4 +1,3 @@
-'use strict';
 // if (process.env.NODE_ENV == 'development') require('dotenv').config({ silent: true });
 require('dotenv').config({ silent: true });
 const express = require('express');
@@ -13,7 +12,7 @@ const PORT    = process.argv[2] || process.env.PORT || 3000;
 app.disable('x-powered-by');
 app.disable('Server');
 
-app.use(history({ logger: logger }))
+app.use(history({ logger }));
 
 app.use(express.static(path.join(__dirname, 'dist/html/')));
 app.use(express.static(path.join(__dirname, 'dist/')));
@@ -21,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public/favicons')));
 
 app.use((err, req, res, next) => {
-  if(err.status) {
+  if (err.status) {
     res.status(err.status).json(err.message);
   } else if (err.message) {
     res.status(500).json(err.message);
@@ -31,4 +30,3 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => console.warn(`Server here! Listening on port ${PORT}!`));
-// fix
