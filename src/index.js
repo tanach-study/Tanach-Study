@@ -20,8 +20,8 @@ const withTracker = (WrappedComponent) => {
     const page = location.pathname + location.search;
     trackPage(page);
 
+    /* eslint-disable react/jsx-filename-extension */
     return (
-      /* eslint "react/jsx-filename-extension": [0] */
       <WrappedComponent {...props} />
     );
   };
@@ -35,3 +35,4 @@ ReactDOM.render(
   </BrowserRouter>,
   document.querySelector('#root-container'),
 );
+/* eslint-enable react/jsx-filename-extension */
