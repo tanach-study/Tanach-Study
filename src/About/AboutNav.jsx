@@ -4,41 +4,58 @@ import { Link } from 'react-router-dom';
 import styles from './About.css';
 
 function AboutNav(props) {
+  const { path } = props;
+  const links = [
+    {
+      link: '/about/mission',
+      text: 'Our Mission',
+    },
+    {
+      link: '/about/practices',
+      text: 'Core Practices',
+    },
+    {
+      link: '/about/history',
+      text: 'History',
+    },
+    {
+      link: '/about/faqs',
+      text: 'FAQ\'s',
+    },
+    {
+      link: '/about/yerushalmi',
+      text: 'Yerushalmi',
+    },
+  ];
+
+  const desktopLinks = links.map((l) => {
+    const { link, text } = l;
+    const liClass = `tab ${path === link ? styles['active-li'] : ''}`;
+    const aClass = `tsblue-text ${path === link ? styles['active-link'] : ''}`;
+    return (
+      <li key={`AboutNav-links-desktop-li-${link}`} className={liClass}>
+        <Link to={link} className={aClass}>{text}</Link>
+      </li>
+    );
+  });
+
+  const mobileLinks = links.map((l) => {
+    const { link, text } = l;
+    const liClass = `tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`;
+    const aClass = `white-text col s10 offset-s1 ${path === link ? styles['mobile-link'] : ''}`;
+    return (
+      <li key={`AboutNav-links-mobile-li-${link}`} className={liClass}>
+        <Link to={link} className={aClass}>{text}</Link>
+      </li>
+    );
+  });
   return (
     <div>
       <ul className='tabs center hide-on-small-only'>
-        <li className={`tab ${props.path === '/about/mission' ? styles['active-li'] : ''}`}>
-          <Link to='/about/mission' className={`tsblue-text ${props.path === '/about/mission' ? styles['active-link'] : ''}`}>Our Mission</Link>
-        </li>
-        <li className={`tab ${props.path === '/about/practices' ? styles['active-li'] : ''}`}>
-          <Link to='/about/practices' className={`tsblue-text ${props.path === '/about/practices' ? styles['active-link'] : ''}`}>Core Practices</Link>
-        </li>
-        <li className={`tab ${props.path === '/about/history' ? styles['active-li'] : ''}`}>
-          <Link to='/about/history' className={`tsblue-text ${props.path === '/about/history' ? styles['active-link'] : ''}`}>History</Link>
-        </li>
-        <li className={`tab ${props.path === '/about/faqs' ? styles['active-li'] : ''}`}>
-          <Link to='/about/faqs' className={`tsblue-text ${props.path === '/about/faqs' ? styles['active-link'] : ''}`}>FAQ&apos;s</Link>
-        </li>
-        <li className={`tab ${props.path === '/about/yerushalmi' ? styles['active-li'] : ''}`}>
-          <Link to='/about/yerushalmi' className={`tsblue-text ${props.path === '/about/yerushalmi' ? styles['active-link'] : ''}`}>Yerushalmi</Link>
-        </li>
+        {desktopLinks}
       </ul>
       <ul className='row hide-on-med-and-up'>
-        <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
-          <Link to='/about/mission' className={`white-text col s10 offset-s1 ${props.path === '/about/mission' ? styles['mobile-link'] : ''}`}>Our Mission</Link>
-        </li>
-        <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
-          <Link to='/about/practices' className={`white-text col s10 offset-s1 ${props.path === '/about/practices' ? styles['mobile-link'] : ''}`}>Core Practices</Link>
-        </li>
-        <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
-          <Link to='/about/history' className={`white-text col s10 offset-s1 ${props.path === '/about/history' ? styles['mobile-link'] : ''}`}>History</Link>
-        </li>
-        <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
-          <Link to='/about/faqs' className={`white-text col s10 offset-s1 ${props.path === '/about/faqs' ? styles['mobile-link'] : ''}`}>FAQ&apos;s</Link>
-        </li>
-        <li className={`tab col s10 offset-s1 tsblue btn ${styles['mobile-li']}`}>
-          <Link to='/about/yerushalmi' className={`white-text col s10 offset-s1 ${props.path === '/about/yerushalmi' ? styles['mobile-link'] : ''}`}>Yerushalmi</Link>
-        </li>
+        {mobileLinks}
       </ul>
     </div>
   );

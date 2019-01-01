@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function ChapterItem(props) {
-  const { bookName, length, i } = props;
-  const { number, path } = props.chapter;
+  const { bookName, length, i, chapter } = props;
+  const { number, path } = chapter;
   let classAdd = '';
   const diff = length - i;
 

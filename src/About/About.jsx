@@ -9,20 +9,17 @@ import FAQs from './FAQs.jsx';
 import Yerushalmi from './Yerushalmi/Yerushalmi.jsx';
 
 class About extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     window.scrollTo(0, 0);
   }
 
   render() {
+    const { location } = this.props;
     return (
       <div className='container'>
         <h1 className='center'>About Us</h1>
 
-        <AboutNav path={this.props.location.pathname} />
+        <AboutNav path={location.pathname} />
 
         <Switch>
           <Route exact path='/about' component={Mission} />
