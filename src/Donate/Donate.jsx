@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class Donate extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillMount() {
     window.scrollTo(0, 0);
   }
@@ -35,7 +31,18 @@ class Donate extends Component {
             </div>
             <div className='col l8 m8 s12 push-l2 push-m2 center'>
               <script src='https://donorbox.org/widget.js' type='text/javascript' />
-              <iframe src='https://donorbox.org/embed/support-tanach-study' height='1000px' width='100%' style={styling} seamless='seamless' id='dbox-form-embed' name='donorbox' frameBorder='0' scrolling='no' title='donation-form' />
+              <iframe
+                src='https://donorbox.org/embed/support-tanach-study'
+                height='1000px'
+                width='100%'
+                style={styling}
+                seamless='seamless'
+                id='dbox-form-embed'
+                name='donorbox'
+                frameBorder='0'
+                scrolling='no'
+                title='donation-form'
+              />
             </div>
           </div>
         </div>
