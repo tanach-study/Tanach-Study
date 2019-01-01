@@ -33,8 +33,9 @@
     "react/jsx-one-expression-per-line": [true, { "allow": "single-child" }],
     "max-len": ["error", { "code": 100 }],
     "object-curly-newline": ["error", { 
-      "ObjectExpression": "always",
+      "ObjectExpression": { "consistent": true },
       "ObjectPattern": { "minProperties": 10 }
-    }]
+    }],
+    "prefer-destructuring": ["error", {"object": true, "array": false}]
   }
 }
