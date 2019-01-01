@@ -32,6 +32,9 @@
     "react/button-has-type": [true],
     "react/jsx-one-expression-per-line": [true, { "allow": "single-child" }],
     "max-len": ["error", { "code": 100 }],
-    "object-curly-newline": ["error", { "minProperties": 10 }]
+    "object-curly-newline": ["error", { 
+      "ObjectExpression": "always",
+      "ObjectPattern": { "minProperties": 10 }
+    }]
   }
 }
