@@ -31,13 +31,17 @@ class Perakim extends Component {
   }
 
   componentDidMount() {
-    const { sefer, perek } = this.props.match.params;
+    const { match } = this.props;
+    const { params } = match;
+    const { sefer, perek } = params;
     this.initialize(sefer, perek);
   }
 
   componentDidUpdate(prevProps) {
-    const newSefer = this.props.match.params.sefer;
-    const newPerek = this.props.match.params.perek;
+    const { match } = this.props;
+    const { params } = match;
+    const newSefer = params.sefer;
+    const newPerek = params.perek;
     const oldSefer = prevProps.match.params.sefer;
     const oldPerek = prevProps.match.params.perek;
 
@@ -47,7 +51,8 @@ class Perakim extends Component {
   }
 
   getQueryParams() {
-    const queryString = this.props.location.search;
+    const { location } = this.props;
+    const queryString = location.search;
     if (queryString) {
       const pairs = queryString.slice(1).split('&');
       const params = {};
@@ -71,26 +76,27 @@ class Perakim extends Component {
   }
 
   render() {
-    if (this.state.haveData) {
-      const { sefer } = this.props.match.params;
-      if (this.state.activePerek.part_name === 'torah') {
+    const { haveData, activePerek } = this.state;
+    const { match } = this.props;
+    if (haveData) {
+      if (activePerek.part_name === 'torah') {
         const params = this.getQueryParams();
         return (
           <TorahPerek
-            act={this.state.activePerek}
+            act={activePerek}
             formatDir={formatDir}
-            sefer={this.props.match.params.sefer}
-            perek={this.props.match.params.perek}
+            sefer={match.params.sefer}
+            perek={match.params.perek}
             queryParams={params}
           />
         );
       }
       return (
         <NachPerek
-          act={this.state.activePerek}
+          act={activePerek}
           formatDir={formatDir}
-          sefer={this.props.match.params.sefer}
-          perek={this.props.match.params.perek}
+          sefer={match.params.sefer}
+          perek={match.params.perek}
         />
       );
     }
