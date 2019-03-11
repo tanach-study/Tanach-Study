@@ -2,28 +2,30 @@ const webpack           = require('webpack');
 const path              = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const template          = require('html-webpack-template');
 
 const BUILD_DIR = path.join(__dirname, './dist');
 const APP_DIR = path.join(__dirname, './src');
 
-// when deploying, this should be the new version number; webpack should be run after the version was bumped up
-const version = process.env.npm_package_version;
-
 // get the node env used to run the script with, and set to development if undefined
 const nodeEnv = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
-// set the public path, using the cdn if deploying to production
+// set the public path, using the CDN if deploying to production
 const publicPath = nodeEnv === 'production' ? 'https://cdn.tanachstudy.com/assets' : '/';
-// deprecated; should always use URL
-const apiURL = nodeEnv === 'production' ? JSON.stringify('https://api.tanachstudy.com') : JSON.stringify('https://api.tanachstudy.com');
-const tanachURL = nodeEnv === 'production' ? JSON.stringify('https://cdn.tanachstudy.com/assets/tanach') : JSON.stringify('/tanach');
+// set the URL of the API server, using the localhost if running in development
+const apiURL = nodeEnv === 'production'
+  ? JSON.stringify('https://api.tanachstudy.com')
+  : JSON.stringify('http://localhost:3000');
+const tanachURL = nodeEnv === 'production'
+  ? JSON.stringify('https://cdn.tanachstudy.com/assets/tanach')
+  : JSON.stringify('/tanach');
 
 const plugins = [
   new ExtractTextPlugin({
-    filename: `[name].${version}.css`,
+    filename: '[name].css',
     allChunks: true,
   }),
   new webpack.ProvidePlugin({
-    fetch: 'imports-loader?this=>global!exports-loader?global.fetch!whatwg-fetch',
+    fetch: 'exports-loader?self.fetch!whatwg-fetch/dist/fetch.umd',
   }),
   new webpack.DefinePlugin({
     API_URL: apiURL,
@@ -32,7 +34,7 @@ const plugins = [
   new HtmlWebpackPlugin({
     inject: false,
     filename: 'index.html',
-    template: require('html-webpack-template'),
+    template,
     appMountId: 'root-container',
     meta: [
       {
@@ -72,7 +74,8 @@ const plugins = [
       },
       {
         property: 'og:description',
-        content: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach',
+        content: 'Tanach Study is a modern, web based platform for the study of the 24 books of '
+        + 'Tanach',
       },
       {
         name: 'theme-color',
@@ -121,7 +124,7 @@ const rules = [
     test: /\b(?!global\.)(\w+(?:-\w+)*)(?=\.css\b)/,
     loader: ExtractTextPlugin.extract({
       fallback: 'style-loader',
-      use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+      use: 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]',
     }),
   },
   {
@@ -178,7 +181,7 @@ module.exports = {
   output: {
     path: BUILD_DIR,
     publicPath,
-    filename: `[name].${version}.js`,
+    filename: '[name].js',
   },
   module: {
     rules,
