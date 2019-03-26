@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import global styles
@@ -9,14 +9,9 @@ import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
 import HomePage from './HomePage/HomePage.jsx';
 import About from './About/About.jsx';
-import Parts from './Parts/Parts.jsx';
-import Sefarim from './Sefarim/Sefarim.jsx';
-import Perakim from './Perakim/Perakim.jsx';
 import Donate from './Donate/Donate.jsx';
 import Contact from './Contact/Contact.jsx';
 import Signup from './Signup/Signup.jsx';
-import AllTeachers from './Teachers/AllTeachers.jsx';
-import Teacher from './Teachers/Teacher.jsx';
 
 // import program conmponents
 import TanachStudy from './TanachStudy/TanachStudy.jsx';
@@ -76,30 +71,40 @@ function getParasha() {
   return parasha;
 }
 
-function App(props) {
-  const parasha = getParasha();
-  const { location } = props;
-  const { pathname } = location;
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      programs,
+    };
+  }
 
-  const section = pathname.split('/')[1].replace('-', '');
-  return (
-    <ProgramContext.Provider value={programs[section]}>
-      <ProgramNavigation />
-      <Navigation />
-      <div className='body'>
-        <Switch>
-          <Route exact path='/signup' component={Signup} />
-          <Route exact path='/contact' component={Contact} />
-          <Route exact path='/donate' component={Donate} />
-          <Route path='/about' component={About} />
-          <Redirect from='/parasha' to={`/perakim/bereshit/${parasha}`} />
-          <Route path='/tanach-study' component={TanachStudy} />
-          <Route path='/' component={HomePage} />
-        </Switch>
-      </div>
-      <Footer />
-    </ProgramContext.Provider>
-  );
+  render() {
+    const parasha = getParasha();
+    const { programs: progs } = this.state;
+    const { location } = this.props;
+    const { pathname } = location;
+
+    const section = pathname.split('/')[1].replace('-', '');
+    return (
+      <ProgramContext.Provider value={progs[section]}>
+        <ProgramNavigation />
+        <Navigation />
+        <div className='body'>
+          <Switch>
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/donate' component={Donate} />
+            <Route path='/about' component={About} />
+            <Redirect from='/parasha' to={`/tanach-study/perakim/bereshit/${parasha}`} />
+            <Route path='/tanach-study' component={TanachStudy} />
+            <Route path='/' component={HomePage} />
+          </Switch>
+        </div>
+        <Footer />
+      </ProgramContext.Provider>
+    );
+  }
 }
 
 export default App;

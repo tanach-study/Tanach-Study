@@ -7,6 +7,7 @@ export const programs = {
     tertiaryColor: '#333333',
     complementaryColor: '#444444',
     logo: '/assets/images/logos/tanachstudy.png',
+    linkPrefix: 'tanach-study',
   },
   mishnastudy: {
     mainColor: '#111111',
@@ -14,6 +15,7 @@ export const programs = {
     tertiaryColor: '#333333',
     complementaryColor: '#444444',
     logo: '/assets/images/logos/mishnastudy.png',
+    linkPrefix: 'tanach-study',
   },
   haftarastudy: {
     mainColor: '#111111',
@@ -21,6 +23,7 @@ export const programs = {
     tertiaryColor: '#333333',
     complementaryColor: '#444444',
     logo: '/assets/images/logos/mishnastudy.png',
+    linkPrefix: 'tanach-study',
   },
 };
 
