@@ -12,12 +12,12 @@ function TanachStudy(props) {
   return (
     <div className='body'>
       <Switch>
-        <Route exact path='/teachers/:id' component={Teacher} />
-        <Route exact path='/teachers' component={AllTeachers} />
-        <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
-        <Route exact path='/sefarim/:sefer' component={Sefarim} />
-        <Route exact path='/parts' component={Parts} />
-        <Route path='/' component={HomePage} />
+        <Route exact path='/tanach-study/teachers/:id' component={Teacher} />
+        <Route exact path='/tanach-study/teachers' component={AllTeachers} />
+        <Route exact path='/tanach-study/perakim/:sefer/:perek' component={Perakim} />
+        <Route exact path='/tanach-study/sefarim/:sefer' component={Sefarim} />
+        <Route exact path='/tanach-study/parts' component={Parts} />
+        <Route exact path='/tanach-study' component={HomePage} />
       </Switch>
     </div>
   );
