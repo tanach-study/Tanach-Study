@@ -13,11 +13,27 @@ class ProgramNavigation extends Component {
   render() {
     return (
       <nav className={`${styles['program-navigation']} valign-wrapper`}>
-        <ul className=''>
-          <li><Link to='/tanach-study'>Tanach Study</Link></li>
-          <li><Link to='/mishna-study'>Mishna Study</Link></li>
-          <li><Link to='/moadim-study'>Moadim Study</Link></li>
-          <li><Link to='/haftara-study'>Haftara Study</Link></li>
+        <ul>
+          <li className={styles['nav-list-item']}>
+            <Link to='/tanach-study' className={styles['nav-link']}>
+              <img src='/assets/images/logo.png' alt='Tanach Study Logo' />
+            </Link>
+          </li>
+          <li className={styles['nav-list-item']}>
+            <Link to='/mishna-study' className={styles['nav-link']}>
+              <img src='/assets/images/logo.png' alt='Mishna Study Logo' />
+            </Link>
+          </li>
+          <li className={styles['nav-list-item']}>
+            <Link to='/haftara-study' className={styles['nav-link']}>
+              <img src='/assets/images/logo.png' alt='Haftara Study Logo' />
+            </Link>
+          </li>
+          <li className={styles['nav-list-item']}>
+            <Link to='/moadim-study' className={styles['nav-link']}>
+              <img src='/assets/images/logo.png' alt='Moadim Study Logo' />
+            </Link>
+          </li>
         </ul>
       </nav>
     );

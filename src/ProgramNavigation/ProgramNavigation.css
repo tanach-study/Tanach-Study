@@ -4,3 +4,13 @@
   min-height: 50px;
   background-color: #000;
 }
+
+.nav-list-item {
+  height: 100%;
+}
+
+.nav-link, .nav-link img {
+  height: 8vh;
+  min-height: 40px;
+  width: auto;
+}
