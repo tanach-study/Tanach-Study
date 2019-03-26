@@ -17,6 +17,8 @@ import Signup from './Signup/Signup.jsx';
 import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
 
+import { programs, ProgramContext } from './app-context.js';
+
 function getParasha() {
   const today = new Date();
   const month = today.getMonth(); // 0-11
@@ -72,8 +74,12 @@ function getParasha() {
 
 function App(props) {
   const parasha = getParasha();
+  const { path } = props;
+  const { location } = path;
+
+  const section = location.find('//').replace('-', '');
   return (
-    <div>
+    <ProgramContext.Provider value={programs[section]}>
       <Navigation />
       <div className='body'>
         <Switch>
@@ -91,7 +97,7 @@ function App(props) {
         </Switch>
       </div>
       <Footer />
-    </div>
+    </ProgramContext.Provider>
   );
 }
 
