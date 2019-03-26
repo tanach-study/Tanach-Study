@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 // import global styles
 import './styles.global.css';
 
+import ProgramNavigation from './ProgramNavigation/ProgramNavigation.jsx';
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
 import HomePage from './HomePage/HomePage.jsx';
@@ -74,12 +75,13 @@ function getParasha() {
 
 function App(props) {
   const parasha = getParasha();
-  const { path } = props;
-  const { location } = path;
+  const { location } = props;
+  const { pathname } = location;
 
-  const section = location.find('//').replace('-', '');
+  const section = pathname.split('/')[1].replace('-', '');
   return (
     <ProgramContext.Provider value={programs[section]}>
+      <ProgramNavigation />
       <Navigation />
       <div className='body'>
         <Switch>
