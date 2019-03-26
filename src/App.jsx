@@ -18,6 +18,9 @@ import Signup from './Signup/Signup.jsx';
 import AllTeachers from './Teachers/AllTeachers.jsx';
 import Teacher from './Teachers/Teacher.jsx';
 
+// import program conmponents
+import TanachStudy from './TanachStudy/TanachStudy.jsx';
+
 import { programs, ProgramContext } from './app-context.js';
 
 function getParasha() {
@@ -85,16 +88,12 @@ function App(props) {
       <Navigation />
       <div className='body'>
         <Switch>
-          <Route exact path='/teachers/:id' component={Teacher} />
-          <Route exact path='/teachers' component={AllTeachers} />
           <Route exact path='/signup' component={Signup} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/donate' component={Donate} />
-          <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
-          <Route exact path='/sefarim/:sefer' component={Sefarim} />
-          <Route exact path='/parts' component={Parts} />
           <Route path='/about' component={About} />
           <Redirect from='/parasha' to={`/perakim/bereshit/${parasha}`} />
+          <Route path='/tanach-study' component={TanachStudy} />
           <Route path='/' component={HomePage} />
         </Switch>
       </div>
