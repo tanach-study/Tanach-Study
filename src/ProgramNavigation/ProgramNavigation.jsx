@@ -12,8 +12,8 @@ class ProgramNavigation extends Component {
 
   render() {
     return (
-      <nav className={`${styles['program-navigation']} valign-wrapper`}>
-        <ul>
+      <nav className={`${styles['program-navigation']}`}>
+        <ul className='valign-wrapper'>
           <li className={styles['nav-list-item']}>
             <Link to='/tanach-study' className={styles['nav-link']}>
               <img src='/assets/images/logo.png' alt='Tanach Study Logo' />
