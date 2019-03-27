@@ -89,7 +89,9 @@ class App extends Component {
     return (
       <ProgramContext.Provider value={progs[section]}>
         <ProgramNavigation />
-        <Navigation />
+        <ProgramContext.Consumer>
+          {program => <Navigation program={program} />}
+        </ProgramContext.Consumer>
         <div className='body'>
           <Switch>
             <Route exact path='/signup' component={Signup} />
