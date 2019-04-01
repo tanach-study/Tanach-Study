@@ -12,8 +12,8 @@ function MishnaStudy(props) {
   return (
     <div className='body'>
       <Switch>
-        <Route exact path='/tanach-study/parts' component={Parts} />
-        <Route exact path='/tanach-study' component={HomePage} />
+        <Route exact path='/mishna-study/parts' component={Parts} />
+        <Route exact path='/mishna-study' component={HomePage} />
       </Switch>
     </div>
   );
