@@ -41,7 +41,7 @@ class Navigation extends Component {
           <i className='material-icons'>menu</i>
         </div>
         <ul className={`${styles['desktop-nav']} hide-on-med-and-down`}>
-          <li><Link to={`${lp}`}>Home</Link></li>
+          <li><Link to='/'>Home</Link></li>
           <li><Link to={`${lp}/parts`}>Study</Link></li>
           <li><Link to='/signup'>Sign Up</Link></li>
           <li>
@@ -61,7 +61,7 @@ class Navigation extends Component {
           <div className='row full-height'>
             <div className='col m5 s8 full-height white' onClick={() => this.toggleMobileNav()}>
               <ul className={`${styles['mobile-nav']} tsblue-text`}>
-                <li><Link to={`${lp}`}>Home</Link></li>
+                <li><Link to='/'>Home</Link></li>
                 <li><Link to={`${lp}/parts`}>Study</Link></li>
                 <li><Link to='/signup'>Sign Up</Link></li>
                 <li>
