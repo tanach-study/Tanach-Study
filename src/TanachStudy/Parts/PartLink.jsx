@@ -13,7 +13,7 @@ function PartLink({ book, i, books }) {
   }
 
   return (
-    <Link to={`/tanach-study${book.url}`} className={`col s12 m6 l4 ${classAdd}`} key={i}>
+    <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
       <div className='card tsblue btn waves-effect hoverable full-width'>
         <div className='col-content'>{book.name}</div>
       </div>
