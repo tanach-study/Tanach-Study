@@ -40,48 +40,30 @@ class Navigation extends Component {
         >
           <i className='material-icons'>menu</i>
         </div>
-        {/* eslint-disable max-len */}
-        <div className={`row ${styles['no-margin-bottom']} full-height full-width hide-on-med-and-down`}>
-          {/* eslint-enable max-len */}
-          <div className='col l2 m1 s3 offset-l1 offset-m1 offset-s1 full-height'>
-            <Link to={`${lp}`} className='full-height valign'>
-              <img
-                className='full-height'
-                src='https://cdn.tanachstudy.com/assets/images/logo.png'
-                alt='Tanach Study Logo'
-              />
-            </Link>
-          </div>
-          <div className='col l7 right-align valign'>
-            <ul className='right'>
-              <li><Link to='/signup'>Sign Up</Link></li>
-              <li><Link to='/about'>About Us</Link></li>
-              <li><Link to={`${lp}/parts`}>Study a Perek</Link></li>
-              <li><Link to={`${lp}/teachers`}>Our Teachers</Link></li>
-              <li>
-                <a
-                  href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
-                  target='blank'
-                >
-                  Videos
-                </a>
-              </li>
-              <li><Link to='/donate'>Donate</Link></li>
-              <li><Link to='/contact'>Contact Us</Link></li>
-            </ul>
-          </div>
-          <div className='col l2' />
-        </div>
+        <ul className={`${styles['desktop-nav']} hide-on-med-and-down`}>
+          <li><Link to={`${lp}`}>Home</Link></li>
+          <li><Link to={`${lp}/parts`}>Study</Link></li>
+          <li><Link to='/signup'>Sign Up</Link></li>
+          <li>
+            <a
+              href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
+              target='blank'
+            >
+              Videos
+            </a>
+          </li>
+          <li><Link to='/donate'>Donate</Link></li>
+          <li><Link to='/contact'>Contact Us</Link></li>
+          <li><Link to='/about'>About Us</Link></li>
+        </ul>
 
         <div className={mobileNavClass}>
           <div className='row full-height'>
             <div className='col m5 s8 full-height white' onClick={() => this.toggleMobileNav()}>
               <ul className={`${styles['mobile-nav']} tsblue-text`}>
                 <li><Link to={`${lp}`}>Home</Link></li>
+                <li><Link to={`${lp}/parts`}>Study</Link></li>
                 <li><Link to='/signup'>Sign Up</Link></li>
-                <li><Link to='/about'>About Us</Link></li>
-                <li><Link to={`${lp}/parts`}>Study a Perek</Link></li>
-                <li><Link to={`${lp}/teachers`}>Our Teachers</Link></li>
                 <li>
                   <a
                     href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
@@ -92,6 +74,7 @@ class Navigation extends Component {
                 </li>
                 <li><Link to='/donate'>Donate</Link></li>
                 <li><Link to='/contact'>Contact Us</Link></li>
+                <li><Link to='/about'>About Us</Link></li>
               </ul>
             </div>
             <div
