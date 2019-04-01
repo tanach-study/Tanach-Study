@@ -15,6 +15,7 @@ import Signup from './Signup/Signup.jsx';
 
 // import program conmponents
 import TanachStudy from './TanachStudy/TanachStudy.jsx';
+import MishnaStudy from './MishnaStudy/MishnaStudy.jsx';
 
 import { programs, ProgramContext } from './app-context.js';
 
@@ -100,6 +101,7 @@ class App extends Component {
             <Route path='/about' component={About} />
             <Redirect from='/parasha' to={`/tanach-study/perakim/bereshit/${parasha}`} />
             <Route path='/tanach-study' component={TanachStudy} />
+            <Route path='/mishna-study' component={MishnaStudy} />
             <Redirect from='/parts' to='/tanach-study/parts' />
             <Redirect from='/perakim' to='/tanach-study/perakim' />
             <Redirect from='/sefarim' to='/tanach-study/sefarim' />
