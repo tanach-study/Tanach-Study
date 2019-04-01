@@ -1,265 +1,265 @@
 {
   "zeraim": [
     {
-      "name": "Masechet Berachot",
+      "name": "Berachot",
       "url": "/mishna-study/zeraim/berachot"
     },
     {
-      "name": "Masechet Peah",
+      "name": "Peah",
       "url": "/mishna-study/zeraim/peah"
     },
     {
-      "name": "Masechet Demai",
+      "name": "Demai",
       "url": "/mishna-study/zeraim/demai"
     },
     {
-      "name": "Masechet Kilayim",
+      "name": "Kilayim",
       "url": "/mishna-study/zeraim/kilayim"
     },
     {
-      "name": "Masechet Sheviit",
+      "name": "Sheviit",
       "url": "/mishna-study/zeraim/sheviit"
     },
     {
-      "name": "Masechet Terumot",
+      "name": "Terumot",
       "url": "/mishna-study/zeraim/terumot"
     },
     {
-      "name": "Masechet Maasrot",
+      "name": "Maasrot",
       "url": "/mishna-study/zeraim/maasrot"
     },
     {
-      "name": "Masechet Maaser Sheni",
+      "name": "Maaser Sheni",
       "url": "/mishna-study/zeraim/maaser-sheni"
     },
     {
-      "name": "Masechet Halla",
+      "name": "Halla",
       "url": "/mishna-study/zeraim/halla"
     },
     {
-      "name": "Masechet Orla",
+      "name": "Orla",
       "url": "/mishna-study/zeraim/orla"
     },
     {
-      "name": "Masechet Bikurim",
+      "name": "Bikurim",
       "url": "/mishna-study/zeraim/bikurim"
     }
   ],
   "moed": [
     {
-      "name": "Masechet Shabbat",
+      "name": "Shabbat",
       "url": "/mishna-study/moed/shabbat"
     },
     {
-      "name": "Masechet Eruvin",
+      "name": "Eruvin",
       "url": "/mishna-study/moed/eruvin"
     },
     {
-      "name": "Masechet Pesahim",
+      "name": "Pesahim",
       "url": "/mishna-study/moed/pesahim"
     },
     {
-      "name": "Masechet Shekalim",
+      "name": "Shekalim",
       "url": "/mishna-study/moed/shekalim"
     },
     {
-      "name": "Masechet Yoma",
+      "name": "Yoma",
       "url": "/mishna-study/moed/yoma"
     },
     {
-      "name": "Masechet Sukka",
+      "name": "Sukka",
       "url": "/mishna-study/moed/sukka"
     },
     {
-      "name": "Masechet Beitza",
+      "name": "Beitza",
       "url": "/mishna-study/moed/beitza"
     },
     {
-      "name": "Masechet Rosh Hashanah",
+      "name": "Rosh Hashanah",
       "url": "/mishna-study/moed/rosh-hashana"
     },
     {
-      "name": "Masechet Taanit",
+      "name": "Taanit",
       "url": "/mishna-study/moed/taanit"
     },
     {
-      "name": "Masechet Megilla",
+      "name": "Megilla",
       "url": "/mishna-study/moed/megilla"
     },
     {
-      "name": "Masechet Moed Katan",
+      "name": "Moed Katan",
       "url": "/mishna-study/moed/moed-katan"
     },
     {
-      "name": "Masechet Hagigah",
+      "name": "Hagigah",
       "url": "/mishna-study/moed/hagiga"
     }
   ],
   "nashim": [
     {
-      "name": "Masechet Yevamot",
+      "name": "Yevamot",
       "url": "/mishna-study/nashim/yevamot"
     },
     {
-      "name": "Masechet Ketubot",
+      "name": "Ketubot",
       "url": "/mishna-study/nashim/ketubot"
     },
     {
-      "name": "Masechet Nedarim",
+      "name": "Nedarim",
       "url": "/mishna-study/nashim/nedarim"
     },
     {
-      "name": "Masechet Nazir",
+      "name": "Nazir",
       "url": "/mishna-study/nashim/nazir"
     },
     {
-      "name": "Masechet Sotah",
+      "name": "Sotah",
       "url": "/mishna-study/nashim/sotah"
     },
     {
-      "name": "Masechet Gittin",
+      "name": "Gittin",
       "url": "/mishna-study/nashim/gittin"
     },
     {
-      "name": "Masechet Kiddushin",
+      "name": "Kiddushin",
       "url": "/mishna-study/nashim/kiddushin"
     }
   ],
   "nezikin": [
     {
-      "name": "Masechet Bava Kamma",
+      "name": "Bava Kamma",
       "url": "/mishna-study/nezikin/bava-kamma"
     },
     {
-      "name": "Masechet Bava Metzia",
+      "name": "Bava Metzia",
       "url": "/mishna-study/nezikin/bava-metzia"
     },
     {
-      "name": "Masechet Bava Batra",
+      "name": "Bava Batra",
       "url": "/mishna-study/nezikin/bava-batra"
     },
     {
-      "name": "Masechet Sanhedrin",
+      "name": "Sanhedrin",
       "url": "/mishna-study/nezikin/sanhedrin"
     },
     {
-      "name": "Masechet Makkot",
+      "name": "Makkot",
       "url": "/mishna-study/nezikin/makkot"
     },
     {
-      "name": "Masechet Shevuot",
+      "name": "Shevuot",
       "url": "/mishna-study/nezikin/shevuot"
     },
     {
-      "name": "Masechet Eduyot",
+      "name": "Eduyot",
       "url": "/mishna-study/nezikin/eduyot"
     },
     {
-      "name": "Masechet Avodah Zara",
+      "name": "Avodah Zara",
       "url": "/mishna-study/nezikin/avoda-zara"
     },
     {
-      "name": "Masechet Pirkei Avot",
+      "name": "Pirkei Avot",
       "url": "/mishna-study/nezikin/pirkei-avot"
     },
     {
-      "name": "Masechet Horayot",
+      "name": "Horayot",
       "url": "/mishna-study/nezikin/horayot"
     }
   ],
   "kadashim": [
     {
-      "name": "Masechet Zevachim",
+      "name": "Zevachim",
       "url": "/mishna-study/kadashim/zevachim"
     },
     {
-      "name": "Masechet Menahot",
+      "name": "Menahot",
       "url": "/mishna-study/kadashim/menahot"
     },
     {
-      "name": "Masechet Hullin",
+      "name": "Hullin",
       "url": "/mishna-study/kadashim/hullin"
     },
     {
-      "name": "Masechet Bekhorot",
+      "name": "Bekhorot",
       "url": "/mishna-study/kadashim/bekhorot"
     },
     {
-      "name": "Masechet Arakhin",
+      "name": "Arakhin",
       "url": "/mishna-study/kadashim/arakhin"
     },
     {
-      "name": "Masechet Temurah",
+      "name": "Temurah",
       "url": "/mishna-study/kadashim/temurah"
     },
     {
-      "name": "Masechet Keritot",
+      "name": "Keritot",
       "url": "/mishna-study/kadashim/keritot"
     },
     {
-      "name": "Masechet Meila",
+      "name": "Meila",
       "url": "/mishna-study/kadashim/meila"
     },
     {
-      "name": "Masechet Tamid",
+      "name": "Tamid",
       "url": "/mishna-study/kadashim/tamid"
     },
     {
-      "name": "Masechet Middot",
+      "name": "Middot",
       "url": "/mishna-study/kadashim/middot"
     },
     {
-      "name": "Masechet Kinnim",
+      "name": "Kinnim",
       "url": "/mishna-study/kadashim/kinnim"
     }
   ],
   "taharot": [
     {
-      "name": "Masechet Kelim",
+      "name": "Kelim",
       "url": "/mishna-study/taharot/kelim"
     },
     {
-      "name": "Masechet Oholot",
+      "name": "Oholot",
       "url": "/mishna-study/taharot/oholot"
     },
     {
-      "name": "Masechet Negaim",
+      "name": "Negaim",
       "url": "/mishna-study/taharot/negaim"
     },
     {
-      "name": "Masechet Parah",
+      "name": "Parah",
       "url": "/mishna-study/taharot/para"
     },
     {
-      "name": "Masechet Taharat",
+      "name": "Taharat",
       "url": "/mishna-study/taharot/taharat"
     },
     {
-      "name": "Masechet Mikvaot",
+      "name": "Mikvaot",
       "url": "/mishna-study/taharot/mikvaot"
     },
     {
-      "name": "Masechet Niddah",
+      "name": "Niddah",
       "url": "/mishna-study/taharot/niddah"
     },
     {
-      "name": "Masechet Makhshirin",
+      "name": "Makhshirin",
       "url": "/mishna-study/taharot/makhshirin"
     },
     {
-      "name": "Masechet Zavim",
+      "name": "Zavim",
       "url": "/mishna-study/taharot/zavim"
     },
     {
-      "name": "Masechet Tevul Yom",
+      "name": "Tevul Yom",
       "url": "/mishna-study/taharot/tevul-yom"
     },
     {
-      "name": "Masechet Yadayim",
+      "name": "Yadayim",
       "url": "/mishna-study/taharot/yadayim"
     },
     {
-      "name": "Masechet Oktzin",
+      "name": "Oktzin",
       "url": "/mishna-study/taharot/oktzin"
     }
   ]
