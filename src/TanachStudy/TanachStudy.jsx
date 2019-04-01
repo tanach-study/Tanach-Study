@@ -2,11 +2,11 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from './TanachStudyHomePage/TanachStudyHomePage.jsx';
-import Parts from '../Parts/Parts.jsx';
-import Sefarim from '../Sefarim/Sefarim.jsx';
-import Perakim from '../Perakim/Perakim.jsx';
-import AllTeachers from '../Teachers/AllTeachers.jsx';
-import Teacher from '../Teachers/Teacher.jsx';
+import Parts from './Parts/Parts.jsx';
+import Sefarim from './Sefarim/Sefarim.jsx';
+import Perakim from './Perakim/Perakim.jsx';
+import AllTeachers from './Teachers/AllTeachers.jsx';
+import Teacher from './Teachers/Teacher.jsx';
 
 function TanachStudy(props) {
   return (

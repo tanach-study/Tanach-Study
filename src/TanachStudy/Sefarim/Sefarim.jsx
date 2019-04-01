@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PerekList from '../PerekList/PerekList.jsx';
-import Spinner from '../Spinner/Spinner.jsx';
+import Spinner from '../../Spinner/Spinner.jsx';
 
 class Sefarim extends Component {
   constructor(props) {

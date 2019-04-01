@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NachPerek from './NachPerek.jsx';
 import TorahPerek from './TorahPerek.jsx';
-import Spinner from '../Spinner/Spinner.jsx';
+import Spinner from '../../Spinner/Spinner.jsx';
 
 function formatDir(passed) {
   let str;
