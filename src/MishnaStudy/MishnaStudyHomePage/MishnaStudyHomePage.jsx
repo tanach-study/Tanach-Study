@@ -35,7 +35,7 @@ class MishnaStudyHomePage extends Component {
         </section>
         <section className='section center'>
           <Link to='/mishna-study/parts'>
-            <button className='btn tsblue'>Study a Mishna</button>
+            <button className='btn msred'>Study a Mishna</button>
           </Link>
         </section>
       </main>
