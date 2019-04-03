@@ -21,17 +21,17 @@ class ProgramNavigation extends Component {
           </li>
           <li className={styles['nav-list-item']}>
             <Link to='/mishna-study' className={styles['nav-link']}>
-              <img src='/assets/images/logo.png' alt='Mishna Study Logo' />
+              <img src='/assets/images/mishna-study-logo.png' alt='Mishna Study Logo' />
             </Link>
           </li>
           <li className={styles['nav-list-item']}>
             <Link to='/haftara-study' className={styles['nav-link']}>
-              <img src='/assets/images/logo.png' alt='Haftara Study Logo' />
+              <img src='/assets/images/haftara-study-logo.png' alt='Haftara Study Logo' />
             </Link>
           </li>
           <li className={styles['nav-list-item']}>
             <Link to='/moadim-study' className={styles['nav-link']}>
-              <img src='/assets/images/logo.png' alt='Moadim Study Logo' />
+              <img src='/assets/images/parasha-study-logo.png' alt='Parasha Study Logo' />
             </Link>
           </li>
         </ul>
