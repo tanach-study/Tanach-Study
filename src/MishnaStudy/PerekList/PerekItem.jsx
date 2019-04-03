@@ -1,6 +1,7 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
+
+import styles from './PerekItem.css';
 
 const MishnaPerekItem = (props) => {
   const { perek, seder, masechet } = props;
@@ -8,7 +9,7 @@ const MishnaPerekItem = (props) => {
   const url = `/mishna-study/perek/${seder}/${masechet}/${perek}`;
   return (
     <div className='col l4 m6 s12'>
-      <Link to={url}>
+      <Link to={url} className={styles['perek-link']}>
         <div className='card hoverable full-width'>
           <div className='card-content'>
             <p>{perekName}</p>
