@@ -12,11 +12,13 @@ class Masechtot extends Component {
     this.state = {
       sederName: seder,
       masechetName: masechet,
-      selectedSeder: {},
+      masechetTitle: '',
+      masechetSponsor: '',
+      perakim: [],
+      teachers: [],
       activeIndex: 0,
       haveData: false,
     };
-    this._seferCardClick = this.seferCardClick.bind(this);
   }
 
   componentWillMount() {
@@ -36,29 +38,46 @@ class Masechtot extends Component {
     fetch(`${API_URL}/mishna-study/masechet/${seder}/${masechet}`)
       .then(r => r.json())
       .then((data) => {
+        const perakim = new Set();
+        const teacherStrings = new Set();
+        const teachers = [];
+        data.forEach((record) => {
+          perakim.add(record.unit);
+          const { teacher_title: title } = record;
+          const { teacher_fname: fname } = record;
+          const { teacher_mname: mname } = record;
+          const { teacher_lname: lname } = record;
+          const teacherString = `${title}-${fname}-${mname}-${lname}`;
+          if (!teacherStrings.has(teacherString)) {
+            teacherStrings.add(teacherString);
+            const { teacher_short_bio: shortBio } = record;
+            const { teacher_long_bio: longBio } = record;
+            const { teacher_image_url: image } = record;
+            teachers.push({
+              title,
+              fname,
+              mname,
+              lname,
+              shortBio,
+              longBio,
+              image,
+            });
+          }
+        });
         this.setState({
           haveData: true,
-          selectedSeder: data,
+          perakim: [...perakim],
+          masechetTitle: data[0].section_title,
+          masechetSponsor: data[0].section_sponsor,
+          teachers,
         });
       })
       .catch(err => console.error(err));
   }
 
-  seferCardClick(i) {
-    const { history } = this.props;
-    const { push } = history;
-    const { sederName } = this.state;
-    push(`/mishna-study/${sederName}/${i}`);
-  }
-
   render() {
-    const { selectedSeder } = this.state;
-    const { sederMeta } = selectedSeder || {};
-    const { sederTeachers } = selectedSeder || [];
-    const { allPerakim } = selectedSeder || [];
-    const { book_sponsor: bookSponsor } = sederMeta || '';
-    const sponsor = Array.isArray(bookSponsor) ? bookSponsor.map(l => <div key={`sefer-sponsor-${selectedSeder}-${l}`}>{l}</div>) : bookSponsor;
-    const teacherChips = sederTeachers.map((teacher, i) => {
+    const { perakim, teachers } = this.state;
+    const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;
       return (
         <div key={`${title}-${fname}-${lname}-chip`} className='chip pointer' onClick={e => this.setState({ activeIndex: i })}>
@@ -66,17 +85,15 @@ class Masechtot extends Component {
         </div>
       );
     });
-    const teacherCards = sederTeachers.map((teacher) => {
-      const { title, fname, mname, lname,
-        long_bio: longBio,
-        short_bio: shortBio,
-        teacher_id: teacherID } = teacher;
+    const teacherCards = teachers.map((teacher) => {
+      const { title, fname, mname, lname, longBio, shortBio } = teacher;
+      const url = mname ? `${fname}-${mname}-${lname}` : `${fname}-${lname}`;
       return (
         <div key={`${title}-${fname}-${lname}-card`} className='card'>
           <div className='card-content'>
             <div className='card-title'>{title} {fname}{mname ? ` ${mname} ` : ' '}{lname}</div>
             <p>{longBio || shortBio}</p>
-            <a href={`/teachers/${teacherID}`}>See {title} {lname}&apos;s bio page</a>
+            <a href={`/teachers/${url}`}>See {title} {lname}&apos;s bio page</a>
           </div>
         </div>
       );
@@ -85,19 +102,21 @@ class Masechtot extends Component {
     const { haveData, activeIndex } = this.state;
 
     if (haveData) {
+      const { masechetTitle, masechetSponsor, sederName, masechetName } = this.state;
+      const sponsor = Array.isArray(masechetSponsor) ? masechetSponsor.map(l => <div key={l}>{l}</div>) : masechetSponsor;
       return (
         <div>
           <div className='container'>
-            <h2>Sefer {sederMeta.book_name_pretty_eng}</h2>
-            {sederMeta.book_sponsor && <h3>{sponsor}</h3>}
+            <h2>Masechet {masechetTitle}</h2>
+            {masechetSponsor && <h3>{sponsor}</h3>}
             <div className='center'>
               {teacherChips}
             </div>
             {teacherCards[activeIndex]}
             <PerekList
-              perakim={allPerakim}
-              sefer={sederMeta}
-              click={this._seferCardClick}
+              perakim={perakim}
+              seder={sederName}
+              masechet={masechetName}
             />
           </div>
         </div>

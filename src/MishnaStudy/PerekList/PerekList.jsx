@@ -2,14 +2,13 @@ import React from 'react';
 import PerekItem from './PerekItem.jsx';
 
 const PerekList = (props) => {
-  const { seder, perakim, click } = props;
-  const mapped = perakim.map((perek, i) => (
+  const { perakim, seder, masechet } = props;
+  const mapped = perakim.map(perek => (
     <PerekItem
       perek={perek}
-      sefer={seder}
-      key={`${seder}-${perek.perek_id}`}
-      index={i}
-      click={click}
+      seder={seder}
+      masechet={masechet}
+      key={`seder-${seder}-masechet-${masechet}-perek-${perek}-listitem`}
     />));
   return (
     <div className='row'>
