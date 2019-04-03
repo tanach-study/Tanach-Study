@@ -12,12 +12,21 @@ function PartLink({ book, i, books }) {
     }
   }
 
+  if (book.active) {
+    return (
+      <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
+        <div className='card msred btn waves-effect hoverable full-width'>
+          <div className='col-content'>{book.name}</div>
+        </div>
+      </Link>
+    );
+  }
   return (
-    <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-      <div className='card msred btn waves-effect hoverable full-width'>
-        <div className='col-content'>Masechet {book.name}</div>
+    <div className={`col s12 m6 l4 ${classAdd}`} key={i}>
+      <div className='card msred btn waves-effect hoverable full-width disabled'>
+        <div className='col-content'>{book.name}</div>
       </div>
-    </Link>
+    </div>
   );
 }
 
