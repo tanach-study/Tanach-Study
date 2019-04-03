@@ -8,8 +8,10 @@ class Masechtot extends Component {
     const { match } = props || {};
     const { params } = match || {};
     const { seder } = params || '';
+    const { masechet } = params || '';
     this.state = {
       sederName: seder,
+      masechetName: masechet,
       selectedSeder: {},
       activeIndex: 0,
       haveData: false,
@@ -25,12 +27,13 @@ class Masechtot extends Component {
     const { match } = this.props || {};
     const { params } = match || {};
     const { seder } = params || '';
+    const { masechet } = params || '';
     if (!seder) {
       const { history } = this.props;
       const { push } = history;
       push('/');
     }
-    fetch(`${API_URL}/mishna-study/${seder}`)
+    fetch(`${API_URL}/mishna-study/masechet/${seder}/${masechet}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({

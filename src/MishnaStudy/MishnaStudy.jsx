@@ -12,7 +12,7 @@ function MishnaStudy(props) {
   return (
     <div className='body'>
       <Switch>
-        <Route exact path='/mishna-study/masechtot/:seder/:masechet' component={Parts} />
+        <Route exact path='/mishna-study/masechet/:seder/:masechet' component={Masechtot} />
         <Route exact path='/mishna-study/parts' component={Parts} />
         <Route exact path='/mishna-study' component={HomePage} />
       </Switch>
