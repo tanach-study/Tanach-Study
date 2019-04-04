@@ -103,8 +103,10 @@ class App extends Component {
             <Route path='/tanach-study' component={TanachStudy} />
             <Route path='/mishna-study' component={MishnaStudy} />
             <Redirect from='/parts' to='/tanach-study/parts' />
-            <Redirect from='/perakim' to='/tanach-study/perakim' />
-            <Redirect from='/sefarim' to='/tanach-study/sefarim' />
+            <Redirect from='/teachers/:id' to='/tanach-study/teachers/:id' />
+            <Redirect from='/teachers' to='/tanach-study/teachers' />
+            <Redirect from='/perakim/:sefer/:perek' to='/tanach-study/perakim/:sefer/:perek' />
+            <Redirect from='/sefarim/:sefer' to='/tanach-study/sefarim/:sefer' />
             <Redirect from='/teachers' to='/tanach-study/teachers' />
             <Route path='/' component={HomePage} />
           </Switch>

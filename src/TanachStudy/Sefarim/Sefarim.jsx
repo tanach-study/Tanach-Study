@@ -20,7 +20,7 @@ class Sefarim extends Component {
   componentDidMount() {
     const { sefer } = this.props.match.params || '';
     if (!sefer) this.props.history.push('/');
-    fetch(`${API_URL}/sefarim/${sefer}`)
+    fetch(`${API_URL}/tanach-study/sefarim/${sefer}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({
