@@ -9,7 +9,8 @@
     "deploy": "npm run clean && npm i --only=dev && NODE_ENV=production webpack --mode production --progress && rm -rf node_modules/ && rm -f package-lock.json && npm i --only=prod",
     "start": "node server.js",
     "rebuild": "NODE_ENV=production webpack --mode production --progress --colors",
-    "watch": "webpack --mode development --progress --watch"
+    "watch": "webpack --mode development --progress --watch",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
+    "babel-jest": "^23.0.1",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -65,6 +67,8 @@
     "html-webpack-plugin": "3.2.0",
     "html-webpack-template": "6.2.0",
     "imports-loader": "0.8.0",
+    "jest": "^23.1.0",
+    "react-test-renderer": "^16.4.1",
     "path-to-regexp": "^2.4.0",
     "postcss-loader": "3.0.0",
     "react": "16.5.2",
@@ -76,5 +80,11 @@
     "webpack": "4.22.0",
     "webpack-cli": "^3.1.2",
     "whatwg-fetch": "3.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
+    }
   }
 }

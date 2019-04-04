@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TeacherCard from './TeacherCard.jsx';
 import TeamimCard from './TeamimCard.jsx';
-import Tanach from '../Tanach/Tanach.jsx';
+import Tanach from '../../Tanach/Tanach.jsx';
 
 class NachPerek extends Component {
   constructor(props) {

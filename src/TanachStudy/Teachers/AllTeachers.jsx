@@ -14,7 +14,7 @@ class Teachers extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API_URL}/teachers`)
+    fetch(`${API_URL}/tanach-study/teachers`)
       .then(r => r.json())
       .then(data => this.setState({ teachers: data }))
       .catch(err => console.log(err));

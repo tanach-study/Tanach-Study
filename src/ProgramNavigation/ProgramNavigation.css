@@ -1,0 +1,24 @@
+.program-navigation {
+  width: 100%;
+  height: 6vh;
+  min-height: 25px;
+  background-color: #000;
+}
+
+.program-navigation ul {
+  height: 100%;
+}
+
+.nav-list-item {
+  height: 100%;
+}
+
+.nav-link {
+  height: 5vh;
+}
+
+.nav-link img {
+  height: 4vh;
+  min-height: 20px;
+  width: auto;
+}

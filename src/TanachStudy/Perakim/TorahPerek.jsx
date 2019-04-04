@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Tanach from '../Tanach/Tanach.jsx';
+import Tanach from '../../Tanach/Tanach.jsx';
 import PartItem from './TorahPartItem.jsx';
 
 class TorahPerek extends Component {

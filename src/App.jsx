@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 // import global styles
 import './styles.global.css';
 
+import ProgramNavigation from './ProgramNavigation/ProgramNavigation.jsx';
 import Navigation from './Navigation/Navigation.jsx';
 import Footer from './Footer/Footer.jsx';
 import HomePage from './HomePage/HomePage.jsx';
 import About from './About/About.jsx';
-import Parts from './Parts/Parts.jsx';
-import Sefarim from './Sefarim/Sefarim.jsx';
-import Perakim from './Perakim/Perakim.jsx';
 import Donate from './Donate/Donate.jsx';
 import Contact from './Contact/Contact.jsx';
 import Signup from './Signup/Signup.jsx';
-import AllTeachers from './Teachers/AllTeachers.jsx';
-import Teacher from './Teachers/Teacher.jsx';
+
+// import program conmponents
+import TanachStudy from './TanachStudy/TanachStudy.jsx';
+import MishnaStudy from './MishnaStudy/MishnaStudy.jsx';
+
+import { programs, ProgramContext } from './app-context.js';
 
 function getParasha() {
   const today = new Date();
@@ -70,29 +72,49 @@ function getParasha() {
   return parasha;
 }
 
-function App(props) {
-  const parasha = getParasha();
-  return (
-    <div>
-      <Navigation />
-      <div className='body'>
-        <Switch>
-          <Route exact path='/teachers/:id' component={Teacher} />
-          <Route exact path='/teachers' component={AllTeachers} />
-          <Route exact path='/signup' component={Signup} />
-          <Route exact path='/contact' component={Contact} />
-          <Route exact path='/donate' component={Donate} />
-          <Route exact path='/perakim/:sefer/:perek' component={Perakim} />
-          <Route exact path='/sefarim/:sefer' component={Sefarim} />
-          <Route exact path='/parts' component={Parts} />
-          <Route path='/about' component={About} />
-          <Redirect from='/parasha' to={`/perakim/bereshit/${parasha}`} />
-          <Route path='/' component={HomePage} />
-        </Switch>
-      </div>
-      <Footer />
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      programs,
+    };
+  }
+
+  render() {
+    const parasha = getParasha();
+    const { programs: progs } = this.state;
+    const { location } = this.props;
+    const { pathname } = location;
+
+    const section = pathname.split('/')[1].replace('-', '');
+    return (
+      <ProgramContext.Provider value={progs[section]}>
+        <ProgramNavigation />
+        <ProgramContext.Consumer>
+          {program => <Navigation program={program} />}
+        </ProgramContext.Consumer>
+        <div className='body'>
+          <Switch>
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/contact' component={Contact} />
+            <Route exact path='/donate' component={Donate} />
+            <Route path='/about' component={About} />
+            <Redirect from='/parasha' to={`/tanach-study/perakim/bereshit/${parasha}`} />
+            <Route path='/tanach-study' component={TanachStudy} />
+            <Route path='/mishna-study' component={MishnaStudy} />
+            <Redirect from='/parts' to='/tanach-study/parts' />
+            <Redirect from='/teachers/:id' to='/tanach-study/teachers/:id' />
+            <Redirect from='/teachers' to='/tanach-study/teachers' />
+            <Redirect from='/perakim/:sefer/:perek' to='/tanach-study/perakim/:sefer/:perek' />
+            <Redirect from='/sefarim/:sefer' to='/tanach-study/sefarim/:sefer' />
+            <Redirect from='/teachers' to='/tanach-study/teachers' />
+            <Route path='/' component={HomePage} />
+          </Switch>
+        </div>
+        <Footer />
+      </ProgramContext.Provider>
+    );
+  }
 }
 
 export default App;

@@ -40,4 +40,17 @@
 .clickable {
   cursor: pointer;
 }
+
+.msred {
+  background-color: #950010 !important;
+}
+
+.msred-text {
+  color: #950010 !important;
+}
+
+.msred-form input:focus {
+  border-bottom: 1px solid #950010 !important;
+  box-shadow: 0 1px 0 0 #950010 !important;
+}
 /* END GLOBAL STYLES */

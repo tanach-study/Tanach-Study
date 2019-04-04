@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PerekList from '../PerekList/PerekList.jsx';
-import Spinner from '../Spinner/Spinner.jsx';
+import Spinner from '../../Spinner/Spinner.jsx';
 
 class Sefarim extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class Sefarim extends Component {
   componentDidMount() {
     const { sefer } = this.props.match.params || '';
     if (!sefer) this.props.history.push('/');
-    fetch(`${API_URL}/sefarim/${sefer}`)
+    fetch(`${API_URL}/tanach-study/sefarim/${sefer}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({

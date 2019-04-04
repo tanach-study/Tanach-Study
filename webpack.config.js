@@ -14,10 +14,13 @@ const publicPath = nodeEnv === 'production' ? 'https://cdn.tanachstudy.com/asset
 // set the URL of the API server, using the localhost if running in development
 const apiURL = nodeEnv === 'production'
   ? JSON.stringify('https://api.tanachstudy.com')
-  : JSON.stringify('http://localhost:3000');
+  : JSON.stringify('http://localhost:3000/api');
 const tanachURL = nodeEnv === 'production'
   ? JSON.stringify('https://cdn.tanachstudy.com/assets/tanach')
   : JSON.stringify('/tanach');
+const materializeURL = nodeEnv === 'production'
+  ? 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'
+  : '/materialize.min.css';
 
 const plugins = [
   new ExtractTextPlugin({
@@ -112,7 +115,7 @@ const plugins = [
         color: '#009fc1',
       },
       'https://fonts.googleapis.com/icon?family=Material+Icons',
-      'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css',
+      materializeURL,
     ],
     title: 'Tanach Study',
   }),

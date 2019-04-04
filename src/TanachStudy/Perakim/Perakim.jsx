@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NachPerek from './NachPerek.jsx';
 import TorahPerek from './TorahPerek.jsx';
-import Spinner from '../Spinner/Spinner.jsx';
+import Spinner from '../../Spinner/Spinner.jsx';
 
 function formatDir(passed) {
   let str;
@@ -66,7 +66,7 @@ class Perakim extends Component {
   }
 
   _initialize(sefer, perek) {
-    fetch(`${API_URL}/perakim/${sefer}/${perek}`)
+    fetch(`${API_URL}/tanach-study/perakim/${sefer}/${perek}`)
       .then(r => r.json())
       .then(data => this.setState({
         haveData: true,
