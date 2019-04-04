@@ -32,5 +32,3 @@ app.use((err, req, res, next) => {
 /* eslint-disable no-console */
 app.listen(PORT, () => console.warn(`Server here! Listening on port ${PORT}!`));
 /* eslint-enable no-console */
-
-
