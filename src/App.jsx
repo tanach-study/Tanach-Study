@@ -111,7 +111,9 @@ class App extends Component {
             <Route path='/' component={HomePage} />
           </Switch>
         </div>
-        <Footer />
+        <ProgramContext.Consumer>
+          {program => <Footer program={program} />}
+        </ProgramContext.Consumer>
       </ProgramContext.Provider>
     );
   }
