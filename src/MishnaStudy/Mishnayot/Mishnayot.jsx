@@ -6,7 +6,7 @@ class Mishnayot extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      response: {},
+      response: { audio_url: {} },
       haveData: false,
     };
   }
@@ -32,7 +32,7 @@ class Mishnayot extends Component {
       .then((data) => {
         this.setState({
           haveData: true,
-          response: data,
+          response: data || { audio_url: {} },
         });
       })
       .catch(err => console.error(err));
