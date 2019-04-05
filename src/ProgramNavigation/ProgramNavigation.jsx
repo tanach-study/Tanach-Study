@@ -26,7 +26,7 @@ class ProgramNavigation extends Component {
           </li>
           <li className={styles['nav-list-item']}>
             <Link to='/haftara-study' className={styles['nav-link']}>
-              <img src='https://cdn.tanachstudy.com/assets/images/mishna-study-logo.png' alt='Haftara Study Logo' />
+              <img src='https://cdn.tanachstudy.com/assets/images/haftara-study-logo.png' alt='Haftara Study Logo' />
             </Link>
           </li>
           <li className={styles['nav-list-item']}>
