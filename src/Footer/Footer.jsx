@@ -4,8 +4,25 @@ import { Link } from 'react-router-dom';
 import styles from './Footer.css';
 
 function Footer(props) {
+  const { program } = props || {};
+  const { linkPrefix } = program || '';
+  let bgColorClass = 'tsblue';
+  switch (linkPrefix) {
+    case 'mishna-study':
+      bgColorClass = 'msred';
+      break;
+    case 'haftara-study':
+      bgColorClass = 'hsorange';
+      break;
+    case 'parasha-study':
+      bgColorClass = 'psgreen';
+      break;
+    default:
+      bgColorClass = 'tsblue';
+      break;
+  }
   return (
-    <footer className='tsblue'>
+    <footer className={bgColorClass}>
       <div className={`container ${styles['footer-container']}`}>
         <div className={`valign-wrapper row ${styles['footer-wrapper']}`}>
           <div className='col l6 m6 s6 left-align valign'>

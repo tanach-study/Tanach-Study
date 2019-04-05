@@ -53,4 +53,30 @@
   border-bottom: 1px solid #950010 !important;
   box-shadow: 0 1px 0 0 #950010 !important;
 }
+
+.hsorange {
+  background-color: #EE5A24 !important;
+}
+
+.hsorange-text {
+  color: #EE5A24 !important;
+}
+
+.hsorange-form input:focus {
+  border-bottom: 1px solid #EE5A24 !important;
+  box-shadow: 0 1px 0 0 #EE5A24 !important;
+}
+
+.psgreen {
+  background-color: #127E36 !important;
+}
+
+.psgreen-text {
+  color: #127E36 !important;
+}
+
+.psgreen-form input:focus {
+  border-bottom: 1px solid #127E36 !important;
+  box-shadow: 0 1px 0 0 #127E36 !important;
+}
 /* END GLOBAL STYLES */
