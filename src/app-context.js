@@ -17,6 +17,22 @@ export const programs = {
     logo: 'https://cdn.tanachstudy.com/assets/images/mishna-study-logo.png',
     linkPrefix: 'mishna-study',
   },
+  haftarastudy: {
+    mainColor: '#EE5A24',
+    secondaryColor: '#FFE6C4',
+    tertiaryColor: '#FFA18B',
+    complementaryColor: '#AC3019',
+    logo: 'https://cdn.tanachstudy.com/assets/images/haftara-study-logo.png',
+    linkPrefix: 'haftara-study',
+  },
+  parashastudy: {
+    mainColor: '#127E36',
+    secondaryColor: '#E4F0E5',
+    tertiaryColor: '#45AA67',
+    complementaryColor: '#AC3019',
+    logo: 'https://cdn.tanachstudy.com/assets/images/parasha-study-logo.png',
+    linkPrefix: 'parasha-study',
+  },
 };
 
 export const ProgramContext = React.createContext(programs.tanachstudy);
