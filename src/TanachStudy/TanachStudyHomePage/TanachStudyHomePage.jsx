@@ -8,7 +8,7 @@ class TanachStudyHomePage extends Component {
       currentPerek: {
         division: '',
         section: 'Yeshayahu',
-        unit: '5',
+        unit: '6',
         part: '',
         series: '',
       },
