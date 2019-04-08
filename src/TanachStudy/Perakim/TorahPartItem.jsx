@@ -24,10 +24,22 @@ class PartItem extends Component {
       end_chapter: eChap,
       start_verse: sVer,
       end_verse: eVer } = part;
-    const textString = sChap === eChap
+    // get the string representing the text portion that the part covers
+    const textPortion = sChap === eChap
       ? `(${sChap}:${sVer}-${eVer})`
       : `(${sChap}:${sVer} - ${eChap}:${eVer})`;
-    const final = title ? `${title} ${textString}` : '';
+
+    let final = '';
+    // check that the part's title is not empty
+    if (title && title !== null && title !== '') {
+      // check that the part has a valid start and end chapter
+      if (sChap !== null && sChap > 0 && eChap !== null && eChap > 0) {
+        final = `${title} ${textPortion}`;
+      } else {
+        // title exists and is valid, text string isn't
+        final = title;
+      }
+    }
     return (
       <div onClick={this.selectPart} className='hoverable section'>
         <b>Part {number}:</b>
