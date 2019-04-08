@@ -34,6 +34,11 @@ class ProgramNavigation extends Component {
               <img src='https://cdn.tanachstudy.com/assets/images/parasha-study-logo.png' alt='Parasha Study Logo' />
             </Link>
           </li>
+          <li className={styles['nav-list-item']}>
+            <Link to='/moadim-study' className={styles['nav-link']}>
+              <img src='https://cdn.tanachstudy.com/assets/images/moadim-study-logo.png' alt='Moadim Study Logo' />
+            </Link>
+          </li>
         </ul>
       </nav>
     );
