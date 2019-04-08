@@ -10,18 +10,40 @@ class PartItem extends Component {
   }
 
   _selectPart() {
-    const { index, part } = this.props;
-    this.props.clickHandler(index + 1, part.title);
+    const { index, part, clickHandler } = this.props;
+    const { title } = part;
+    clickHandler(index + 1, title);
   }
 
   render() {
-    const { part } = this.props || {};
     const { index, currentPart } = this.props;
-    const textString = part.start_chapter === part.end_chapter ? `(${part.start_chapter}:${part.start_verse}-${part.end_verse})` : `(${part.start_chapter}:${part.start_verse} - ${part.end_chapter}:${part.end_verse})`;
-    const title = part.title.includes('(') ? part.title : `${part.title} ${textString}`;
+    const { part } = this.props || {};
+    const { number,
+      title,
+      start_chapter: sChap,
+      end_chapter: eChap,
+      start_verse: sVer,
+      end_verse: eVer } = part;
+    // get the string representing the text portion that the part covers
+    const textPortion = sChap === eChap
+      ? `(${sChap}:${sVer}-${eVer})`
+      : `(${sChap}:${sVer} - ${eChap}:${eVer})`;
+
+    let final = '';
+    // check that the part's title is not empty
+    if (title && title !== null && title !== '') {
+      // check that the part has a valid start and end chapter
+      if (sChap !== null && sChap > 0 && eChap !== null && eChap > 0) {
+        final = `${title} ${textPortion}`;
+      } else {
+        // title exists and is valid, text string isn't
+        final = title;
+      }
+    }
     return (
       <div onClick={this.selectPart} className='hoverable section'>
-        <b>Part {part.number}:</b><span className={`${currentPart === index + 1 ? 'bold' : ''}`}> {part.title !== '' ? title : ''}</span>
+        <b>Part {number}:</b>
+        <span className={`${currentPart === index + 1 ? 'bold' : ''}`}>&nbsp;{final}</span>
       </div>
     );
   }
