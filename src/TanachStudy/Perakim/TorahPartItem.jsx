@@ -10,18 +10,28 @@ class PartItem extends Component {
   }
 
   _selectPart() {
-    const { index, part } = this.props;
-    this.props.clickHandler(index + 1, part.title);
+    const { index, part, clickHandler } = this.props;
+    const { title } = part;
+    clickHandler(index + 1, title);
   }
 
   render() {
-    const { part } = this.props || {};
     const { index, currentPart } = this.props;
-    const textString = part.start_chapter === part.end_chapter ? `(${part.start_chapter}:${part.start_verse}-${part.end_verse})` : `(${part.start_chapter}:${part.start_verse} - ${part.end_chapter}:${part.end_verse})`;
-    const title = part.title.includes('(') ? part.title : `${part.title} ${textString}`;
+    const { part } = this.props || {};
+    const { number,
+      title,
+      start_chapter: sChap,
+      end_chapter: eChap,
+      start_verse: sVer,
+      end_verse: eVer } = part;
+    const textString = sChap === eChap
+      ? `(${sChap}:${sVer}-${eVer})`
+      : `(${sChap}:${sVer} - ${eChap}:${eVer})`;
+    const final = title ? `${title} ${textString}` : '';
     return (
       <div onClick={this.selectPart} className='hoverable section'>
-        <b>Part {part.number}:</b><span className={`${currentPart === index + 1 ? 'bold' : ''}`}> {part.title !== '' ? title : ''}</span>
+        <b>Part {number}:</b>
+        <span className={`${currentPart === index + 1 ? 'bold' : ''}`}>&nbsp;{final}</span>
       </div>
     );
   }
