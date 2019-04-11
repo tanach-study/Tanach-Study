@@ -30,9 +30,9 @@ class MishnaStudyHomePage extends Component {
       <main className='container'>
         <section className='section center'>
           <h3>Welcome to Mishna Study!</h3>
-          <p>Currently, Mishna Study is studying Introduction Part 5.</p>
+          <p>Currently, Mishna Study is studying Introduction Part 6.</p>
           {/* <p>Currently, Mishna Study is studying Seder {segment} Masechet {section} Perek {unit} Mishna {part}.</p> */}
-          <Link className='msred-text' to='/mishna-study/mishna/introduction/introduction/1/5'>Click here to go to today&#39;s part</Link>
+          <Link className='msred-text' to='/mishna-study/mishna/introduction/introduction/1/6'>Click here to go to today&#39;s part</Link>
         </section>
         <div className='divider' />
         <section className='section center'>
