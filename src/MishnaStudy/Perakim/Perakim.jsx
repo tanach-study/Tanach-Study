@@ -40,10 +40,10 @@ class Perakim extends Component {
       .then(r => r.json())
       .then((data) => {
         const mishnayot = new Set();
-        data.forEach(record => mishnayot.add(record.part));
+        data.forEach(record => mishnayot.add(parseInt(record.part_sequence, 10)));
         this.setState({
           haveData: true,
-          mishnayot: [...mishnayot].sort(),
+          mishnayot: [...mishnayot].sort((a, b) => a < b ? -1 : a === b ? 0 : 1),
         });
       })
       .catch(err => console.error(err));
