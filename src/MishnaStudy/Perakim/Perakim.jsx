@@ -19,6 +19,7 @@ class Perakim extends Component {
       mishnayot: [],
       currentMishna: 0,
     };
+    this.selectMishna = this.selectMishna.bind(this);
   }
 
   componentWillMount() {
@@ -49,6 +50,12 @@ class Perakim extends Component {
       .catch(err => console.error(err));
   }
 
+  selectMishna(i) {
+    this.setState({
+      currentMishna: i,
+    });
+  }
+
   render() {
     const { haveData, mishnayot, sederName, masechetName, perekNumber, currentMishna } = this.state;
     const base = mishnayot[0] || {};
@@ -70,6 +77,7 @@ class Perakim extends Component {
               seder={sederName}
               masechet={masechetName}
               perek={perekNumber}
+              click={this.selectMishna}
             />
             <AudioPlayer
               url={url}

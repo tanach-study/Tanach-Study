@@ -2,14 +2,16 @@ import React from 'react';
 import MishnaItem from './MishnaItem.jsx';
 
 const MishnaList = (props) => {
-  const { mishnayot, seder, masechet, perek } = props;
-  const mapped = mishnayot.map((mishna) => {
+  const { mishnayot, seder, masechet, perek, click } = props;
+  const mapped = mishnayot.map((mishna, i) => {
     const { part_name: name, part_title: title, part: number } = mishna;
     return (
       <MishnaItem
         name={name}
         number={number}
         title={title}
+        index={i}
+        click={click}
         key={`seder-${seder}-masechet-${masechet}-perek-${perek}-mishna-${number}-listitem`}
       />
     );
