@@ -6,15 +6,7 @@ import AudioPlayer from '../AudioPlayer/AudioPlayer.jsx';
 class Perakim extends Component {
   constructor(props) {
     super(props);
-    const { match } = props || {};
-    const { params } = match || {};
-    const { seder } = params || '';
-    const { masechet } = params || '';
-    const { perek } = params || '';
     this.state = {
-      sederName: seder,
-      masechetName: masechet,
-      perekNumber: parseInt(perek, 10),
       haveData: false,
       mishnayot: [],
       currentMishna: 0,
@@ -57,26 +49,40 @@ class Perakim extends Component {
   }
 
   render() {
-    const { haveData, mishnayot, sederName, masechetName, perekNumber, currentMishna } = this.state;
-    const base = mishnayot[0] || {};
-    const { unit_name: pName } = base;
-    const perekName = pName || 'Title';
-    const { unit_sponsor: uSpon } = base;
+    const { haveData } = this.state;
 
     if (haveData) {
-      const sponsor = Array.isArray(uSpon) ? uSpon.map(l => <div key={l}>{l}</div>) : uSpon;
+      const { mishnayot, currentMishna } = this.state;
+      const base = mishnayot[0] || {};
+      const { segment_name: sederN, section_name: masechetN, unit_name: perekN } = base;
+      const { segment_title: sederT, section_title: masechetT, unit_title: perekT } = base;
+      const { segment: seder, section: masechet, unit: perek } = base;
+
+      const { section_sponsor: sSpon } = base;
+      const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
       const mishna = mishnayot[currentMishna] || {};
       const { audio_url: url } = mishna;
+
+      let pageTitle = null;
+      if (seder === 'introduction') {
+        pageTitle = 'HaRambam\'s Introduction';
+      } else {
+        const sederString = `${sederN || 'Seder'} ${sederT || seder}`;
+        const masechetString = `${masechetN || 'Masechet'} ${masechetT || masechet}`;
+        const perekString = `${perekN || 'Perek'} ${perekT || perek}`;
+        pageTitle = `${sederString} ${masechetString} ${perekString}`;
+      }
+
       return (
         <div className='container'>
-          <h2>{perekName} {perekNumber}</h2>
-          {uSpon && <h3>{sponsor}</h3>}
+          <h2>{pageTitle}</h2>
+          {sSpon && <h3>{sponsor}</h3>}
           <section className='row'>
             <MishnaList
               mishnayot={mishnayot}
-              seder={sederName}
-              masechet={masechetName}
-              perek={perekNumber}
+              seder={seder}
+              masechet={masechet}
+              perek={perek}
               click={this.selectMishna}
               selected={currentMishna}
             />
