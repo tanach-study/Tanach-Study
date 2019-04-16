@@ -78,6 +78,7 @@ class Perakim extends Component {
               masechet={masechetName}
               perek={perekNumber}
               click={this.selectMishna}
+              selected={currentMishna}
             />
             <AudioPlayer
               url={url}
