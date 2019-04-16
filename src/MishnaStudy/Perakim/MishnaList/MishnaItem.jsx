@@ -1,22 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import styles from './MishnaItem.css';
+import { ProgramContext } from '../../../app-context.js';
 
 const MishnaItem = (props) => {
-  const { perek, seder, masechet, mishna } = props;
-  const mishnaName = mishna === 0 ? 'Introduction' : `Mishna ${mishna}`;
-  const url = `/mishna-study/mishna/${seder}/${masechet}/${perek}/${mishna}`;
+  const { name, number, title, index, click, selected } = props;
   return (
-    <div className='col l4 m6 s12'>
-      <Link to={url} className={styles['perek-link']}>
-        <div className='card hoverable full-width'>
-          <div className='card-content'>
-            <p>{mishnaName}</p>
-          </div>
-        </div>
-      </Link>
-    </div>
+    <ProgramContext.Consumer>
+      {(program) => {
+        const { backgroundClass: bg } = program;
+        return (
+          <li
+            className={`collection-item clickable ${selected === index ? `active ${bg}` : ''}`}
+            onClick={() => click(index)}
+          >
+            <span>{name} {number}: {title}</span>
+          </li>
+        );
+      }}
+    </ProgramContext.Consumer>
   );
 };
 

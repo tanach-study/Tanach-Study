@@ -1,3 +1,8 @@
-.perek-link {
-  color: black;
+.active-li {
+  background-color: blue !important;
+}
+
+.li {
+  height: 100%;
+  width: 100%;
 }

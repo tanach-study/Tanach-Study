@@ -1,23 +1,17 @@
 import React, { Component } from 'react';
 import MishnaList from './MishnaList/MishnaList.jsx';
 import Spinner from '../../Spinner/Spinner.jsx';
+import AudioPlayer from '../AudioPlayer/AudioPlayer.jsx';
 
 class Perakim extends Component {
   constructor(props) {
     super(props);
-    const { match } = props || {};
-    const { params } = match || {};
-    const { seder } = params || '';
-    const { masechet } = params || '';
-    const { perek } = params || '';
     this.state = {
-      sederName: seder,
-      masechetName: masechet,
-      perekNumber: parseInt(perek, 10),
-      perekSponsor: '',
-      mishnayot: [],
       haveData: false,
+      mishnayot: [],
+      currentMishna: 0,
     };
+    this.selectMishna = this.selectMishna.bind(this);
   }
 
   componentWillMount() {
@@ -39,31 +33,64 @@ class Perakim extends Component {
     fetch(`${API_URL}/mishna-study/perek/${seder}/${masechet}/${perekNum}`)
       .then(r => r.json())
       .then((data) => {
-        const mishnayot = new Set();
-        data.forEach(record => mishnayot.add(parseInt(record.part_sequence, 10)));
         this.setState({
           haveData: true,
-          mishnayot: [...mishnayot].sort((a, b) => a < b ? -1 : a === b ? 0 : 1),
+          mishnayot: [...data],
+          currentMishna: 0,
         });
       })
       .catch(err => console.error(err));
   }
 
+  selectMishna(i) {
+    this.setState({
+      currentMishna: i,
+    });
+  }
+
   render() {
-    const { haveData, mishnayot, perekSponsor, sederName, masechetName, perekNumber } = this.state;
+    const { haveData } = this.state;
 
     if (haveData) {
-      const sponsor = Array.isArray(perekSponsor) ? perekSponsor.map(l => <div key={l}>{l}</div>) : perekSponsor;
+      const { mishnayot, currentMishna } = this.state;
+      const base = mishnayot[0] || {};
+      const { segment_name: sederN, section_name: masechetN, unit_name: perekN } = base;
+      const { segment_title: sederT, section_title: masechetT, unit_title: perekT } = base;
+      const { segment: seder, section: masechet, unit: perek } = base;
+
+      const { section_sponsor: sSpon } = base;
+      const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
+      const mishna = mishnayot[currentMishna] || {};
+      const { audio_url: url } = mishna;
+
+      let pageTitle = null;
+      if (seder === 'introduction') {
+        pageTitle = 'HaRambam\'s Introduction';
+      } else {
+        const sederString = `${sederN || 'Seder'} ${sederT || seder}`;
+        const masechetString = `${masechetN || 'Masechet'} ${masechetT || masechet}`;
+        const perekString = `${perekN || 'Perek'} ${perekT || perek}`;
+        pageTitle = `${sederString} ${masechetString} ${perekString}`;
+      }
+
       return (
         <div className='container'>
-          <h2>Perek {perekNumber}</h2>
-          {perekSponsor && <h3>{sponsor}</h3>}
-          <MishnaList
-            mishnayot={mishnayot}
-            seder={sederName}
-            masechet={masechetName}
-            perek={perekNumber}
-          />
+          <h2>{pageTitle}</h2>
+          {sSpon && <h3>{sponsor}</h3>}
+          <section className='row'>
+            <MishnaList
+              mishnayot={mishnayot}
+              seder={seder}
+              masechet={masechet}
+              perek={perek}
+              click={this.selectMishna}
+              selected={currentMishna}
+            />
+            <AudioPlayer
+              url={url}
+              playing={mishna}
+            />
+          </section>
         </div>
       );
     }
