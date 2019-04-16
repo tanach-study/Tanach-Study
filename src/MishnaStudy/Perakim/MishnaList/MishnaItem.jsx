@@ -9,8 +9,11 @@ const MishnaItem = (props) => {
       {(program) => {
         const { backgroundClass: bg } = program;
         return (
-          <li className={`collection-item clickable ${selected === index ? `active ${bg}` : ''}`}>
-            <div onClick={() => click(index)}>{name} {number}: {title}</div>
+          <li
+            className={`collection-item clickable ${selected === index ? `active ${bg}` : ''}`}
+            onClick={() => click(index)}
+          >
+            <span>{name} {number}: {title}</span>
           </li>
         );
       }}
