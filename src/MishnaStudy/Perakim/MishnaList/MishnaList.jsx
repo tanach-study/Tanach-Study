@@ -3,18 +3,21 @@ import MishnaItem from './MishnaItem.jsx';
 
 const MishnaList = (props) => {
   const { mishnayot, seder, masechet, perek } = props;
-  const mapped = mishnayot.map(mishna => (
-    <MishnaItem
-      seder={seder}
-      masechet={masechet}
-      perek={perek}
-      mishna={mishna}
-      key={`seder-${seder}-masechet-${masechet}-perek-${perek}-mishna-${mishna}-listitem`}
-    />));
+  const mapped = mishnayot.map((mishna) => {
+    const { part_name: name, part_title: title, part: number } = mishna;
+    return (
+      <MishnaItem
+        name={name}
+        number={number}
+        title={title}
+        key={`seder-${seder}-masechet-${masechet}-perek-${perek}-mishna-${number}-listitem`}
+      />
+    );
+  });
   return (
-    <div className='row'>
+    <ul className='col l6 m6 s12'>
       {mapped}
-    </div>
+    </ul>
   );
 };
 

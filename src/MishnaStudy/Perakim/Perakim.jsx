@@ -14,9 +14,9 @@ class Perakim extends Component {
       sederName: seder,
       masechetName: masechet,
       perekNumber: parseInt(perek, 10),
-      perekSponsor: '',
-      mishnayot: [],
       haveData: false,
+      mishnayot: [],
+      currentMishna: 0,
     };
   }
 
@@ -39,31 +39,37 @@ class Perakim extends Component {
     fetch(`${API_URL}/mishna-study/perek/${seder}/${masechet}/${perekNum}`)
       .then(r => r.json())
       .then((data) => {
-        const mishnayot = new Set();
-        data.forEach(record => mishnayot.add(parseInt(record.part_sequence, 10)));
         this.setState({
           haveData: true,
-          mishnayot: [...mishnayot].sort((a, b) => a < b ? -1 : a === b ? 0 : 1),
+          mishnayot: [...data],
+          currentMishna: 0,
         });
       })
       .catch(err => console.error(err));
   }
 
   render() {
-    const { haveData, mishnayot, perekSponsor, sederName, masechetName, perekNumber } = this.state;
+    const { haveData, mishnayot, sederName, masechetName, perekNumber } = this.state;
+    const mishnaNumbers = mishnayot.map(m => m.part);
+    const base = mishnayot[0] || {};
+    const { unit_name: pName } = base;
+    const perekName = pName || 'Title';
+    const { unit_sponsor: uSpon } = base;
 
     if (haveData) {
-      const sponsor = Array.isArray(perekSponsor) ? perekSponsor.map(l => <div key={l}>{l}</div>) : perekSponsor;
+      const sponsor = Array.isArray(uSpon) ? uSpon.map(l => <div key={l}>{l}</div>) : uSpon;
       return (
         <div className='container'>
-          <h2>Perek {perekNumber}</h2>
-          {perekSponsor && <h3>{sponsor}</h3>}
-          <MishnaList
-            mishnayot={mishnayot}
-            seder={sederName}
-            masechet={masechetName}
-            perek={perekNumber}
-          />
+          <h2>{perekName} {perekNumber}</h2>
+          {uSpon && <h3>{sponsor}</h3>}
+          <section className='row'>
+            <MishnaList
+              mishnayot={mishnayot}
+              seder={sederName}
+              masechet={masechetName}
+              perek={perekNumber}
+            />
+          </section>
         </div>
       );
     }
