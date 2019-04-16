@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MishnaList from './MishnaList/MishnaList.jsx';
 import Spinner from '../../Spinner/Spinner.jsx';
+import AudioPlayer from '../AudioPlayer/AudioPlayer.jsx';
 
 class Perakim extends Component {
   constructor(props) {
@@ -49,8 +50,7 @@ class Perakim extends Component {
   }
 
   render() {
-    const { haveData, mishnayot, sederName, masechetName, perekNumber } = this.state;
-    const mishnaNumbers = mishnayot.map(m => m.part);
+    const { haveData, mishnayot, sederName, masechetName, perekNumber, currentMishna } = this.state;
     const base = mishnayot[0] || {};
     const { unit_name: pName } = base;
     const perekName = pName || 'Title';
@@ -58,6 +58,8 @@ class Perakim extends Component {
 
     if (haveData) {
       const sponsor = Array.isArray(uSpon) ? uSpon.map(l => <div key={l}>{l}</div>) : uSpon;
+      const mishna = mishnayot[currentMishna] || {};
+      const { audio_url: url } = mishna;
       return (
         <div className='container'>
           <h2>{perekName} {perekNumber}</h2>
@@ -68,6 +70,9 @@ class Perakim extends Component {
               seder={sederName}
               masechet={masechetName}
               perek={perekNumber}
+            />
+            <AudioPlayer
+              url={url}
             />
           </section>
         </div>
