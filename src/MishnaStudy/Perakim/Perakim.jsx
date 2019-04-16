@@ -82,6 +82,7 @@ class Perakim extends Component {
             />
             <AudioPlayer
               url={url}
+              playing={mishna}
             />
           </section>
         </div>
