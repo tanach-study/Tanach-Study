@@ -1,7 +1,7 @@
 import React from 'react';
 
 function AudioPlayer(props) {
-  const { url, playing } = props;
+  const { url, playing, className } = props;
   const { host, path } = url || {};
   const src = `${host}${path}`;
 
@@ -17,7 +17,7 @@ function AudioPlayer(props) {
   const teacherString = `${teacherTitle} ${fname} ${middle} ${lname}`;
 
   return (
-    <div className='col l6 m6 s12'>
+    <div className={className}>
       <div className='card'>
         <div className='card-content'>
           <h4 className='grey-text text-darken-4'>Now Playing: {name} {number}</h4>

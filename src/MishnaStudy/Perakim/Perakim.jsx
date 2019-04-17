@@ -103,10 +103,12 @@ class Perakim extends Component {
               perek={perek}
               click={this.selectMishna}
               selected={currentMishna}
+              className='col l6 m6 s12 collection'
             />
             <AudioPlayer
               url={url}
               playing={mishna}
+              className='col l6 m6 s12'
             />
           </section>
         </div>
