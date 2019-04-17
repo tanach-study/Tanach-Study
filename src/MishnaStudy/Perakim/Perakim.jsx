@@ -30,16 +30,34 @@ class Perakim extends Component {
       const { push } = history;
       push('/');
     }
+    const query = this.getQueryParams();
+    const { part } = query;
+    const currentMishna = part ? parseInt(part, 10) - 1 : 0;
     fetch(`${API_URL}/mishna-study/perek/${seder}/${masechet}/${perekNum}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({
           haveData: true,
           mishnayot: [...data],
-          currentMishna: 0,
+          currentMishna,
         });
       })
       .catch(err => console.error(err));
+  }
+
+  getQueryParams() {
+    const { location } = this.props;
+    const queryString = location.search;
+    if (queryString) {
+      const pairs = queryString.slice(1).split('&');
+      const params = {};
+      for (let i = 0; i < pairs.length; i++) {
+        const kv = pairs[i].split('=');
+        params[kv[0]] = kv[1];
+      }
+      return params;
+    }
+    return {};
   }
 
   selectMishna(i) {
