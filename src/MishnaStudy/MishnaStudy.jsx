@@ -13,6 +13,7 @@ function MishnaStudy(props) {
   return (
     <div className='body'>
       <Switch>
+        <Redirect from='/mishna-study/mishna/introduction/introduction/1/:part' to='/mishna-study/perek/introduction/introduction/1?part=:part' />
         <Redirect from='/mishna-study/mishna/introduction/' to='/mishna-study/perek/introduction/introduction/1' />
         <Redirect from='/mishna-study/masechet/introduction/' to='/mishna-study/perek/introduction/introduction/1' />
         <Route exact path='/mishna-study/mishna/:seder/:masechet/:perek/:mishna' component={Mishnayot} />
