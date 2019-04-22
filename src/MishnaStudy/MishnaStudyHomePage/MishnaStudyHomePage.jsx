@@ -5,34 +5,44 @@ class MishnaStudyHomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMishna: {
-        division: 'Mishna',
-        segment: 'Zeraim',
-        section: 'Berachot',
-        unit: '1',
-        part: '1',
-        series: '',
-      },
+      segment: 'introduction',
+      section: 'introduction',
+      unit: '1',
+      part: '18',
     };
   }
 
   componentWillMount() {
-    // TODO: implement
-    // get data from API
-    // create link
-    // save to state
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+    const utcDate = new Date(date);
+    utcDate.setHours(0, 0, 0, 0);
+    fetch(`${API_URL}/mishna-study/schedule/${utcDate.toISOString()}`)
+      .then(r => r.json())
+      .then((d) => {
+        if (d) {
+          const { segment, section, unit, part } = d || '';
+          this.setState({
+            segment,
+            section,
+            unit,
+            part,
+          });
+        }
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
-    const { currentMishna } = this.state;
-    const { segment, section, unit, part } = currentMishna;
+    const { segment, section, unit, part } = this.state;
+    const link = `/mishna-study/perek/${segment}/${section}/${unit}?part=${part}`;
     return (
       <main className='container'>
         <section className='section center'>
           <h3>Welcome to Mishna Study!</h3>
-          <p>Currently, Mishna Study is studying Introduction Part 12.</p>
+          <p>Currently, Mishna Study is studying {section} Part {part}.</p>
           {/* <p>Currently, Mishna Study is studying Seder {segment} Masechet {section} Perek {unit} Mishna {part}.</p> */}
-          <Link className='msred-text' to='/mishna-study/perek/introduction/introduction/1?part=12'>Click here to go to today&#39;s part</Link>
+          <Link className='msred-text' to={link}>Click here to go to today&#39;s part</Link>
         </section>
         <div className='divider' />
         <section className='section center'>
