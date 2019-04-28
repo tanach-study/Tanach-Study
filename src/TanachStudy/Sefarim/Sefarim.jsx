@@ -48,15 +48,7 @@ class Sefarim extends Component {
             const { teacher_short_bio: shortBio } = record;
             const { teacher_long_bio: longBio } = record;
             const { teacher_image_url: image } = record;
-            teachers.push({
-              title,
-              fname,
-              mname,
-              lname,
-              shortBio,
-              longBio,
-              image,
-            });
+            teachers.push({ title, fname, mname, lname, shortBio, longBio, image });
           }
         });
         this.setState({
@@ -72,41 +64,41 @@ class Sefarim extends Component {
   }
 
   render() {
-    const { units, teachers } = this.state;
-
-    const teacherChips = teachers.map((teacher, i) => {
-      const { title, fname, mname, lname } = teacher;
-      return (
-        <div
-          key={`${title}-${fname}-${lname}-chip`}
-          className='chip pointer'
-          onClick={e => this.setState({ activeIndex: i })}
-        >
-          {title} {fname}{mname ? ` ${mname} ` : ' '}{lname}
-        </div>
-      );
-    });
-    const teacherCards = teachers.map((teacher) => {
-      const { title, fname, mname, lname, longBio, shortBio } = teacher;
-      const url = mname ? `${fname}-${mname}-${lname}` : `${fname}-${lname}`;
-      return (
-        <div key={`${title}-${fname}-${lname}-card`} className='card'>
-          <div className='card-content'>
-            <div className='card-title'>{title} {fname}{mname ? ` ${mname} ` : ' '}{lname}</div>
-            <p>{longBio || shortBio}</p>
-            <Link to={`/teachers/${url}`}>See {title} {lname}&apos;s bio page</Link>
-          </div>
-        </div>
-      );
-    });
-
     const { haveData, activeIndex } = this.state;
 
     if (haveData) {
-      const { seferTitle, seferSponsor, seferName, part } = this.state;
+      const { units, teachers, seferTitle, seferSponsor, seferName, part } = this.state;
+
+      const teacherChips = teachers.map((teacher, i) => {
+        const { title, fname, mname, lname } = teacher;
+        return (
+          <div
+            key={`${title}-${fname}-${lname}-chip`}
+            className='chip pointer'
+            onClick={e => this.setState({ activeIndex: i })}
+          >
+            {title} {fname}{mname ? ` ${mname} ` : ' '}{lname}
+          </div>
+        );
+      });
+      const teacherCards = teachers.map((teacher) => {
+        const { title, fname, mname, lname, longBio, shortBio } = teacher;
+        const url = mname ? `${fname}-${mname}-${lname}` : `${fname}-${lname}`;
+        return (
+          <div key={`${title}-${fname}-${lname}-card`} className='card'>
+            <div className='card-content'>
+              <div className='card-title'>{title} {fname}{mname ? ` ${mname} ` : ' '}{lname}</div>
+              <p>{longBio || shortBio}</p>
+              <Link to={`/teachers/${url}`}>See {title} {lname}&apos;s bio page</Link>
+            </div>
+          </div>
+        );
+      });
+
       const sponsor = Array.isArray(seferSponsor)
         ? seferSponsor.map(l => <div key={l}>{l}</div>)
         : seferSponsor;
+
       return (
         <div className='container'>
           <h2>Sefer {seferTitle}</h2>
