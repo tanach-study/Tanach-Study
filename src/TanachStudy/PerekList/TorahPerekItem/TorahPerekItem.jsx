@@ -1,21 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from '../PerekItem.css';
 
 function toTitleCase(str) {
-  return str.replace(/\w\S*/g, txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+  const x = str.replace('-', ' ');
+  return x.replace(/\w\S*/g, t => t.charAt(0).toUpperCase() + t.substr(1).toLowerCase());
 }
 
-
 const TorahPerekItem = (props) => {
-  const perekName = `Parashat ${toTitleCase(props.perek.pretty_name)}`;
-  const textString = props.perek.start_chapter === props.perek.end_chapter ? `(${props.perek.start_chapter}:${props.perek.start_verse}-${props.perek.end_verse})` : `(${props.perek.start_chapter}:${props.perek.start_verse} - ${props.perek.end_chapter}:${props.perek.end_verse})`;
+  const { sefer, perek } = props;
+  const parashaName = `Parashat ${toTitleCase(perek)}`;
+  const url = `/tanach-study/perakim/${sefer}/${perek}`;
 
   return (
     <div className='col l4 m6 s12'>
-      <div onClick={(e) => props.click(props.perek.perek_id)} className='card hoverable full-width'>
-        <div className='card-content'>
-          <p>{perekName} {props.perek.start_chapter && <span>{textString}</span>}</p>
+      <Link to={url} className={styles['perek-link']}>
+        <div className='card hoverable full-width'>
+          <div className='card-content'>
+            <p>{parashaName}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

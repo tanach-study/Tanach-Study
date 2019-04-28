@@ -1,35 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from '../PerekItem.css';
 
 const NachPerekItem = (props) => {
-  const { perek, click } = props;
-  const perekTitle = perek.perek_title;
-  const perekID = perek.perek_id;
-  const title = perekTitle ? `Perek ${perekID}: ${perekTitle}` : `Perek ${perekID}`;
-  const perekName = perekID === 0 ? 'Introduction' : title;
-  let partsStr = null;
-  let partsBreakdown = null;
-  if (perek.is_many_parts) {
-    partsBreakdown = perek.parts_breakdown.split(',');
-    partsStr = partsBreakdown.reduce((parts, part) => `${parts}${part.toUpperCase()}, `, 'Parts ');
-    partsStr = partsStr.substring(0, partsStr.length - 2);
-  }
+  const { sefer, perek } = props;
+  const perekName = perek === 0 ? 'Introduction' : `Perek ${perek}`;
+  const url = `/tanach-study/perakim/${sefer}/${perek}`;
+
   return (
     <div className='col l4 m6 s12'>
-      <div onClick={() => click(perekID)} className='card hoverable full-width'>
-        <div className='card-content'>
-          <p>
-            {perekName}
-            &nbsp;
-            {partsStr && (
-              <span>
-                <i>
-                  {partsStr}
-                </i>
-              </span>
-            )}
-          </p>
+      <Link to={url} className={styles['perek-link']}>
+        <div className='card hoverable full-width'>
+          <div className='card-content'>
+            <p>{perekName}</p>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
