@@ -16,14 +16,13 @@ class PartItem extends Component {
   }
 
   render() {
-    const { index, currentPart } = this.props;
-    const { part } = this.props || {};
-    const { number,
-      title,
+    const { index, currentPart, part } = this.props;
+    const { part: number,
+      part_title: title,
       start_chapter: sChap,
       end_chapter: eChap,
       start_verse: sVer,
-      end_verse: eVer } = part;
+      end_verse: eVer } = part || {};
     // get the string representing the text portion that the part covers
     const textPortion = sChap === eChap
       ? `(${sChap}:${sVer}-${eVer})`

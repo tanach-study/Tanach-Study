@@ -20,7 +20,6 @@ class Perakim extends Component {
     super(props);
     this.state = {
       haveData: false,
-      activePerek: {},
       response: [],
     };
 
@@ -78,17 +77,20 @@ class Perakim extends Component {
   }
 
   render() {
-    const { haveData, activePerek, response } = this.state;
+    const { haveData, response } = this.state;
+    const base = response[0] || {};
+    const { division: tanachPart } = base;
+
     const { match } = this.props;
     const { params } = match || {};
     const { sefer, perek } = params || {};
+
     if (haveData) {
-      if (activePerek.part_name === 'torah') {
+      if (tanachPart === 'torah') {
         const qParams = this.getQueryParams();
         return (
           <TorahPerek
-            act={activePerek}
-            formatDir={formatDir}
+            parts={response}
             sefer={sefer}
             perek={perek}
             queryParams={qParams}
