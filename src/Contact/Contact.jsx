@@ -75,7 +75,7 @@ class Contact extends Component {
           });
         }
       })
-      .catch(err => this.setState({ error: err }));
+      .catch(err => this.setState({ error: err, success: false }));
     return true;
   }
 
