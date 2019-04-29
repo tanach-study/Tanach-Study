@@ -2,12 +2,17 @@ import React from 'react';
 
 function TeamimItem(props) {
   const { teamim } = props;
-  const readerNameString = `${teamim.reader_title} ${teamim.reader_fname} ${teamim.reader_mname || ''}${teamim.reader_lname}`;
+  const { reader_title: title,
+    reader_fname: fname,
+    reader_mname: mname,
+    reader_lname: lname,
+    audio_url: url } = teamim || {};
+  const readerNameString = `${title} ${fname} ${mname || ''}${lname}`;
   return (
     <div>
       <span className='card-title grey-text text-darken-4'>Perek read by {readerNameString}</span>
       <br />
-      <audio src={teamim.url} controls />
+      <audio src={url} controls />
     </div>
   );
 }
