@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { isValidEmail } from '../../lib/lib.js';
 
 class Contact extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class Contact extends Component {
       });
       return false;
     }
-    if (email === null || email === '' || !this.isValidEmail(email)) {
+    if (email === null || email === '' || !isValidEmail(email)) {
       this.setState({
         error: 'Please enter a valid email',
       });
@@ -46,6 +47,9 @@ class Contact extends Component {
     }
     fetch(`${API_URL}/contact`, {
       method: 'POST',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      }),
       body: JSON.stringify({
         name,
         email,
