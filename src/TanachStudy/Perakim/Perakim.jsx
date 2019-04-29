@@ -21,6 +21,7 @@ class Perakim extends Component {
     this.state = {
       haveData: false,
       activePerek: {},
+      response: [],
     };
 
     this.initialize = this._initialize.bind(this);
@@ -38,12 +39,13 @@ class Perakim extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { match } = this.props;
-    const { params } = match;
-    const newSefer = params.sefer;
-    const newPerek = params.perek;
-    const oldSefer = prevProps.match.params.sefer;
-    const oldPerek = prevProps.match.params.perek;
+    const { match: newMatch } = this.props || {};
+    const { params: newParams } = newMatch || {};
+    const { sefer: newSefer, perek: newPerek } = newParams || {};
+
+    const { match: oldMatch } = prevProps || {};
+    const { params: oldParams } = oldMatch || {};
+    const { sefer: oldSefer, perek: oldPerek } = oldParams || {};
 
     if (newSefer !== oldSefer || newPerek !== oldPerek) {
       this.initialize(newSefer, newPerek);
@@ -70,33 +72,34 @@ class Perakim extends Component {
       .then(r => r.json())
       .then(data => this.setState({
         haveData: true,
-        activePerek: data,
+        response: data,
       }))
       .catch(err => console.error(err));
   }
 
   render() {
-    const { haveData, activePerek } = this.state;
+    const { haveData, activePerek, response } = this.state;
     const { match } = this.props;
+    const { params } = match || {};
+    const { sefer, perek } = params || {};
     if (haveData) {
       if (activePerek.part_name === 'torah') {
-        const params = this.getQueryParams();
+        const qParams = this.getQueryParams();
         return (
           <TorahPerek
             act={activePerek}
             formatDir={formatDir}
-            sefer={match.params.sefer}
-            perek={match.params.perek}
-            queryParams={params}
+            sefer={sefer}
+            perek={perek}
+            queryParams={qParams}
           />
         );
       }
       return (
         <NachPerek
-          act={activePerek}
-          formatDir={formatDir}
-          sefer={match.params.sefer}
-          perek={match.params.perek}
+          response={response}
+          sefer={sefer}
+          perek={perek}
         />
       );
     }
