@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function TeacherCard(props) {
+  const { audio, title, fname, mname, lname, bio } = props;
+  const { host, path } = audio || {};
   const act = props.activePerek;
   let recording = null;
 
@@ -22,7 +24,7 @@ function TeacherCard(props) {
     <div className='col l6 m12 s12'>
       <div className='card'>
         <div className='card-content'>
-          <span className='card-title activator grey-text text-darken-4'>Class given by {act.teacher_title} {act.teacher_fname}{act.teacher_mname ? ` ${act.teacher_mname} ` : ' '}{act.teacher_lname}<i className='material-icons right'>more_vert</i></span>
+          <span className='card-title activator grey-text text-darken-4'>Class given by {title} {fname}{mname ? ` ${mname} ` : ' '}{lname}<i className='material-icons right'>more_vert</i></span>
           <br />
           {recording}
         </div>

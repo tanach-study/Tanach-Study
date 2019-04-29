@@ -56,13 +56,11 @@ class Tanach extends Component {
   }
 
   render() {
-    if (this.state.haveTanach) {
-      const sefer = this.props.sefer || '';
-      const part = this.props.part || '';
+    const { haveTanach } = this.state;
+    if (haveTanach) {
+      const { sefer, perek, part } = this.props;
+      const { tanach, selectedPart, show } = this.state;
 
-      const { tanach } = this.state;
-
-      const whatIWant = part ? part : 'Cookies!';
 
       const seferText = tanach[sefer] || {};
       const hebrewText = seferText.hebrew || [];
@@ -72,25 +70,27 @@ class Tanach extends Component {
         const { partsBreakdown } = this.props || [];
         const tabs = partsBreakdown.map(torahPart => (
           <li
-            key={`tab-${torahPart.number}`}
-            className={`tab ${styles['part-tab']} tsblue-text ${this.state.selectedPart === torahPart.number ? styles['active-part'] : ''} clickable`}
-            onClick={() => this.selectPart(torahPart.number)}
+            key={`tab-${torahPart.part}`}
+            className={`tab ${styles['part-tab']} tsblue-text ${selectedPart === torahPart.part ? styles['active-part'] : ''} clickable`}
+            onClick={() => this.selectPart(torahPart.part)}
           >
-            Part {torahPart.number}
+            Part {torahPart.part}
           </li>
         ));
 
-        const { selectedPart } = this.state;
+        const { parasha } = this.props;
+        const { start_chapter: sc, start_verse: sv, end_chapter: ec, end_verse: ev } = parasha;
+
         let thisPart;
         if (selectedPart === 0) {
           thisPart = {
-            start_chapter: this.props.parasha.startChapter,
-            start_verse: this.props.parasha.startVerse,
-            end_chapter: this.props.parasha.endChapter,
-            end_verse: this.props.parasha.endVerse,
+            start_chapter: sc,
+            start_verse: sv,
+            end_chapter: ec,
+            end_verse: ev,
           };
         } else {
-          thisPart = partsBreakdown[this.state.selectedPart - 1] || {};
+          thisPart = partsBreakdown[selectedPart - 1] || {};
         }
 
         return (
@@ -101,7 +101,7 @@ class Tanach extends Component {
                 <div className='card-content'>
                   <ul className='tabs center'>
                     <li
-                      className={`tab ${styles['part-tab']} tsblue-text ${this.state.selectedPart === 0 ? styles['active-part'] : ''} clickable`}
+                      className={`tab ${styles['part-tab']} tsblue-text ${selectedPart === 0 ? styles['active-part'] : ''} clickable`}
                       onClick={() => this.selectPart(0)}
                     >
                       Entire Parasha
@@ -111,9 +111,9 @@ class Tanach extends Component {
                   <Torah
                     hebrew={hebrewText}
                     english={englishText}
-                    show={this.state.show}
+                    show={show}
                     sefer={sefer}
-                    parasha={this.props.parasha.id}
+                    parasha={parasha.id}
                     startChapter={thisPart.start_chapter}
                     startVerse={thisPart.start_verse}
                     endChapter={thisPart.end_chapter}
@@ -124,25 +124,25 @@ class Tanach extends Component {
             </div>
           </div>
         );
-      } else {
-        return (
-          <div>
-            <LanguageSelector clickHandler={this.selectLanguage} />
-            <div className='row'>
-              <div className='card'>
-                <div className='card-content'>
-                  <Nach
-                    hebrew={hebrewText}
-                    english={englishText}
-                    show={this.state.show}
-                    perek={this.props.perek}
-                  />
-                </div>
+      }
+      // else part is not torah
+      return (
+        <div>
+          <LanguageSelector clickHandler={this.selectLanguage} />
+          <div className='row'>
+            <div className='card'>
+              <div className='card-content'>
+                <Nach
+                  hebrew={hebrewText}
+                  english={englishText}
+                  show={show}
+                  perek={perek}
+                />
               </div>
             </div>
           </div>
-        );
-      }
+        </div>
+      );
     }
     return (
       <div className='row center'>
