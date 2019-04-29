@@ -3,18 +3,6 @@ import NachPerek from './NachPerek.jsx';
 import TorahPerek from './TorahPerek.jsx';
 import Spinner from '../../Spinner/Spinner.jsx';
 
-function formatDir(passed) {
-  let str;
-  if (passed) str = passed.toLowerCase();
-  else return undefined;
-  const part1 = str.replace(/(?:^\w|[A-Z]|\b\w)/g, (match) => {
-    if (+match === 0) return '';
-    return match.toUpperCase();
-  });
-  const part2 = part1.replace(/-/g, ' ');
-  return part2;
-}
-
 class Perakim extends Component {
   constructor(props) {
     super(props);
