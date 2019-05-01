@@ -8,6 +8,7 @@ class TorahPerek extends Component {
     super(props);
     const { queryParams } = props;
     const { part } = queryParams || {};
+    // partNumber is one-based, not zero based
     const partNumber = part ? parseInt(part, 10) : 1;
     this.state = {
       partNumber,
@@ -38,12 +39,15 @@ class TorahPerek extends Component {
       />
     ));
 
+    // get the first and last part to be used to determine parasha length
     const firstPart = parts[0] || {};
     const lastPart = parts[parts.length - 1] || {};
 
+    // get the start chapter/verse from the first part, and end chapter/verse from the last part
     const { start_chapter: sc, start_verse: sv } = firstPart;
     const { end_chapter: ec, end_verse: ev } = lastPart;
 
+    // create a new object to be passed to the Tanach component
     const parasha = {
       id: perek,
       startChapter: sc || null,
@@ -52,6 +56,7 @@ class TorahPerek extends Component {
       endVerse: ev || null,
     };
 
+    // get basic info from the first part object - these data are the same for all parts
     const { section_name: seferN, unit_name: parashaN } = firstPart;
     const { section_title: seferT, unit_title: parashaT } = firstPart;
     const { division: tanachPart } = firstPart;
@@ -60,10 +65,12 @@ class TorahPerek extends Component {
     const seferSponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
     const parashaSponsor = Array.isArray(pSpon) ? pSpon.map(l => <div key={l}>{l}</div>) : pSpon;
 
+    // create some strings with the data
     const seferString = `${seferN || 'Sefer'} ${seferT || sefer}`;
     const parashaString = `${parashaN || 'Parashat'} ${parashaT || perek}`;
 
-    const selected = parts[partNumber] || {};
+    // get the currently selected part - must subtract 1 since partNumber is not zero-based
+    const selected = parts[partNumber - 1] || {};
     const { audio_url: url } = selected || {};
     const { host, path } = url || {};
 
