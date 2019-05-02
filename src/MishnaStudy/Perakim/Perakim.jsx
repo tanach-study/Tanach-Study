@@ -81,6 +81,13 @@ class Perakim extends Component {
       const mishna = mishnayot[currentMishna] || {};
       const { audio_url: url } = mishna;
 
+      const { part_name: partN, part_title: partT, part } = mishna;
+      const { teacher_title: teacherT,
+        teacher_fname: teacherFN,
+        teacher_mname: teacherMN,
+        teacher_lname: teacherLN,
+        teacher_short_bio: teacherBio,
+        teacher_image_url: teacherImage } = mishna;
       let pageTitle = null;
       if (seder === 'introduction') {
         pageTitle = 'HaRambam\'s Introduction';
@@ -107,7 +114,15 @@ class Perakim extends Component {
             />
             <AudioPlayer
               url={url}
-              playing={mishna}
+              name={partN}
+              title={partT}
+              part={part}
+              teacherTitle={teacherT}
+              teacherFirst={teacherFN}
+              teacherMiddle={teacherMN}
+              teacherLast={teacherLN}
+              teacherImage={teacherImage}
+              teacherBio={teacherBio}
               className='col l6 m6 s12'
             />
           </section>
