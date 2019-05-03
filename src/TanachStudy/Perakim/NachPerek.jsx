@@ -31,8 +31,15 @@ class NachPerek extends Component {
     // response is always an array; if we have many parts, get the currently selected part
     const selected = numParts > 1 ? response[partIndex] : response[0];
 
-    const { section_name: seferN, unit_name: perekN, section_title: seferT } = selected;
+    const { section_name: seferN, unit_name: perekN } = selected;
+    const { section_title: seferT, unit_title: perekT } = selected;
     const { division: tanachPart, section: sefer, unit: perek } = selected;
+    const { teacher_title: teacherT,
+      teacher_fname: teacherFN,
+      teacher_mname: teacherMN,
+      teacher_lname: teacherLN,
+      teacher_short_bio: teacherBio,
+      teacher_image_url: teacherImage } = selected;
 
     const { section_sponsor: sSpon, unit_sponsor: pSpon } = selected;
     const seferSponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
@@ -60,8 +67,16 @@ class NachPerek extends Component {
           </Link>
           <div className='section' />
           <AudioPlayer
+            name={perekN}
+            title={perekT}
+            part={perek}
+            teacherTitle={teacherT}
+            teacherFirst={teacherFN}
+            teacherMiddle={teacherMN}
+            teacherLast={teacherLN}
+            teacherImage={teacherImage}
+            teacherBio={teacherBio}
             url={url}
-            playing={selected}
             className='col l6 m6 s6'
           />
           <TeamimCard

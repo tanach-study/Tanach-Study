@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Tanach from '../../Tanach/Tanach.jsx';
 import PartItem from './TorahPartItem.jsx';
+import AudioPlayer from '../../components/AudioPlayer/AudioPlayer.jsx';
 
 class TorahPerek extends Component {
   constructor(props) {
@@ -74,6 +75,15 @@ class TorahPerek extends Component {
     const { audio_url: url } = selected || {};
     const { host, path } = url || {};
 
+    const { part_name: name, part_title: title, part } = selected;
+
+    const { teacher_title: teacherT,
+      teacher_fname: teacherFN,
+      teacher_mname: teacherMN,
+      teacher_lname: teacherLN,
+      teacher_short_bio: teacherBio,
+      teacher_image_url: teacherImage } = selected;
+
     return (
       <div className='container'>
         <div className='section'>
@@ -86,16 +96,22 @@ class TorahPerek extends Component {
           </Link>
         </div>
         <div className='section row'>
-          <div className='col l8 m6 s12'>
+          <div className='col l6 m6 s12'>
             {partItems}
           </div>
-          <div className='col l4 m6 s12 card small'>
-            <p className='card-title'>Now Playing: Part {partNumber}</p>
-            <div className='card-content'>
-              <p>{partTitle}</p>
-            </div>
-            <audio src={`${host}${path}`} controls />
-          </div>
+          <AudioPlayer
+            url={url}
+            className='col l6 m6 s12'
+            name={name}
+            title={title}
+            part={part}
+            teacherTitle={teacherT}
+            teacherFirst={teacherFN}
+            teacherMiddle={teacherMN}
+            teacherLast={teacherLN}
+            teacherImage={teacherImage}
+            teacherBio={teacherBio}
+          />
         </div>
         <div className='divider hide-on-med-and-down' />
         <br className='hide-on-med-and-down' />
