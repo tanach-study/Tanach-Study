@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MishnaList from './MishnaList/MishnaList.jsx';
+import Mishna from '../../Mishna/Mishna.jsx';
 import Spinner from '../../Spinner/Spinner.jsx';
 import AudioPlayer from '../../components/AudioPlayer/AudioPlayer.jsx';
 
@@ -124,6 +125,13 @@ class Perakim extends Component {
               teacherImage={teacherImage}
               teacherBio={teacherBio}
               className='col l6 m6 s12'
+            />
+          </section>
+          <section className='row'>
+            <Mishna
+              seder={seder}
+              masechet={masechet}
+              perek={perek}
             />
           </section>
         </div>
