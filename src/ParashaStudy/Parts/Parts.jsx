@@ -10,8 +10,6 @@ function Parts(props) {
       <div className='section center'>
         <h4>Sefarim</h4>
         <PartList title='Torah' parts={data.torah} />
-        <PartList title={'Nevi\'im'} parts={data.neviim} />
-        <PartList title='Ketuvim' parts={data.ketuvim} />
       </div>
     </div>
   );
