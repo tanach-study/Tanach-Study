@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import TorahPerek from "./TorahPerek.jsx";
-import Spinner from "../../Spinner/Spinner.jsx";
+import React, { Component } from 'react';
+import TorahPerek from './TorahPerek.jsx';
+import Spinner from '../../Spinner/Spinner.jsx';
 
 class Perakim extends Component {
   constructor(props) {
     super(props);
     this.state = {
       haveData: false,
-      response: []
+      response: [],
     };
 
     this.initialize = this._initialize.bind(this);
@@ -42,10 +42,10 @@ class Perakim extends Component {
     const { location } = this.props;
     const queryString = location.search;
     if (queryString) {
-      const pairs = queryString.slice(1).split("&");
+      const pairs = queryString.slice(1).split('&');
       const params = {};
       for (let i = 0; i < pairs.length; i++) {
-        const kv = pairs[i].split("=");
+        const kv = pairs[i].split('=');
         params[kv[0]] = kv[1];
       }
       return params;
@@ -67,8 +67,6 @@ class Perakim extends Component {
 
   render() {
     const { haveData, response } = this.state;
-    const base = response[0] || {};
-    const { division: tanachPart } = base;
 
     // For routing
     const { match } = this.props;
@@ -87,8 +85,8 @@ class Perakim extends Component {
       );
     }
     return (
-      <div className="row center">
-        <div className="col l12 m12 s12">
+      <div className='row center'>
+        <div className='col l12 m12 s12'>
           <Spinner />
         </div>
       </div>

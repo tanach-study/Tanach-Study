@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class TanachStudyHomePage extends Component {
+class ParashaStudyHomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,12 +29,12 @@ class TanachStudyHomePage extends Component {
     return (
       <main className='container'>
         <section className='section center'>
-          <h3>Welcome to Tanach Study!</h3>
-          <p>Currently, Tanach Study is studying Sefer {section} Perek {unit}.</p>
-          <Link to={`/tanach-study/perakim/${sect}/${unit}`}>Click here to go to today&#39;s part</Link>
+          <h3>Welcome to Parasha Study!</h3>
+          <p>Currently, Parasha Study is studying Sefer {section} Perek {unit}.</p>
+          <Link to={`/parasha-study/perakim/${sect}/${unit}`}>Click here to go to today&#39;s part</Link>
         </section>
         <section className='section center'>
-          <Link to='/tanach-study/parts'>
+          <Link to='/parasha-study/parts'>
             <button className='btn tsblue'>Study a Perek</button>
           </Link>
         </section>
@@ -43,4 +43,4 @@ class TanachStudyHomePage extends Component {
   }
 }
 
-export default TanachStudyHomePage;
+export default ParashaStudyHomePage;

@@ -11,7 +11,7 @@ function toTitleCase(str) {
 const TorahPerekItem = (props) => {
   const { sefer, perek } = props;
   const parashaName = `Parashat ${toTitleCase(perek)}`;
-  const url = `/tanach-study/perakim/${sefer}/${perek}`;
+  const url = `/parasha-study/perakim/${sefer}/${perek}`;
 
   return (
     <div className='col l4 m6 s12'>
