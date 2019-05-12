@@ -70,23 +70,21 @@ class Perakim extends Component {
     const base = response[0] || {};
     const { division: tanachPart } = base;
 
+    // For routing
     const { match } = this.props;
     const { params } = match || {};
     const { sefer, perek } = params || {};
 
     if (haveData) {
-      if (tanachPart === "torah") {
-        const qParams = this.getQueryParams();
-        return (
-          <TorahPerek
-            parts={response}
-            sefer={sefer}
-            perek={perek}
-            queryParams={qParams}
-          />
-        );
-      }
-      return <NachPerek response={response} sefer={sefer} perek={perek} />;
+      const qParams = this.getQueryParams();
+      return (
+        <TorahPerek
+          parts={response}
+          sefer={sefer}
+          perek={perek}
+          queryParams={qParams}
+        />
+      );
     }
     return (
       <div className="row center">
