@@ -1,0 +1,164 @@
+{
+  "torah": [
+    {
+      "name": "Sefer Bereshit",
+      "url": "/tanach-study/sefarim/bereshit"
+    },
+    {
+      "name": "Sefer Shemot",
+      "url": "/tanach-study/sefarim/shemot"
+    },
+    {
+      "name": "Sefer Vayikra",
+      "url": "/tanach-study/sefarim/vayikra"
+    },
+    {
+      "name": "Sefer Bemidbar",
+      "url": "/tanach-study/sefarim/bemidbar"
+    },
+    {
+      "name": "Sefer Devarim",
+      "url": "/tanach-study/sefarim/devarim"
+    }
+  ],
+  "neviim": [
+    {
+      "name": "Sefer Yehoshua",
+      "url": "/tanach-study/sefarim/yehoshua"
+    },
+    {
+      "name": "Sefer Shofetim",
+      "url": "/tanach-study/sefarim/shofetim"
+    },
+    {
+      "name": "Sefer Shemuel 1",
+      "url": "/tanach-study/sefarim/shemuel1"
+    },
+    {
+      "name": "Sefer Shemuel 2",
+      "url": "/tanach-study/sefarim/shemuel2"
+    },
+    {
+      "name": "Sefer Melachim 1",
+      "url": "/tanach-study/sefarim/melachim1"
+    },
+    {
+      "name": "Sefer Melachim 2",
+      "url": "/tanach-study/sefarim/melachim2"
+    },
+    {
+      "name": "Sefer Yeshayahu",
+      "url": "/tanach-study/sefarim/yeshayahu"
+    },
+    {
+      "name": "Sefer Yirmiyahu",
+      "url": "/tanach-study/sefarim/yirmiyahu"
+    },
+    {
+      "name": "Sefer Yehezkel",
+      "url": "/tanach-study/sefarim/yehezkel"
+    },
+    {
+      "name": "Sefer Hoshea",
+      "url": "/tanach-study/sefarim/hoshea"
+    },
+    {
+      "name": "Sefer Yoel",
+      "url": "/tanach-study/sefarim/yoel"
+    },
+    {
+      "name": "Sefer Amos",
+      "url": "/tanach-study/sefarim/amos"
+    },
+    {
+      "name": "Sefer Ovadia",
+      "url": "/tanach-study/sefarim/ovadia"
+    },
+    {
+      "name": "Sefer Yonah",
+      "url": "/tanach-study/sefarim/yonah"
+    },
+    {
+      "name": "Sefer Michah",
+      "url": "/tanach-study/sefarim/michah"
+    },
+    {
+      "name": "Sefer Nahum",
+      "url": "/tanach-study/sefarim/nahum"
+    },
+    {
+      "name": "Sefer Habakuk",
+      "url": "/tanach-study/sefarim/habakuk"
+    },
+    {
+      "name": "Sefer Sephania",
+      "url": "/tanach-study/sefarim/sephania"
+    },
+    {
+      "name": "Sefer Hagai",
+      "url": "/tanach-study/sefarim/hagai"
+    },
+    {
+      "name": "Sefer Zecharia",
+      "url": "/tanach-study/sefarim/zecharia"
+    },
+    {
+      "name": "Sefer Malachi",
+      "url": "/tanach-study/sefarim/malachi"
+    }
+  ],
+  "ketuvim": [
+    {
+      "name": "Sefer Divre Hayamim 1",
+      "url": "/tanach-study/sefarim/divre-hayamim-1"
+    },
+    {
+      "name": "Sefer Divre Hayamim 2",
+      "url": "/tanach-study/sefarim/divre-hayamim-2"
+    },
+    {
+      "name": "Sefer Tehillim",
+      "url": "/tanach-study/sefarim/tehillim"
+    },
+    {
+      "name": "Sefer Mishle",
+      "url": "/tanach-study/sefarim/mishle"
+    },
+    {
+      "name": "Sefer Iyov",
+      "url": "/tanach-study/sefarim/iyov"
+    },
+    {
+      "name": "Megillat Shir Hashirim",
+      "url": "/tanach-study/sefarim/shir-hashirim"
+    },
+    {
+      "name": "Megillat Ruth",
+      "url": "/tanach-study/sefarim/ruth"
+    },
+    {
+      "name": "Megillat Eichah",
+      "url": "/tanach-study/sefarim/eichah"
+    },
+    {
+      "name": "Megillat Kohelet",
+      "url": "/tanach-study/sefarim/kohelet"
+    },
+    {
+      "name": "Megillat Esther",
+      "url": "/tanach-study/sefarim/esther"
+    },
+    {
+      "name": "Sefer Daniel",
+      "url": "/tanach-study/sefarim/daniel"
+    },
+    {
+      "name": "Sefer Ezra",
+      "url": "/tanach-study/sefarim/ezra"
+    },
+    {
+      "name": "Sefer Nehemya",
+      "url": "/tanach-study/sefarim/nehemya"
+    }
+  ]
+}
