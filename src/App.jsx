@@ -100,7 +100,7 @@ class App extends Component {
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/donate' component={Donate} />
             <Route path='/about' component={About} />
-            <Redirect from='/parasha' to={`/tanach-study/perakim/bereshit/${parasha}`} />
+            <Redirect from='/parasha' to='/parasha-study/parasha' />
             <Route path='/tanach-study' component={TanachStudy} />
             <Route path='/parasha-study' component={ParashaStudy} />
             <Route path='/mishna-study' component={MishnaStudy} />
