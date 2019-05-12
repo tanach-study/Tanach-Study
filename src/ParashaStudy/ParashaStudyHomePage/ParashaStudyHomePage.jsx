@@ -11,7 +11,7 @@ class ParashaStudyHomePage extends Component {
         unit: '14',
         part: '',
         series: '',
-      },
+      }
     };
   }
 
@@ -30,12 +30,16 @@ class ParashaStudyHomePage extends Component {
       <main className='container'>
         <section className='section center'>
           <h3>Welcome to Parasha Study!</h3>
-          <p>Currently, Parasha Study is studying Sefer {section} Perek {unit}.</p>
-          <Link to={`/parasha-study/perakim/${sect}/${unit}`}>Click here to go to today&#39;s part</Link>
+          <p>
+            Currently, Parasha Study is studying Sefer {section} Perek {unit}.
+          </p>
+          <Link to={`/parasha-study/perakim/${sect}/${unit}`}>
+            Click here to go to today&#39;s part
+          </Link>
         </section>
         <section className='section center'>
           <Link to='/parasha-study/parts'>
-            <button className='btn tsblue'>Study a Perek</button>
+            <button className='btn psgreen'>Study a Perek</button>
           </Link>
         </section>
       </main>

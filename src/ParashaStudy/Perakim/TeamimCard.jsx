@@ -27,7 +27,7 @@ class ReaderCard extends Component {
             <li className='tab' key={item.url}>
               <div
                 onClick={() => this.handleClick(i)}
-                className={`${this.state.selectedItem === i ? styles['active-reader'] : ''} tsblue-text`}
+                className={`${this.state.selectedItem === i ? styles['active-reader'] : ''} psgreen-text`}
               >
                 {item.reader_title} {item.reader_lname}
               </div>
