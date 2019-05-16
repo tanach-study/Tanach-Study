@@ -5,7 +5,8 @@
   },
   "globals": {
     "API_URL": true,
-    "TANACH_URL": true
+    "TANACH_URL": true,
+    "MISHNA_URL": true
   },
   "rules": {
     "quotes": ["error", "single"],
