@@ -23,6 +23,7 @@ class ReaderCard extends Component {
     if (teamim) {
       if (Array.isArray(teamim)) {
         if (teamim.length > 1) {
+          console.log(teamim)
           const teamimTabs = teamim.map((item, i) => (
             <li className='tab' key={item.url}>
               <div
