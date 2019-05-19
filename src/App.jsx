@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-    const parasha = getParasha();
     const { programs: progs } = this.state;
     const { location } = this.props;
     const { pathname } = location;
