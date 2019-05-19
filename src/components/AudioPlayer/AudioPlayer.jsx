@@ -1,7 +1,9 @@
 import React from 'react';
 
+import styles from './AudioPlayer.css';
+
 function AudioPlayer(props) {
-  const { className, url, name, title, part } = props;
+  const { className, url, name, title, part, tabs } = props;
   const { teacherTitle,
     teacherFirst,
     teacherMiddle,
@@ -37,6 +39,13 @@ function AudioPlayer(props) {
             <audio src={src} controls className='col l12 m12 s12' />
           </div>
         </div>
+        {tabs && (
+          <div className='card-tabs'>
+            <ul className={`tabs tabs-fixed-width ${styles['tabs-container']}`}>
+              {tabs}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -18,6 +18,9 @@ const apiURL = nodeEnv === 'production'
 const tanachURL = nodeEnv === 'production'
   ? JSON.stringify('https://cdn.tanachstudy.com/assets/tanach')
   : JSON.stringify('/tanach');
+const mishnaURL = nodeEnv === 'production'
+  ? JSON.stringify('https://cdn.tanachstudy.com/assets/mishna')
+  : JSON.stringify('/mishna');
 const materializeURL = nodeEnv === 'production'
   ? 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css'
   : '/materialize.min.css';
@@ -33,6 +36,7 @@ const plugins = [
   new webpack.DefinePlugin({
     API_URL: apiURL,
     TANACH_URL: tanachURL,
+    MISHNA_URL: mishnaURL,
   }),
   new HtmlWebpackPlugin({
     inject: false,

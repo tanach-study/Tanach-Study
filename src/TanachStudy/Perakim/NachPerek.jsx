@@ -5,6 +5,8 @@ import AudioPlayer from '../../components/AudioPlayer/AudioPlayer.jsx';
 import TeamimCard from './TeamimCard.jsx';
 import Tanach from '../../Tanach/Tanach.jsx';
 
+import styles from './NachPerek.css';
+
 class NachPerek extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +14,7 @@ class NachPerek extends Component {
       numParts: 1,
       partIndex: null,
     };
+    this.selectPart = this._selectPartByZeroBasedIndex.bind(this);
   }
 
   componentDidMount() {
@@ -22,6 +25,12 @@ class NachPerek extends Component {
         partIndex: 0,
       });
     }
+  }
+
+  _selectPartByZeroBasedIndex(i) {
+    this.setState({
+      partIndex: i,
+    });
   }
 
   render() {
@@ -46,6 +55,20 @@ class NachPerek extends Component {
     const perekSponsor = Array.isArray(pSpon) ? pSpon.map(l => <div key={l}>{l}</div>) : pSpon;
 
     const { audio_url: url, teamim } = selected;
+
+    let tabs = null;
+    if (numParts > 1) {
+      tabs = response.map((p, i) => (
+        <li className='tab' key={`${perekN} ${p.part}`}>
+          <div
+            onClick={() => this.selectPart(i)}
+            className={`${partIndex === i ? styles['active-part'] : ''} tsblue-text`}
+          >
+            {`Part ${p.part.toUpperCase()}`}
+          </div>
+        </li>
+      ));
+    }
 
     let pageTitle = null;
     let seferString = null;
@@ -77,6 +100,7 @@ class NachPerek extends Component {
             teacherImage={teacherImage}
             teacherBio={teacherBio}
             url={url}
+            tabs={tabs}
             className='col l6 m6 s6'
           />
           <TeamimCard
