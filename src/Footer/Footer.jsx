@@ -74,7 +74,6 @@ function SocialLinks() {
 function Footer(props) {
   const { program } = props || {};
   const { linkPrefix } = program || '';
-  const windowWidth = window.innerWidth || '';
   let bgColorClass = 'tsblue';
   switch (linkPrefix) {
     case 'mishna-study':
@@ -93,11 +92,11 @@ function Footer(props) {
   return (
     <footer className={bgColorClass}>
       <div className={`container ${styles['footer-container']}`}>
-        <div className={`valign-wrapper row ${styles['footer-wrapper']}`}>
-          <div className='col l6 m6 s6 left-align valign'>
+        <div className={`row ${styles['footer-wrapper']}`}>
+          <div className={`col l6 m6 s12 ${styles['created-container']}`}>
             <CreatedBy />
           </div>
-          <div className='col l6 m6 s6 right-align valign'>
+          <div className={`col l6 m6 s12 ${styles['links-container']}`}>
             <SocialLinks />
           </div>
         </div>
