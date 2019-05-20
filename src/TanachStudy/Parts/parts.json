@@ -2,23 +2,23 @@
   "torah": [
     {
       "name": "Sefer Bereshit",
-      "url": "/tanach-study/sefarim/bereshit"
+      "url": "/parasha-study/sefarim/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/tanach-study/sefarim/shemot"
+      "url": "/parasha-study/sefarim/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/tanach-study/sefarim/vayikra"
+      "url": "/parasha-study/sefarim/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/tanach-study/sefarim/bemidbar"
+      "url": "/parasha-study/sefarim/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/tanach-study/sefarim/devarim"
+      "url": "/parasha-study/sefarim/devarim"
     }
   ],
   "neviim": [
