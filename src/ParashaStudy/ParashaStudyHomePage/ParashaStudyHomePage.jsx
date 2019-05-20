@@ -11,7 +11,7 @@ class ParashaStudyHomePage extends Component {
         unit: 'Behar',
         part: '1',
         series: '',
-      };
+      },
     };
   }
 
