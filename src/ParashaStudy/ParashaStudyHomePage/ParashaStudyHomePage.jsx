@@ -7,11 +7,11 @@ class ParashaStudyHomePage extends Component {
     this.state = {
       currentPerek: {
         division: '',
-        section: 'Yeshayahu',
-        unit: '14',
-        part: '',
+        section: 'Vayikra',
+        unit: 'Behar',
+        part: '1',
         series: '',
-      }
+      },
     };
   }
 
@@ -24,16 +24,17 @@ class ParashaStudyHomePage extends Component {
 
   render() {
     const { currentPerek } = this.state;
-    const { section, unit } = currentPerek;
+    const { section, unit, part } = currentPerek;
     const sect = section.toLowerCase().replace(' ', '-');
+    const pars = unit.toLowerCase().replace(' ', '-');
     return (
       <main className='container'>
         <section className='section center'>
           <h3>Welcome to Parasha Study!</h3>
           <p>
-            Currently, Parasha Study is studying Sefer {section} Perek {unit}.
+            Currently, Parasha Study is studying Sefer {section} Parashat {unit} Part {part}.
           </p>
-          <Link to={`/parasha-study/perakim/${sect}/${unit}`}>
+          <Link to={`/parasha-study/perakim/${sect}/${pars}?part=${part}`}>
             Click here to go to today&#39;s part
           </Link>
         </section>

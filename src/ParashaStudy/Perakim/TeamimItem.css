@@ -3,11 +3,11 @@
 }
 
 .active-reader {
-  background-color: rgba(0,159,193,0.1);
+  background-color: rgba(18,126,54,0.1);
   outline: none;
   font-weight: 600;
   font-size: 16px !important;
-  border-bottom: 3px solid rgba(0,159,193,0.8) !important;
+  border-bottom: 3px solid rgba(18,126,54,0.8) !important;
   transition: background-color 1.5s ease !important, font-size .5s ease !important;
 }
 

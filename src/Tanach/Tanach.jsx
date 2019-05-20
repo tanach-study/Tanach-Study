@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nach from './Nach.jsx';
 import Torah from './Torah.jsx';
 import LanguageSelector from './LanguageSelector.jsx';
+import TabItem from './TabItem.jsx';
 import Spinner from '../Spinner/Spinner.jsx';
 
 import styles from './Tanach.css';
@@ -69,13 +70,12 @@ class Tanach extends Component {
       if (part === 'torah') {
         const { partsBreakdown } = this.props || [];
         const tabs = partsBreakdown.map(torahPart => (
-          <li
+          <TabItem
             key={`tab-${torahPart.part}`}
-            className={`tab ${styles['part-tab']} tsblue-text ${selectedPart === torahPart.part ? styles['active-part'] : ''} clickable`}
-            onClick={() => this.selectPart(torahPart.part)}
-          >
-            Part {torahPart.part}
-          </li>
+            isActive={selectedPart === torahPart.part}
+            click={() => this.selectPart(torahPart.part)}
+            content={`Part ${torahPart.part}`}
+          />
         ));
 
         const { parasha } = this.props;
@@ -100,12 +100,11 @@ class Tanach extends Component {
               <div className='card'>
                 <div className='card-content'>
                   <ul className='tabs center'>
-                    <li
-                      className={`tab ${styles['part-tab']} tsblue-text ${selectedPart === 0 ? styles['active-part'] : ''} clickable`}
-                      onClick={() => this.selectPart(0)}
-                    >
-                      Entire Parasha
-                    </li>
+                    <TabItem
+                      isActive={selectedPart === 0}
+                      click={() => this.selectPart(0)}
+                      content='Entire Parasha'
+                    />
                     {tabs}
                   </ul>
                   <Torah
