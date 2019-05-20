@@ -10,6 +10,7 @@ export const programs = {
     linkPrefix: 'tanach-study',
     backgroundClass: 'tsblue',
     textClass: 'tsblue-text',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/tanach-study/id930200652',
   },
   mishnastudy: {
     mainColor: '#950010',
@@ -20,6 +21,7 @@ export const programs = {
     linkPrefix: 'mishna-study',
     backgroundClass: 'msred',
     textClass: 'msred-text',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/mishna-study/id1458633885',
   },
   haftarastudy: {
     mainColor: '#EE5A24',
@@ -30,6 +32,7 @@ export const programs = {
     linkPrefix: 'haftara-study',
     backgroundClass: 'hsorange',
     textClass: 'hsorange-text',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/tanach-study/id930200652',
   },
   parashastudy: {
     mainColor: '#127E36',
@@ -40,6 +43,7 @@ export const programs = {
     linkPrefix: 'parasha-study',
     backgroundClass: 'psgreen',
     textClass: 'psgreen-text',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study/id1459797702',
   },
 };
 
