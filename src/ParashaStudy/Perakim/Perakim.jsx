@@ -56,12 +56,12 @@ class Perakim extends Component {
   _initialize(sefer, perek) {
     fetch(`${API_URL}/tanach-study/perakim/${sefer}/${perek}`)
       .then(r => r.json())
-      .then(data =>
+      .then((data) => {
         this.setState({
           haveData: true,
-          response: data
-        })
-      )
+          response: data,
+        });
+      })
       .catch(err => console.error(err));
   }
 
