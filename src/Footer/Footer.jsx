@@ -18,7 +18,10 @@ function CreatedBy() {
   );
 }
 
-function SocialLinks() {
+function SocialLinks(props) {
+  const { podcast } = props;
+  const podcastURL = podcast || 'https://podcasts.apple.com/us/podcast/tanach-study/id930200652';
+
   return (
     <React.Fragment>
       <Link to='/signup' className={styles['social-icons']}>
@@ -38,7 +41,7 @@ function SocialLinks() {
         />
       </a>
       <a
-        href='https://itunes.apple.com/us/podcast/tanach-study/id930200652'
+        href={podcastURL}
         className={styles['social-icons']}
         target='blank'
       >
@@ -73,31 +76,17 @@ function SocialLinks() {
 
 function Footer(props) {
   const { program } = props || {};
-  const { linkPrefix } = program || '';
-  let bgColorClass = 'tsblue';
-  switch (linkPrefix) {
-    case 'mishna-study':
-      bgColorClass = 'msred';
-      break;
-    case 'haftara-study':
-      bgColorClass = 'hsorange';
-      break;
-    case 'parasha-study':
-      bgColorClass = 'psgreen';
-      break;
-    default:
-      bgColorClass = 'tsblue';
-      break;
-  }
+  const { backgroundClass, podcastURL } = program || {};
+
   return (
-    <footer className={bgColorClass}>
+    <footer className={backgroundClass}>
       <div className={`container ${styles['footer-container']}`}>
         <div className={`row ${styles['footer-wrapper']}`}>
           <div className={`col l6 m6 s12 ${styles['created-container']}`}>
             <CreatedBy />
           </div>
           <div className={`col l6 m6 s12 ${styles['links-container']}`}>
-            <SocialLinks />
+            <SocialLinks podcast={podcastURL} />
           </div>
         </div>
       </div>
