@@ -79,4 +79,17 @@
   border-bottom: 1px solid #127E36 !important;
   box-shadow: 0 1px 0 0 #127E36 !important;
 }
+
+.moadimyellow {
+  background-color: #EEDA22 !important;
+}
+
+.moadimyellow-text {
+  color: #EEDA22 !important;
+}
+
+.moadimyellow-form input:focus {
+  border-bottom: 1px solid #EEDA22 !important;
+  box-shadow: 0 1px 0 0 #EEDA22 !important;
+}
 /* END GLOBAL STYLES */

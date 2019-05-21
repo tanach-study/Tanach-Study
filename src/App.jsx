@@ -17,6 +17,8 @@ import Signup from './Signup/Signup.jsx';
 import TanachStudy from './TanachStudy/TanachStudy.jsx';
 import ParashaStudy from './ParashaStudy/ParashaStudy.jsx';
 import MishnaStudy from './MishnaStudy/MishnaStudy.jsx';
+import HaftaraStudy from './HaftaraStudy/HaftaraStudy.jsx';
+import MoadimStudy from './MoadimStudy/MoadimStudy.jsx';
 
 import { programs, ProgramContext } from './app-context.js';
 
@@ -50,6 +52,8 @@ class App extends Component {
             <Route path='/tanach-study' component={TanachStudy} />
             <Route path='/parasha-study' component={ParashaStudy} />
             <Route path='/mishna-study' component={MishnaStudy} />
+            <Route path='/haftara-study' component={HaftaraStudy} />
+            <Route path='/moadim-study' component={MoadimStudy} />
             <Redirect from='/parts' to='/tanach-study/parts' />
             <Redirect from='/teachers/:id' to='/tanach-study/teachers/:id' />
             <Redirect from='/teachers' to='/tanach-study/teachers' />
