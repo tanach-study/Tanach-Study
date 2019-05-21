@@ -8,9 +8,9 @@ class Teacher extends Component {
     super(props);
     const { match } = props || {};
     const { params } = match || {};
-    const { id } = params || {};
+    const { slug } = params || {};
     this.state = {
-      teacherID: id || '',
+      teacherID: slug || '',
       teacher: {},
     };
   }
