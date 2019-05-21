@@ -6,8 +6,11 @@ import styles from './Teacher.css';
 class Teacher extends Component {
   constructor(props) {
     super(props);
+    const { match } = props || {};
+    const { params } = match || {};
+    const { id } = params || {};
     this.state = {
-      teacherID: this.props.match.params.id,
+      teacherID: id || '',
       teacher: {},
     };
   }
@@ -17,17 +20,24 @@ class Teacher extends Component {
   }
 
   componentDidMount() {
-    fetch(`${API_URL}/tanach-study/teachers/${this.state.teacherID}`)
+    const { teacherID } = this.state;
+    // TODO: check if teacherID is empty string
+    fetch(`${API_URL}/tanach-study/teachers/${teacherID}`)
       .then(r => r.json())
       .then(data => this.setState({ teacher: data }))
       .catch(err => console.log(err));
   }
 
   render() {
-    const teacher = this.state.teacher || {};
-    const info = teacher.teacher_info || {};
-    const teacherBooks = this.state.teacher.teacher_books || [];
-    const mappedBooks = teacherBooks.map(book => (
+    // get the current teacher object from state
+    const { teacher } = this.state;
+    // get the teacher's info and list of books
+    const { teacher_info: info } = teacher || {};
+    const { teacher_books: teacherBooks } = teacher || {};
+    const books = teacherBooks || [];
+    // map the teacher's books to a card that links to the book
+    // TODO: update this with the new data model
+    const mappedBooks = books.map(book => (
       <div className='col l4 m6 s12' key={book.book_name}>
         <Link to={`/sefarim/${book.book_name}`}>
           <div className='card hoverable full-width black-text'>
@@ -38,6 +48,11 @@ class Teacher extends Component {
         </Link>
       </div>
     ));
+
+    // get the teacher's info
+    const { title, fname, mname, lname, short_bio: short, long_bio: long, image_url: url } = info;
+    // generate a string of the teacher's name
+    const teacherString = `${title} ${fname}${mname ? ` ${mname} ` : ' '}${lname}`;
     return (
       <div className='container'>
         <div className='section'>
@@ -45,16 +60,16 @@ class Teacher extends Component {
             <div className='card-content'>
               <div className='row valign-wrapper'>
                 <div className='col l3 m4 s12 offset-l1 valign'>
-                  <img src={info.image_url} alt='' className='responsive-img full-width circle' />
+                  <img src={url} alt='' className='responsive-img full-width circle' />
                 </div>
                 <div className='col l8 m8 s12 valign'>
-                  <h2 className={styles['teacher-title']}>{info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname}</h2>
-                  <div><i>{info.short_bio}</i></div>
+                  <h2 className={styles['teacher-title']}>{teacherString}</h2>
+                  <div><i>{short}</i></div>
                 </div>
               </div>
               <div className='row'>
                 <div className='col l10 m12 s12 offset-l1'>
-                  <p>{info.long_bio}</p>
+                  <p>{long}</p>
                 </div>
               </div>
             </div>
@@ -62,7 +77,7 @@ class Teacher extends Component {
           <div className='card'>
             <div className='card-content'>
               <div className='row'>
-                <h4 className='col l12 m12 s12 left-align'>Sefarim that {info.title} {info.fname}{info.mname ? ` ${info.mname} ` : ' '}{info.lname} Taught</h4>
+                <h4 className='col l12 m12 s12 left-align'>Sefarim that {teacherString} Taught</h4>
                 {mappedBooks}
               </div>
             </div>
