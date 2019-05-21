@@ -20,6 +20,11 @@ class ProgramNavigation extends Component {
             </Link>
           </li>
           <li className={styles['nav-list-item']}>
+            <Link to='/parasha-study' className={styles['nav-link']}>
+              <img src='https://cdn.tanachstudy.com/assets/images/parasha-study-logo.png' alt='Parasha Study Logo' />
+            </Link>
+          </li>
+          <li className={styles['nav-list-item']}>
             <Link to='/mishna-study' className={styles['nav-link']}>
               <img src='https://cdn.tanachstudy.com/assets/images/mishna-study-logo.png' alt='Mishna Study Logo' />
             </Link>
@@ -27,11 +32,6 @@ class ProgramNavigation extends Component {
           <li className={styles['nav-list-item']}>
             <Link to='/haftara-study' className={styles['nav-link']}>
               <img src='https://cdn.tanachstudy.com/assets/images/haftara-study-logo.png' alt='Haftara Study Logo' />
-            </Link>
-          </li>
-          <li className={styles['nav-list-item']}>
-            <Link to='/parasha-study' className={styles['nav-link']}>
-              <img src='https://cdn.tanachstudy.com/assets/images/parasha-study-logo.png' alt='Parasha Study Logo' />
             </Link>
           </li>
           <li className={styles['nav-list-item']}>
