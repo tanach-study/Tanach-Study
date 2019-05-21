@@ -12,6 +12,8 @@ import About from './About/About.jsx';
 import Donate from './Donate/Donate.jsx';
 import Contact from './Contact/Contact.jsx';
 import Signup from './Signup/Signup.jsx';
+import AllTeachers from './Teachers/AllTeachers.jsx';
+import Teacher from './Teachers/Teacher.jsx';
 
 // import program conmponents
 import TanachStudy from './TanachStudy/TanachStudy.jsx';
@@ -46,6 +48,8 @@ class App extends Component {
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/donate' component={Donate} />
             <Route path='/about' component={About} />
+            <Route path='/teachers' component={AllTeachers} />
+            <Route path='/teachers/:slug' component={Teacher} />
             <Redirect from='/parasha' to='/parasha-study/parasha' />
             <Route path='/tanach-study' component={TanachStudy} />
             <Route path='/parasha-study' component={ParashaStudy} />
