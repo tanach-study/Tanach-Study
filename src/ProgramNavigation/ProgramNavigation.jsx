@@ -14,10 +14,11 @@ class ProgramNavigation extends Component {
     const { location } = this.props;
     const { pathname } = location;
     console.log(pathname);
+    const activateTS = !(pathname.includes('/mishna-study') || pathname.includes('/haftara-study') || pathname.includes('/parasha-study') || pathname.includes('/moadim-study'));
     return (
       <nav className={`${styles['program-navigation']}`}>
         <ul className='valign-wrapper'>
-          <li className={pathname.includes('/tanach-study') ? styles['nav-list-item-selected'] : styles['nav-list-item']}>
+          <li className={activateTS ? styles['nav-list-item-selected'] : styles['nav-list-item']}>
             <Link to='/tanach-study' className={styles['nav-link']}>
               <img src='https://cdn.tanachstudy.com/assets/images/logo.png' alt='Tanach Study Logo' />
             </Link>
