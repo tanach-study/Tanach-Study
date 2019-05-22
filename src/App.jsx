@@ -40,7 +40,7 @@ class App extends Component {
     const section = pathname.split('/')[1].replace('-', '');
     return (
       <ProgramContext.Provider value={progs[section] || progs['tanachstudy']}>
-        <ProgramNavigation />
+        <Route path='/' component={ProgramNavigation} />
         <ProgramContext.Consumer>
           {program => <Navigation program={program} />}
         </ProgramContext.Consumer>
