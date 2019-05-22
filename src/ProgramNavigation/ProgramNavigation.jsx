@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './ProgramNavigation.css';
@@ -23,6 +23,12 @@ class ProgramNavigation extends Component {
         activate: !(pathname.includes('/mishna-study') || pathname.includes('/haftara-study') || pathname.includes('/parasha-study') || pathname.includes('/moadim-study')),
       },
       {
+        to: '/parasha-study',
+        img: 'https://cdn.tanachstudy.com/assets/images/parasha-study-logo.png',
+        alt: 'Parasha Study Logo',
+        activate: pathname.includes('/parasha-study'),
+      },
+      {
         to: '/mishna-study',
         img: 'https://cdn.tanachstudy.com/assets/images/mishna-study-logo.png',
         alt: 'Mishna Study Logo',
@@ -33,12 +39,6 @@ class ProgramNavigation extends Component {
         img: 'https://cdn.tanachstudy.com/assets/images/haftara-study-logo.png',
         alt: 'Haftara Study Logo',
         activate: pathname.includes('/haftara-study'),
-      },
-      {
-        to: '/parasha-study',
-        img: 'https://cdn.tanachstudy.com/assets/images/parasha-study-logo.png',
-        alt: 'Parasha Study Logo',
-        activate: pathname.includes('/parasha-study'),
       },
       {
         to: '/moadim-study',
