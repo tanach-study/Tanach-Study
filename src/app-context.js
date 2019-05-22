@@ -45,6 +45,17 @@ export const programs = {
     textClass: 'psgreen-text',
     podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study/id1459797702',
   },
+  moadimstudy: {
+    mainColor: '#EEDA22',
+    secondaryColor: '#FBF7D0',
+    tertiaryColor: '#FFE700',
+    complementaryColor: '#5823A2',
+    logo: 'https://cdn.tanachstudy.com/assets/images/moadim-study-logo.png',
+    linkPrefix: 'moadim-study',
+    backgroundClass: 'moadimyellow',
+    textClass: 'moadimyellow-text',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/tanach-study/id930200652',
+  },
 };
 
 export const ProgramContext = React.createContext(programs.tanachstudy);

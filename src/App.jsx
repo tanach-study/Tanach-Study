@@ -12,11 +12,15 @@ import About from './About/About.jsx';
 import Donate from './Donate/Donate.jsx';
 import Contact from './Contact/Contact.jsx';
 import Signup from './Signup/Signup.jsx';
+import AllTeachers from './Teachers/AllTeachers.jsx';
+import Teacher from './Teachers/Teacher.jsx';
 
 // import program conmponents
 import TanachStudy from './TanachStudy/TanachStudy.jsx';
 import ParashaStudy from './ParashaStudy/ParashaStudy.jsx';
 import MishnaStudy from './MishnaStudy/MishnaStudy.jsx';
+import HaftaraStudy from './HaftaraStudy/HaftaraStudy.jsx';
+import MoadimStudy from './MoadimStudy/MoadimStudy.jsx';
 
 import { programs, ProgramContext } from './app-context.js';
 
@@ -36,7 +40,7 @@ class App extends Component {
     const section = pathname.split('/')[1].replace('-', '');
     return (
       <ProgramContext.Provider value={progs[section] || progs['tanachstudy']}>
-        <ProgramNavigation />
+        <Route path='/' component={ProgramNavigation} />
         <ProgramContext.Consumer>
           {program => <Navigation program={program} />}
         </ProgramContext.Consumer>
@@ -46,10 +50,14 @@ class App extends Component {
             <Route exact path='/contact' component={Contact} />
             <Route exact path='/donate' component={Donate} />
             <Route path='/about' component={About} />
+            <Route path='/teachers' component={AllTeachers} />
+            <Route path='/teachers/:slug' component={Teacher} />
             <Redirect from='/parasha' to='/parasha-study/parasha' />
             <Route path='/tanach-study' component={TanachStudy} />
             <Route path='/parasha-study' component={ParashaStudy} />
             <Route path='/mishna-study' component={MishnaStudy} />
+            <Route path='/haftara-study' component={HaftaraStudy} />
+            <Route path='/moadim-study' component={MoadimStudy} />
             <Redirect from='/parts' to='/tanach-study/parts' />
             <Redirect from='/teachers/:id' to='/tanach-study/teachers/:id' />
             <Redirect from='/teachers' to='/tanach-study/teachers' />
