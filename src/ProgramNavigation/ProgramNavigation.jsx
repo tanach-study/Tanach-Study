@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './ProgramNavigation.css';
@@ -13,14 +13,16 @@ class ProgramNavigation extends Component {
   render() {
     const { location } = this.props;
     const { pathname } = location;
-    const activateTS = !(pathname.includes('/mishna-study') || pathname.includes('/haftara-study') || pathname.includes('/parasha-study') || pathname.includes('/moadim-study'));
 
     const links = [
       {
         to: '/tanach-study',
         img: 'https://cdn.tanachstudy.com/assets/images/logo.png',
         alt: 'Tanach Study Logo',
-        activate: !(pathname.includes('/mishna-study') || pathname.includes('/haftara-study') || pathname.includes('/parasha-study') || pathname.includes('/moadim-study')),
+        activate: !(pathname.includes('/mishna-study')
+          || pathname.includes('/haftara-study')
+          || pathname.includes('/parasha-study')
+          || pathname.includes('/moadim-study')),
       },
       {
         to: '/parasha-study',
@@ -46,16 +48,17 @@ class ProgramNavigation extends Component {
         alt: 'Moadim Study Logo',
         activate: pathname.includes('/moadim-study'),
       },
-    ]
+    ];
 
+    const active = styles['nav-list-item-selected'];
     const mappedLinks = links.map(l => (
-      <li className={l.activate ? styles['nav-list-item-selected'] : styles['nav-list-item']}>
+      <li key={l.to} className={`${l.activate ? active : ''} ${styles['nav-list-item']}`}>
         <Link to={l.to} className={styles['nav-link']}>
           <img src={l.img} alt={l.alt} />
         </Link>
       </li>
     ));
-    
+
     return (
       <nav className={`${styles['program-navigation']}`}>
         <ul className='valign-wrapper'>
