@@ -19,11 +19,11 @@ function TanachStudy(props) {
     { f: '/tanach-study/sefarim/bemidbar', t: '/parasha-study/sefarim/bemidbar' },
     { f: '/tanach-study/sefarim/devarim', t: '/parasha-study/sefarim/devarim' },
   ];
-  const mappedRedirects = redirects.map(({ f, t }) => <Redirect from={f} to={t} />);
+  const mapped = redirects.map(({ f, t }) => <Redirect key={`${f}->${t}`} from={f} to={t} />);
   return (
     <div className='body'>
       <Switch>
-        {mappedRedirects}
+        {mapped}
         <Route exact path='/tanach-study/perakim/:sefer/:perek' component={Perakim} />
         <Route exact path='/tanach-study/sefarim/:sefer' component={Sefarim} />
         <Route exact path='/tanach-study/parts' component={Parts} />
