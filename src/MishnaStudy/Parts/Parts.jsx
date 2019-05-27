@@ -9,13 +9,13 @@ function Parts(props) {
     <div className='container'>
       <div className='section center'>
         <h4>Sedarim</h4>
-        <PartList title='Introduction' parts={data.introduction} />
         <PartList title='Zeraim' parts={data.zeraim} />
         <PartList title='Moed' parts={data.moed} />
         <PartList title='Nashim' parts={data.nashim} />
         <PartList title='Nezikin' parts={data.nezikin} />
         <PartList title='Kadashim' parts={data.kadashim} />
         <PartList title='Taharot' parts={data.taharot} />
+        <PartList title='Introduction' parts={data.introduction} />
       </div>
     </div>
   );
