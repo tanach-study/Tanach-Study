@@ -1,0 +1,95 @@
+/* GLOBAL STYLES */
+
+.tsblue {
+  background-color: #009FC1 !important;
+}
+
+.tsblue-text {
+  color: #009FC1 !important;
+}
+
+.tsblue-form input:focus {
+  border-bottom: 1px solid #009FC1 !important;
+  box-shadow: 0 1px 0 0 #009FC1 !important;
+}
+
+.body {
+  min-height: 81vh;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.msred {
+  background-color: #950010 !important;
+}
+
+.msred-text {
+  color: #950010 !important;
+}
+
+.msred-form input:focus {
+  border-bottom: 1px solid #950010 !important;
+  box-shadow: 0 1px 0 0 #950010 !important;
+}
+
+.hsorange {
+  background-color: #EE5A24 !important;
+}
+
+.hsorange-text {
+  color: #EE5A24 !important;
+}
+
+.hsorange-form input:focus {
+  border-bottom: 1px solid #EE5A24 !important;
+  box-shadow: 0 1px 0 0 #EE5A24 !important;
+}
+
+.psgreen {
+  background-color: #127E36 !important;
+}
+
+.psgreen-text {
+  color: #127E36 !important;
+}
+
+.psgreen-form input:focus {
+  border-bottom: 1px solid #127E36 !important;
+  box-shadow: 0 1px 0 0 #127E36 !important;
+}
+
+.moadimyellow {
+  background-color: #EEDA22 !important;
+}
+
+.moadimyellow-text {
+  color: #EEDA22 !important;
+}
+
+.moadimyellow-form input:focus {
+  border-bottom: 1px solid #EEDA22 !important;
+  box-shadow: 0 1px 0 0 #EEDA22 !important;
+}
+/* END GLOBAL STYLES */

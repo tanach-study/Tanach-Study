@@ -1,0 +1,59 @@
+.slider-caption {
+  position: relative;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.slider-caption div {
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 5px;
+  /*padding: 1%;*/
+}
+
+.right-caption {
+  position: absolute;
+  bottom: 0;
+  padding: 1%;
+}
+
+.left-caption {
+}
+
+.testimonial-container {
+  position: relative;
+}
+
+.collage-container {
+  position: relative;
+}
+
+.collage-container img {
+  position: relative;
+}
+
+.collage-container .in-memory {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  max-width: 25%;
+  padding: 1% 1%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.in-memory-link {
+  color: white;
+  text-decoration: none;
+}
+
+.in-memory-link:visited {
+  color: white;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+  font-size: inherit;
+}
