@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 import PerekList from '../PerekList/PerekList.jsx';
 import Spinner from '../../Spinner/Spinner.jsx';
 
