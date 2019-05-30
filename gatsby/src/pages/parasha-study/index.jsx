@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../../components/layout.jsx';
+import Layout from '../../layouts/main.jsx';
 import HomePage from '../../components/ParashaStudy/ParashaStudyHomePage/ParashaStudyHomePage.jsx';
 // import Parts from './Parts/Parts.jsx';
 // import Sefarim from './Sefarim/Sefarim.jsx';

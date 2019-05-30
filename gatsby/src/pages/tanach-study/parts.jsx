@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../../components/layout.jsx';
+import Layout from '../../layouts/main.jsx';
 
 import PartsComponent from '../../components/TanachStudy/Parts/Parts.jsx';
 
