@@ -1,5 +1,18 @@
-const path      = require('path');
-const { getDB } = require('./dbConnection.js');
+const path = require('path');
+const fetch = require('node-fetch');
+
+const sefarim = require('./sefarim.json');
+const API_URL = 'https://api.tanachstudy.com';
+
+function getSefer(sefer) {
+  const { url } = sefer;
+  return fetch(`${API_URL}${url}`);
+}
+
+function getAllSefarim() {
+  const fetches = sefarim.map(getSefer);
+  return Promise.all(fetches);
+}
 
 function createPages({ actions }) {
   const { createPage } = actions;
