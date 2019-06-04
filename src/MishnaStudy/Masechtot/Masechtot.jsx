@@ -66,7 +66,7 @@ class Masechtot extends Component {
         });
         this.setState({
           haveData: true,
-          perakim: [...perakim].sort(),
+          perakim: [...perakim],
           masechetTitle: data[0].section_title,
           masechetSponsor: data[0].section_sponsor,
           teachers,
