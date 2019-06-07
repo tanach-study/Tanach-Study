@@ -15,10 +15,6 @@ class Perakim extends Component {
     this.selectMishna = this.selectMishna.bind(this);
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   componentDidMount() {
     const query = this.getQueryParams();
     const { part } = query;

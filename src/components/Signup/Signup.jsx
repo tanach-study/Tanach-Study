@@ -20,10 +20,6 @@ class Signup extends Component {
     this.resetForm = this.resetForm.bind(this);
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   setResponse(isError, message) {
     this.setState({
       isError,

@@ -13,10 +13,6 @@ class Teachers extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     const { teachers } = this.state;
     const filled = teachers || [];

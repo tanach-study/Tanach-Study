@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
+import fetch from 'whatwg-fetch';
 
 class MishnaStudyHomePage extends Component {
   constructor(props) {

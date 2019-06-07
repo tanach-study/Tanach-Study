@@ -16,10 +16,6 @@ class Contact extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   doSubmit(e) {
     e.preventDefault();
     const { name, email, subject, message } = this.state;

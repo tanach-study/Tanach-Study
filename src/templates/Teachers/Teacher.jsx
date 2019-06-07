@@ -14,10 +14,6 @@ class Teacher extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     // get the current teacher object from state
     const { teacher } = this.state;

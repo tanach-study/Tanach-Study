@@ -4,18 +4,8 @@ const { onCreateWebpackConfig } = require('./lib/webpack-config-fix.js');
 
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
 
-// Implement the Gatsby API “createPages”. This is
-// called after the Gatsby bootstrap is finished so you have
-// access to any information necessary to programmatically
-// create pages.
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  // The “graphql” function allows us to run arbitrary
-  // queries against the mongoDB graphql schema.
-
-  // Mongodb{dbName}{collection} is a data node type created from mongoDB is a
-  // "connection" (a GraphQL convention for accessing a list of nodes) gives
-  // us an easy way to query all documents in the mongoDB collection.
 
   const { data } = await graphql(`
     {

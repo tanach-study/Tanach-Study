@@ -13,5 +13,5 @@ deploy:
   - provider: script
     script: bash scripts/deployment_travis.sh
     skip_cleanup: true
-    on: 
+    on:
       branch: master

@@ -14,10 +14,6 @@ class Perakim extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   getQueryParams() {
     const { location } = this.props;
     const queryString = location.search;

@@ -45,10 +45,6 @@ class Masechtot extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     const { perakim, teachers } = this.state;
     const teacherChips = teachers.map((teacher, i) => {

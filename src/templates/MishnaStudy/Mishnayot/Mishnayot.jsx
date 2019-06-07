@@ -11,10 +11,6 @@ class Mishnayot extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   componentDidMount() {
     const { match } = this.props || {};
     const { params } = match || {};

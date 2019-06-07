@@ -38,10 +38,6 @@ class Sefarim extends Component {
     };
   }
 
-  componentWillMount() {
-    window.scrollTo(0, 0);
-  }
-
   render() {
     const { activeIndex } = this.state;
 
