@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
-import styles from './PerekItem.css';
+import styles from './PerekItem.module.css';
 
 const MishnaPerekItem = (props) => {
   const { perek, seder, masechet } = props;

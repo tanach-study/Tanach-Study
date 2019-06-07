@@ -9,7 +9,8 @@ const PerekList = (props) => {
       seder={seder}
       masechet={masechet}
       key={`seder-${seder}-masechet-${masechet}-perek-${perek}-listitem`}
-    />));
+    />
+  ));
   return (
     <div className='row'>
       {mapped}

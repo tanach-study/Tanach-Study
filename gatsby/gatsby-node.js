@@ -125,10 +125,25 @@ exports.createPages = async ({ graphql, actions }) => {
         break;
       case 'mishna':
         if (!mishna[segment]) {
-          mishna[segment] = mishna[segment] || [];
+          mishna[segment] = {};
         }
-        // segment is the seder
-        mishna[segment].push(curr);
+        if (!mishna[segment][section]) {
+          mishna[segment][section] = [];
+        }
+        // segment is the seder, section is the masechet
+        mishna[segment][section].push(curr);
+
+        // unit is the perek
+        if (!masechtot[segment]) {
+          masechtot[segment] = {};
+        }
+        if (!masechtot[segment][section]) {
+          masechtot[segment][section] = {};
+        }
+        if (!masechtot[segment][section][unit]) {
+          masechtot[segment][section][unit] = [];
+        }
+        masechtot[segment][section][unit].push(curr);
         break;
       default:
         break;
@@ -139,7 +154,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const torahParashaTemplate = path.resolve('./src/templates/ParashaStudy/Perakim/Perakim.jsx');
   const nachSeferTemplate = path.resolve('./src/templates/TanachStudy/Sefarim/Sefarim.jsx');
   const nachPerekTemplate = path.resolve('./src/templates/TanachStudy/Perakim/Perakim.jsx');
-  const mishnaSederTemplate = path.resolve('./src/templates/MishnaStudy/Sefarim/Sefarim.jsx');
+  const mishnaMasechetTemplate = path.resolve('./src/templates/MishnaStudy/Masechtot/Masechtot.jsx');
+  const mishnaPerekTemplate = path.resolve('./src/templates/MishnaStudy/Perakim/Perakim.jsx');
 
   Object.keys(torah).forEach((sefer) => {
     console.log('creating page', `/parasha-study/sefarim/${sefer}`)
@@ -187,6 +203,33 @@ exports.createPages = async ({ graphql, actions }) => {
           sefer,
           perek,
         },
+      });
+    });
+  });
+
+  Object.keys(mishna).forEach((seder) => {
+    const sederData = mishna[seder];
+    Object.keys(sederData).forEach((masechet) => {
+      console.log('creating page', `/mishna-study/masechet/${seder}/${masechet}`)
+      createPage({
+        path: `/mishna-study/masechet/${seder}/${masechet}`,
+        component: mishnaMasechetTemplate,
+        context: {
+          data: sederData[masechet],
+          seder,
+          masechet,
+        },
+      });
+      const pers = masechtot[seder][masechet];
+      Object.keys(pers).forEach((perek) => {
+        console.log('creating page', `/mishna-study/perek/${seder}/${masechet}/${perek}`)
+        createPage({
+          path: `/mishna-study/perek/${seder}/${masechet}/${perek}`,
+          component: mishnaPerekTemplate,
+          context: {
+            data: pers[perek],
+          },
+        });
       });
     });
   });

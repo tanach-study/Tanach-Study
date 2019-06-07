@@ -18,7 +18,7 @@ class Mishna extends Component {
     const { seder } = this.props;
     const fileName = `${seder.replace(' ', '_')}.json`;
 
-    fetch(`${MISHNA_URL}/${fileName}`)
+    fetch(`https://cdn.tanachstudy.com/assets/mishna/${fileName}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({
