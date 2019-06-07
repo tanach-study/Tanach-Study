@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
-import fetch from 'whatwg-fetch';
 
 class MishnaStudyHomePage extends Component {
   constructor(props) {
@@ -13,7 +12,7 @@ class MishnaStudyHomePage extends Component {
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const date = new Date();
     date.setHours(0, 0, 0, 0);
     const utcDate = new Date(date);
