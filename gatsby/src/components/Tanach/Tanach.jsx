@@ -5,7 +5,7 @@ import LanguageSelector from './LanguageSelector.jsx';
 import TabItem from './TabItem.jsx';
 import Spinner from '../Spinner/Spinner.jsx';
 
-import styles from './Tanach.css';
+import styles from './Tanach.module.css';
 
 class Tanach extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Tanach extends Component {
     const { part } = this.props;
     const fileName = `${part.replace(' ', '_')}.json`;
 
-    fetch(`${TANACH_URL}/${fileName}`)
+    fetch(`https://cdn.tanachstudy.com/assets/tanach/${fileName}`)
       .then(r => r.json())
       .then((data) => {
         this.setState({

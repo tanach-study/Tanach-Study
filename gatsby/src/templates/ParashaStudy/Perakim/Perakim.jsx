@@ -1,41 +1,20 @@
 import React, { Component } from 'react';
+
+import Layout from '../../../layouts/main.jsx';
 import TorahPerek from './TorahPerek.jsx';
-import Spinner from '../../Spinner/Spinner.jsx';
 
 class Perakim extends Component {
   constructor(props) {
     super(props);
+    const { pageContext } = props || {};
+    const { data } = pageContext || {};
     this.state = {
-      haveData: false,
-      response: [],
+      response: data || [],
     };
-
-    this.initialize = this._initialize.bind(this);
   }
 
   componentWillMount() {
     window.scrollTo(0, 0);
-  }
-
-  componentDidMount() {
-    const { match } = this.props;
-    const { params } = match;
-    const { sefer, perek } = params;
-    this.initialize(sefer, perek);
-  }
-
-  componentDidUpdate(prevProps) {
-    const { match: newMatch } = this.props || {};
-    const { params: newParams } = newMatch || {};
-    const { sefer: newSefer, perek: newPerek } = newParams || {};
-
-    const { match: oldMatch } = prevProps || {};
-    const { params: oldParams } = oldMatch || {};
-    const { sefer: oldSefer, perek: oldPerek } = oldParams || {};
-
-    if (newSefer !== oldSefer || newPerek !== oldPerek) {
-      this.initialize(newSefer, newPerek);
-    }
   }
 
   getQueryParams() {
@@ -53,43 +32,21 @@ class Perakim extends Component {
     return {};
   }
 
-  _initialize(sefer, perek) {
-    fetch(`${API_URL}/tanach-study/perakim/${sefer}/${perek}`)
-      .then(r => r.json())
-      .then((data) => {
-        this.setState({
-          haveData: true,
-          response: data,
-        });
-      })
-      .catch(err => console.error(err));
-  }
-
   render() {
-    const { haveData, response } = this.state;
+    const { response } = this.state;
+    const { pageContext } = this.props;
+    const { sefer, perek } = pageContext || {};
 
-    // For routing
-    const { match } = this.props;
-    const { params } = match || {};
-    const { sefer, perek } = params || {};
-
-    if (haveData) {
-      const qParams = this.getQueryParams();
-      return (
+    const qParams = this.getQueryParams();
+    return (
+      <Layout>
         <TorahPerek
           parts={response}
           sefer={sefer}
           perek={perek}
           queryParams={qParams}
         />
-      );
-    }
-    return (
-      <div className='row center'>
-        <div className='col l12 m12 s12'>
-          <Spinner />
-        </div>
-      </div>
+      </Layout>
     );
   }
 }

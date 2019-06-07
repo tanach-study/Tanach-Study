@@ -1,6 +1,6 @@
 import React from 'react';
 
-import gematriya from '../../lib/gematriya.js';
+import gematriya from '../../../lib/gematriya.js';
 
 function Nach(props) {
   const { hebrew, english, sefer, perek, show } = props;

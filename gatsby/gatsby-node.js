@@ -81,16 +81,29 @@ exports.createPages = async ({ graphql, actions }) => {
   const nach = {};
   const mishna = {};
 
+  const parashot = {};
+  const perakim = {};
+  const masechtot = {};
+
   for (let i = 0; i < rawData.length; i++) {
     const curr = rawData[i] || {};
-    const { division, segment, section } = curr;
+    const { division, segment, section, unit } = curr;
     switch (division) {
       case 'torah':
-        if (!torah[section]) {
-          torah[section] = torah[section] || [];
-        }
         // section is the sefer
+        if (!torah[section]) {
+          torah[section] = [];
+        }
         torah[section].push(curr);
+
+        // unit is the parasha
+        if (!parashot[section]) {
+          parashot[section] = {};
+        }
+        if (!parashot[section][unit]) {
+          parashot[section][unit] = [];
+        }
+        parashot[section][unit].push(curr);
         break;
       case 'neviim_rishonim':
       case 'neviim_aharonim':
@@ -114,7 +127,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   }
 
-  const torahTemplate = path.resolve('./src/templates/ParashaStudy/Sefarim/Sefarim.jsx');
+  const torahSeferTemplate = path.resolve('./src/templates/ParashaStudy/Sefarim/Sefarim.jsx');
+  const torahParashaTemplate = path.resolve('./src/templates/ParashaStudy/Perakim/Perakim.jsx');
   const nachTemplate = path.resolve('./src/templates/TanachStudy/Sefarim/Sefarim.jsx');
   const mishnaTemplate = path.resolve('./src/templates/MishnaStudy/Sefarim/Sefarim.jsx');
 
@@ -122,10 +136,24 @@ exports.createPages = async ({ graphql, actions }) => {
     console.log('creating page', `/parasha-study/sefarim/${sefer}`)
     createPage({
       path: `/parasha-study/sefarim/${sefer}`,
-      component: torahTemplate,
+      component: torahSeferTemplate,
       context: {
         data: torah[sefer],
+        sefer,
       },
+    });
+    const pars = parashot[sefer];
+    Object.keys(pars).forEach((parasha) => {
+      console.log('creating page', `/parasha-study/perakim/${sefer}/${parasha}`)
+      createPage({
+        path: `/parasha-study/perakim/${sefer}/${parasha}`,
+        component: torahParashaTemplate,
+        context: {
+          data: pars[parasha],
+          sefer,
+          perek: parasha,
+        },
+      });
     });
   });
 };

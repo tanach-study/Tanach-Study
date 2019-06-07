@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ProgramContext } from '../app-context.js';
+import { ProgramContext } from '../../../../src/app-context.js';
 
-import styles from './Tanach.css';
+import styles from './Tanach.module.css';
 
 // helper function to convert a hex value to rgb
 // obtained from https://stackoverflow.com/a/5624139

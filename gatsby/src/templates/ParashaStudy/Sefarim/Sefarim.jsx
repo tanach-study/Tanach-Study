@@ -8,7 +8,7 @@ class Sefarim extends Component {
   constructor(props) {
     super(props);
     const { pageContext } = props || {};
-    const { data } = pageContext || {};
+    const { data, sefer } = pageContext || {};
     const units = new Set();
     const teacherStrings = new Set();
     const teachers = [];
@@ -28,6 +28,7 @@ class Sefarim extends Component {
       }
     });
     this.state = {
+      seferName: sefer,
       units: Array.from(units),
       seferTitle: data[0].section_title,
       seferSponsor: data[0].section_sponsor,
