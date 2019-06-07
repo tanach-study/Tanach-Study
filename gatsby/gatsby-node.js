@@ -175,7 +175,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const mishnaPerekTemplate = path.resolve('./src/templates/MishnaStudy/Perakim/Perakim.jsx');
 
   Object.keys(torah).forEach((sefer) => {
-    console.log('creating page', `/parasha-study/sefarim/${sefer}`)
+    console.log('creating page', `/parasha-study/sefarim/${sefer}`);
     createPage({
       path: `/parasha-study/sefarim/${sefer}`,
       component: torahSeferTemplate,
@@ -186,7 +186,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
     const pars = parashot[sefer];
     Object.keys(pars).forEach((parasha) => {
-      console.log('creating page', `/parasha-study/perakim/${sefer}/${parasha}`)
+      console.log('creating page', `/parasha-study/perakim/${sefer}/${parasha}`);
       createPage({
         path: `/parasha-study/perakim/${sefer}/${parasha}`,
         component: torahParashaTemplate,
@@ -200,7 +200,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   Object.keys(nach).forEach((sefer) => {
-    console.log('creating page', `/tanach-study/sefarim/${sefer}`)
+    console.log('creating page', `/tanach-study/sefarim/${sefer}`);
     createPage({
       path: `/tanach-study/sefarim/${sefer}`,
       component: nachSeferTemplate,
@@ -211,7 +211,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
     const pers = perakim[sefer];
     Object.keys(pers).forEach((perek) => {
-      console.log('creating page', `/tanach-study/perakim/${sefer}/${perek}`)
+      console.log('creating page', `/tanach-study/perakim/${sefer}/${perek}`);
       createPage({
         path: `/tanach-study/perakim/${sefer}/${perek}`,
         component: nachPerekTemplate,
@@ -227,7 +227,7 @@ exports.createPages = async ({ graphql, actions }) => {
   Object.keys(mishna).forEach((seder) => {
     const sederData = mishna[seder];
     Object.keys(sederData).forEach((masechet) => {
-      console.log('creating page', `/mishna-study/masechet/${seder}/${masechet}`)
+      console.log('creating page', `/mishna-study/masechet/${seder}/${masechet}`);
       createPage({
         path: `/mishna-study/masechet/${seder}/${masechet}`,
         component: mishnaMasechetTemplate,
@@ -239,7 +239,7 @@ exports.createPages = async ({ graphql, actions }) => {
       });
       const pers = masechtot[seder][masechet];
       Object.keys(pers).forEach((perek) => {
-        console.log('creating page', `/mishna-study/perek/${seder}/${masechet}/${perek}`)
+        console.log('creating page', `/mishna-study/perek/${seder}/${masechet}/${perek}`);
         createPage({
           path: `/mishna-study/perek/${seder}/${masechet}/${perek}`,
           component: mishnaPerekTemplate,
@@ -248,6 +248,31 @@ exports.createPages = async ({ graphql, actions }) => {
           },
         });
       });
+    });
+  });
+
+  const teachersTemplate = path.resolve('./src/templates/Teachers/AllTeachers.jsx');
+  const teacherTemplate = path.resolve('./src/templates/Teachers/Teacher.jsx');
+  const filteredTeachers = teachers.filter(t => t.title && t.fname && t.lname);
+  console.log('creating page', '/teachers');
+  createPage({
+    path: '/teachers',
+    component: teachersTemplate,
+    context: {
+      teachers: filteredTeachers,
+    },
+  });
+  filteredTeachers.forEach((teacher) => {
+    const { title, fname, mname, lname } = teacher;
+    const slug = mname ? `${title}-${fname}-${mname}-${lname}` : `${title}-${fname}-${lname}`;
+    const teacherSlug = slug.replace(/\./g, '').toLowerCase();
+    console.log('creating page', `/teachers/${teacherSlug}`);
+    createPage({
+      path: `/teachers/${teacherSlug}`,
+      component: teacherTemplate,
+      context: {
+        teacher,
+      },
     });
   });
 };

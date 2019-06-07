@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProgramContext } from '../../../../src/app-context.js';
+import { ProgramContext } from '../../app-context.js';
 
 import styles from './Tanach.module.css';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProgramContext } from '../../../../../../src/app-context.js';
+import { ProgramContext } from '../../../../app-context.js';
 
 const MishnaItem = (props) => {
   const { name, number, title, index, click, selected } = props;

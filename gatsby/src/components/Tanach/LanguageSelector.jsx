@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ProgramContext } from '../../../../src/app-context.js';
+import { ProgramContext } from '../../app-context.js';
 
 function LanguageSelector(props) {
   const { clickHandler } = props;

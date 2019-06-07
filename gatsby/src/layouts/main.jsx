@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import 'materialize-css/dist/css/materialize.min.css';
 import './styles.global.css';
 import './icons.css';
-import { programs } from '../../../src/app-context.js';
+import { programs } from '../app-context.js';
 
 import ProgramNavigation from '../components/ProgramNavigation/ProgramNavigation.jsx';
 import Navigation from '../components/Navigation/Navigation.jsx';
