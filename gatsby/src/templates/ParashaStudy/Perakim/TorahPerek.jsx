@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Tanach from '../../../components/Tanach/Tanach.jsx';
 import PartItem from './TorahPartItem.jsx';
-import AudioPlayer from '../../../../../src/components/AudioPlayer/AudioPlayer.jsx';
+import AudioPlayer from '../../../components/AudioPlayer/AudioPlayer.jsx';
 
 class TorahPerek extends Component {
   constructor(props) {

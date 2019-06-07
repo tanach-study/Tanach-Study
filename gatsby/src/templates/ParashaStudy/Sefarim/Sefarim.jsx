@@ -46,7 +46,6 @@ class Sefarim extends Component {
     const { activeIndex } = this.state;
 
     const { units, teachers, seferTitle, seferSponsor, seferName, part } = this.state;
-    console.log(units, teachers, seferTitle, seferSponsor, seferName, part)
 
     const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;

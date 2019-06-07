@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MishnaList from './MishnaList/MishnaList.jsx';
 import Mishna from '../../../components/Mishna/Mishna.jsx';
-import AudioPlayer from '../../../../../src/components/AudioPlayer/AudioPlayer.jsx';
+import AudioPlayer from '../../../components/AudioPlayer/AudioPlayer.jsx';
 
 class Perakim extends Component {
   constructor(props) {
