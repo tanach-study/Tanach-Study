@@ -1,4 +1,4 @@
-require('dotenv').config({ silent: true, path: '../.env' });
+require('dotenv').config({ silent: true });
 
 module.exports = {
   siteMetadata: {
