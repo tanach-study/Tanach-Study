@@ -1,31 +1,20 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
-import styles from './Teacher.css';
+import styles from './Teacher.module.css';
 
 class Teacher extends Component {
   constructor(props) {
     super(props);
-    const { match } = props || {};
-    const { params } = match || {};
-    const { slug } = params || {};
+    const { pageContext } = props;
+    const { data } = pageContext;
     this.state = {
-      teacherID: slug || '',
-      teacher: {},
+      teacher: data || {},
     };
   }
 
   componentWillMount() {
     window.scrollTo(0, 0);
-  }
-
-  componentDidMount() {
-    const { teacherID } = this.state;
-    // TODO: check if teacherID is empty string
-    fetch(`${API_URL}/tanach-study/teachers/${teacherID}`)
-      .then(r => r.json())
-      .then(data => this.setState({ teacher: data }))
-      .catch(err => console.log(err));
   }
 
   render() {

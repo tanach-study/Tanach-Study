@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { isValidEmail } from '../../../lib/lib.js';
+import { isValidEmail } from '../../lib/lib.js';
 
 import Layout from '../layouts/main.jsx';
 

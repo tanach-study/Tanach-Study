@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
 class Teachers extends Component {
   constructor(props) {
     super(props);
+    const { pageContext } = props;
+    const { data } = pageContext;
     this.state = {
-      teachers: [],
+      teachers: data || [],
     };
   }
 
   componentWillMount() {
     window.scrollTo(0, 0);
-  }
-
-  componentDidMount() {
-    fetch(`${API_URL}/tanach-study/teachers`)
-      .then(r => r.json())
-      .then(data => this.setState({ teachers: data }))
-      .catch(err => console.log(err));
   }
 
   render() {
