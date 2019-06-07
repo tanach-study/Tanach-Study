@@ -71,11 +71,10 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  // Create pages.
+
   const { allMongodbTsNewPerakim } = data || {};
   const { nodes } = allMongodbTsNewPerakim || {};
   const rawData = nodes || [];
-  //
 
   const torah = {};
   const nach = {};
@@ -129,8 +128,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const torahSeferTemplate = path.resolve('./src/templates/ParashaStudy/Sefarim/Sefarim.jsx');
   const torahParashaTemplate = path.resolve('./src/templates/ParashaStudy/Perakim/Perakim.jsx');
-  const nachTemplate = path.resolve('./src/templates/TanachStudy/Sefarim/Sefarim.jsx');
-  const mishnaTemplate = path.resolve('./src/templates/MishnaStudy/Sefarim/Sefarim.jsx');
+  const nachSeferTemplate = path.resolve('./src/templates/TanachStudy/Sefarim/Sefarim.jsx');
+  const mishnaSederTemplate = path.resolve('./src/templates/MishnaStudy/Sefarim/Sefarim.jsx');
 
   Object.keys(torah).forEach((sefer) => {
     console.log('creating page', `/parasha-study/sefarim/${sefer}`)

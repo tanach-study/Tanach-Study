@@ -5,8 +5,6 @@ import LanguageSelector from './LanguageSelector.jsx';
 import TabItem from './TabItem.jsx';
 import Spinner from '../Spinner/Spinner.jsx';
 
-import styles from './Tanach.module.css';
-
 class Tanach extends Component {
   constructor(props) {
     super(props);
