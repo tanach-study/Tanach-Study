@@ -84,6 +84,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const perakim = {};
   const masechtot = {};
 
+  const teachers = [];
+  const teacherStrings = new Set();
+
+
   for (let i = 0; i < rawData.length; i++) {
     const curr = rawData[i] || {};
     const { division, segment, section, unit } = curr;
@@ -147,6 +151,19 @@ exports.createPages = async ({ graphql, actions }) => {
         break;
       default:
         break;
+    }
+
+    const { teacher_title: title } = curr;
+    const { teacher_fname: fname } = curr;
+    const { teacher_mname: mname } = curr;
+    const { teacher_lname: lname } = curr;
+    const teacherString = `${title}-${fname}-${mname}-${lname}`;
+    if (!teacherStrings.has(teacherString)) {
+      teacherStrings.add(teacherString);
+      const { teacher_short_bio: shortBio } = curr;
+      const { teacher_long_bio: longBio } = curr;
+      const { teacher_image_url: image } = curr;
+      teachers.push({ title, fname, mname, lname, shortBio, longBio, image });
     }
   }
 
