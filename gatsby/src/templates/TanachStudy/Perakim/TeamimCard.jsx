@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TeamimItem from './TeamimItem.jsx';
 
-import styles from './TeamimItem.css';
+import styles from './TeamimItem.module.css';
 
 class ReaderCard extends Component {
   constructor(props) {

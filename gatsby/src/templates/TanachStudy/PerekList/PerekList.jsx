@@ -10,7 +10,8 @@ const PerekList = (props) => {
       perek={unit}
       sefer={sefer}
       key={`sefer-${sefer}-perek-${unit}-listitem`}
-    />));
+    />
+  ));
   return (
     <div className='row'>
       {mapped}

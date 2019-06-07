@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
-import styles from '../PerekItem.css';
+import styles from '../PerekItem.module.css';
 
 function toTitleCase(str) {
   const x = str.replace('-', ' ');
@@ -10,7 +10,7 @@ function toTitleCase(str) {
 
 const TorahPerekItem = (props) => {
   const { sefer, perek } = props;
-  const parashaName = `Parashat ${toTitleCase(perek)}`;
+  const parashaName = `Parashat ${toTitleCase(String(perek))}`;
   const url = `/tanach-study/perakim/${sefer}/${perek}`;
 
   return (

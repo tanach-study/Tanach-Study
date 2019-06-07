@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Tanach from '../../Tanach/Tanach.jsx';
+import { Link } from 'gatsby';
+import Tanach from '../../../components/Tanach/Tanach.jsx';
 import PartItem from './TorahPartItem.jsx';
-import AudioPlayer from '../../components/AudioPlayer/AudioPlayer.jsx';
+import AudioPlayer from '../../../../../src/components/AudioPlayer/AudioPlayer.jsx';
 
 class TorahPerek extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class TorahPerek extends Component {
     const partNumber = part ? parseInt(part, 10) : 1;
     this.state = {
       partNumber,
-      partTitle: '',
     };
     this.selectPart = this._selectPart.bind(this);
   }
@@ -21,13 +20,12 @@ class TorahPerek extends Component {
   _selectPart(i, title) {
     this.setState({
       partNumber: i,
-      partTitle: title,
     });
   }
 
   render() {
     const { parts, sefer, perek } = this.props;
-    const { partNumber, partTitle } = this.state;
+    const { partNumber } = this.state;
 
     /* eslint react/no-array-index-key: "off" */
     const partItems = parts.map((part, i) => (
@@ -73,7 +71,6 @@ class TorahPerek extends Component {
     // get the currently selected part - must subtract 1 since partNumber is not zero-based
     const selected = parts[partNumber - 1] || {};
     const { audio_url: url } = selected || {};
-    const { host, path } = url || {};
 
     const { part_name: name, part_title: title, part } = selected;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 
 function TeacherCard(props) {
   const { audio, title, fname, mname, lname, bio } = props;

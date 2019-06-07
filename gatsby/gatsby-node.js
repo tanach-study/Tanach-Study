@@ -113,6 +113,15 @@ exports.createPages = async ({ graphql, actions }) => {
         }
         // section is the sefer
         nach[section].push(curr);
+
+        // unit is the parasha
+        if (!perakim[section]) {
+          perakim[section] = {};
+        }
+        if (!perakim[section][unit]) {
+          perakim[section][unit] = [];
+        }
+        perakim[section][unit].push(curr);
         break;
       case 'mishna':
         if (!mishna[segment]) {
@@ -129,6 +138,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const torahSeferTemplate = path.resolve('./src/templates/ParashaStudy/Sefarim/Sefarim.jsx');
   const torahParashaTemplate = path.resolve('./src/templates/ParashaStudy/Perakim/Perakim.jsx');
   const nachSeferTemplate = path.resolve('./src/templates/TanachStudy/Sefarim/Sefarim.jsx');
+  const nachPerekTemplate = path.resolve('./src/templates/TanachStudy/Perakim/Perakim.jsx');
   const mishnaSederTemplate = path.resolve('./src/templates/MishnaStudy/Sefarim/Sefarim.jsx');
 
   Object.keys(torah).forEach((sefer) => {
@@ -151,6 +161,31 @@ exports.createPages = async ({ graphql, actions }) => {
           data: pars[parasha],
           sefer,
           perek: parasha,
+        },
+      });
+    });
+  });
+
+  Object.keys(nach).forEach((sefer) => {
+    console.log('creating page', `/tanach-study/sefarim/${sefer}`)
+    createPage({
+      path: `/tanach-study/sefarim/${sefer}`,
+      component: nachSeferTemplate,
+      context: {
+        data: nach[sefer],
+        sefer,
+      },
+    });
+    const pers = perakim[sefer];
+    Object.keys(pers).forEach((perek) => {
+      console.log('creating page', `/tanach-study/perakim/${sefer}/${perek}`)
+      createPage({
+        path: `/tanach-study/perakim/${sefer}/${perek}`,
+        component: nachPerekTemplate,
+        context: {
+          data: pers[perek],
+          sefer,
+          perek,
         },
       });
     });

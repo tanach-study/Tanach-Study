@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'gatsby';
 // import TeacherCard from './TeacherCard.jsx';
-import AudioPlayer from '../../components/AudioPlayer/AudioPlayer.jsx';
+import AudioPlayer from '../../../../../src/components/AudioPlayer/AudioPlayer.jsx';
 import TeamimCard from './TeamimCard.jsx';
-import Tanach from '../../Tanach/Tanach.jsx';
+import Tanach from '../../../components/Tanach/Tanach.jsx';
 
-import styles from './NachPerek.css';
+import styles from './NachPerek.module.css';
 
 class NachPerek extends Component {
   constructor(props) {
@@ -51,7 +51,9 @@ class NachPerek extends Component {
       teacher_image_url: teacherImage } = selected;
 
     const { section_sponsor: sSpon, unit_sponsor: pSpon } = selected;
+    // eslint-disable-next-line no-unused-vars
     const seferSponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
+    // eslint-disable-next-line no-unused-vars
     const perekSponsor = Array.isArray(pSpon) ? pSpon.map(l => <div key={l}>{l}</div>) : pSpon;
 
     const { audio_url: url, teamim } = selected;
