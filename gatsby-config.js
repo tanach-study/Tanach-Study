@@ -1,7 +1,9 @@
 if (process.env.NODE_ENV === 'development') {
+  console.log('requiring dotenv...')
   require('dotenv').config({ silent: true });
 }
 
+console.log(process.env.NODE_ENV)
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
