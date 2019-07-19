@@ -6,7 +6,6 @@ cache:
     - node_modules
 install:
   - npm install
-  - sudo pip install awscli
 script:
   - npm run build
 deploy:
