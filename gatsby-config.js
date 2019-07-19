@@ -1,6 +1,5 @@
 require('dotenv').config({ silent: true });
 
-console.log(process.env.DB_CONNECTION)
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
