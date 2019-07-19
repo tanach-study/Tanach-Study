@@ -1,13 +1,16 @@
 language: node_js
 node_js:
-  - 8.3.0
+- 8.3.0
 install:
-  - npm install
+- npm install
 script:
-  - npm run build
+- npm run build
 deploy:
-  - provider: script
-    script: npm run deploy
-    skip_cleanup: true
-    on:
-      branch: master
+- provider: script
+  script: npm run deploy
+  skip_cleanup: true
+  on:
+    branch: master
+env:
+  global:
+    secure: YLGqXvzTspQdhNKeErQxE0/RjQV7JBwMraAhOFAIkRtH8/mQ94fO9uEyczgc33Tn1h120LsavnJi93P/gpPVThMR/EOR/Z8UZ3U8/hT2LtMjwCrMg/SF8K4sRRaFSsIZzl8DUq9+Dd80s7gPbViAd4Bgw6usLm9jzSV3GZgx4Epy+lrMwVIv8eJinzKITDE3j4aTiWWAmrjWPVt2oz5ENdtV6RozdzRUJwFRA/EqOu0/NrRu7zBeLUvqoIZWGvO6A1GMz998WBuFDbeqkPcKcjhMyTIXWV6t5zLO7dHSAJ4sXydwdjdWeqPKjhz3lYGCTpk3bmzMHiZ9IasKyoeutK4+hIDXncEX4rwy6/LIL5bVU7W79OtPpZmgqQbb+rSK/a432bW/NNujNcoxqwbVhPBuD7dJ2uFwpZsokRruxTEJIdQNVEVtpFXaqCGTThRhigBWwnYxcIAT3xXmI4RqTUsOcnilkzUsjv+ig0/vPEUMTi14NKdVFlqGAFXPeVHtRsnjk113xM6CN7leTpOgFS4sWMw3R//V3vy+V0FNwScbWcTZFUNitCCr1t6igsmlvrwYvGp7N4hIGgWzir8AzSHQowbSKJL6IOfXjf8dvtcUpUGr8tlVm4MqC7xFreBq2wcIKmmtoDi+fnBTiEu7iPiC5o6Vq1UszZPiwTzF594=
