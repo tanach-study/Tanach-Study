@@ -4,6 +4,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 console.log(process.env.NODE_ENV)
+console.log(process.env.DB_CONNECTION)
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
