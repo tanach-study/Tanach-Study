@@ -9,7 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     {
-      allMongodbTsNewPerakim {
+      allMongodbTsprodNewPerakim {
         nodes {
           division
           division_title
@@ -62,8 +62,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const { allMongodbTsNewPerakim } = data || {};
-  const { nodes } = allMongodbTsNewPerakim || {};
+  const { allMongodbTsprodNewPerakim } = data || {};
+  const { nodes } = allMongodbTsprodNewPerakim || {};
   const rawData = nodes || [];
 
   const torah = {};

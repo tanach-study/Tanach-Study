@@ -1,5 +1,6 @@
 require('dotenv').config({ silent: true });
 
+console.log(process.env.DB_CONNECTION)
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
@@ -38,7 +39,11 @@ module.exports = {
     },
     {
       resolve: 'gatsby-source-mongodb',
-      options: { dbName: 'ts', collection: 'newPerakim' },
+      options: {
+        connectionString: process.env.DB_CONNECTION,
+        collection: 'newPerakim',
+        dbName: 'ts-prod',
+      },
     },
     {
       resolve: 'gatsby-plugin-s3',
