@@ -3,11 +3,6 @@ if (process.env.NODE_ENV === 'development') {
   require('dotenv').config({ silent: true });
 }
 
-console.log('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
-console.log('console logs are here ****************')
-console.log(process.env.NODE_ENV)
-console.log(process.env.DB_CONNECTION)
-console.log(process.env)
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
