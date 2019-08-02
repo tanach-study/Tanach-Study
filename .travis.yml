@@ -7,8 +7,17 @@ script:
 - npm run build
 deploy:
 - provider: script
-  script: npm run deploy
+  script: npm run deploy:prod
   skip_cleanup: true
+  on:
+    branch: master
+- provider: script
+  script: npm run deploy:staging
+  skip_cleanup: true
+  branches:
+    except:
+    - master
+
 env:
   global:
     - NODE_ENV: 'production'
