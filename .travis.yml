@@ -15,7 +15,6 @@ deploy:
   on:
     all_branches: true
 
-
 env:
   global:
     - NODE_ENV: 'production'

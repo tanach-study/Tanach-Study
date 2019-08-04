@@ -7,6 +7,7 @@ if (NODE_ENV !== 'production') {
 }
 
 const bucket = S3_BUCKET || NODE_ENV === 'production' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
+console.log('bucket to deploy to:', bucket);
 
 module.exports = {
   siteMetadata: {
