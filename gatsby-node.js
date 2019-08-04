@@ -4,6 +4,34 @@ const { onCreateWebpackConfig } = require('./lib/webpack-config-fix.js');
 
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
 
+function teacherComparator(t1, t2) {
+  if (t1.lname > t2.lname) {
+    return 1;
+  }
+
+  if (t1.lname < t2.lname) {
+    return -1;
+  }
+
+  if (t1.fname > t2.fname) {
+    return 1;
+  }
+
+  if (t1.fname < t2.fname) {
+    return -1;
+  }
+
+  if (t1.mname > t2.mname) {
+    return 1;
+  }
+
+  if (t1.mname < t2.mname) {
+    return -1;
+  }
+
+  return 0;
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -244,6 +272,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const teachersTemplate = path.resolve('./src/templates/Teachers/AllTeachers.jsx');
   const teacherTemplate = path.resolve('./src/templates/Teachers/Teacher.jsx');
   const filteredTeachers = teachers.filter(t => t.title && t.fname && t.lname);
+  filteredTeachers.sort(teacherComparator);
   console.log('creating page', '/teachers');
   createPage({
     path: '/teachers',
