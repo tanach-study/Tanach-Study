@@ -6,8 +6,7 @@ if (NODE_ENV !== 'production') {
   dotenv.config({ silent: true });
 }
 
-const bucket = S3_BUCKET || NODE_ENV === 'production' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
-console.log('bucket to deploy to:', bucket);
+console.log('bucket to deploy to:', S3_BUCKET);
 
 module.exports = {
   siteMetadata: {
@@ -56,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-s3',
       options: {
-        bucketName: bucket,
+        bucketName: S3_BUCKET,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
