@@ -12,9 +12,8 @@ deploy:
 - provider: script
   script: npm run deploy
   skip_cleanup: true
-  branches:
-  only:
-    - /.*/
+  on:
+    all_branches: true
 
 
 env:
