@@ -15,8 +15,8 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -f package-lock.json && rm -rf .cache && rm -rf public",
-    "deploy:prod": "gatsby-plugin-s3 deploy --bucket tanachstudy.com",
-    "deploy:staging": "gatsby-plugin-s3 deploy --bucket beta.tanachstudy.com",
+    "deploy:prod": "NODE_ENV=production gatsby-plugin-s3 deploy",
+    "deploy:staging": "NODE_ENV=development gatsby-plugin-s3 deploy",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve"

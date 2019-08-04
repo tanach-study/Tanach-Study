@@ -1,7 +1,12 @@
-if (process.env.NODE_ENV === 'development') {
-  console.log('requiring dotenv...')
-  require('dotenv').config({ silent: true });
+const dotenv = require('dotenv');
+
+const { NODE_ENV, DB_CONNECTION, S3_BUCKET } = process.env;
+
+if (NODE_ENV !== 'production') {
+  dotenv.config({ silent: true });
 }
+
+const bucket = S3_BUCKET || NODE_ENV === 'production' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
 
 module.exports = {
   siteMetadata: {
@@ -42,7 +47,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-mongodb',
       options: {
-        connectionString: process.env.DB_CONNECTION,
+        connectionString: DB_CONNECTION,
         collection: 'newPerakim',
         dbName: 'ts-prod',
       },
@@ -50,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-s3',
       options: {
-        bucketName: 'beta.tanachstudy.com',
+        bucketName: bucket,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
