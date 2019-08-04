@@ -3,15 +3,6 @@
   "version": "1.0.0",
   "description": "A React-based client app for the Tanach Study Program",
   "main": "server.js",
-  "oldscripts": {
-    "clean": "rm -rf dist && rm -rf node_modules && rm -f package-lock.json",
-    "build": "NODE_ENV=production webpack --mode production --progress --config webpack.config.js",
-    "deploy": "npm run clean && npm i --only=dev && NODE_ENV=production webpack --mode production --progress && rm -rf node_modules/ && rm -f package-lock.json && npm i --only=prod",
-    "start": "node server.js",
-    "rebuild": "NODE_ENV=production webpack --mode production --progress --colors",
-    "watch": "webpack --mode development --progress --watch",
-    "test": "jest"
-  },
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -f package-lock.json && rm -rf .cache && rm -rf public",
