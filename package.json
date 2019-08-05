@@ -1,7 +1,7 @@
 {
   "name": "ts-react",
   "version": "1.0.0",
-  "description": "A React-based client app for the Tanach Study Program",
+  "description": "A Gatsbyjs/React-based client app for the Tanach Study Program",
   "main": "server.js",
   "scripts": {
     "build": "gatsby build",
