@@ -1,17 +1,20 @@
 language: node_js
 node_js:
-  - 8.3.0
+- 10.4.1
 cache:
   directories:
     - node_modules
 install:
-  - npm install
-  - sudo pip install awscli
+- npm install
 script:
-  - npm run build
+- npm run build
 deploy:
-  - provider: script
-    script: bash scripts/deployment_travis.sh
-    skip_cleanup: true
-    on: 
-      branch: master
+- provider: script
+  script: npm run deploy
+  skip_cleanup: true
+  on:
+    all_branches: true
+
+env:
+  global:
+    - NODE_ENV: 'production'

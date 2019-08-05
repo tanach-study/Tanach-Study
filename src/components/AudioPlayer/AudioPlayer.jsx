@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './AudioPlayer.css';
+import styles from './AudioPlayer.module.css';
 
 function AudioPlayer(props) {
   const { className, url, name, title, part, tabs } = props;
