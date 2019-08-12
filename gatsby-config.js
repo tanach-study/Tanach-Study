@@ -30,11 +30,12 @@ module.exports = {
       options: {
         name: 'Tanach Study',
         short_name: 'TS',
+        description: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach',
         start_url: '/',
         background_color: '#009fc1',
         theme_color: '#009fc1',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'static/favicons/original-favicon.png',
       },
     },
     {
