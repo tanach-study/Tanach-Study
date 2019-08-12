@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
 
-const { NODE_ENV, DB_CONNECTION, TRAVIS_BRANCH } = process.env;
+const { NODE_ENV, TRAVIS_BRANCH } = process.env;
+const { DB_CONNECTION, DB_NAME, DB_COLLECTION } = process.env;
 
 if (NODE_ENV !== 'production') {
   dotenv.config({ silent: true });
@@ -50,8 +51,8 @@ module.exports = {
       resolve: 'gatsby-source-mongodb',
       options: {
         connectionString: DB_CONNECTION,
-        collection: 'newPerakim',
-        dbName: 'ts-prod',
+        collection: DB_COLLECTION,
+        dbName: DB_NAME,
       },
     },
     {
