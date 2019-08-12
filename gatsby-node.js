@@ -1,5 +1,7 @@
 const path = require('path');
 
+const { GRAPHQL_SOURCE } = process.env;
+
 const { onCreateWebpackConfig } = require('./lib/webpack-config-fix.js');
 
 exports.onCreateWebpackConfig = onCreateWebpackConfig;
@@ -37,7 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const { data } = await graphql(`
     {
-      allMongodbTsprodNewPerakim {
+      ${GRAPHQL_SOURCE} {
         nodes {
           division
           division_title
