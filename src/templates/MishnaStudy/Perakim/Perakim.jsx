@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+
+import Layout from '../../../layouts/main.jsx';
 import MishnaList from './MishnaList/MishnaList.jsx';
 import Mishna from '../../../components/Mishna/Mishna.jsx';
 import AudioPlayer from '../../../components/AudioPlayer/AudioPlayer.jsx';
@@ -78,41 +80,43 @@ class Perakim extends Component {
     }
 
     return (
-      <div className='container'>
-        <h2>{pageTitle}</h2>
-        {sSpon && <h3>{sponsor}</h3>}
-        <section className='row'>
-          <MishnaList
-            mishnayot={mishnayot}
-            seder={seder}
-            masechet={masechet}
-            perek={perek}
-            click={this.selectMishna}
-            selected={currentMishna}
-            className='col l6 m6 s12 collection'
-          />
-          <AudioPlayer
-            url={url}
-            name={partN}
-            title={partT}
-            part={part}
-            teacherTitle={teacherT}
-            teacherFirst={teacherFN}
-            teacherMiddle={teacherMN}
-            teacherLast={teacherLN}
-            teacherImage={teacherImage}
-            teacherBio={teacherBio}
-            className='col l6 m6 s12'
-          />
-        </section>
-        <section className='row'>
-          <Mishna
-            seder={seder}
-            masechet={masechet}
-            perek={perek}
-          />
-        </section>
-      </div>
+      <Layout>
+        <div className='container'>
+          <h2>{pageTitle}</h2>
+          {sSpon && <h3>{sponsor}</h3>}
+          <section className='row'>
+            <MishnaList
+              mishnayot={mishnayot}
+              seder={seder}
+              masechet={masechet}
+              perek={perek}
+              click={this.selectMishna}
+              selected={currentMishna}
+              className='col l6 m6 s12 collection'
+            />
+            <AudioPlayer
+              url={url}
+              name={partN}
+              title={partT}
+              part={part}
+              teacherTitle={teacherT}
+              teacherFirst={teacherFN}
+              teacherMiddle={teacherMN}
+              teacherLast={teacherLN}
+              teacherImage={teacherImage}
+              teacherBio={teacherBio}
+              className='col l6 m6 s12'
+            />
+          </section>
+          <section className='row'>
+            <Mishna
+              seder={seder}
+              masechet={masechet}
+              perek={perek}
+            />
+          </section>
+        </div>
+      </Layout>
     );
   }
 }
