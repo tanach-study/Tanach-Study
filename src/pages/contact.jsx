@@ -102,8 +102,8 @@ class Contact extends Component {
                     <div className='card-content'>
                       <h4>Message Received!</h4>
                       <p>
-                        Thanks for your feedback! We love hearing from you, and are always working to
-                        make Tanach Study a better platform for you.
+                        Thanks for your feedback! We love hearing from you, and are always working
+                        to make Tanach Study a better platform for you.
                       </p>
                     </div>
                   )}
