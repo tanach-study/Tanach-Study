@@ -7,6 +7,8 @@ import Tanach from '../../../components/Tanach/Tanach.jsx';
 
 import styles from './NachPerek.module.css';
 
+import { ProgramContext } from '../../../app-context.js';
+
 class NachPerek extends Component {
   constructor(props) {
     super(props);
@@ -61,14 +63,18 @@ class NachPerek extends Component {
     let tabs = null;
     if (numParts > 1) {
       tabs = response.map((p, i) => (
-        <li className='tab' key={`${perekN} ${p.part}`}>
-          <div
-            onClick={() => this.selectPart(i)}
-            className={`${partIndex === i ? styles['active-part'] : ''} tsblue-text`}
-          >
-            {`Part ${p.part.toUpperCase()}`}
-          </div>
-        </li>
+        <ProgramContext.Consumer>
+          {theme => (
+            <li className='tab' key={`${perekN} ${p.part}`}>
+              <div
+                onClick={() => this.selectPart(i)}
+                className={`${partIndex === i ? styles['active-part'] : ''} tsblue-text`}
+              >
+                {`Part ${p.part.toUpperCase()}`}
+              </div>
+            </li>
+          )}
+        </ProgramContext.Consumer>
       ));
     }
 

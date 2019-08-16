@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
+import { ProgramContext } from '../../../app-context.js';
+
 class TanachStudyHomePage extends Component {
   constructor(props) {
     super(props);
@@ -35,7 +37,9 @@ class TanachStudyHomePage extends Component {
         </section>
         <section className='section center'>
           <Link to='/tanach-study/parts'>
-            <button className='btn tsblue'>Study a Perek</button>
+            <ProgramContext.Consumer>
+              {theme => <button className={`btn ${theme.backgroundClass}`}>Study a Perek</button>}
+            </ProgramContext.Consumer>
           </Link>
         </section>
       </main>

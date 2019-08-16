@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { ProgramContext } from '../../../app-context.js';
+
 class HomeSignupForm extends Component {
   constructor(props) {
     super(props);
@@ -53,7 +55,11 @@ class HomeSignupForm extends Component {
         <input type="text" name="firstName" placeholder="First Name" required value={this.state.firstName} onChange={(e) => this.updateState('firstName', e.target.value)} />
         <input type="text" name="lastName" placeholder="Last Name" required value={this.state.lastName} onChange={(e) => this.updateState('lastName', e.target.value)} />
         <input type="email" name="email" placeholder="Email" required value={this.state.email} onChange={(e) => this.updateState('email', e.target.value)} />
-        <button type="submit" className="btn tsblue" onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
+        <ProgramContext.Consumer>
+          {theme => (
+            <button type="submit" className={`btn ${theme.backgroundClass}`} onClick={(e) => this.doSubmit(e)}>Sign Up!</button>
+          )}
+        </ProgramContext.Consumer>
       </form>
     );
   }

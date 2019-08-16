@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { ProgramContext } from '../../../app-context.js';
+
 function PartLink({ book, i, books }) {
   let classAdd = '';
   const diff = books.length - i;
@@ -13,11 +15,15 @@ function PartLink({ book, i, books }) {
   }
 
   return (
-    <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-      <div className='card tsblue btn waves-effect hoverable full-width'>
-        <div className='col-content'>{book.name}</div>
-      </div>
-    </Link>
+    <ProgramContext.Consumer>
+      {theme => (
+        <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
+          <div className={`card ${theme.backgroundClass} btn waves-effect hoverable full-width`}>
+            <div className='col-content'>{book.name}</div>
+          </div>
+        </Link>
+      )}
+    </ProgramContext.Consumer>
   );
 }
 
