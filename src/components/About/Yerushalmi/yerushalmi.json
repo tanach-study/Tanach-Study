@@ -1,0 +1,103 @@
+{
+  "torah": [
+    {
+      "name": "bereshit",
+      "title": "Bereshit",
+      "chapters": [
+        { "number": 12, "path": "/perakim/bereshit/lech-lecha?part=1" },
+        { "number": 13, "path": "/perakim/bereshit/lech-lecha?part=2" },
+        { "number": 14, "path": "/perakim/bereshit/lech-lecha?part=3" },
+        { "number": 15, "path": "/perakim/bereshit/lech-lecha?part=4" },
+        { "number": 18, "path": "/perakim/bereshit/vayera?part=1" },
+        { "number": 19, "path": "/perakim/bereshit/vayera?part=2" }
+      ]
+    },
+    {
+      "name": "shemot",
+      "title": "Shemot",
+      "chapters": [
+        { "number": 19, "path": "/perakim/shemot/yitro?part=3" },
+        { "number": 20, "path": "/perakim/shemot/yitro?part=4" }
+      ]
+    },
+    {
+      "name": "vayikra",
+      "title": "Vayikra",
+      "chapters": [
+        { "number": 19, "path": "/perakim/vayikra/kedoshim" },
+        { "number": 25, "path": "/perakim/vayikra/behar" }
+      ]
+    },
+    {
+      "name": "devarim",
+      "title": "Devarim",
+      "chapters": [
+        { "number": 20, "path": "/perakim/devarim/shofetim" },
+        { "number": 21, "path": "/perakim/devarim/ki-tetze" }
+      ]
+    }
+  ],
+  "neviim": [
+    {
+      "name": "yehoshua",
+      "title": "Yehoshua",
+      "chapters": [
+        { "number": 1 },
+        { "number": 2 },
+        { "number": 3 },
+        { "number": 4 }
+      ]
+    },
+    {
+      "name": "shemuel1",
+      "title": "Shemuel 1",
+      "chapters":  [
+        { "number": 1 },
+        { "number": 2 }
+      ]
+    },
+    {
+      "name": "melachim1",
+      "title": "Melachim 1",
+      "chapters": [
+        { "number": 17 },
+        { "number": 18 },
+        { "number": 19 }
+      ]
+    },
+    {
+      "name": "yeshayahu",
+      "title": "Yeshayahu",
+      "chapters":  [
+        { "number": 2 },
+        { "number": 11 }
+      ]
+    },
+    {
+      "name": "yirmiyahu",
+      "title": "Yirmiyahu",
+      "chapters": [
+        { "number": 26 }
+      ]
+    }
+  ],
+  "ketuvim": [
+    {
+      "name": "tehillim",
+      "title": "Tehillim",
+      "chapters":  [
+        { "number": 1 },
+        { "number": 8 },
+        { "number": 23 }
+      ]
+    },
+    {
+      "name": "ruth",
+      "title": "Ruth",
+      "chapters": [
+        { "number": 2 },
+        { "number": 3 }
+      ]
+    }
+  ]
+}
