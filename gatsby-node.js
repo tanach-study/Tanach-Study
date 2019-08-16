@@ -34,6 +34,42 @@ function teacherComparator(t1, t2) {
   return 0;
 }
 
+function rawPerakimComparator(a, b) {
+  if (a.division_sequence < b.division_sequence) {
+    return -1;
+  }
+
+  if (a.division_sequence > b.division_sequence) {
+    return 1;
+  }
+
+  if (a.section_sequence < b.section_sequence) {
+    return -1;
+  }
+
+  if (a.section_sequence > b.section_sequence) {
+    return 1;
+  }
+
+  if (a.unit_sequence < b.unit_sequence) {
+    return -1;
+  }
+
+  if (a.unit_sequence > b.unit_sequence) {
+    return 1;
+  }
+
+  if (a.part_sequence < b.part_sequence) {
+    return -1;
+  }
+
+  if (a.part_sequence > b.part_sequence) {
+    return 1;
+  }
+
+  return 0;
+}
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -95,6 +131,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const { allMongodbTsprodNewPerakim } = data || {};
   const { nodes } = allMongodbTsprodNewPerakim || {};
   const rawData = nodes || [];
+
+  rawData.sort(rawPerakimComparator);
 
   const torah = {};
   const nach = {};

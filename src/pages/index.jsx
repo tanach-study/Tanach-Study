@@ -3,8 +3,8 @@ import React from 'react';
 import Layout from '../layouts/main.jsx';
 import HomePage from '../components/HomePage/HomePage.jsx';
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = ({ location }) => (
+  <Layout location={location}>
     <HomePage />
   </Layout>
 );

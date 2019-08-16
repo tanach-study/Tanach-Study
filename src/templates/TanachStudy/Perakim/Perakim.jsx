@@ -31,7 +31,7 @@ class Perakim extends Component {
 
   render() {
     const { response } = this.state;
-    const { pageContext } = this.props;
+    const { pageContext, location } = this.props;
     const { sefer, perek } = pageContext;
 
     const base = response[0] || {};
@@ -40,7 +40,7 @@ class Perakim extends Component {
     if (tanachPart === 'torah') {
       const qParams = this.getQueryParams();
       return (
-        <Layout>
+        <Layout location={location}>
           <TorahPerek
             parts={response}
             sefer={sefer}
@@ -51,7 +51,7 @@ class Perakim extends Component {
       );
     }
     return (
-      <Layout>
+      <Layout location={location}>
         <NachPerek
           response={response}
           sefer={sefer}
