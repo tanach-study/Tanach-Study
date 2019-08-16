@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+const log = require('./lib/logger.js');
 
 const { NODE_ENV, TRAVIS_BRANCH } = process.env;
 
@@ -9,12 +10,13 @@ if (NODE_ENV !== 'production') {
 const { DB_CONNECTION, DB_NAME, DB_COLLECTION } = process.env;
 
 const bucket = TRAVIS_BRANCH === 'master' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
-console.log('bucket to deploy to:', bucket);
+log.info('bucket to deploy to:', bucket);
 
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
-    description: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach',
+    description: 'Tanach Study is a modern, web based platform for the study of the 24 books of'
+    + 'Tanach',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -32,7 +34,8 @@ module.exports = {
       options: {
         name: 'Tanach Study',
         short_name: 'TS',
-        description: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach',
+        description: 'Tanach Study is a modern, web based platform for the study of the 24 books of'
+        + 'Tanach',
         start_url: '/',
         background_color: '#009fc1',
         theme_color: '#009fc1',
