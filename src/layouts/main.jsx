@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import 'materialize-css/dist/css/materialize.min.css';
 import './styles.global.css';
 import './icons.css';
-import { programs } from '../app-context.js';
 
 import ProgramNavigation from '../components/ProgramNavigation/ProgramNavigation.jsx';
 import Navigation from '../components/Navigation/Navigation.jsx';
 import Footer from '../components/Footer/Footer.jsx';
+
+import { programs, ProgramContext } from '../app-context.js';
 
 function Layout(props) {
   const { children, location } = props;
@@ -29,14 +30,14 @@ function Layout(props) {
     program = programs.tanachstudy;
   }
   return (
-    <React.Fragment>
+    <ProgramContext.Provider value={program}>
       <ProgramNavigation />
       <Navigation />
       <div className='body'>
         <main>{children}</main>
       </div>
       <Footer program={program} />
-    </React.Fragment>
+    </ProgramContext.Provider>
   );
 }
 

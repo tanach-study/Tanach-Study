@@ -3,6 +3,8 @@ import TeamimItem from './TeamimItem.jsx';
 
 import styles from './TeamimItem.module.css';
 
+import { ProgramContext } from '../../../app-context.js';
+
 class ReaderCard extends Component {
   constructor(props) {
     super(props);
@@ -24,14 +26,18 @@ class ReaderCard extends Component {
       if (Array.isArray(teamim)) {
         if (teamim.length > 1) {
           const teamimTabs = teamim.map((item, i) => (
-            <li className='tab' key={item.url}>
-              <div
-                onClick={() => this.handleClick(i)}
-                className={`${this.state.selectedItem === i ? styles['active-reader'] : ''} tsblue-text`}
-              >
-                {item.reader_title} {item.reader_lname}
-              </div>
-            </li>
+            <ProgramContext.Consumer>
+              {theme => (
+                <li className='tab' key={item.url}>
+                  <div
+                    onClick={() => this.handleClick(i)}
+                    className={`${this.state.selectedItem === i ? styles['active-reader'] : ''} ${theme.textClass}`}
+                  >
+                    {item.reader_title} {item.reader_lname}
+                  </div>
+                </li>
+              )}
+            </ProgramContext.Consumer>
           ));
           return (
             <div className='col l6 m6 s12'>

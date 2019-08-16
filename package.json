@@ -7,7 +7,7 @@
     "build": "gatsby build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -f package-lock.json && rm -rf .cache && rm -rf public",
     "deploy": "gatsby-plugin-s3 deploy",
-    "develop": "gatsby develop",
+    "develop": "NODE_ENV=development gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve"
   },

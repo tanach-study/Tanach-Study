@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './Signup.module.css';
 
+import { ProgramContext } from '../../app-context.js';
+
 class SignupForm extends Component {
   constructor(props) {
     super(props);
@@ -221,13 +223,17 @@ class SignupForm extends Component {
             </label>
           </div>
         </div>
-        <button
-          type='submit'
-          className='btn tsblue'
-          onClick={e => this.doSubmit(e)}
-        >
-          Sign Up!
-        </button>
+        <ProgramContext.Consumer>
+          {theme => (
+            <button
+              type='submit'
+              className={`btn ${theme.backgroundClass}`}
+              onClick={e => this.doSubmit(e)}
+            >
+              Sign Up!
+            </button>
+          )}
+        </ProgramContext.Consumer>
       </form>
     );
   }
