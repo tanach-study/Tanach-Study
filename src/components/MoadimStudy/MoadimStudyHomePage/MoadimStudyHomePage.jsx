@@ -6,7 +6,10 @@ function MoadimStudyHomePage(props) {
     <main className='container'>
       <section className='section center'>
         <h3>Welcome to Moadim Study!</h3>
-        <p>Stay tuned for the upcoming launch of Moadim Study! Until then, we encourage you to check out our other programs, or to sign up for our emails!</p>
+        <p>Stay tuned for the upcoming launch of Moadim Study! Until then, we
+          encourage you to check out our other programs, or to sign up for our
+          emails!
+        </p>
       </section>
       <div className='divider' />
       <section className='section center'>

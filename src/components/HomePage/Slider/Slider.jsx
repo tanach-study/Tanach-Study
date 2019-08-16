@@ -20,35 +20,40 @@ class Slider extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.interval);
+    const { interval } = this.state;
+    clearInterval(interval);
   }
 
   advanceSlide() {
-    const next = (this.state.activeIndex + 1) % this.props.slides.length;
-    const { captionLeft } = this.props.slides[next];
-    const { captionRight } = this.props.slides[next];
-    this.props.left(captionLeft);
-    this.props.right(captionRight);
+    const { activeIndex } = this.state;
+    const { slides, left, right } = this.props;
+    const next = (activeIndex + 1) % slides.length;
+    const { captionLeft } = slides[next];
+    const { captionRight } = slides[next];
+    left(captionLeft);
+    right(captionRight);
     this.setState({ activeIndex: next });
   }
 
   render() {
-    const slides = this.props.slides.map((slide, i) => {
+    const { slides } = this.props;
+    const { activeIndex } = this.state;
+    const mappedSlides = slides.map((slide, i) => {
       const style = {
         backgroundImage: `url(${slide.url})`,
       };
       const slideClass = classNames({
         [styles['slide-item']]: true,
-        [styles.active]: this.state.activeIndex === i,
-        [styles.inactive]: this.state.activeIndex !== i,
+        [styles.active]: activeIndex === i,
+        [styles.inactive]: activeIndex !== i,
       });
       return (
-        <div key={`homepage-slider-slide-${i}`} className={slideClass} style={style} />
+        <div key={`homepage-slider-slide-${slide.url}`} className={slideClass} style={style} />
       );
     }, this);
     return (
       <div className={styles.slideshow}>
-        {slides}
+        {mappedSlides}
       </div>
     );
   }

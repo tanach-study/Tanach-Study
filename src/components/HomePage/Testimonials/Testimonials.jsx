@@ -20,32 +20,39 @@ class Testimonials extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.state.interval);
+    const { interval } = this.state;
+    clearInterval(interval);
   }
 
   advanceSlide() {
-    const curr = this.state.activeIndex;
-    const numSlides = this.props.testimonials.length;
+    const { activeIndex } = this.state;
+    const { testimonials } = this.props;
+    const curr = activeIndex;
+    const numSlides = testimonials.length;
     let next = curr + 1;
     if (next >= numSlides) next = 0;
     this.setState({ activeIndex: next });
   }
 
   retractSlide() {
-    const curr = this.state.activeIndex;
-    const numSlides = this.props.testimonials.length;
+    const { activeIndex } = this.state;
+    const { testimonials } = this.props;
+    const curr = activeIndex;
+    const numSlides = testimonials.length;
     let next = curr - 1;
     if (next <= 0) next = numSlides;
     this.setState({ activeIndex: next });
   }
 
   render() {
-    const testimonials = this.props.testimonials.map((testimonial, i) => {
+    const { activeIndex } = this.state;
+    const { testimonials } = this.props;
+    const mappedTestimonials = testimonials.map((testimonial, i) => {
       const slideClass = classNames({
         [styles['testimonial-slide-item']]: true,
         valign: true,
-        [styles.active]: this.state.activeIndex === i,
-        [styles.inactive]: this.state.activeIndex !== i,
+        [styles.active]: activeIndex === i,
+        [styles.inactive]: activeIndex !== i,
       });
       return (
         <div key={i} className={slideClass}>
@@ -60,7 +67,7 @@ class Testimonials extends Component {
 
     return (
       <div className={styles.slideshow}>
-        {testimonials}
+        {mappedTestimonials}
       </div>
     );
   }
