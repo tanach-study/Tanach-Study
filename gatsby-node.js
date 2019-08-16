@@ -128,8 +128,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  const { allMongodbTsprodNewPerakim } = data || {};
-  const { nodes } = allMongodbTsprodNewPerakim || {};
+  const queryResults = data[GRAPHQL_SOURCE];
+  const { nodes } = queryResults || {};
   const rawData = nodes || [];
 
   rawData.sort(rawPerakimComparator);
