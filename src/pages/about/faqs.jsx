@@ -11,15 +11,15 @@ function FAQs(props) {
         <div className='faq'>
           <p><b>1) What does Tanach Study wish to accomplish?</b></p>
           <p>
-            Our goal is to teach as many people as possible the basic understanding of Tanach, through
-            a modern, web-based platform.
+            Our goal is to teach as many people as possible the basic understanding of Tanach,
+            through a modern, web-based platform.
           </p>
         </div>
         <div className='faq'>
           <p><b>2) Does Tanach Study learn on Shabbat and holidays?</b></p>
           <p>
-            Since we use a web-based platform, our program pauses for these days, but we encourage all
-            of our members to review their studies on these days.
+            Since we use a web-based platform, our program pauses for these days, but we encourage
+            all of our members to review their studies on these days.
           </p>
         </div>
         <div className='faq'>
@@ -59,13 +59,13 @@ function FAQs(props) {
         <div className='faq'>
           <p>
             <b>
-              7) If I can&apos;t keep up with learning a chapter a day, do you recommend still joining
-              ?
+              7) If I can&apos;t keep up with learning a chapter a day, do you recommend still
+              joining?
             </b>
           </p>
           <p>
-            Absolutely! If you find the daily program too difficult to follow, feel free to go at your
-            own pace and learn how ever much you want.
+            Absolutely! If you find the daily program too difficult to follow, feel free to go at
+            your own pace and learn how ever much you want.
           </p>
         </div>
         <div className='faq'>
@@ -89,8 +89,8 @@ function FAQs(props) {
         <div className='faq'>
           <p><b>11) How can I get involved on the backside of Tanach Study?</b></p>
           <p>
-            Thank you for your interest! Please <Link to='/contact'>contact us</Link> and let us know
-            how you can help!
+            Thank you for your interest! Please <Link to='/contact'>contact us</Link> and let us
+            know how you can help!
           </p>
         </div>
         <div className='faq'>
