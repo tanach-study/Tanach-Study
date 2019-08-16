@@ -9,14 +9,14 @@ class Testimonials extends Component {
     this.state = {
       activeIndex: 0,
       interval: null,
-    }
+    };
   }
 
   componentDidMount() {
     const interval = setInterval(() => {
       this.advanceSlide();
     }, 15000);
-    this.setState({ interval: interval });
+    this.setState({ interval });
   }
 
   componentWillUnmount() {
@@ -44,22 +44,22 @@ class Testimonials extends Component {
       const slideClass = classNames({
         [styles['testimonial-slide-item']]: true,
         valign: true,
-        [styles['active']]: this.state.activeIndex === i,
-        [styles['inactive']]: this.state.activeIndex !== i,
+        [styles.active]: this.state.activeIndex === i,
+        [styles.inactive]: this.state.activeIndex !== i,
       });
       return (
         <div key={i} className={slideClass}>
-          <div className={`${styles['caption']} left-align valign`}>
-            <p className="grey-text text-darken-2">{testimonial.Testimonial}</p>
-            <p className="grey-text text-lighten-1">{testimonial.Name}</p>
-            <p className="grey-text text-lighten-1">{testimonial.Title}</p>
+          <div className={`${styles.caption} left-align valign`}>
+            <p className='grey-text text-darken-2'>{testimonial.Testimonial}</p>
+            <p className='grey-text text-lighten-1'>{testimonial.Name}</p>
+            <p className='grey-text text-lighten-1'>{testimonial.Title}</p>
           </div>
         </div>
-        );
+      );
     });
 
     return (
-      <div className={styles['slideshow']}>
+      <div className={styles.slideshow}>
         {testimonials}
       </div>
     );

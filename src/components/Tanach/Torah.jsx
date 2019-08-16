@@ -57,13 +57,13 @@ function Torah(props) {
         {heb}
       </div>
     );
-  } else if (show === 'par') {
+  } if (show === 'par') {
     return (
       <div id='parText'>
         {par}
       </div>
     );
-  } else if (show === 'eng') {
+  } if (show === 'eng') {
     return (
       <div className='left-align' id='engText'>
         {eng}

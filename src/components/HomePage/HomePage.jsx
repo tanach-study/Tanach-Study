@@ -33,24 +33,24 @@ class HomePage extends Component {
     ];
 
     for (let i = testimonials.length; i > 0; i--) {
-      let j = Math.floor((Math.random() * i));
-      let temp = testimonials[i - 1];
+      const j = Math.floor((Math.random() * i));
+      const temp = testimonials[i - 1];
       testimonials[i - 1] = testimonials[j];
       testimonials[j] = temp;
     }
 
     this.state = {
-      images: images,
+      images,
       currentIndex: 0,
-      testimonials: testimonials,
+      testimonials,
       leftCaptionDiv: images[0].captionLeft,
       rightCaptionDiv: images[0].captionRight,
       errorMsg: null,
-    }
+    };
   }
 
   render() {
-    return(
+    return (
       <ProgramContext.Consumer>
         {theme => (
           <div>
@@ -59,7 +59,7 @@ class HomePage extends Component {
                 <div className='container'>
                   <h1 className={`header center ${theme.textClass}`}>Tanach Study</h1>
                   <div className='row center'>
-                    <h5 className='header col s12 light'>Fusing modern technologies<br/>with ancient texts</h5>
+                    <h5 className='header col s12 light'>Fusing modern technologies<br />with ancient texts</h5>
                   </div>
                   <div className='row center'>
                     <Link to='/signup' className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}>Sign Up Now!</Link>
@@ -68,8 +68,8 @@ class HomePage extends Component {
                 <Slider
                   slides={this.state.images}
                   index={this.state.currentIndex}
-                  left={(v) => this.setState({ leftCaptionDiv: v })}
-                  right={(v) => this.setState({ rightCaptionDiv: v })}
+                  left={v => this.setState({ leftCaptionDiv: v })}
+                  right={v => this.setState({ rightCaptionDiv: v })}
                 />
               </div>
             </div>
@@ -78,20 +78,20 @@ class HomePage extends Component {
               <div className='full-width full-height row'>
                 <div className={`col l4 m3 full-height ${styles['slider-caption']}`}><div className={styles['left-caption']}>{this.state.leftCaptionDiv}</div></div>
                 <div className='col l4 m6'>
-                    <div className='card'>
-                      <div className='card-content center'>
-                        <h1 className={`header ${theme.textClass}`}>Tanach Study</h1>
-                        <h5 className='header col s12 light'>Fusing modern technologies<br/>with ancient texts</h5>
-                        <Link to='/signup' className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}>Sign Up Now!</Link>
-                      </div>
+                  <div className='card'>
+                    <div className='card-content center'>
+                      <h1 className={`header ${theme.textClass}`}>Tanach Study</h1>
+                      <h5 className='header col s12 light'>Fusing modern technologies<br />with ancient texts</h5>
+                      <Link to='/signup' className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}>Sign Up Now!</Link>
                     </div>
                   </div>
+                </div>
                 <div className={`col l4 m3 full-height ${styles['slider-caption']}`}><div className={styles['right-caption']}>{this.state.rightCaptionDiv}</div></div>
                 <Slider
                   slides={this.state.images}
                   index={this.state.currentIndex}
-                  left={(v) => this.setState({ leftCaptionDiv: v })}
-                  right={(v) => this.setState({ rightCaptionDiv: v })}
+                  left={v => this.setState({ leftCaptionDiv: v })}
+                  right={v => this.setState({ rightCaptionDiv: v })}
                 />
               </div>
             </div>
@@ -111,7 +111,7 @@ class HomePage extends Component {
 
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
-                      <h2 className={`center ${theme.textClass}`}><span className={`${theme.textClass} ${icons['tsicons']} ${icons['icon-scroll']}`}></span></h2>
+                      <h2 className={`center ${theme.textClass}`}><span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-scroll']}`} /></h2>
                       <h5 className='center'>Torah Content</h5>
 
                       <p className='light center-align'>We offer you an  experience that allows you to become intimately familiar with the text, framework, and storyline of the Tanach. Every Sefer. Every Perek. Every Pasuk.</p>
@@ -120,7 +120,7 @@ class HomePage extends Component {
 
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
-                      <h2 className={`center ${theme.textClass}`}><span className={`${theme.textClass} ${icons['tsicons']} ${icons['icon-star']}`}></span></h2>
+                      <h2 className={`center ${theme.textClass}`}><span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-star']}`} /></h2>
                       <h5 className='center'>Build Identity</h5>
                       <p className='light center-align'>To increase knowledge of your ancestral Jewish history, to strengthen your sense of awe and love of God, and reinforce your personal and national Jewish identity.</p>
                     </div>
@@ -130,9 +130,8 @@ class HomePage extends Component {
             </div>
 
 
-
             <div className={`center ${styles['collage-container']}`}>
-                <a href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos' target='blank'><img src='https://cdn.tanachstudy.com/assets/images/collage.png' alt='Collage of all educators' className='responsive-img hoverable' /></a>
+              <a href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos' target='blank'><img src='https://cdn.tanachstudy.com/assets/images/collage.png' alt='Collage of all educators' className='responsive-img hoverable' /></a>
 
               <div className={`${styles['in-memory']} white-text hide-on-small-only`}>
                 Guest lecturers sponsored in loving memory of <a href='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} ${theme.textClass}`}>Rabbi Dr. Ezra Labaton A'H</a>
@@ -141,11 +140,11 @@ class HomePage extends Component {
             </div>
 
 
-            <div className='section row' style={{height: '400px'}}>
+            <div className='section row' style={{ height: '400px' }}>
               <h4 className='header center'>Testimonials</h4>
               <div className='col l1 m1 s1 right-align full-height'><i className='material-icons'>format_quote</i></div>
               <div className={`col l10 m10 s10 ${styles['testimonial-container']} full-height valign-wrapper`}>
-                <Testimonials testimonials={this.state.testimonials}/>
+                <Testimonials testimonials={this.state.testimonials} />
               </div>
               <div className='col l1 m1 s1 full-height'><i className='material-icons'>format_quote</i></div>
             </div>
@@ -153,7 +152,7 @@ class HomePage extends Component {
             <div className='section'>
               <div className='center full-width'>
                 <h4>Tanach Study Around the World</h4>
-                <img src='https://cdn.tanachstudy.com/assets/images/analytics.png' alt='' className='responsive-img'/>
+                <img src='https://cdn.tanachstudy.com/assets/images/analytics.png' alt='' className='responsive-img' />
               </div>
             </div>
           </div>

@@ -159,7 +159,7 @@ class Contact extends Component {
               </div>
             </div>
           </div>
-        </div>        
+        </div>
       </Layout>
     );
   }

@@ -22,6 +22,9 @@ class ReaderCard extends Component {
 
   render() {
     const { teamim } = this.props;
+    const { selectedItem } = this.state;
+
+    const active = styles['active-reader'];
     if (teamim) {
       if (Array.isArray(teamim)) {
         if (teamim.length > 1) {
@@ -31,7 +34,7 @@ class ReaderCard extends Component {
                 <li className='tab' key={item.url}>
                   <div
                     onClick={() => this.handleClick(i)}
-                    className={`${this.state.selectedItem === i ? styles['active-reader'] : ''} ${theme.textClass}`}
+                    className={`${selectedItem === i ? active : ''} ${theme.textClass}`}
                   >
                     {item.reader_title} {item.reader_lname}
                   </div>
@@ -44,7 +47,7 @@ class ReaderCard extends Component {
               <div className='card'>
                 <div className='card-content'>
                   <TeamimItem
-                    teamim={teamim[this.state.selectedItem]}
+                    teamim={teamim[selectedItem]}
                   />
                 </div>
                 <div className='card-tabs'>

@@ -8,7 +8,8 @@ test('renders correctly', () => {
     .create(
       <MemoryRouter>
         <Footer />
-      </MemoryRouter>)
+      </MemoryRouter>,
+    )
     .toJSON();
   expect(tree).toMatchSnapshot();
 });
