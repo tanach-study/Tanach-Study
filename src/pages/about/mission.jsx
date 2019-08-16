@@ -3,9 +3,8 @@ import React from 'react';
 import AboutLayout from '../../layouts/about.jsx';
 
 function Mission(props) {
-  const { location } = props;
   return (
-    <AboutLayout location={location}>
+    <AboutLayout>
       <h3 className='left-align'>Our Mission</h3>
       <div className='row valign-wrapper hide-on-small-only'>
         <div className='col l3 m4 s12 valign'>

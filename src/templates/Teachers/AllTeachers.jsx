@@ -15,7 +15,6 @@ class Teachers extends Component {
 
   render() {
     const { teachers } = this.state;
-    const { location } = this.props;
     const filled = teachers || [];
     const mappedTeachers = filled.map((teacher) => {
       const { image: url, title, fname, mname, lname, short_bio: short } = teacher || {};
@@ -38,7 +37,7 @@ class Teachers extends Component {
       );
     });
     return (
-      <Layout location={location}>
+      <Layout>
         <div className='container'>
           <div className='section center'>
             <div className='heading'>

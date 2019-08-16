@@ -30,12 +30,12 @@ class Perakim extends Component {
 
   render() {
     const { response } = this.state;
-    const { pageContext, location } = this.props;
+    const { pageContext } = this.props;
     const { sefer, perek } = pageContext || {};
 
     const qParams = this.getQueryParams();
     return (
-      <Layout location={location}>
+      <Layout>
         <TorahPerek
           parts={response}
           sefer={sefer}
