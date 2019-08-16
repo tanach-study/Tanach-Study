@@ -47,6 +47,7 @@ class Masechtot extends Component {
 
   render() {
     const { perakim, teachers } = this.state;
+    const { location } = this.props;
     const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;
       return (
@@ -71,7 +72,7 @@ class Masechtot extends Component {
     const { masechetTitle, masechetSponsor, sederName, masechetName, activeIndex } = this.state;
     const sponsor = Array.isArray(masechetSponsor) ? masechetSponsor.map(l => <div key={l}>{l}</div>) : masechetSponsor;
     return (
-      <Layout>
+      <Layout location={location}>
         <div className='container'>
           <h2>Masechet {masechetTitle}</h2>
           {masechetSponsor && <h3>{sponsor}</h3>}

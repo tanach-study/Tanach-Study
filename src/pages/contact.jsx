@@ -79,8 +79,9 @@ class Contact extends Component {
 
   render() {
     const { name, email, subject, message, error, success } = this.state;
+    const { location } = this.props;
     return (
-      <Layout>
+      <Layout location={location}>
         <div className='container'>
           <div className='section center'>
             <div className='row valign-wrapper'>

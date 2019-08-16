@@ -43,6 +43,8 @@ class Sefarim extends Component {
 
     const { units, teachers, seferTitle, seferSponsor, seferName, part } = this.state;
 
+    const { location } = this.props;
+
     const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;
       return (
@@ -74,7 +76,7 @@ class Sefarim extends Component {
       : seferSponsor;
 
     return (
-      <Layout>
+      <Layout location={location}>
         <div className='container'>
           <h2>Sefer {seferTitle}</h2>
           {seferSponsor && <h3>{sponsor}</h3>}
