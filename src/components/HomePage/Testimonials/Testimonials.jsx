@@ -55,7 +55,7 @@ class Testimonials extends Component {
         [styles.inactive]: activeIndex !== i,
       });
       return (
-        <div key={i} className={slideClass}>
+        <div key={testimonial.Testimonial} className={slideClass}>
           <div className={`${styles.caption} left-align valign`}>
             <p className='grey-text text-darken-2'>{testimonial.Testimonial}</p>
             <p className='grey-text text-lighten-1'>{testimonial.Name}</p>

@@ -45,11 +45,12 @@ class HomePage extends Component {
       testimonials,
       leftCaptionDiv: images[0].captionLeft,
       rightCaptionDiv: images[0].captionRight,
-      errorMsg: null,
     };
   }
 
   render() {
+    const { images, currentIndex, leftCaptionDiv, rightCaptionDiv, testimonials } = this.state;
+
     return (
       <ProgramContext.Consumer>
         {theme => (
@@ -59,15 +60,22 @@ class HomePage extends Component {
                 <div className='container'>
                   <h1 className={`header center ${theme.textClass}`}>Tanach Study</h1>
                   <div className='row center'>
-                    <h5 className='header col s12 light'>Fusing modern technologies<br />with ancient texts</h5>
+                    <h5 className='header col s12 light'>
+                      Fusing modern technologies<br />with ancient texts
+                    </h5>
                   </div>
                   <div className='row center'>
-                    <Link to='/signup' className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}>Sign Up Now!</Link>
+                    <Link
+                      to='/signup'
+                      className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}
+                    >
+                      Sign Up Now!
+                    </Link>
                   </div>
                 </div>
                 <Slider
-                  slides={this.state.images}
-                  index={this.state.currentIndex}
+                  slides={images}
+                  index={currentIndex}
                   left={v => this.setState({ leftCaptionDiv: v })}
                   right={v => this.setState({ rightCaptionDiv: v })}
                 />
@@ -76,20 +84,31 @@ class HomePage extends Component {
 
             <div className='slider hide-on-small-only'>
               <div className='full-width full-height row'>
-                <div className={`col l4 m3 full-height ${styles['slider-caption']}`}><div className={styles['left-caption']}>{this.state.leftCaptionDiv}</div></div>
+                <div className={`col l4 m3 full-height ${styles['slider-caption']}`}>
+                  <div className={styles['left-caption']}>{leftCaptionDiv}</div>
+                </div>
                 <div className='col l4 m6'>
                   <div className='card'>
                     <div className='card-content center'>
                       <h1 className={`header ${theme.textClass}`}>Tanach Study</h1>
-                      <h5 className='header col s12 light'>Fusing modern technologies<br />with ancient texts</h5>
-                      <Link to='/signup' className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}>Sign Up Now!</Link>
+                      <h5 className='header col s12 light'>
+                        Fusing modern technologies<br />with ancient texts
+                      </h5>
+                      <Link
+                        to='/signup'
+                        className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}
+                      >
+                        Sign Up Now!
+                      </Link>
                     </div>
                   </div>
                 </div>
-                <div className={`col l4 m3 full-height ${styles['slider-caption']}`}><div className={styles['right-caption']}>{this.state.rightCaptionDiv}</div></div>
+                <div className={`col l4 m3 full-height ${styles['slider-caption']}`}>
+                  <div className={styles['right-caption']}>{rightCaptionDiv}</div>
+                </div>
                 <Slider
-                  slides={this.state.images}
-                  index={this.state.currentIndex}
+                  slides={images}
+                  index={currentIndex}
                   left={v => this.setState({ leftCaptionDiv: v })}
                   right={v => this.setState({ rightCaptionDiv: v })}
                 />
@@ -102,27 +121,44 @@ class HomePage extends Component {
                 <div className='row'>
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
-                      <h2 className={`center ${theme.textClass}`}><i className={`${styles['material-icons']} material-icons`}>headset</i></h2>
+                      <h2 className={`center ${theme.textClass}`}>
+                        <i className={`${styles['material-icons']} material-icons`}>headset</i>
+                      </h2>
                       <h5 className='center'>Mode of Study</h5>
 
-                      <p className='light center-align'>A free digital Tanach study program that is all-encompassing and geared towards English-speaking communities around the world.</p>
+                      <p className='light center-align'>
+                        A free digital Tanach study program that is all-encompassing and geared
+                        towards English-speaking communities around the world.
+                      </p>
                     </div>
                   </div>
 
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
-                      <h2 className={`center ${theme.textClass}`}><span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-scroll']}`} /></h2>
+                      <h2 className={`center ${theme.textClass}`}>
+                        <span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-scroll']}`} />
+                      </h2>
                       <h5 className='center'>Torah Content</h5>
 
-                      <p className='light center-align'>We offer you an  experience that allows you to become intimately familiar with the text, framework, and storyline of the Tanach. Every Sefer. Every Perek. Every Pasuk.</p>
+                      <p className='light center-align'>
+                        We offer you an  experience that allows you to become intimately familiar
+                        with the text, framework, and storyline of the Tanach. Every Sefer. Every
+                        Perek. Every Pasuk.
+                      </p>
                     </div>
                   </div>
 
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
-                      <h2 className={`center ${theme.textClass}`}><span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-star']}`} /></h2>
+                      <h2 className={`center ${theme.textClass}`}>
+                        <span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-star']}`} />
+                      </h2>
                       <h5 className='center'>Build Identity</h5>
-                      <p className='light center-align'>To increase knowledge of your ancestral Jewish history, to strengthen your sense of awe and love of God, and reinforce your personal and national Jewish identity.</p>
+                      <p className='light center-align'>
+                        To increase knowledge of your ancestral Jewish history, to strengthen your
+                        sense of awe and love of God, and reinforce your personal and national
+                        Jewish identity.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -131,7 +167,16 @@ class HomePage extends Component {
 
 
             <div className={`center ${styles['collage-container']}`}>
-              <a href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos' target='blank'><img src='https://cdn.tanachstudy.com/assets/images/collage.png' alt='Collage of all educators' className='responsive-img hoverable' /></a>
+              <a 
+                href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
+                target='blank'
+              >
+                <img
+                  src='https://cdn.tanachstudy.com/assets/images/collage.png'
+                  alt='Collage of all educators'
+                  className='responsive-img hoverable'
+                />
+              </a>
 
               <div className={`${styles['in-memory']} white-text hide-on-small-only`}>
                 Guest lecturers sponsored in loving memory of <a href='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} ${theme.textClass}`}>Rabbi Dr. Ezra Labaton A'H</a>
@@ -142,11 +187,15 @@ class HomePage extends Component {
 
             <div className='section row' style={{ height: '400px' }}>
               <h4 className='header center'>Testimonials</h4>
-              <div className='col l1 m1 s1 right-align full-height'><i className='material-icons'>format_quote</i></div>
-              <div className={`col l10 m10 s10 ${styles['testimonial-container']} full-height valign-wrapper`}>
-                <Testimonials testimonials={this.state.testimonials} />
+              <div className='col l1 m1 s1 right-align full-height'>
+                <i className='material-icons'>format_quote</i>
               </div>
-              <div className='col l1 m1 s1 full-height'><i className='material-icons'>format_quote</i></div>
+              <div className={`col l10 m10 s10 ${styles['testimonial-container']} full-height valign-wrapper`}>
+                <Testimonials testimonials={testimonials} />
+              </div>
+              <div className='col l1 m1 s1 full-height'>
+                <i className='material-icons'>format_quote</i>
+              </div>
             </div>
 
             <div className='section'>

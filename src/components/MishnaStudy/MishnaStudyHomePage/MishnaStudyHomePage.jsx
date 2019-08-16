@@ -41,7 +41,7 @@ class MishnaStudyHomePage extends Component {
         <section className='section center'>
           <h3>Welcome to Mishna Study!</h3>
           <p>Currently, Mishna Study is studying {section} Part {part}.</p>
-          {/* <p>Currently, Mishna Study is studying Seder {segment} 
+          {/* <p>Currently, Mishna Study is studying Seder {segment}
             Masechet {section} Perek {unit} Mishna {part}.</p> */}
           <Link className='msred-text' to={link}>Click here to go to today&#39;s part</Link>
         </section>
