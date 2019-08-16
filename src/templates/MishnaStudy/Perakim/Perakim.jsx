@@ -52,7 +52,6 @@ class Perakim extends Component {
 
   render() {
     const { mishnayot, currentMishna } = this.state;
-    const { location } = this.props;
     const base = mishnayot[0] || {};
     const { segment_name: sederN, section_name: masechetN, unit_name: perekN } = base;
     const { segment_title: sederT, section_title: masechetT, unit_title: perekT } = base;
@@ -81,7 +80,7 @@ class Perakim extends Component {
     }
 
     return (
-      <Layout location={location}>
+      <Layout>
         <div className='container'>
           <h2>{pageTitle}</h2>
           {sSpon && <h3>{sponsor}</h3>}

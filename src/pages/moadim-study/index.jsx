@@ -4,9 +4,8 @@ import Layout from '../../layouts/main.jsx';
 import HomePage from '../../components/MoadimStudy/MoadimStudyHomePage/MoadimStudyHomePage.jsx';
 
 function MoadimStudy(props) {
-  const { location } = props;
   return (
-    <Layout location={location}>
+    <Layout>
       <HomePage />
     </Layout>
   );
