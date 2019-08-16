@@ -43,9 +43,7 @@ class Teachers extends Component {
           <div className='section center'>
             <div className='heading'>
               <h2>Our Teachers</h2>
-              <p>
-                Below is a list of all of the educators that have taught daily perakim in our program.
-              </p>
+              <p>Below is a list of all of the educators that have taught in our program.</p>
             </div>
             <div className='teachers'>
               <div className='row'>
