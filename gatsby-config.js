@@ -1,11 +1,12 @@
 const dotenv = require('dotenv');
 
 const { NODE_ENV, TRAVIS_BRANCH } = process.env;
-const { DB_CONNECTION, DB_NAME, DB_COLLECTION } = process.env;
 
 if (NODE_ENV !== 'production') {
-  dotenv.config({ silent: true });
+  dotenv.config({ silent: false });
 }
+
+const { DB_CONNECTION, DB_NAME, DB_COLLECTION } = process.env;
 
 const bucket = TRAVIS_BRANCH === 'master' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
 console.log('bucket to deploy to:', bucket);
