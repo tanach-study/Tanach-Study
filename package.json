@@ -8,7 +8,7 @@
     "clean": "rm -rf dist && rm -rf node_modules && rm -f package-lock.json && rm -rf .cache && rm -rf public",
     "deploy": "gatsby-plugin-s3 deploy",
     "develop": "NODE_ENV=development gatsby develop",
-    "lint": "eslint . --ignore-pattern ./node_modules --ignore-pattern ./public --ignore-pattern ./.cache",
+    "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
     "start": "npm run develop",
     "serve": "gatsby serve"
   },
