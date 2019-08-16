@@ -9,8 +9,9 @@ function Donate(props) {
     minWidth: '310px',
   };
 
+  const { location } = props;
   return (
-    <Layout>
+    <Layout location={location}>
       <div className='container'>
         <div className='section'>
           <div className='row'>

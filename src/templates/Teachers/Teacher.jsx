@@ -17,6 +17,7 @@ class Teacher extends Component {
   render() {
     // get the current teacher object from state
     const { teacher } = this.state;
+    const { location } = this.props;
     // get the teacher's info and list of books
     const { teacher_books: teacherBooks } = teacher || {};
     const books = teacherBooks || [];
@@ -39,7 +40,7 @@ class Teacher extends Component {
     // generate a string of the teacher's name
     const teacherString = `${title} ${fname}${mname ? ` ${mname} ` : ' '}${lname}`;
     return (
-      <Layout>
+      <Layout location={location}>
         <div className='container'>
           <div className='section'>
             <div className='card'>

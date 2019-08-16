@@ -7,8 +7,9 @@ import HomePage from '../../components/ParashaStudy/ParashaStudyHomePage/Parasha
 // import Perakim from './Perakim/Perakim.jsx';
 
 function ParashaStudy(props) {
+  const { location } = props;
   return (
-    <Layout>
+    <Layout location={location}>
       <HomePage />
     </Layout>
   );
