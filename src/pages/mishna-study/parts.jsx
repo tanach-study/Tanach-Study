@@ -5,8 +5,9 @@ import Layout from '../../layouts/main.jsx';
 import PartsComponent from '../../components/MishnaStudy/Parts/Parts.jsx';
 
 function Parts(props) {
+  const { location } = props;
   return (
-    <Layout>
+    <Layout location={location}>
       <PartsComponent />
     </Layout>
   );

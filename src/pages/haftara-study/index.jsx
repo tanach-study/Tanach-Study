@@ -4,8 +4,9 @@ import Layout from '../../layouts/main.jsx';
 import HomePage from '../../components/HaftaraStudy/HaftaraStudyHomePage/HaftaraStudyHomePage.jsx';
 
 function HaftaraStudy(props) {
+  const { location } = props;
   return (
-    <Layout>
+    <Layout location={location}>
       <HomePage />
     </Layout>
   );
