@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
+import log from '../../../../lib/logger.js';
+
 class MishnaStudyHomePage extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class MishnaStudyHomePage extends Component {
           });
         }
       })
-      .catch(err => console.error(err));
+      .catch(err => log.error(err));
   }
 
   render() {

@@ -3,6 +3,8 @@ import Text from './Text.jsx';
 import LanguageSelector from './LanguageSelector.jsx';
 import Spinner from '../Spinner/Spinner.jsx';
 
+import log from '../../../lib/logger.js';
+
 class Mishna extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,7 @@ class Mishna extends Component {
           text: data,
         });
       })
-      .catch(err => console.error(err));
+      .catch(err => log.error(err));
   }
 
   componentWillReceiveProps(newProps) {
