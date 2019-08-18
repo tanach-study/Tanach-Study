@@ -23,12 +23,14 @@ class HomePage extends Component {
       {
         url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_2.png',
         captionRight: 'הִנֵּה דָוִד, בְּמִדְבַּר עֵין גֶּדִי... עַל-פְּנֵי, צוּרֵי הַיְּעֵלִים',
-        captionLeftDisabled: 'Behold, David is in the wilderness of En-gedi... upon the rocks of the wild goats',
+        captionLeftDisabled: 'Behold, David is in the wilderness of En-gedi... upon the rocks of'
+        + 'the wild goats',
       },
       {
         url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_3.jpg',
         captionRight: 'אֲשֶׁר-שָׁם, צִפֳּרִים יְקַנֵּנוּ;    חֲסִידָה, בְּרוֹשִׁים בֵּיתָהּ',
-        captionLeftDisabled: 'Wherein the birds make their nests; as for the stork, the fir-trees are her house',
+        captionLeftDisabled: 'Wherein the birds make their nests; as for the stork, the fir-trees'
+        + 'are her house',
       },
     ];
 
@@ -42,14 +44,13 @@ class HomePage extends Component {
     this.state = {
       images,
       currentIndex: 0,
-      testimonials,
       leftCaptionDiv: images[0].captionLeft,
       rightCaptionDiv: images[0].captionRight,
     };
   }
 
   render() {
-    const { images, currentIndex, leftCaptionDiv, rightCaptionDiv, testimonials } = this.state;
+    const { images, currentIndex, leftCaptionDiv, rightCaptionDiv } = this.state;
 
     return (
       <ProgramContext.Consumer>
@@ -67,7 +68,9 @@ class HomePage extends Component {
                   <div className='row center'>
                     <Link
                       to='/signup'
-                      className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}
+                      className={`
+                        btn-large waves-effect waves-light ${theme.backgroundClass} hoverable
+                      `}
                     >
                       Sign Up Now!
                     </Link>
@@ -96,7 +99,9 @@ class HomePage extends Component {
                       </h5>
                       <Link
                         to='/signup'
-                        className={`btn-large waves-effect waves-light ${theme.backgroundClass} hoverable`}
+                        className={`
+                          btn-large waves-effect waves-light ${theme.backgroundClass} hoverable
+                        `}
                       >
                         Sign Up Now!
                       </Link>
@@ -136,7 +141,9 @@ class HomePage extends Component {
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
                       <h2 className={`center ${theme.textClass}`}>
-                        <span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-scroll']}`} />
+                        <span
+                          className={`${theme.textClass} ${icons.tsicons} ${icons['icon-scroll']}`}
+                        />
                       </h2>
                       <h5 className='center'>Torah Content</h5>
 
@@ -151,7 +158,9 @@ class HomePage extends Component {
                   <div className='col s12 m4'>
                     <div className={styles['icon-block']}>
                       <h2 className={`center ${theme.textClass}`}>
-                        <span className={`${theme.textClass} ${icons.tsicons} ${icons['icon-star']}`} />
+                        <span
+                          className={`${theme.textClass} ${icons.tsicons} ${icons['icon-star']}`}
+                        />
                       </h2>
                       <h5 className='center'>Build Identity</h5>
                       <p className='light center-align'>
@@ -167,7 +176,7 @@ class HomePage extends Component {
 
 
             <div className={`center ${styles['collage-container']}`}>
-              <a 
+              <a
                 href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
                 target='blank'
               >
@@ -179,9 +188,26 @@ class HomePage extends Component {
               </a>
 
               <div className={`${styles['in-memory']} white-text hide-on-small-only`}>
-                Guest lecturers sponsored in loving memory of <a href='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} ${theme.textClass}`}>Rabbi Dr. Ezra Labaton A'H</a>
+                Guest lecturers sponsored in loving memory of
+                <a
+                  href='http://www.rabbilabaton.com/'
+                  target='blank'
+                  className={`${styles['in-memory-link']} ${theme.textClass}`}
+                >
+                  Rabbi Dr. Ezra Labaton A&apos;H
+                </a>
               </div>
-              <div className='hide-on-med-and-up'><i>Guest lectures sponsored in loving memory of <a href='http://www.rabbilabaton.com/' target='blank' className={`${styles['in-memory-link']} ${theme.textClass}`}>Rabbi Dr. Ezra Labaton A'H</a></i></div>
+              <div className='hide-on-med-and-up'>
+                <i>Guest lectures sponsored in loving memory of
+                  <a
+                    href='http://www.rabbilabaton.com/'
+                    target='blank'
+                    className={`${styles['in-memory-link']} ${theme.textClass}`}
+                  >
+                    Rabbi Dr. Ezra Labaton A&apos;H
+                  </a>
+                </i>
+              </div>
             </div>
 
 
@@ -190,7 +216,11 @@ class HomePage extends Component {
               <div className='col l1 m1 s1 right-align full-height'>
                 <i className='material-icons'>format_quote</i>
               </div>
-              <div className={`col l10 m10 s10 ${styles['testimonial-container']} full-height valign-wrapper`}>
+              <div
+                className={`
+                  col l10 m10 s10 ${styles['testimonial-container']} full-height valign-wrapper`
+                }
+              >
                 <Testimonials testimonials={testimonials} />
               </div>
               <div className='col l1 m1 s1 full-height'>
@@ -201,7 +231,11 @@ class HomePage extends Component {
             <div className='section'>
               <div className='center full-width'>
                 <h4>Tanach Study Around the World</h4>
-                <img src='https://cdn.tanachstudy.com/assets/images/analytics.png' alt='' className='responsive-img' />
+                <img
+                  src='https://cdn.tanachstudy.com/assets/images/analytics.png'
+                  alt=''
+                  className='responsive-img'
+                />
               </div>
             </div>
           </div>
