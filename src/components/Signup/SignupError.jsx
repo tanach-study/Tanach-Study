@@ -6,7 +6,9 @@ function SignupError(props) {
   return (
     <div>
       <h2 className='card-title'>Hmm Something&apos;s Wrong...</h2>
-      <p>Looks like there was an error signing you up to our list - we apologize! Here&apos;s why:</p>
+      <p>Looks like there was an error signing you up to our list - we
+        apologize! Here&apos;s why:
+      </p>
       <br />
       <p>{message || 'Unknown error'}</p>
       <br />

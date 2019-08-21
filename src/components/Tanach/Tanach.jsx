@@ -5,6 +5,8 @@ import LanguageSelector from './LanguageSelector.jsx';
 import TabItem from './TabItem.jsx';
 import Spinner from '../Spinner/Spinner.jsx';
 
+import log from '../../../lib/logger.js';
+
 class Tanach extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class Tanach extends Component {
           tanach: data,
         });
       })
-      .catch(err => console.error(err));
+      .catch(err => log.error(err));
   }
 
   componentWillReceiveProps(newProps) {

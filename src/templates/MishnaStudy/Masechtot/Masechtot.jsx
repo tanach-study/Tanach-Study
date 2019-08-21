@@ -51,7 +51,11 @@ class Masechtot extends Component {
     const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;
       return (
-        <div key={`${title}-${fname}-${lname}-chip`} className='chip pointer' onClick={e => this.setState({ activeIndex: i })}>
+        <div
+          key={`${title}-${fname}-${lname}-chip`}
+          className='chip pointer'
+          onClick={e => this.setState({ activeIndex: i })}
+        >
           {title} {fname}{mname ? ` ${mname} ` : ' '}{lname}
         </div>
       );
@@ -70,7 +74,9 @@ class Masechtot extends Component {
       );
     });
     const { masechetTitle, masechetSponsor, sederName, masechetName, activeIndex } = this.state;
-    const sponsor = Array.isArray(masechetSponsor) ? masechetSponsor.map(l => <div key={l}>{l}</div>) : masechetSponsor;
+    const sponsor = Array.isArray(masechetSponsor)
+      ? masechetSponsor.map(l => <div key={l}>{l}</div>)
+      : masechetSponsor;
     return (
       <Layout location={location}>
         <div className='container'>

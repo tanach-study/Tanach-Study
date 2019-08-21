@@ -34,19 +34,20 @@ class SignupForm extends Component {
   }
 
   setOneList(e, key) {
-    const { all } = this.state;
+    const { all, [key]: thisKey } = this.state;
     if (all) {
       this.setState({
         all: false,
-        [key]: !this.state[key],
+        [key]: !thisKey,
       });
     } else {
       let thisKeyVal = false;
       let otherKeyVals = true;
       for (let i = 1; i < 5 && otherKeyVals; i++) {
+        const { [`list${i}`]: iterKeyVal } = this.state;
         if (key === `list${i}`) {
-          thisKeyVal = this.state[key];
-        } else if (!this.state[`list${i}`]) {
+          thisKeyVal = thisKey;
+        } else if (!iterKeyVal) {
           otherKeyVals = false;
         } else {
           otherKeyVals = true;
@@ -62,7 +63,7 @@ class SignupForm extends Component {
         });
       } else {
         this.setState({
-          [key]: !this.state[key],
+          [key]: !thisKey,
         });
       }
     }
@@ -127,7 +128,6 @@ class SignupForm extends Component {
           name='firstName'
           placeholder='First Name'
           required
-          autoFocus
           value={firstName}
           onChange={e => this.setState({ firstName: e.target.value })}
         />
@@ -155,71 +155,71 @@ class SignupForm extends Component {
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <input
-              type='checkbox'
-              id='allLists'
-              className={styles['ts-checkbox']}
-              checked={all}
-              onChange={this.setAllLists}
-            />
             <label htmlFor='allLists' className={styles['checkbox-label']}>
               <b>All:</b> Sign up to all of our email lists!
+              <input
+                type='checkbox'
+                id='allLists'
+                className={styles['ts-checkbox']}
+                checked={all}
+                onChange={this.setAllLists}
+              />
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <input
-              type='checkbox'
-              id='list1'
-              className={styles['ts-checkbox']}
-              checked={list1}
-              onChange={e => this.setOneList(e, 'list1')}
-            />
             <label htmlFor='list1' className={styles['checkbox-label']}>
               <b>Parashat Hashavua:</b> Daily email with classes of each week&apos;s parasha
+              <input
+                type='checkbox'
+                id='list1'
+                className={styles['ts-checkbox']}
+                checked={list1}
+                onChange={e => this.setOneList(e, 'list1')}
+              />
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <input
-              type='checkbox'
-              id='list2'
-              className={styles['ts-checkbox']}
-              checked={list2}
-              onChange={e => this.setOneList(e, 'list2')}
-            />
             <label htmlFor='list2' className={styles['checkbox-label']}>
               <b>Nevi&apos;im & Ketuvim:</b> Daily email methodically studying a perek a day of Nach
+              <input
+                type='checkbox'
+                id='list2'
+                className={styles['ts-checkbox']}
+                checked={list2}
+                onChange={e => this.setOneList(e, 'list2')}
+              />
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <input
-              type='checkbox'
-              id='list3'
-              className={styles['ts-checkbox']}
-              checked={list3}
-              onChange={e => this.setOneList(e, 'list3')}
-            />
             <label htmlFor='list3' className={styles['checkbox-label']}>
               <b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam (coming soon)
+              <input
+                type='checkbox'
+                id='list3'
+                className={styles['ts-checkbox']}
+                checked={list3}
+                onChange={e => this.setOneList(e, 'list3')}
+              />
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <input
-              type='checkbox'
-              id='list4'
-              className={styles['ts-checkbox']}
-              checked={list4}
-              onChange={e => this.setOneList(e, 'list4')}
-            />
             <label htmlFor='list4' className={styles['checkbox-label']}>
               <b>Events:</b> Periodic email regarding upcoming events and lectures
+              <input
+                type='checkbox'
+                id='list4'
+                className={styles['ts-checkbox']}
+                checked={list4}
+                onChange={e => this.setOneList(e, 'list4')}
+              />
             </label>
           </div>
         </div>

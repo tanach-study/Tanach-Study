@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
+import log from '../../../../lib/logger.js';
+
 class MishnaStudyHomePage extends Component {
   constructor(props) {
     super(props);
@@ -30,7 +32,7 @@ class MishnaStudyHomePage extends Component {
           });
         }
       })
-      .catch(err => console.error(err));
+      .catch(err => log.error(err));
   }
 
   render() {
@@ -41,7 +43,8 @@ class MishnaStudyHomePage extends Component {
         <section className='section center'>
           <h3>Welcome to Mishna Study!</h3>
           <p>Currently, Mishna Study is studying {section} Part {part}.</p>
-          {/* <p>Currently, Mishna Study is studying Seder {segment} Masechet {section} Perek {unit} Mishna {part}.</p> */}
+          {/* <p>Currently, Mishna Study is studying Seder {segment}
+            Masechet {section} Perek {unit} Mishna {part}.</p> */}
           <Link className='msred-text' to={link}>Click here to go to today&#39;s part</Link>
         </section>
         <div className='divider' />

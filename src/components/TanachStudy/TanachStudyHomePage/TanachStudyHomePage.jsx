@@ -33,7 +33,9 @@ class TanachStudyHomePage extends Component {
         <section className='section center'>
           <h3>Welcome to Tanach Study!</h3>
           <p>Currently, Tanach Study is studying Sefer {section} Perek {unit}.</p>
-          <Link to={`/tanach-study/perakim/${sect}/${unit}`}>Click here to go to today&#39;s part</Link>
+          <Link to={`/tanach-study/perakim/${sect}/${unit}`}>
+            Click here to go to today&#39;s part
+          </Link>
         </section>
         <section className='section center'>
           <Link to='/tanach-study/parts'>

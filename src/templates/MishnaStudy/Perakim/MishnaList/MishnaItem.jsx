@@ -8,6 +8,7 @@ const MishnaItem = (props) => {
     <ProgramContext.Consumer>
       {(program) => {
         const { backgroundClass: bg } = program;
+        /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
         return (
           <li
             className={`collection-item clickable ${selected === index ? `active ${bg}` : ''}`}
@@ -16,6 +17,7 @@ const MishnaItem = (props) => {
             <span>{name} {number}: {title}</span>
           </li>
         );
+        /* eslint-enable jsx-a11y/no-noninteractive-element-interactions */
       }}
     </ProgramContext.Consumer>
   );

@@ -30,6 +30,7 @@ function TabItem(props) {
           borderColor: `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.8)`,
           borderBottom: '3px solid',
         };
+        /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
         return (
           <li
             key={key}
@@ -40,6 +41,7 @@ function TabItem(props) {
             {content}
           </li>
         );
+        /* eslint-enable jsx-a11y/no-noninteractive-element-interactions */
       }}
     </ProgramContext.Consumer>
   );

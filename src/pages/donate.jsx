@@ -45,7 +45,7 @@ function Donate(props) {
             </div>
           </div>
         </div>
-      </div>        
+      </div>
     </Layout>
   );
 }
