@@ -41,6 +41,10 @@
   cursor: pointer;
 }
 
+.no-click {
+  cursor: default;
+}
+
 .msred {
   background-color: #950010 !important;
 }

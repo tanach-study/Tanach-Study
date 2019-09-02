@@ -22,11 +22,11 @@ function PartLink({ book, i, books }) {
     );
   }
   return (
-    <div className={`col s12 m6 l4 ${classAdd}`} key={i}>
-      <div className='card msred btn waves-effect hoverable full-width disabled'>
+    <Link to={book.url} className={`col s12 m6 l4 ${classAdd} no-click`} key={i}>
+      <div className='card disabled btn full-width'>
         <div className='col-content'>{book.name}</div>
       </div>
-    </div>
+    </Link>
   );
 }
 
