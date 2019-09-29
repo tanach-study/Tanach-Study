@@ -32,7 +32,7 @@ function Layout(props) {
   return (
     <ProgramContext.Provider value={program}>
       <ProgramNavigation />
-      <Navigation />
+      <Navigation program={program} />
       <div className='body'>
         <main>{children}</main>
       </div>
