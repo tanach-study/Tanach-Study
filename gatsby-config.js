@@ -47,7 +47,9 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'material icons',
+          'Material Icons',
+          'Muli:400,700',
+          'Thasadith:400,700',
         ],
       },
     },
