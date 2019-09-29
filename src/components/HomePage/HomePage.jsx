@@ -7,9 +7,6 @@ import testimonials from './Testimonials/testimonials.json';
 import { ProgramContext } from '../../app-context.js';
 
 import styles from './HomePage.module.css';
-// import icons from '../icons.css';
-const icons = {};
-
 
 class HomePage extends Component {
   constructor(props) {
@@ -142,7 +139,7 @@ class HomePage extends Component {
                     <div className={styles['icon-block']}>
                       <h2 className={`center ${theme.textClass}`}>
                         <span
-                          className={`${theme.textClass} ${icons.tsicons} ${icons['icon-scroll']}`}
+                          className={`${theme.textClass} tsicons icon-scroll`}
                         />
                       </h2>
                       <h5 className='center'>Torah Content</h5>
@@ -159,7 +156,7 @@ class HomePage extends Component {
                     <div className={styles['icon-block']}>
                       <h2 className={`center ${theme.textClass}`}>
                         <span
-                          className={`${theme.textClass} ${icons.tsicons} ${icons['icon-star']}`}
+                          className={`${theme.textClass} tsicons icon-star`}
                         />
                       </h2>
                       <h5 className='center'>Build Identity</h5>
@@ -188,7 +185,7 @@ class HomePage extends Component {
               </a>
 
               <div className={`${styles['in-memory']} white-text hide-on-small-only`}>
-                Guest lecturers sponsored in loving memory of
+                Guest lecturers sponsored in loving memory of&nbsp;
                 <a
                   href='http://www.rabbilabaton.com/'
                   target='blank'
