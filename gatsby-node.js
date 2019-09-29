@@ -123,6 +123,7 @@ exports.createPages = async ({ graphql, actions }) => {
             reader_fname
             reader_mname
             reader_lname
+            audio_url
           }
         }
       }
@@ -145,7 +146,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const teachers = [];
   const teacherStrings = new Set();
-
 
   for (let i = 0; i < rawData.length; i++) {
     const curr = rawData[i] || {};
