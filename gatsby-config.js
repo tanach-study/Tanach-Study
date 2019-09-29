@@ -48,6 +48,8 @@ module.exports = {
       options: {
         fonts: [
           'material icons',
+          'Muli\:400,700',
+          'Thasadith\:400,700',
         ],
       },
     },

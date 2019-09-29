@@ -1,5 +1,14 @@
 /* GLOBAL STYLES */
 
+* {
+  font-family: 'Muli', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Thasadith', sans-serif;
+  font-weight: 700;
+}
+
 .tsblue {
   background-color: #009FC1 !important;
 }
