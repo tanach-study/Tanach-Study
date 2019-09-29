@@ -156,7 +156,6 @@ class SignupForm extends Component {
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
             <label htmlFor='allLists' className={styles['checkbox-label']}>
-              <b>All:</b> Sign up to all of our email lists!
               <input
                 type='checkbox'
                 id='allLists'
@@ -164,13 +163,13 @@ class SignupForm extends Component {
                 checked={all}
                 onChange={this.setAllLists}
               />
+              <b>All:</b> Sign up to all of our email lists!
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
             <label htmlFor='list1' className={styles['checkbox-label']}>
-              <b>Parashat Hashavua:</b> Daily email with classes of each week&apos;s parasha
               <input
                 type='checkbox'
                 id='list1'
@@ -178,13 +177,13 @@ class SignupForm extends Component {
                 checked={list1}
                 onChange={e => this.setOneList(e, 'list1')}
               />
+              <b>Parashat Hashavua:</b> Daily email with classes of each week&apos;s parasha
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
             <label htmlFor='list2' className={styles['checkbox-label']}>
-              <b>Nevi&apos;im & Ketuvim:</b> Daily email methodically studying a perek a day of Nach
               <input
                 type='checkbox'
                 id='list2'
@@ -192,13 +191,13 @@ class SignupForm extends Component {
                 checked={list2}
                 onChange={e => this.setOneList(e, 'list2')}
               />
+              <b>Nevi&apos;im & Ketuvim:</b> Daily email methodically studying a perek a day of Nach
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
             <label htmlFor='list3' className={styles['checkbox-label']}>
-              <b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam (coming soon)
               <input
                 type='checkbox'
                 id='list3'
@@ -206,13 +205,13 @@ class SignupForm extends Component {
                 checked={list3}
                 onChange={e => this.setOneList(e, 'list3')}
               />
+              <b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam (coming soon)
             </label>
           </div>
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
             <label htmlFor='list4' className={styles['checkbox-label']}>
-              <b>Events:</b> Periodic email regarding upcoming events and lectures
               <input
                 type='checkbox'
                 id='list4'
@@ -220,6 +219,7 @@ class SignupForm extends Component {
                 checked={list4}
                 onChange={e => this.setOneList(e, 'list4')}
               />
+              <b>Events:</b> Periodic email regarding upcoming events and lectures
             </label>
           </div>
         </div>
