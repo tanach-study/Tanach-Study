@@ -26,12 +26,9 @@ class Slider extends Component {
 
   advanceSlide() {
     const { activeIndex } = this.state;
-    const { slides, left, right } = this.props;
+    const { slides, update } = this.props;
     const next = (activeIndex + 1) % slides.length;
-    const { captionLeft } = slides[next];
-    const { captionRight } = slides[next];
-    left(captionLeft);
-    right(captionRight);
+    update(next);
     this.setState({ activeIndex: next });
   }
 

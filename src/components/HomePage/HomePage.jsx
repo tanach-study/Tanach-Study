@@ -8,28 +8,29 @@ import { ProgramContext } from '../../app-context.js';
 
 import styles from './HomePage.module.css';
 
+const images  = [
+  {
+    url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_1.jpg',
+    captionRight: 'וְעַד יָם הָעֲרָבָה יָם-הַמֶּלַח מִזְרָחָה',
+    captionLeftDisabled: 'And unto the sea of the Arabah, even the Salt Sea, eastward',
+  },
+  {
+    url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_2.png',
+    captionRight: 'הִנֵּה דָוִד, בְּמִדְבַּר עֵין גֶּדִי... עַל-פְּנֵי, צוּרֵי הַיְּעֵלִים',
+    captionLeftDisabled: 'Behold, David is in the wilderness of En-gedi... upon the rocks of'
+    + 'the wild goats',
+  },
+  {
+    url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_3.jpg',
+    captionRight: 'אֲשֶׁר-שָׁם, צִפֳּרִים יְקַנֵּנוּ;    חֲסִידָה, בְּרוֹשִׁים בֵּיתָהּ',
+    captionLeftDisabled: 'Wherein the birds make their nests; as for the stork, the fir-trees'
+    + 'are her house',
+  },
+];
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
-    const images  = [
-      {
-        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_1.jpg',
-        captionRight: 'וְעַד יָם הָעֲרָבָה יָם-הַמֶּלַח מִזְרָחָה',
-        captionLeftDisabled: 'And unto the sea of the Arabah, even the Salt Sea, eastward',
-      },
-      {
-        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_2.png',
-        captionRight: 'הִנֵּה דָוִד, בְּמִדְבַּר עֵין גֶּדִי... עַל-פְּנֵי, צוּרֵי הַיְּעֵלִים',
-        captionLeftDisabled: 'Behold, David is in the wilderness of En-gedi... upon the rocks of'
-        + 'the wild goats',
-      },
-      {
-        url: 'https://cdn.tanachstudy.com/assets/images/ts_bg_3.jpg',
-        captionRight: 'אֲשֶׁר-שָׁם, צִפֳּרִים יְקַנֵּנוּ;    חֲסִידָה, בְּרוֹשִׁים בֵּיתָהּ',
-        captionLeftDisabled: 'Wherein the birds make their nests; as for the stork, the fir-trees'
-        + 'are her house',
-      },
-    ];
 
     for (let i = testimonials.length; i > 0; i--) {
       const j = Math.floor((Math.random() * i));
@@ -39,15 +40,12 @@ class HomePage extends Component {
     }
 
     this.state = {
-      images,
-      currentIndex: 0,
-      leftCaptionDiv: images[0].captionLeft,
-      rightCaptionDiv: images[0].captionRight,
+      currentSlide: 0,
     };
   }
 
   render() {
-    const { images, currentIndex, leftCaptionDiv, rightCaptionDiv } = this.state;
+    const { currentSlide } = this.state;
 
     return (
       <ProgramContext.Consumer>
@@ -75,9 +73,8 @@ class HomePage extends Component {
                 </div>
                 <Slider
                   slides={images}
-                  index={currentIndex}
-                  left={v => this.setState({ leftCaptionDiv: v })}
-                  right={v => this.setState({ rightCaptionDiv: v })}
+                  index={currentSlide}
+                  update={v => this.setState({ currentSlide: v })}
                 />
               </div>
             </div>
@@ -85,7 +82,7 @@ class HomePage extends Component {
             <div className='slider hide-on-small-only'>
               <div className='full-width full-height row'>
                 <div className={`col l4 m3 full-height ${styles['slider-caption']}`}>
-                  <div className={styles['left-caption']}>{leftCaptionDiv}</div>
+                  <div className={styles['left-caption']}>{images[currentSlide].captionLeft}</div>
                 </div>
                 <div className='col l4 m6'>
                   <div className='card'>
@@ -106,13 +103,12 @@ class HomePage extends Component {
                   </div>
                 </div>
                 <div className={`col l4 m3 full-height ${styles['slider-caption']}`}>
-                  <div className={styles['right-caption']}>{rightCaptionDiv}</div>
+                  <div className={styles['right-caption']}>{images[currentSlide].captionRight}</div>
                 </div>
                 <Slider
                   slides={images}
-                  index={currentIndex}
-                  left={v => this.setState({ leftCaptionDiv: v })}
-                  right={v => this.setState({ rightCaptionDiv: v })}
+                  index={currentSlide}
+                  update={v => this.setState({ currentSlide: v })}
                 />
               </div>
             </div>
