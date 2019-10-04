@@ -23,6 +23,11 @@ class ProgramNavigation extends Component {
         alt: 'Parasha Study Logo',
       },
       {
+        to: '/parasha-study-plus',
+        img: 'https://cdn.tanachstudy.com/assets/images/parasha-study-plus-logo.png',
+        alt: 'Parasha Study Plus Logo',
+      },
+      {
         to: '/mishna-study',
         img: 'https://cdn.tanachstudy.com/assets/images/mishna-study-logo.png',
         alt: 'Mishna Study Logo',
