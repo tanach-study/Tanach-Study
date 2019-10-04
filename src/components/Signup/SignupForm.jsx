@@ -214,7 +214,7 @@ class SignupForm extends Component {
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <label htmlFor='list3' className={styles['checkbox-label']}>
+            <label htmlFor='list4' className={styles['checkbox-label']}>
               <input
                 type='checkbox'
                 id='list4'
@@ -228,7 +228,7 @@ class SignupForm extends Component {
         </div>
         <div className='row'>
           <div className='col l12 m12 s12 left-align'>
-            <label htmlFor='list4' className={styles['checkbox-label']}>
+            <label htmlFor='list5' className={styles['checkbox-label']}>
               <input
                 type='checkbox'
                 id='list5'
