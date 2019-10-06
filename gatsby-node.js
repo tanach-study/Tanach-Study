@@ -280,7 +280,16 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  Object.keys(nach).forEach((sefer) => {
+  const nachKeys = Object.keys(nach);
+  nachKeys.forEach((sefer, i) => {
+    let nextSefer = '';
+    let prevSefer = '';
+    if (i < nachKeys.length - 1) {
+      nextSefer = `/tanach-study/sefarim/${nachKeys[i + 1]}`;
+    }
+    if (i > 0) {
+      prevSefer = `/tanach-study/sefarim/${nachKeys[i - 1]}`;
+    }
     log.info('creating page', `/tanach-study/sefarim/${sefer}`);
     createPage({
       path: `/tanach-study/sefarim/${sefer}`,
@@ -288,10 +297,21 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         data: nach[sefer],
         sefer,
+        nextSefer,
+        prevSefer,
       },
     });
     const pers = perakim[sefer];
-    Object.keys(pers).forEach((perek) => {
+    const persKeys = Object.keys(pers);
+    persKeys.forEach((perek, j) => {
+      let nextPerek = '';
+      let prevPerek = '';
+      if (j < persKeys.length - 1) {
+        nextPerek = `/tanach-study/perakim/${sefer}/${persKeys[j + 1]}`;
+      }
+      if (j > 0) {
+        prevPerek = `/tanach-study/perakim/${sefer}/${persKeys[j - 1]}`;
+      }
       log.info('creating page', `/tanach-study/perakim/${sefer}/${perek}`);
       createPage({
         path: `/tanach-study/perakim/${sefer}/${perek}`,
@@ -300,6 +320,8 @@ exports.createPages = async ({ graphql, actions }) => {
           data: pers[perek],
           sefer,
           perek,
+          nextPerek,
+          prevPerek,
         },
       });
     });
