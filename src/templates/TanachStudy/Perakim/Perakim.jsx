@@ -32,7 +32,7 @@ class Perakim extends Component {
   render() {
     const { response } = this.state;
     const { pageContext, location } = this.props;
-    const { sefer, perek } = pageContext;
+    const { sefer, perek, nextPerek, prevPerek } = pageContext || {};
 
     const base = response[0] || {};
     const { division: tanachPart } = base;
@@ -56,6 +56,8 @@ class Perakim extends Component {
           response={response}
           sefer={sefer}
           perek={perek}
+          nextPerek={nextPerek}
+          prevPerek={prevPerek}
         />
       </Layout>
     );

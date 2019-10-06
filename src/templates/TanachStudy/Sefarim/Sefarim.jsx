@@ -43,7 +43,9 @@ class Sefarim extends Component {
 
     const { units, teachers, seferTitle, seferSponsor, seferName, part } = this.state;
 
-    const { location } = this.props;
+    const { location, pageContext } = this.props;
+
+    const { nextSefer, prevSefer } = pageContext || {};
 
     const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;
@@ -89,6 +91,14 @@ class Sefarim extends Component {
             sefer={seferName}
             part={part}
           />
+          <div className='section row'>
+            <div className='col l6 m6 s6'>
+              {prevSefer && <Link to={prevSefer}>Previous Sefer</Link>}
+            </div>
+            <div className='col l6 m6 s6 right-align'>
+              {nextSefer && <Link to={nextSefer}>Next Sefer</Link>}
+            </div>
+          </div>
         </div>
       </Layout>
     );
