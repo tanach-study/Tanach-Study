@@ -88,16 +88,16 @@ class TorahPerek extends Component {
           {seferSponsor && <h4 className='center'>{seferSponsor}</h4>}
           <h3>{parashaString}</h3>
           {parashaSponsor && <h5>{parashaSponsor}</h5>}
-          <Link to={`/sefarim/${sefer}`} className='left'>
+          <Link to={`/parasha-study/sefarim/${sefer}`} className='left'>
             <i>Back to {seferString}</i>
           </Link>
         </div>
         <div className='section row'>
           <div className='col l6 m6 s6'>
-            {prevParasha.name && <Link to={prevParasha.url}>{prevParasha.name}</Link>}
+            {prevParasha && <Link to={prevParasha}>Previous Parasha</Link>}
           </div>
           <div className='col l6 m6 s6 right-align'>
-            {nextParasha.name && <Link to={nextParasha.url}>{nextParasha.name}</Link>}
+            {nextParasha && <Link to={nextParasha}>Next Parasha</Link>}
           </div>
         </div>
         <div className='section row'>

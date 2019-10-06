@@ -82,10 +82,6 @@ class Sefarim extends Component {
         <div className='container'>
           <h2>Sefer {seferTitle}</h2>
           {seferSponsor && <h3>{sponsor}</h3>}
-          <div className='row'>
-            {prevSefer.name && <Link to={prevSefer.url}>{prevSefer.name}</Link>}
-            {nextSefer.name && <Link to={nextSefer.url}>{nextSefer.name}</Link>}
-          </div>
           <div className='center'>
             {teacherChips}
           </div>
@@ -95,6 +91,14 @@ class Sefarim extends Component {
             sefer={seferName}
             part={part}
           />
+          <div className='section row'>
+            <div className='col l6 m6 s6'>
+              {prevSefer && <Link to={prevSefer}>Previous Sefer</Link>}
+            </div>
+            <div className='col l6 m6 s6 right-align'>
+              {nextSefer && <Link to={nextSefer}>Next Sefer</Link>}
+            </div>
+          </div>
         </div>
       </Layout>
     );

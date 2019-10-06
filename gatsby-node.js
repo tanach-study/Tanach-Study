@@ -235,21 +235,13 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const torahSefarim = Object.keys(torah);
   torahSefarim.forEach((sefer, i) => {
-    const nextSefer = {
-      name: '',
-      url: '',
-    };
-    const prevSefer = {
-      name: '',
-      url: '',
-    };
-    if (i !== torahSefarim.length) {
-      nextSefer.name = torahSefarim[i + 1];
-      nextSefer.url = `/parasha-study/sefarim/${torahSefarim[i + 1]}`;
+    let nextSefer = '';
+    let prevSefer = '';
+    if (i < torahSefarim.length - 1) {
+      nextSefer = `/parasha-study/sefarim/${torahSefarim[i + 1]}`;
     }
-    if (i !== 0) {
-      prevSefer.name = torahSefarim[i - 1];
-      prevSefer.url = `/parasha-study/sefarim/${torahSefarim[i - 1]}`;
+    if (i > 0) {
+      prevSefer = `/parasha-study/sefarim/${torahSefarim[i - 1]}`;
     }
     log.info('creating page', `/parasha-study/sefarim/${sefer}`);
     createPage({
@@ -265,21 +257,13 @@ exports.createPages = async ({ graphql, actions }) => {
     const pars = parashot[sefer];
     const parsKeys = Object.keys(pars);
     parsKeys.forEach((parasha, j) => {
-      const nextParasha = {
-        name: '',
-        url: '',
-      };
-      const prevParasha = {
-        name: '',
-        url: '',
-      };
-      if (j !== pars.length) {
-        nextParasha.name = parsKeys[j + 1];
-        nextParasha.url = `/parasha-study/perakim/${sefer}/${parsKeys[j + 1]}`;
+      let nextParasha = '';
+      let prevParasha = '';
+      if (j < parsKeys.length - 1) {
+        nextParasha = `/parasha-study/perakim/${sefer}/${parsKeys[j + 1]}`;
       }
-      if (j !== 0) {
-        prevParasha.name = parsKeys[j - 1];
-        prevParasha.url = `/parasha-study/perakim/${sefer}/${parsKeys[j - 1]}`;
+      if (j > 0) {
+        prevParasha = `/parasha-study/perakim/${sefer}/${parsKeys[j - 1]}`;
       }
       log.info('creating page', `/parasha-study/perakim/${sefer}/${parasha}`);
       createPage({
