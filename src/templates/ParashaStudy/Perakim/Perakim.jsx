@@ -31,7 +31,7 @@ class Perakim extends Component {
   render() {
     const { response } = this.state;
     const { pageContext, location } = this.props;
-    const { sefer, perek } = pageContext || {};
+    const { sefer, perek, nextParasha, prevParasha } = pageContext || {};
 
     const qParams = this.getQueryParams();
     return (
@@ -41,6 +41,8 @@ class Perakim extends Component {
           sefer={sefer}
           perek={perek}
           queryParams={qParams}
+          nextParasha={nextParasha}
+          prevParasha={prevParasha}
         />
       </Layout>
     );
