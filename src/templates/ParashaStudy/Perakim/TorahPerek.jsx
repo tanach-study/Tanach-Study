@@ -26,7 +26,6 @@ class TorahPerek extends Component {
   render() {
     const { parts, sefer, perek, nextParasha, prevParasha } = this.props;
     const { partNumber } = this.state;
-    console.log(this.props)
 
     /* eslint react/no-array-index-key: "off" */
     const partItems = parts.map((part, i) => (
@@ -92,13 +91,13 @@ class TorahPerek extends Component {
           <Link to={`/sefarim/${sefer}`} className='left'>
             <i>Back to {seferString}</i>
           </Link>
-          <div className='row'>
-            <div className='col l6 m6 s6'>
-              {prevParasha.name && <Link to={prevParasha.url}>{prevParasha.name}</Link>}
-            </div>
-            <div className='col l6 m6 s6 right-align'>
-              {nextParasha.name && <Link to={nextParasha.url}>{nextParasha.name}</Link>}
-            </div>
+        </div>
+        <div className='section row'>
+          <div className='col l6 m6 s6'>
+            {prevParasha.name && <Link to={prevParasha.url}>{prevParasha.name}</Link>}
+          </div>
+          <div className='col l6 m6 s6 right-align'>
+            {nextParasha.name && <Link to={nextParasha.url}>{nextParasha.name}</Link>}
           </div>
         </div>
         <div className='section row'>
