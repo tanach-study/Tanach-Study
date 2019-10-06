@@ -13,7 +13,8 @@ class SignupForm extends Component {
       list1: false, // parasha
       list2: false, // nach
       list3: false, // mishna
-      list4: true, // events
+      list4: false, // parasha+
+      list5: true, // events
       all: false,
     };
     this.setAllLists = this.setAllLists.bind(this);
@@ -28,6 +29,7 @@ class SignupForm extends Component {
         list2: true,
         list3: true,
         list4: true,
+        list5: true,
         all: true,
       });
     }
@@ -43,7 +45,7 @@ class SignupForm extends Component {
     } else {
       let thisKeyVal = false;
       let otherKeyVals = true;
-      for (let i = 1; i < 5 && otherKeyVals; i++) {
+      for (let i = 1; i < 6 && otherKeyVals; i++) {
         const { [`list${i}`]: iterKeyVal } = this.state;
         if (key === `list${i}`) {
           thisKeyVal = thisKey;
@@ -59,6 +61,7 @@ class SignupForm extends Component {
           list2: true,
           list3: true,
           list4: true,
+          list5: true,
           all: true,
         });
       } else {
@@ -77,12 +80,12 @@ class SignupForm extends Component {
     fetching(true);
     // get the data from state
     const { email, firstName, lastName } = this.state;
-    const { list1, list2, list3, list4 } = this.state;
-    if (!(list1 || list2 || list3 || list4)) {
+    const { list1, list2, list3, list4, list5 } = this.state;
+    if (!(list1 || list2 || list3 || list4, list5)) {
       // TODO: tell the user
       return;
     }
-    const lists = [list1, list2, list3, list4];
+    const lists = [list1, list2, list3, list4, list5];
     // TODO: validate data
     // make the call
     fetch('https://api.tanachstudy.com/signup', {
@@ -120,7 +123,7 @@ class SignupForm extends Component {
 
   render() {
     const { firstName, lastName, email } = this.state;
-    const { all, list1, list2, list3, list4 } = this.state;
+    const { all, list1, list2, list3, list4, list5 } = this.state;
     return (
       <form className='tsblue-form'>
         <input
@@ -205,7 +208,7 @@ class SignupForm extends Component {
                 checked={list3}
                 onChange={e => this.setOneList(e, 'list3')}
               />
-              <b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam (coming soon)
+              <b>MishnaStudy:</b> Daily email studying Mishna with Perush HaRambam
             </label>
           </div>
         </div>
@@ -218,6 +221,20 @@ class SignupForm extends Component {
                 className={styles['ts-checkbox']}
                 checked={list4}
                 onChange={e => this.setOneList(e, 'list4')}
+              />
+              <b>ParashaStudy Plus:</b> Daily email studying different mefarshim on the parasha (coming soon)
+            </label>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col l12 m12 s12 left-align'>
+            <label htmlFor='list5' className={styles['checkbox-label']}>
+              <input
+                type='checkbox'
+                id='list5'
+                className={styles['ts-checkbox']}
+                checked={list5}
+                onChange={e => this.setOneList(e, 'list5')}
               />
               <b>Events:</b> Periodic email regarding upcoming events and lectures
             </label>
