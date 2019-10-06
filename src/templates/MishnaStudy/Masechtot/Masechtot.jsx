@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
 import Layout from '../../../layouts/main.jsx';
 import PerekList from './PerekList/PerekList.jsx';
@@ -47,7 +48,8 @@ class Masechtot extends Component {
 
   render() {
     const { perakim, teachers } = this.state;
-    const { location } = this.props;
+    const { location, pageContext } = this.props;
+    const { nextMasechet, prevMasechet } = pageContext || {};
     const teacherChips = teachers.map((teacher, i) => {
       const { title, fname, mname, lname } = teacher;
       return (
@@ -91,6 +93,14 @@ class Masechtot extends Component {
             seder={sederName}
             masechet={masechetName}
           />
+          <div className='section row'>
+            <div className='col l6 m6 s6'>
+              {prevMasechet && <Link to={prevMasechet}>Previous Masechet</Link>}
+            </div>
+            <div className='col l6 m6 s6 right-align'>
+              {nextMasechet && <Link to={nextMasechet}>Next Masechet</Link>}
+            </div>
+          </div>
         </div>
       </Layout>
     );

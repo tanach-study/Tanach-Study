@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 
 import Layout from '../../../layouts/main.jsx';
 import MishnaList from './MishnaList/MishnaList.jsx';
@@ -52,7 +53,8 @@ class Perakim extends Component {
 
   render() {
     const { mishnayot, currentMishna } = this.state;
-    const { location } = this.props;
+    const { location, pageContext } = this.props;
+    const { nextPerek, prevPerek } = pageContext || {};
     const base = mishnayot[0] || {};
     const { segment_name: sederN, section_name: masechetN, unit_name: perekN } = base;
     const { segment_title: sederT, section_title: masechetT, unit_title: perekT } = base;
@@ -85,6 +87,14 @@ class Perakim extends Component {
         <div className='container'>
           <h2>{pageTitle}</h2>
           {sSpon && <h3>{sponsor}</h3>}
+          <div className='section row'>
+            <div className='col l6 m6 s6'>
+              {prevPerek && <Link to={prevPerek}>Previous Perek</Link>}
+            </div>
+            <div className='col l6 m6 s6 right-align'>
+              {nextPerek && <Link to={nextPerek}>Next Perek</Link>}
+            </div>
+          </div>
           <section className='row'>
             <MishnaList
               mishnayot={mishnayot}

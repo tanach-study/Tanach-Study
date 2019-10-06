@@ -307,7 +307,16 @@ exports.createPages = async ({ graphql, actions }) => {
 
   Object.keys(mishna).forEach((seder) => {
     const sederData = mishna[seder];
-    Object.keys(sederData).forEach((masechet) => {
+    const masechetKeys = Object.keys(sederData);
+    masechetKeys.forEach((masechet, i) => {
+      let nextMasechet = '';
+      let prevMasechet = '';
+      if (i < masechetKeys.length - 1) {
+        nextMasechet = `/mishna-study/masechet/${seder}/${masechetKeys[i + 1]}`;
+      }
+      if (i > 0) {
+        prevMasechet = `/mishna-study/masechet/${seder}/${masechetKeys[i - 1]}`;
+      }
       log.info('creating page', `/mishna-study/masechet/${seder}/${masechet}`);
       createPage({
         path: `/mishna-study/masechet/${seder}/${masechet}`,
@@ -316,16 +325,29 @@ exports.createPages = async ({ graphql, actions }) => {
           data: sederData[masechet],
           seder,
           masechet,
+          nextMasechet,
+          prevMasechet,
         },
       });
       const pers = masechtot[seder][masechet];
-      Object.keys(pers).forEach((perek) => {
+      const persKeys = Object.keys(pers);
+      persKeys.forEach((perek, j) => {
+        let nextPerek = '';
+        let prevPerek = '';
+        if (j < persKeys.length - 1) {
+          nextPerek = `/mishna-study/perek/${seder}/${masechet}/${persKeys[j + 1]}`;
+        }
+        if (j > 0) {
+          prevPerek = `/mishna-study/perek/${seder}/${masechet}/${persKeys[j - 1]}`;
+        }
         log.info('creating page', `/mishna-study/perek/${seder}/${masechet}/${perek}`);
         createPage({
           path: `/mishna-study/perek/${seder}/${masechet}/${perek}`,
           component: mishPerekTemplate,
           context: {
             data: pers[perek],
+            nextPerek,
+            prevPerek,
           },
         });
       });
