@@ -222,7 +222,7 @@ class SignupForm extends Component {
                 checked={list4}
                 onChange={e => this.setOneList(e, 'list4')}
               />
-              <b>ParashaStudy Plus:</b> Daily email studying different mefarshim on the parasha (coming soon)
+              <b>ParashaStudy Plus:</b> Daily email studying different mefarshim on the parasha
             </label>
           </div>
         </div>
