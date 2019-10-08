@@ -6,6 +6,8 @@ import './tailwind.global.css';
 import './styles.global.css';
 import './icons.css';
 
+import ProgramNavigation from '../components/ProgramNavigation/ProgramNavigation.jsx';
+import Navigation from '../components/Navigation/Navigation.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 
 import { programs, ProgramContext } from '../app-context.js';
