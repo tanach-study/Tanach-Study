@@ -43,7 +43,7 @@ class ReaderCard extends Component {
             </ProgramContext.Consumer>
           ));
           return (
-            <div className='col l6 m6 s12'>
+            <div className='col l6 m12 s12'>
               <div className='card'>
                 <div className='card-content'>
                   <TeamimItem

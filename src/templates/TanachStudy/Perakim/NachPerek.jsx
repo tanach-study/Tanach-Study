@@ -116,7 +116,7 @@ class NachPerek extends Component {
             teacherBio={teacherBio}
             url={url}
             tabs={tabs}
-            className='col l6 m6 s6'
+            className='col l6 m12 s12'
           />
           <TeamimCard
             teamim={teamim}
