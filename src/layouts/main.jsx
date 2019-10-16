@@ -20,6 +20,8 @@ function Layout(props) {
     program = programs.tanachstudy;
   } else if (routePath.includes('mishna-study')) {
     program = programs.mishnastudy;
+  } else if (routePath.includes('parasha-study-plus')) {
+    program = programs.parashastudyplus;
   } else if (routePath.includes('parasha-study')) {
     program = programs.parashastudy;
   } else if (routePath.includes('haftara-study')) {
