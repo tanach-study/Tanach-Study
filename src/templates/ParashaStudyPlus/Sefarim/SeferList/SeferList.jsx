@@ -4,7 +4,7 @@ import SeferItem from './SeferItem.jsx';
 const SeferList = (props) => {
   const { parashot, track, click, selected, className } = props;
   const mapped = parashot.map((par, i) => {
-    const { section: sefer, unit_title: title } = par;
+    const { section: sefer, unit_title: title, unit: parasha } = par;
     return (
       <SeferItem
         parasha={title}
@@ -12,7 +12,7 @@ const SeferList = (props) => {
         index={i}
         click={click}
         selected={selected}
-        key={`${track}-sefer-${sefer}-parasha-${title}-listitem`}
+        key={`${track}-sefer-${sefer}-parasha-${parasha}-listitem`}
       />
     );
   });

@@ -52,14 +52,14 @@ class Sefarim extends Component {
     const { location, pageContext } = this.props;
     const { data: parashot, nextPerek, prevPerek } = pageContext || {};
     const base = parashot[0] || {};
-    const { section_name: seferN, unit_name: parashaN } = base;
-    const { segment_title: trackT, section_title: seferT, unit_title: parashaT } = base;
-    const { segment: track, section: sefer, unit: parasha } = base;
+    const { section_name: seferN } = base;
+    const { segment_title: trackT, section_title: seferT } = base;
+    const { segment: track, section: sefer } = base;
 
     const { section_sponsor: sSpon } = base;
     const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
     const parashaObj = parashot[currentParasha] || {};
-    const { audio_url: url } = parashaObj;
+    const { audio_url: url, unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
 
     const { teacher_title: teacherT,
       teacher_fname: teacherFN,
@@ -95,9 +95,8 @@ class Sefarim extends Component {
             />
             <AudioPlayer
               url={url}
-              name={parashaN}
-              title={parashaT}
-              part={parasha}
+              name={parashaT}
+              title={`Parashat ${parashaT}`}
               teacherTitle={teacherT}
               teacherFirst={teacherFN}
               teacherMiddle={teacherMN}
