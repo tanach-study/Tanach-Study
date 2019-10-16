@@ -144,6 +144,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const perakim = {};
   const masechtot = {};
 
+  const parashotplus = {};
+
   const teachers = [];
   const teacherStrings = new Set();
 
@@ -208,6 +210,17 @@ exports.createPages = async ({ graphql, actions }) => {
         }
         masechtot[segment][section][unit].push(curr);
         break;
+      case 'parasha':
+        // section is the sefer
+        // segment is the track
+        if (!parashotplus[section]) {
+          parashotplus[section] = {};
+        }
+        if (!parashotplus[section][segment]) {
+          parashotplus[section][segment] = [];
+        }
+        parashotplus[section][segment].push(curr);
+        break;
       default:
         break;
     }
@@ -232,6 +245,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const nachPerekTemplate = path.resolve('./src/templates/TanachStudy/Perakim/Perakim.jsx');
   const mishMasechetTemplate = path.resolve('./src/templates/MishnaStudy/Masechtot/Masechtot.jsx');
   const mishPerekTemplate = path.resolve('./src/templates/MishnaStudy/Perakim/Perakim.jsx');
+  const parashaSeferTemplate = path.resolve('./src/templates/ParashaStudyPlus/Sefarim/Sefarim.jsx');
 
   const torahSefarim = Object.keys(torah);
   torahSefarim.forEach((sefer, i) => {
@@ -372,6 +386,33 @@ exports.createPages = async ({ graphql, actions }) => {
             prevPerek,
           },
         });
+      });
+    });
+  });
+
+  const parashaSefarim = Object.keys(parashotplus);
+  parashaSefarim.forEach((sefer, i) => {
+    const parashaTracks = Object.keys(parashotplus[sefer]);
+    parashaTracks.forEach((track) => {
+      let nextSefer = '';
+      let prevSefer = '';
+      if (i < parashotplus.length - 1) {
+        nextSefer = `/parasha-plus-study/sefarim/${track}/${parashotplus[i + 1]}`;
+      }
+      if (i > 0) {
+        prevSefer = `/parasha-plus-study/sefarim/${track}/${parashotplus[i - 1]}`;
+      }
+      log.info('creating page', `/parasha-plus-study/sefarim/${track}/${sefer}`);
+      createPage({
+        path: `/parasha-plus-study/sefarim/${track}/${sefer}`,
+        component: parashaSeferTemplate,
+        context: {
+          data: parashotplus[sefer][track],
+          sefer,
+          track,
+          nextSefer,
+          prevSefer,
+        },
       });
     });
   });

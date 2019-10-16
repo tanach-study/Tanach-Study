@@ -45,6 +45,17 @@ export const programs = {
     textClass: 'psgreen-text',
     podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study/id1459797702',
   },
+  parashastudyplus: {
+    mainColor: '#00806f',
+    secondaryColor: '#E4F0E5',
+    tertiaryColor: '#45AA67',
+    complementaryColor: '#AC3019',
+    logo: 'https://cdn.tanachstudy.com/assets/images/parasha-study-plus-logo.png',
+    linkPrefix: 'parasha-plus-study',
+    backgroundClass: 'psplusgreen',
+    textClass: 'psplusgreen-text',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study/id1459797702',
+  },
   moadimstudy: {
     mainColor: '#EEDA22',
     secondaryColor: '#FBF7D0',
