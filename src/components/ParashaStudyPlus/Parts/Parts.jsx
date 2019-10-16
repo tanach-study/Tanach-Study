@@ -15,7 +15,7 @@ function Parts(props) {
         <PartList title='Wednesdays: Ramban' parts={data.ramban} />
         <PartList title='Thursdays: Rasag' parts={data.rasag} />
         <PartList title='Thursdays: Midrash' parts={data.midrash} />
-        <PartList title='Fridays: Midrash' parts={data.haftara} />
+        <PartList title='Fridays: Haftara' parts={data.haftara} />
       </div>
     </div>
   );
