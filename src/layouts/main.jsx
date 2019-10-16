@@ -31,6 +31,7 @@ function Layout(props) {
   } else {
     program = programs.tanachstudy;
   }
+  console.log(program)
   return (
     <ProgramContext.Provider value={program}>
       <ProgramNavigation />
