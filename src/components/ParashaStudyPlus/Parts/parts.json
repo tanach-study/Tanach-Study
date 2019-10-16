@@ -2,155 +2,155 @@
   "archaeology": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/archaeology/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/archaeology/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/archaeology/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/archaeology/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/archaeology/devarim"
     }
   ],
   "analysis": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/analysis/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/analysis/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/analysis/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/analysis/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/analysis/devarim"
     }
   ],
   "harambam": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/harambam/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/harambam/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/harambam/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/harambam/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/harambam/devarim"
     }
   ],
   "ramban": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/ramban/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/ramban/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/ramban/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/ramban/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/ramban/devarim"
     }
   ],
   "rasag": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/rasag/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/rasag/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/rasag/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/rasag/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/rasag/devarim"
     }
   ],
   "midrash": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/midrash/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/midrash/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/midrash/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/midrash/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/midrash/devarim"
     }
   ],
   "haftara": [
     {
       "name": "Sefer Bereshit",
-      "url": "/parasha-plus-study/sefarim/bereshit"
+      "url": "/parasha-plus-study/sefarim/haftara/bereshit"
     },
     {
       "name": "Sefer Shemot",
-      "url": "/parasha-plus-study/sefarim/shemot"
+      "url": "/parasha-plus-study/sefarim/haftara/shemot"
     },
     {
       "name": "Sefer Vayikra",
-      "url": "/parasha-plus-study/sefarim/vayikra"
+      "url": "/parasha-plus-study/sefarim/haftara/vayikra"
     },
     {
       "name": "Sefer Bemidbar",
-      "url": "/parasha-plus-study/sefarim/bemidbar"
+      "url": "/parasha-plus-study/sefarim/haftara/bemidbar"
     },
     {
       "name": "Sefer Devarim",
-      "url": "/parasha-plus-study/sefarim/devarim"
+      "url": "/parasha-plus-study/sefarim/haftara/devarim"
     }
   ]
 }
