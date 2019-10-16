@@ -51,7 +51,7 @@ export const programs = {
     tertiaryColor: '#45AA67',
     complementaryColor: '#AC3019',
     logo: 'https://cdn.tanachstudy.com/assets/images/parasha-study-plus-logo.png',
-    linkPrefix: 'parasha-study-plus',
+    linkPrefix: 'parasha-plus-study',
     backgroundClass: 'psplusgreen',
     textClass: 'psplusgreen-text',
     podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study/id1459797702',

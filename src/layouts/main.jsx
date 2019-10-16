@@ -20,7 +20,7 @@ function Layout(props) {
     program = programs.tanachstudy;
   } else if (routePath.includes('mishna-study')) {
     program = programs.mishnastudy;
-  } else if (routePath.includes('parasha-study-plus')) {
+  } else if (routePath.includes('parasha-plus-study')) {
     program = programs.parashastudyplus;
   } else if (routePath.includes('parasha-study')) {
     program = programs.parashastudy;
@@ -31,7 +31,6 @@ function Layout(props) {
   } else {
     program = programs.tanachstudy;
   }
-  console.log(program)
   return (
     <ProgramContext.Provider value={program}>
       <ProgramNavigation />
