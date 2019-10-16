@@ -14,7 +14,7 @@ function ParashaStudyHomePage(props) {
       <div className='divider' />
       <section className='section center'>
         <Link to='/signup'>
-          <button className='btn psgreen'>Click here to sign up!</button>
+          <button className='btn psplusgreen'>Click here to sign up!</button>
         </Link>
       </section>
     </main>
