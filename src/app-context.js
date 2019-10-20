@@ -54,7 +54,7 @@ export const programs = {
     linkPrefix: 'parasha-plus-study',
     backgroundClass: 'psplusgreen',
     textClass: 'psplusgreen-text',
-    podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study/id1459797702',
+    podcastURL: 'https://podcasts.apple.com/us/podcast/parasha-study-plus/id1483716454',
   },
   moadimstudy: {
     mainColor: '#EEDA22',
