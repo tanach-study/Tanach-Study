@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import Layout from '../../../layouts/main.jsx';
 import SeferList from './SeferList/SeferList.jsx';
 import AudioPlayer from '../../../components/AudioPlayer/AudioPlayer.jsx';
+import VideoPlayer from '../../../components/VideoPlayer/VideoPlayer.jsx';
 
 class Sefarim extends Component {
   constructor(props) {
@@ -59,7 +60,9 @@ class Sefarim extends Component {
     const { section_sponsor: sSpon } = base;
     const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
     const parashaObj = parashot[currentParasha] || {};
-    const { audio_url: url, unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
+    const { audio_url: audioURL, unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
+    const { video_url: videoURL } = parashaObj;
+    console.log(parashaObj)
 
     const { teacher_title: teacherT,
       teacher_fname: teacherFN,
@@ -93,18 +96,33 @@ class Sefarim extends Component {
               selected={currentParasha}
               className='col l6 m6 s12 collection'
             />
-            <AudioPlayer
-              url={url}
-              name={parashaT}
-              title={`Parashat ${parashaT}`}
-              teacherTitle={teacherT}
-              teacherFirst={teacherFN}
-              teacherMiddle={teacherMN}
-              teacherLast={teacherLN}
-              teacherImage={teacherImage}
-              teacherBio={teacherBio}
-              className='col l6 m6 s12'
-            />
+            {videoURL ? (
+              <VideoPlayer
+                url={videoURL}
+                name={parashaT}
+                title={`Parashat ${parashaT}`}
+                teacherTitle={teacherT}
+                teacherFirst={teacherFN}
+                teacherMiddle={teacherMN}
+                teacherLast={teacherLN}
+                teacherImage={teacherImage}
+                teacherBio={teacherBio}
+                className='col l6 m6 s12'
+              />
+            ) : (
+              <AudioPlayer
+                url={audioURL}
+                name={parashaT}
+                title={`Parashat ${parashaT}`}
+                teacherTitle={teacherT}
+                teacherFirst={teacherFN}
+                teacherMiddle={teacherMN}
+                teacherLast={teacherLN}
+                teacherImage={teacherImage}
+                teacherBio={teacherBio}
+                className='col l6 m6 s12'
+              />
+            )}
           </section>
         </div>
       </Layout>
