@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Layout from '../../../layouts/main.jsx';
 import MishnaList from './MishnaList/MishnaList.jsx';
 import Mishna from '../../../components/Mishna/Mishna.jsx';
-import AudioPlayer from '../../../components/AudioPlayer/AudioPlayer.jsx';
+import AudioPlayer from '../../../components/MediaPlayer/AudioPlayer/AudioPlayer.jsx';
 
 class Perakim extends Component {
   constructor(props) {

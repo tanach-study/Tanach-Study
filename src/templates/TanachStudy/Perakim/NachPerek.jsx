@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import AudioPlayer from '../../../components/AudioPlayer/AudioPlayer.jsx';
+import AudioPlayer from '../../../components/MediaPlayer/AudioPlayer/AudioPlayer.jsx';
 import TeamimCard from './TeamimCard.jsx';
 import Tanach from '../../../components/Tanach/Tanach.jsx';
 
