@@ -1,0 +1,12 @@
+.active-tab {
+  font-weight: 600;
+  font-size: 16px !important;
+  border-bottom: 3px solid #00806f !important;
+  transition: font-size .5s ease !important;
+  background-color: rgba(0, 128, 111, 0.1);
+}
+
+.tab-span {
+  height: 100%;
+  width: 100%;
+}

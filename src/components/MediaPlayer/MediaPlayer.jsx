@@ -40,6 +40,30 @@ function MediaPlayer(props) {
     return (
       <div className={className}>
         <div className='card'>
+          <div className='card-tabs'>
+            <ul className='tabs'>
+              <li className={`tab psplusgreen-text clickable
+                ${selected === 'audio' ? styles['active-tab'] : ''}`}
+              >
+                <div
+                  className={styles['tab-content']}
+                  onClick={() => selectType('audio')}
+                >
+                  Audio
+                </div>
+              </li>
+              <li className={`tab psplusgreen-text clickable
+                ${selected === 'video' ? styles['active-tab'] : ''}`}
+              >
+                <div
+                  className={styles['tab-content']}
+                  onClick={() => selectType('video')}
+                >
+                  Video
+                </div>
+              </li>
+            </ul>
+          </div>
           <div className='card-content'>
             {selected === 'video' ? (
               <VideoContent
@@ -60,20 +84,6 @@ function MediaPlayer(props) {
                 src={aSrc}
               />
             )}
-          </div>
-          <div className='card-tabs'>
-            <ul className='tabs'>
-              <li className={`tab psplusgreen-text
-                ${selected === 'audio' ? styles['active-tab'] : ''}`}
-              >
-                <span onClick={() => selectType('audio')}>Audio</span>
-              </li>
-              <li className={`tab psplusgreen-text
-                ${selected === 'video' ? styles['active-tab'] : ''}`}
-              >
-                <span onClick={() => selectType('video')}>Video</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
