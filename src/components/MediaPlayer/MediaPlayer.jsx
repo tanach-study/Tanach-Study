@@ -21,7 +21,7 @@ function MediaPlayer(props) {
   if (type === 'combo') {
     const [selected, selectType] = useState('audio');
 
-    const { videoURL, audioURL, name, title, part } = props;
+    const { audioURL, videoURL, name, title } = props;
     const { teacherTitle,
       teacherFirst,
       teacherMiddle,
@@ -30,28 +30,28 @@ function MediaPlayer(props) {
       teacherBio } = props;
     const middle = teacherMiddle || '';
     const teacherString = `${teacherTitle} ${teacherFirst} ${middle} ${teacherLast}`;
-    const nowPlaying = `${name} ${part}`;
 
-    const { aHost, aPath } = audioURL || {};
+    const { host: aHost, path: aPath } = audioURL || {};
     const aSrc = `${aHost}${aPath}`;
-    const { vHost, vPath } = videoURL || {};
+    const { host: vHost, path: vPath } = videoURL || {};
     const vSrc = `${vHost}${vPath}`;
 
     const isVideo = selected === 'video';
     const Content = isVideo ? VideoContent : AudioContent;
     const src = isVideo ? vSrc : aSrc;
 
+    const liClass = `tab psplusgreen-text col l6 m6 s6 ${styles['tab-li']}`;
     return (
       <div className={className}>
         <div className='card'>
           <div className='card-tabs'>
             <ul className='tabs'>
-              <li className={`tab psplusgreen-text clickable ${!isVideo && styles['active-tab']}`}>
+              <li className={`${liClass} ${!isVideo && styles['active-tab']}`}>
                 <div className={styles['tab-content']} onClick={() => selectType('audio')}>
                   Audio
                 </div>
               </li>
-              <li className={`tab psplusgreen-text clickable ${isVideo && styles['active-tab']}`}>
+              <li className={`${liClass} ${isVideo && styles['active-tab']}`}>
                 <div className={styles['tab-content']} onClick={() => selectType('video')}>
                   Video
                 </div>
@@ -60,7 +60,7 @@ function MediaPlayer(props) {
           </div>
           <div className='card-content'>
             <Content
-              nowPlaying={nowPlaying}
+              nowPlaying={name}
               title={title}
               image={teacherImage}
               teacher={teacherString}
