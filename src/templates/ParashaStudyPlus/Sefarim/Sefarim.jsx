@@ -10,10 +10,8 @@ class Sefarim extends Component {
     super(props);
     this.state = {
       currentParasha: 0,
-      avSelector: 'audio',
     };
     this.selectParasha = this.selectParasha.bind(this);
-    this.toggleAudioVideo = this.toggleAudioVideo.bind(this);
   }
 
   componentDidMount() {
@@ -49,14 +47,8 @@ class Sefarim extends Component {
     });
   }
 
-  toggleAudioVideo(selection) {
-    this.setState({
-      avSelector: selection,
-    });
-  }
-
   render() {
-    const { currentParasha, avSelector } = this.state;
+    const { currentParasha } = this.state;
     const { location, pageContext } = this.props;
     const { data: parashot, nextPerek, prevPerek } = pageContext || {};
     const base = parashot[0] || {};
@@ -69,8 +61,8 @@ class Sefarim extends Component {
     const parashaObj = parashot[currentParasha] || {};
     const { audio_url: audioURL, unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
     const { video_url: videoURL } = parashaObj;
-    console.log(parashaObj)
-    console.log(audioURL, videoURL)
+
+    const hasVideo = !!videoURL;
 
     const { teacher_title: teacherT,
       teacher_fname: teacherFN,
@@ -96,14 +88,6 @@ class Sefarim extends Component {
               {nextPerek && <Link to={nextPerek}>Next Perek</Link>}
             </div>
           </div>
-          <ul className='tabs'>
-            <li className={avSelector === 'audio' ? 'tab active' : 'tab'}>
-              <button onClick={() => this.toggleAudioVideo('audio')}>Listen to Audio</button>
-            </li>
-            <li className={avSelector === 'video' ? 'tab active' : 'tab'}>
-              <button onClick={() => this.toggleAudioVideo('video')}>Watch Video</button>
-            </li>
-          </ul>
           <section className='row'>
             <SeferList
               parashot={parashot}
@@ -112,37 +96,9 @@ class Sefarim extends Component {
               selected={currentParasha}
               className='col l6 m6 s12 collection'
             />
-            {avSelector === 'video' ? (
-              <MediaPlayer
-                type='video'
-                url={videoURL}
-                name={parashaT}
-                title={`Parashat ${parashaT}`}
-                teacherTitle={teacherT}
-                teacherFirst={teacherFN}
-                teacherMiddle={teacherMN}
-                teacherLast={teacherLN}
-                teacherImage={teacherImage}
-                teacherBio={teacherBio}
-                className='col l6 m6 s12'
-              />
-            ) : (
-              <MediaPlayer
-                type='audio'
-                url={audioURL}
-                name={parashaT}
-                title={`Parashat ${parashaT}`}
-                teacherTitle={teacherT}
-                teacherFirst={teacherFN}
-                teacherMiddle={teacherMN}
-                teacherLast={teacherLN}
-                teacherImage={teacherImage}
-                teacherBio={teacherBio}
-                className='col l6 m6 s12'
-              />
-            )}
             <MediaPlayer
-              type='combo'
+              type={hasVideo ? 'combo' : 'audio'}
+              url={audioURL}
               audioURL={audioURL}
               videoURL={videoURL}
               name={parashaT}
