@@ -101,7 +101,8 @@ class Sefarim extends Component {
               url={audioURL}
               audioURL={audioURL}
               videoURL={videoURL}
-              name={`Parashat ${parashaT}`}
+              name={parashaT}
+              part=''
               title={`Parashat ${parashaT}`}
               teacherTitle={teacherT}
               teacherFirst={teacherFN}
