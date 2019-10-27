@@ -111,6 +111,10 @@ exports.createPages = async ({ graphql, actions }) => {
             host
             path
           }
+          video_url {
+            host
+            path
+          }
           teacher_title
           teacher_fname
           teacher_mname
