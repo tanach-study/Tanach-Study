@@ -37,6 +37,9 @@ function MediaPlayer(props) {
     const { vHost, vPath } = videoURL || {};
     const vSrc = `${vHost}${vPath}`;
 
+    const Content = selected === 'video' ? VideoContent : AudioContent;
+    const src = selected === 'video' ? vSrc : aSrc;
+
     return (
       <div className={className}>
         <div className='card'>
@@ -65,25 +68,14 @@ function MediaPlayer(props) {
             </ul>
           </div>
           <div className='card-content'>
-            {selected === 'video' ? (
-              <VideoContent
-                nowPlaying={nowPlaying}
-                title={title}
-                image={teacherImage}
-                teacher={teacherString}
-                bio={teacherBio}
-                src={vSrc}
-              />
-            ) : (
-              <AudioContent
-                nowPlaying={nowPlaying}
-                title={title}
-                image={teacherImage}
-                teacher={teacherString}
-                bio={teacherBio}
-                src={aSrc}
-              />
-            )}
+            <Content
+              nowPlaying={nowPlaying}
+              title={title}
+              image={teacherImage}
+              teacher={teacherString}
+              bio={teacherBio}
+              src={src}
+            />
           </div>
         </div>
       </div>
