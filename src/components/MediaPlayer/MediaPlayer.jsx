@@ -37,31 +37,22 @@ function MediaPlayer(props) {
     const { vHost, vPath } = videoURL || {};
     const vSrc = `${vHost}${vPath}`;
 
-    const Content = selected === 'video' ? VideoContent : AudioContent;
-    const src = selected === 'video' ? vSrc : aSrc;
+    const isVideo = selected === 'video';
+    const Content = isVideo ? VideoContent : AudioContent;
+    const src = isVideo ? vSrc : aSrc;
 
     return (
       <div className={className}>
         <div className='card'>
           <div className='card-tabs'>
             <ul className='tabs'>
-              <li className={`tab psplusgreen-text clickable
-                ${selected === 'audio' ? styles['active-tab'] : ''}`}
-              >
-                <div
-                  className={styles['tab-content']}
-                  onClick={() => selectType('audio')}
-                >
+              <li className={`tab psplusgreen-text clickable ${!isVideo && styles['active-tab']}`}>
+                <div className={styles['tab-content']} onClick={() => selectType('audio')}>
                   Audio
                 </div>
               </li>
-              <li className={`tab psplusgreen-text clickable
-                ${selected === 'video' ? styles['active-tab'] : ''}`}
-              >
-                <div
-                  className={styles['tab-content']}
-                  onClick={() => selectType('video')}
-                >
+              <li className={`tab psplusgreen-text clickable ${isVideo && styles['active-tab']}`}>
+                <div className={styles['tab-content']} onClick={() => selectType('video')}>
                   Video
                 </div>
               </li>
