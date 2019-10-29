@@ -56,7 +56,7 @@ class Sefarim extends Component {
     const { segment_title: trackT, section_title: seferT } = base;
     const { segment: track, section: sefer } = base;
 
-    const { section_sponsor: sSpon } = base;
+    const { segment_sponsor: sSpon } = base;
     const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
     const parashaObj = parashot[currentParasha] || {};
     const { audio_url: audioURL, unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
