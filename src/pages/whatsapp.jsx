@@ -54,6 +54,12 @@ function WhatsApp(props) {
                   <a href='https://chat.whatsapp.com/FuIZjgtBUY9AewWDh3TzAD'>Click to join</a>
                 </td>
               </tr>
+              <tr>
+                <td>Parasha Study Plus #4</td>
+                <td>
+                  <a href='https://chat.whatsapp.com/CcLCLxPXYrB3yzz3QbMGWL'>Click to join</a>
+                </td>
+              </tr>
             </tbody>
           </table>
         </section>
