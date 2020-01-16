@@ -31,14 +31,9 @@ function MediaPlayer(props) {
     const middle = teacherMiddle || '';
     const teacherString = `${teacherTitle} ${teacherFirst} ${middle} ${teacherLast}`;
 
-    const { host: aHost, path: aPath } = audioURL || {};
-    const aSrc = `${aHost}${aPath}`;
-    const { host: vHost, path: vPath } = videoURL || {};
-    const vSrc = `${vHost}${vPath}`;
-
     const isVideo = selected === 'video';
     const Content = isVideo ? VideoContent : AudioContent;
-    const src = isVideo ? vSrc : aSrc;
+    const src = isVideo ? videoURL : audioURL;
 
     const liClass = `tab psplusgreen-text col l6 m6 s6 ${styles['tab-li']}`;
     return (
