@@ -1,7 +1,8 @@
 const path = require('path');
+const fetch = require('node-fetch');
 const log = require('./lib/logger.js');
 
-const { GRAPHQL_SOURCE } = process.env;
+const { API_URL } = process.env;
 
 const { onCreateWebpackConfig } = require('./lib/webpack-config-fix.js');
 
@@ -74,69 +75,22 @@ function rawPerakimComparator(a, b) {
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const { data } = await graphql(`
-    {
-      ${GRAPHQL_SOURCE} {
-        nodes {
-          division
-          division_title
-          division_sequence
-          segment
-          segment_name
-          segment_title
-          segment_sponsor
-          segment_sequence
-          section
-          section_name
-          section_title
-          section_sponsor
-          section_sequence
-          unit
-          unit_name
-          unit_title
-          unit_sponsor
-          unit_sequence
-          part
-          part_name
-          part_title
-          part_sequence
-          series
-          series_title
-          series_sequence
-          start_chapter
-          start_verse
-          end_chapter
-          end_verse
-          audio_url {
-            host
-            path
-          }
-          video_url {
-            host
-            path
-          }
-          teacher_title
-          teacher_fname
-          teacher_mname
-          teacher_lname
-          teacher_long_bio
-          teacher_short_bio
-          teacher_image_url
-          teamim {
-            reader_title
-            reader_fname
-            reader_mname
-            reader_lname
-            audio_url
-          }
-        }
-      }
-    }
-  `);
+  log.info('fetching data');
+  const data = await fetch(API_URL);
+  log.info('data fetched, parsing');
+  const jsonData = await data.json();
+  log.info('parsed');
 
-  const queryResults = data[GRAPHQL_SOURCE];
-  const { nodes } = queryResults || {};
-  const rawData = nodes || [];
+  const rawData = jsonData || [];
+
+  rawData.forEach((obj, i) => {
+    rawData[i].division_sequence = parseInt(obj.division_sequence, 10);
+    rawData[i].segment_sequence = parseInt(obj.segment_sequence, 10);
+    rawData[i].section_sequence = parseInt(obj.section_sequence, 10);
+    rawData[i].unit_sequence = parseInt(obj.unit_sequence, 10);
+    rawData[i].part_sequence = parseInt(obj.part_sequence, 10);
+    rawData[i].series_sequence = parseInt(obj.series_sequence, 10);
+  });
 
   rawData.sort(rawPerakimComparator);
 

@@ -7,8 +7,6 @@ if (NODE_ENV !== 'production') {
   dotenv.config({ silent: false });
 }
 
-const { DB_CONNECTION, DB_NAME, DB_COLLECTION } = process.env;
-
 const bucket = TRAVIS_BRANCH === 'master' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
 log.info('bucket to deploy to:', bucket);
 
@@ -51,14 +49,6 @@ module.exports = {
           'Muli:400,700',
           'Thasadith:400,700',
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-source-mongodb',
-      options: {
-        connectionString: DB_CONNECTION,
-        collection: DB_COLLECTION,
-        dbName: DB_NAME,
       },
     },
     {
