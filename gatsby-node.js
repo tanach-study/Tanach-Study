@@ -90,6 +90,7 @@ exports.createPages = async ({ graphql, actions }) => {
     rawData[i].unit_sequence = parseInt(obj.unit_sequence, 10);
     rawData[i].part_sequence = parseInt(obj.part_sequence, 10);
     rawData[i].series_sequence = parseInt(obj.series_sequence, 10);
+    rawData[i].audio_url = obj.audio;
   });
 
   rawData.sort(rawPerakimComparator);

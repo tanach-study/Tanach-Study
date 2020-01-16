@@ -11,8 +11,6 @@ function AudioPlayer(props) {
     teacherLast,
     teacherImage,
     teacherBio } = props;
-  const { host, path } = url || {};
-  const src = `${host}${path}`;
 
   const middle = teacherMiddle || '';
   const teacherString = `${teacherTitle} ${teacherFirst} ${middle} ${teacherLast}`;
@@ -29,7 +27,7 @@ function AudioPlayer(props) {
           image={teacherImage}
           teacher={teacherString}
           bio={teacherBio}
-          src={src}
+          src={url}
         />
         {tabs && (
           <div className='card-tabs'>
