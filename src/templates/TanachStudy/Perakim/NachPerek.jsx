@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
-import AudioPlayer from '../../../components/MediaPlayer/AudioPlayer/AudioPlayer.jsx';
+import MediaPlayer from '../../../components/MediaPlayer/MediaPlayer.jsx';
 import TeamimCard from './TeamimCard.jsx';
 import Tanach from '../../../components/Tanach/Tanach.jsx';
 
@@ -106,7 +106,8 @@ class NachPerek extends Component {
           </div>
         </div>
         <div className='row'>
-          <AudioPlayer
+          <MediaPlayer
+            type='audio'
             name='Perek'
             title={perekT}
             part={perek}

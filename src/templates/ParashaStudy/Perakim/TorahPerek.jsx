@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Tanach from '../../../components/Tanach/Tanach.jsx';
 import PartItem from './TorahPartItem.jsx';
-import AudioPlayer from '../../../components/MediaPlayer/AudioPlayer/AudioPlayer.jsx';
+import MediaPlayer from '../../../components/MediaPlayer/MediaPlayer.jsx';
 
 class TorahPerek extends Component {
   constructor(props) {
@@ -106,7 +106,8 @@ class TorahPerek extends Component {
           <div className='col l6 m6 s12'>
             {partItems}
           </div>
-          <AudioPlayer
+          <MediaPlayer
+            type='audio'
             url={url}
             className='col l6 m6 s12'
             name={name}

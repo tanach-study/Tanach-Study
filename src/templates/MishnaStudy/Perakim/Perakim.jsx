@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Layout from '../../../layouts/main.jsx';
 import MishnaList from './MishnaList/MishnaList.jsx';
 import Mishna from '../../../components/Mishna/Mishna.jsx';
-import AudioPlayer from '../../../components/MediaPlayer/AudioPlayer/AudioPlayer.jsx';
+import MediaPlayer from '../../../components/MediaPlayer/MediaPlayer.jsx';
 
 class Perakim extends Component {
   constructor(props) {
@@ -105,7 +105,8 @@ class Perakim extends Component {
               selected={currentMishna}
               className='col l6 m6 s12 collection'
             />
-            <AudioPlayer
+            <MediaPlayer
+              type='audio'
               url={url}
               name={partN}
               title={partT}
