@@ -130,7 +130,7 @@ exports.createPages = async ({ graphql, actions }) => {
         break;
       case 'neviim_rishonim':
       case 'neviim_aharonim':
-      case 'tere_asar':
+      case 'tere_assar':
       case 'ketuvim':
         if (!nach[section]) {
           nach[section] = nach[section] || [];
