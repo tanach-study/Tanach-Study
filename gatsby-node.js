@@ -130,7 +130,7 @@ exports.createPages = async ({ graphql, actions }) => {
         break;
       case 'neviim_rishonim':
       case 'neviim_aharonim':
-      case 'tere_asar':
+      case 'tere_assar':
       case 'ketuvim':
         if (!nach[section]) {
           nach[section] = nach[section] || [];
@@ -189,12 +189,14 @@ exports.createPages = async ({ graphql, actions }) => {
     const { teacher_mname: mname } = curr;
     const { teacher_lname: lname } = curr;
     const teacherString = `${title}-${fname}-${mname}-${lname}`;
-    if (!teacherStrings.has(teacherString)) {
-      teacherStrings.add(teacherString);
-      const { teacher_short_bio: shortBio } = curr;
-      const { teacher_long_bio: longBio } = curr;
-      const { teacher_image_url: image } = curr;
-      teachers.push({ title, fname, mname, lname, shortBio, longBio, image });
+    if (teacherString !== 'a-b-c-d') {
+      if (!teacherStrings.has(teacherString)) {
+        teacherStrings.add(teacherString);
+        const { teacher_short_bio: shortBio } = curr;
+        const { teacher_long_bio: longBio } = curr;
+        const { teacher_image_url: image } = curr;
+        teachers.push({ title, fname, mname, lname, shortBio, longBio, image });
+      }
     }
   }
 

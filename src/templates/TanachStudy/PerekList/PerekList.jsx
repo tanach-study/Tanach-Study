@@ -1,12 +1,10 @@
 import React from 'react';
 import NachPerekItem from './NachPerekItem/NachPerekItem.jsx';
-import TorahPerekItem from './TorahPerekItem/TorahPerekItem.jsx';
 
 const PerekList = (props) => {
-  const { sefer, units, part } = props;
-  const PerekItem = part === 'torah' ? TorahPerekItem : NachPerekItem;
+  const { sefer, units } = props;
   const mapped = units.map(unit => (
-    <PerekItem
+    <NachPerekItem
       perek={unit}
       sefer={sefer}
       key={`sefer-${sefer}-perek-${unit}-listitem`}

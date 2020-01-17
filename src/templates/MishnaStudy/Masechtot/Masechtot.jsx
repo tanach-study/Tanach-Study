@@ -64,13 +64,14 @@ class Masechtot extends Component {
     });
     const teacherCards = teachers.map((teacher) => {
       const { title, fname, mname, lname, longBio, shortBio } = teacher;
-      const url = mname ? `${fname}-${mname}-${lname}` : `${fname}-${lname}`;
+      const raw = mname ? `${title}-${fname}-${mname}-${lname}` : `${title}-${fname}-${lname}`;
+      const url = raw.toLowerCase().replace('.', '').replace(' ', '-');
       return (
         <div key={`${title}-${fname}-${lname}-card`} className='card'>
           <div className='card-content'>
             <div className='card-title'>{title} {fname}{mname ? ` ${mname} ` : ' '}{lname}</div>
             <p>{longBio || shortBio}</p>
-            <a href={`/teachers/${url}`}>See {title} {lname}&apos;s bio page</a>
+            <a href={`/teachers/${url}`}>Read more about {title} {lname}</a>
           </div>
         </div>
       );

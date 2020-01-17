@@ -1,26 +1,4 @@
 {
-  "torah": [
-    {
-      "name": "Sefer Bereshit",
-      "url": "/parasha-study/sefarim/bereshit"
-    },
-    {
-      "name": "Sefer Shemot",
-      "url": "/parasha-study/sefarim/shemot"
-    },
-    {
-      "name": "Sefer Vayikra",
-      "url": "/parasha-study/sefarim/vayikra"
-    },
-    {
-      "name": "Sefer Bemidbar",
-      "url": "/parasha-study/sefarim/bemidbar"
-    },
-    {
-      "name": "Sefer Devarim",
-      "url": "/parasha-study/sefarim/devarim"
-    }
-  ],
   "neviim": [
     {
       "name": "Sefer Yehoshua",

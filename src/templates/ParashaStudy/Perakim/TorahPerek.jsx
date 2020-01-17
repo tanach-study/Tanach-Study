@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import Tanach from '../../../components/Tanach/Tanach.jsx';
 import PartItem from './TorahPartItem.jsx';
-import AudioPlayer from '../../../components/MediaPlayer/AudioPlayer/AudioPlayer.jsx';
+import MediaPlayer from '../../../components/MediaPlayer/MediaPlayer.jsx';
 
 class TorahPerek extends Component {
   constructor(props) {
@@ -88,11 +88,13 @@ class TorahPerek extends Component {
           {seferSponsor && <h4 className='center'>{seferSponsor}</h4>}
           <h3>{parashaString}</h3>
           {parashaSponsor && <h5>{parashaSponsor}</h5>}
+        </div>
+        <div className='row'>
           <Link to={`/parasha-study/sefarim/${sefer}`} className='left'>
             <i>Back to {seferString}</i>
           </Link>
         </div>
-        <div className='section row'>
+        <div className='row'>
           <div className='col l6 m6 s6'>
             {prevParasha && <Link to={prevParasha}>Previous Parasha</Link>}
           </div>
@@ -104,7 +106,8 @@ class TorahPerek extends Component {
           <div className='col l6 m6 s12'>
             {partItems}
           </div>
-          <AudioPlayer
+          <MediaPlayer
+            type='audio'
             url={url}
             className='col l6 m6 s12'
             name={name}
