@@ -105,7 +105,7 @@ class NachPerek extends Component {
         </div>
         <div className='section row'>
           <AudioPlayer
-            name={perekN}
+            name='Perek'
             title={perekT}
             part={perek}
             teacherTitle={teacherT}
