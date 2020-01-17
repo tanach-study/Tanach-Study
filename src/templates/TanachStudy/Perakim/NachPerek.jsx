@@ -92,18 +92,20 @@ class NachPerek extends Component {
     return (
       <div className='container'>
         <h2>{pageTitle}</h2>
-        <Link to={`/tanach-study/sefarim/${sefer}`} className='left'>
-          <i>Back to {seferString}</i>
-        </Link>
         <div className='section row'>
-          <div className='col l6 m6 s6'>
+          <Link to={`/tanach-study/sefarim/${sefer}`} className='left'>
+            <i>Back to {seferString}</i>
+          </Link>
+        </div>
+        <div className='row'>
+          <div className='col l6 m6 s6 left-align'>
             {prevPerek && <Link to={prevPerek}>Previous Perek</Link>}
           </div>
           <div className='col l6 m6 s6 right-align'>
             {nextPerek && <Link to={nextPerek}>Next Perek</Link>}
           </div>
         </div>
-        <div className='section row'>
+        <div className='row'>
           <AudioPlayer
             name='Perek'
             title={perekT}
