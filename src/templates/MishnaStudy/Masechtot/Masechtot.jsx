@@ -42,6 +42,7 @@ class Masechtot extends Component {
       perakim: Array.from(perakim),
       masechetTitle: data[0].section_title,
       masechetSponsor: data[0].section_sponsor,
+      divisionSponsor: data[0].division_sponsor,
       teachers,
     };
   }
@@ -76,15 +77,24 @@ class Masechtot extends Component {
         </div>
       );
     });
-    const { masechetTitle, masechetSponsor, sederName, masechetName, activeIndex } = this.state;
+    const { masechetTitle,
+      masechetSponsor,
+      divisionSponsor,
+      sederName,
+      masechetName,
+      activeIndex } = this.state;
     const sponsor = Array.isArray(masechetSponsor)
       ? masechetSponsor.map(l => <div key={l}>{l}</div>)
       : masechetSponsor;
+    const dSponsor = Array.isArray(divisionSponsor)
+      ? divisionSponsor.map(l => <div key={l}>{l}</div>)
+      : divisionSponsor;
     return (
       <Layout location={location}>
         <div className='container'>
-          <h2>Masechet {masechetTitle}</h2>
-          {masechetSponsor && <h3>{sponsor}</h3>}
+          {divisionSponsor && <h3 className='center'>{dSponsor}</h3>}
+          <h4>Masechet {masechetTitle}</h4>
+          {masechetSponsor && <h5>{sponsor}</h5>}
           <div className='center'>
             {teacherChips}
           </div>

@@ -4,10 +4,12 @@ import PartList from './PartList.jsx';
 
 import data from './parts.json';
 
+// TODO: remove hardcoded sponsor heading here and make it dynamic
 function Parts(props) {
   return (
     <div className='container'>
       <div className='section center'>
+        <h3>In Loving Memory of Buddy Sutton A&quot;H</h3>
         <h4>Sedarim</h4>
         <PartList title='Zeraim' parts={data.zeraim} />
         <PartList title='Moed' parts={data.moed} />
