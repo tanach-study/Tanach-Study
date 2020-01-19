@@ -60,8 +60,11 @@ class Perakim extends Component {
     const { segment_title: sederT, section_title: masechetT, unit_title: perekT } = base;
     const { segment: seder, section: masechet, unit: perek } = base;
 
-    const { section_sponsor: sSpon } = base;
+    const { section_sponsor: sSpon, division_sponsor: divisionSponsor } = base;
     const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
+    const dSponsor = Array.isArray(divisionSponsor)
+      ? divisionSponsor.map(l => <div key={l}>{l}</div>)
+      : divisionSponsor;
     const mishna = mishnayot[currentMishna] || {};
     const { audio_url: url } = mishna;
 
@@ -85,8 +88,9 @@ class Perakim extends Component {
     return (
       <Layout location={location}>
         <div className='container'>
-          <h2>{pageTitle}</h2>
-          {sSpon && <h3>{sponsor}</h3>}
+          {divisionSponsor && <h2 className='center'>{dSponsor}</h2>}
+          <h3>{pageTitle}</h3>
+          {sSpon && <h4>{sponsor}</h4>}
           <div className='section row'>
             <div className='col l6 m6 s6'>
               {prevPerek && <Link to={prevPerek}>Previous Perek</Link>}
