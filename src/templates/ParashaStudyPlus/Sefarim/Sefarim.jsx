@@ -78,8 +78,8 @@ class Sefarim extends Component {
     return (
       <Layout location={location}>
         <div className='container'>
-          <h2>{pageTitle}</h2>
-          {sSpon && <h3>{sponsor}</h3>}
+          <h3>{pageTitle}</h3>
+          {sSpon && <h4>{sponsor}</h4>}
           <div className='section row'>
             <div className='col l6 m6 s6'>
               {prevPerek && <Link to={prevPerek}>Previous Perek</Link>}

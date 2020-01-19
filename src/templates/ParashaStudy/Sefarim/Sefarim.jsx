@@ -81,8 +81,8 @@ class Sefarim extends Component {
     return (
       <Layout location={location}>
         <div className='container'>
-          <h2>Sefer {seferTitle}</h2>
-          {seferSponsor && <h3>{sponsor}</h3>}
+          <h3>Sefer {seferTitle}</h3>
+          {seferSponsor && <h4>{sponsor}</h4>}
           <div className='center'>
             {teacherChips}
           </div>

@@ -91,7 +91,7 @@ class NachPerek extends Component {
 
     return (
       <div className='container'>
-        <h2>{pageTitle}</h2>
+        <h3>{pageTitle}</h3>
         <div className='section row'>
           <Link to={`/tanach-study/sefarim/${sefer}`} className='left'>
             <i>Back to {seferString}</i>
