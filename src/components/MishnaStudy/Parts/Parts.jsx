@@ -9,7 +9,7 @@ function Parts(props) {
   return (
     <div className='container'>
       <div className='section center'>
-        <h3>In Loving Memory of Buddy Sutton A&quot;H</h3>
+        <h3>In Loving Memory of Mr. Ovadia Buddy Sutton A&quot;H</h3>
         <h4>Sedarim</h4>
         <PartList title='Zeraim' parts={data.zeraim} />
         <PartList title='Moed' parts={data.moed} />
