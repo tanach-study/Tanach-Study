@@ -30,8 +30,8 @@
     }],
     "no-multi-spaces": ["error", { "exceptions": { "VariableDeclarator": true } }],
     "no-unused-vars": ["error", { "argsIgnorePattern": "[props]|[next]" }],
-    "react/button-has-type": [true],
-    "react/jsx-one-expression-per-line": [true, { "allow": "single-child" }],
+    "react/button-has-type": [2],
+    "react/jsx-one-expression-per-line": [2, { "allow": "single-child" }],
     "max-len": ["error", { "code": 100 }],
     "object-curly-newline": ["error", { 
       "ObjectExpression": { "consistent": true },
