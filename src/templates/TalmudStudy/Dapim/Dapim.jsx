@@ -9,9 +9,9 @@ function Dapim(props) {
   const { location, pageContext } = props;
   const { data: dafObj } = pageContext;
   const { nextPerek, prevPerek } = pageContext || {};
-  const { segment_name: sederN, section_name: masechetN, unit_name: dafN, part_name: amudN } = dafObj;
-  const { segment_title: sederT, section_title: masechetT, unit_title: dafT, part_title: amudT } = dafObj;
-  const { segment: seder, section: masechet, unit: daf, amud: amud } = dafObj;
+  const { segment_name: sederN, section_name: masechetN, unit_name: dafN } = dafObj;
+  const { segment_title: sederT, section_title: masechetT, unit_title: dafT } = dafObj;
+  const { segment: seder, section: masechet, unit: daf } = dafObj;
 
   const { section_sponsor: sSpon, division_sponsor: divisionSponsor } = dafObj;
   const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
@@ -29,8 +29,7 @@ function Dapim(props) {
 
   const sederString = `${sederN || 'Seder'} ${sederT || seder}`;
   const masechetString = `${masechetN || 'Masechet'} ${masechetT || masechet}`;
-  const dafString = `Daf ${daf}${amud}`;
-  const pageTitle = `${sederString} ${masechetString} ${dafString}`;
+  const pageTitle = `${sederString} ${masechetString} Daf ${daf}`;
 
   return (
     <Layout location={location}>
@@ -51,8 +50,8 @@ function Dapim(props) {
             type='audio'
             url={url}
             name={dafN}
-            title={amudT}
-            part={amud}
+            title={dafT}
+            part={daf}
             teacherTitle={teacherT}
             teacherFirst={teacherFN}
             teacherMiddle={teacherMN}
