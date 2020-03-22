@@ -105,6 +105,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const parashotplus = {};
 
+  const talmud = {};
+
   const teachers = [];
   const teacherStrings = new Set();
 
@@ -180,6 +182,16 @@ exports.createPages = async ({ graphql, actions }) => {
         }
         parashotplus[section][segment].push(curr);
         break;
+      case 'talmud':
+        if (!talmud[segment]) {
+          talmud[segment] = {};
+        }
+        if (!talmud[segment][section]) {
+          talmud[segment][section] = [];
+        }
+        // segment is the seder, section is the masechet
+        talmud[segment][section].push(curr);
+        break;
       default:
         break;
     }
@@ -207,6 +219,8 @@ exports.createPages = async ({ graphql, actions }) => {
   const mishMasechetTemplate = path.resolve('./src/templates/MishnaStudy/Masechtot/Masechtot.jsx');
   const mishPerekTemplate = path.resolve('./src/templates/MishnaStudy/Perakim/Perakim.jsx');
   const parashaSeferTemplate = path.resolve('./src/templates/ParashaStudyPlus/Sefarim/Sefarim.jsx');
+  const talmudMasTemplate = path.resolve('./src/templates/TalmudStudy/Masechtot/Masechtot.jsx');
+  const talmudDafTemplate = path.resolve('./src/templates/TalmudStudy/Dapim/Dapim.jsx');
 
   const torahSefarim = Object.keys(torah);
   torahSefarim.forEach((sefer, i) => {
@@ -374,6 +388,45 @@ exports.createPages = async ({ graphql, actions }) => {
           nextSefer,
           prevSefer,
         },
+      });
+    });
+  });
+
+  const tms = Object.keys(talmud);
+  tms.forEach((seder, i) => {
+    const talmudMasechtot = Object.keys(talmud[seder]);
+    talmudMasechtot.forEach((masechet, j) => {
+      let nextMasechet = '';
+      let prevMasechet = '';
+      if (j < talmud[seder].length - 1) {
+        nextMasechet = `/talmud-study/masechtot/${seder}/${talmud[i + 1]}`;
+      }
+      if (j > 0) {
+        prevMasechet = `/parasha-plus-study/sefarim/${seder}/${parashotplus[i - 1]}`;
+      }
+      log.info('creating page', `/talmud-study/masechet/${seder}/${masechet}`);
+      createPage({
+        path: `/talmud-study/masechet/${seder}/${masechet}`,
+        component: talmudMasTemplate,
+        context: {
+          data: talmud[seder][masechet],
+          seder,
+          masechet,
+          nextMasechet,
+          prevMasechet,
+        },
+      });
+
+      const dapim = talmud[seder][masechet];
+      dapim.forEach((daf) => {
+        log.info('creating page', `/talmud-study/dapim/${seder}/${masechet}/${daf.unit}`);
+        createPage({
+          path: `/talmud-study/dapim/${seder}/${masechet}/${daf.unit}`,
+          component: talmudDafTemplate,
+          context: {
+            data: daf,
+          },
+        });
       });
     });
   });
