@@ -13,8 +13,10 @@ log.info('bucket to deploy to:', bucket);
 module.exports = {
   siteMetadata: {
     title: 'Tanach Study',
-    description: 'Tanach Study is a modern, web based platform for the study of the 24 books of'
-    + 'Tanach',
+    template: '%s | Tanach Study',
+    description: 'Tanach Study is a modern, web based platform for the study of the 24 books of Tanach',
+    image: '',
+    url: `https://${bucket}`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
