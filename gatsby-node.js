@@ -418,13 +418,23 @@ exports.createPages = async ({ graphql, actions }) => {
       });
 
       const dapim = talmud[seder][masechet];
-      dapim.forEach((daf) => {
+      dapim.forEach((daf, i) => {
+        let nextDaf = '';
+        let prevDaf = '';
         log.info('creating page', `/talmud-study/dapim/${seder}/${masechet}/${daf.unit}`);
+        if (i < dapim.length - 1) {
+          nextDaf = `/talmud-study/dapim/${seder}/${masechet}/${dapim[i + 1].unit}`;
+        }
+        if (i > 0) {
+          prevDaf = `/talmud-study/dapim/${seder}/${masechet}/${dapim[i - 1].unit}`;
+        }
         createPage({
           path: `/talmud-study/dapim/${seder}/${masechet}/${daf.unit}`,
           component: talmudDafTemplate,
           context: {
             data: daf,
+            nextDaf,
+            prevDaf,
           },
         });
       });
