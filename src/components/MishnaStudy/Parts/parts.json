@@ -92,12 +92,12 @@
     {
       "name": "Masechet Sukka",
       "url": "/mishna-study/masechet/moed/sukka",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Beitza",
       "url": "/mishna-study/masechet/moed/beitza",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Rosh Hashanah",
