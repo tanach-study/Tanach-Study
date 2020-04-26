@@ -1,0 +1,209 @@
+{
+  "zeraim": [
+    {
+      "name": "Masechet Berachot",
+      "url": "/talmud-study/masechet/zeraim/berachot",
+      "active": true
+    }
+  ],
+  "moed": [
+    {
+      "name": "Masechet Shabbat",
+      "url": "/talmud-study/masechet/moed/shabbat",
+      "active": true
+    },
+    {
+      "name": "Masechet Eruvin",
+      "url": "/talmud-study/masechet/moed/eruvin",
+      "active": false
+    },
+    {
+      "name": "Masechet Pesahim",
+      "url": "/talmud-study/masechet/moed/pesahim",
+      "active": false
+    },
+    {
+      "name": "Masechet Shekalim",
+      "url": "/talmud-study/masechet/moed/shekalim",
+      "active": false
+    },
+    {
+      "name": "Masechet Yoma",
+      "url": "/talmud-study/masechet/moed/yoma",
+      "active": false
+    },
+    {
+      "name": "Masechet Sukka",
+      "url": "/talmud-study/masechet/moed/sukka",
+      "active": false
+    },
+    {
+      "name": "Masechet Beitza",
+      "url": "/talmud-study/masechet/moed/beitza",
+      "active": false
+    },
+    {
+      "name": "Masechet Rosh Hashanah",
+      "url": "/talmud-study/masechet/moed/rosh-hashana",
+      "active": false
+    },
+    {
+      "name": "Masechet Taanit",
+      "url": "/talmud-study/masechet/moed/taanit",
+      "active": false
+    },
+    {
+      "name": "Masechet Megilla",
+      "url": "/talmud-study/masechet/moed/megilla",
+      "active": false
+    },
+    {
+      "name": "Masechet Moed Katan",
+      "url": "/talmud-study/masechet/moed/moed-katan",
+      "active": false
+    },
+    {
+      "name": "Masechet Hagigah",
+      "url": "/talmud-study/masechet/moed/hagiga",
+      "active": false
+    }
+  ],
+  "nashim": [
+    {
+      "name": "Masechet Yevamot",
+      "url": "/talmud-study/masechet/nashim/yevamot",
+      "active": false
+    },
+    {
+      "name": "Masechet Ketubot",
+      "url": "/talmud-study/masechet/nashim/ketubot",
+      "active": false
+    },
+    {
+      "name": "Masechet Nedarim",
+      "url": "/talmud-study/masechet/nashim/nedarim",
+      "active": false
+    },
+    {
+      "name": "Masechet Nazir",
+      "url": "/talmud-study/masechet/nashim/nazir",
+      "active": false
+    },
+    {
+      "name": "Masechet Sotah",
+      "url": "/talmud-study/masechet/nashim/sotah",
+      "active": false
+    },
+    {
+      "name": "Masechet Gittin",
+      "url": "/talmud-study/masechet/nashim/gittin",
+      "active": false
+    },
+    {
+      "name": "Masechet Kiddushin",
+      "url": "/talmud-study/masechet/nashim/kiddushin",
+      "active": false
+    }
+  ],
+  "nezikin": [
+    {
+      "name": "Masechet Bava Kamma",
+      "url": "/talmud-study/masechet/nezikin/bava-kamma",
+      "active": false
+    },
+    {
+      "name": "Masechet Bava Metzia",
+      "url": "/talmud-study/masechet/nezikin/bava-metzia",
+      "active": false
+    },
+    {
+      "name": "Masechet Bava Batra",
+      "url": "/talmud-study/masechet/nezikin/bava-batra",
+      "active": false
+    },
+    {
+      "name": "Masechet Sanhedrin",
+      "url": "/talmud-study/masechet/nezikin/sanhedrin",
+      "active": false
+    },
+    {
+      "name": "Masechet Makkot",
+      "url": "/talmud-study/masechet/nezikin/makkot",
+      "active": false
+    },
+    {
+      "name": "Masechet Shevuot",
+      "url": "/talmud-study/masechet/nezikin/shevuot",
+      "active": false
+    },
+    {
+      "name": "Masechet Eduyot",
+      "url": "/talmud-study/masechet/nezikin/eduyot",
+      "active": false
+    },
+    {
+      "name": "Masechet Avodah Zara",
+      "url": "/talmud-study/masechet/nezikin/avoda-zara",
+      "active": false
+    },
+    {
+      "name": "Masechet Horayot",
+      "url": "/talmud-study/masechet/nezikin/horayot",
+      "active": false
+    }
+  ],
+  "kadashim": [
+    {
+      "name": "Masechet Zevachim",
+      "url": "/talmud-study/masechet/kadashim/zevachim",
+      "active": false
+    },
+    {
+      "name": "Masechet Menahot",
+      "url": "/talmud-study/masechet/kadashim/menahot",
+      "active": false
+    },
+    {
+      "name": "Masechet Hullin",
+      "url": "/talmud-study/masechet/kadashim/hullin",
+      "active": false
+    },
+    {
+      "name": "Masechet Bekhorot",
+      "url": "/talmud-study/masechet/kadashim/bekhorot",
+      "active": false
+    },
+    {
+      "name": "Masechet Arakhin",
+      "url": "/talmud-study/masechet/kadashim/arakhin",
+      "active": false
+    },
+    {
+      "name": "Masechet Temurah",
+      "url": "/talmud-study/masechet/kadashim/temurah",
+      "active": false
+    },
+    {
+      "name": "Masechet Keritot",
+      "url": "/talmud-study/masechet/kadashim/keritot",
+      "active": false
+    },
+    {
+      "name": "Masechet Meila",
+      "url": "/talmud-study/masechet/kadashim/meila",
+      "active": false
+    },
+    {
+      "name": "Masechet Tamid",
+      "url": "/talmud-study/masechet/kadashim/tamid",
+      "active": false
+    }
+  ],
+  "taharot": [
+    {
+      "name": "Masechet Niddah",
+      "url": "/talmud-study/masechet/taharot/niddah",
+      "active": false
+    }
+  ]
+}
