@@ -42,6 +42,7 @@ class Navigation extends Component {
           <li><Link to='/'>Home</Link></li>
           <li><Link to={`${lp}/parts`}>Study</Link></li>
           <li><Link to='/signup'>Sign Up</Link></li>
+          <li><Link to='/whatsapp'>WhatsApp</Link></li>
           <li>
             <a
               href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
@@ -62,6 +63,7 @@ class Navigation extends Component {
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to={`${lp}/parts`}>Study</Link></li>
                 <li><Link to='/signup'>Sign Up</Link></li>
+                <li><Link to='/whatsapp'>WhatsApp</Link></li>
                 <li>
                   <a
                     href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
