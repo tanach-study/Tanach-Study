@@ -15,7 +15,8 @@ function WhatsApp(props) {
             around the world! We will be sending out our recordings of&nbsp;
             <Link to='/parasha-plus-study'>Parasha Study Plus</Link>
             &nbsp;to these WhatsApp groups, in addition to our&nbsp;
-            <Link to='/signup'>daily emails</Link>&nbsp;and&nbsp;
+            <Link to='/signup'>daily emails</Link>
+            &nbsp;and&nbsp;
             <a href='https://podcasts.apple.com/us/podcast/parasha-study-plus/id1483716454'>
               daily podcasts.
             </a>
@@ -28,6 +29,9 @@ function WhatsApp(props) {
             Please note that the content will be the same across all chats; joining one chat is
             sufficient.
           </p>
+        </section>
+        <section className='section center'>
+          <h4>Parasha Study Plus</h4>
           <table className='table'>
             <thead>
               <tr>
@@ -58,6 +62,25 @@ function WhatsApp(props) {
                 <td>Parasha Study Plus #4</td>
                 <td>
                   <a href='https://chat.whatsapp.com/CcLCLxPXYrB3yzz3QbMGWL'>Click to join</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section className='section center'>
+          <h4>Mishna Study</h4>
+          <table className='table'>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mishna Study #1</td>
+                <td>
+                  <a href='https://chat.whatsapp.com/I75D26AIiIBEi2GIg6sYvo'>Click to join</a>
                 </td>
               </tr>
             </tbody>

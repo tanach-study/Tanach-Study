@@ -56,7 +56,6 @@ class Signup extends Component {
     if (!didFetch) {
       return (
         <SignupContainer
-          showHeader
           child={(
             <SignupForm
               response={this.setResponse}
@@ -70,7 +69,6 @@ class Signup extends Component {
     if (isError) {
       return (
         <SignupContainer
-          showHeader
           child={(
             <SignupError
               message={message}
@@ -83,7 +81,6 @@ class Signup extends Component {
     // no error, we have a successful submission
     return (
       <SignupContainer
-        showHeader
         child={(
           <SignupSuccess
             message={message}
