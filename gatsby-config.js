@@ -7,7 +7,7 @@ if (NODE_ENV !== 'production') {
   dotenv.config({ silent: false });
 }
 
-const bucket = TRAVIS_BRANCH === 'master' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
+const bucket = TRAVIS_BRANCH === 'master' ? 'tanachstudy.com' : 'app.tanachstudy.com';
 log.info('bucket to deploy to:', bucket);
 
 module.exports = {
