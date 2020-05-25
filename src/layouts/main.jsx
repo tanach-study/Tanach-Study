@@ -5,7 +5,6 @@ import 'materialize-css/dist/css/materialize.min.css';
 import './styles.global.css';
 import './icons.css';
 
-import ProgramNavigation from '../components/ProgramNavigation/ProgramNavigation.jsx';
 import Navigation from '../components/Navigation/Navigation.jsx';
 import Footer from '../components/Footer/Footer.jsx';
 
@@ -33,7 +32,6 @@ function Layout(props) {
   }
   return (
     <ProgramContext.Provider value={program}>
-      <ProgramNavigation />
       <Navigation program={program} />
       <div className='body'>
         <main>{children}</main>

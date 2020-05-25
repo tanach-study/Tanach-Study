@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
 import classNames from 'classnames';
 
 import styles from './Navigation.module.css';
@@ -26,10 +25,6 @@ class Navigation extends Component {
       'hide-on-large-only': true,
       hide: hideMobile,
     });
-    const { program } = this.props;
-    const prog = program || {};
-    const { linkPrefix } = prog;
-    const lp = linkPrefix ? `/${linkPrefix}` : '/tanach-study';
     return (
       <nav className={`white ${styles.tsnav} valign-wrapper`}>
         <div
@@ -39,42 +34,22 @@ class Navigation extends Component {
           <i className='material-icons'>menu</i>
         </div>
         <ul className={`${styles['desktop-nav']} hide-on-med-and-down`}>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to={`${lp}/parts`}>Study</Link></li>
-          <li><Link to='/signup'>Sign Up</Link></li>
-          <li><Link to='/whatsapp'>WhatsApp</Link></li>
-          <li>
-            <a
-              href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
-              target='blank'
-            >
-              Videos
-            </a>
-          </li>
-          <li><Link to='/donate'>Donate</Link></li>
-          <li><Link to='/contact'>Contact Us</Link></li>
-          <li><Link to='/about'>About Us</Link></li>
+          <li><a href='https://tanachstudy.com'>Home</a></li>
+          <li><a href='https://tanachstudy.com/about'>About</a></li>
+          <li><a href='https://tanachstudy.com/signup'>Sign Up</a></li>
+          <li><a href='https://tanachstudy.com/donate'>Donate</a></li>
+          <li><a href='https://tanachstudy.com/contact'>Contact</a></li>
         </ul>
 
         <div className={mobileNavClass}>
           <div className='row full-height'>
             <div className='col m5 s8 full-height white' onClick={() => this.toggleMobileNav()}>
               <ul className={`${styles['mobile-nav']} tsblue-text`}>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to={`${lp}/parts`}>Study</Link></li>
-                <li><Link to='/signup'>Sign Up</Link></li>
-                <li><Link to='/whatsapp'>WhatsApp</Link></li>
-                <li>
-                  <a
-                    href='https://www.youtube.com/channel/UC0b52aDc7f8VTtxT-Ktfb6Q/videos'
-                    target='blank'
-                  >
-                    Videos
-                  </a>
-                </li>
-                <li><Link to='/donate'>Donate</Link></li>
-                <li><Link to='/contact'>Contact Us</Link></li>
-                <li><Link to='/about'>About Us</Link></li>
+                <li><a href='https://tanachstudy.com'>Home</a></li>
+                <li><a href='https://tanachstudy.com/about'>About</a></li>
+                <li><a href='https://tanachstudy.com/signup'>Sign Up</a></li>
+                <li><a href='https://tanachstudy.com/donate'>Donate</a></li>
+                <li><a href='https://tanachstudy.com/contact'>Contact</a></li>
               </ul>
             </div>
             <div
