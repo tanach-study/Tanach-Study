@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'gatsby';
 import classNames from 'classnames';
 
 import styles from './Navigation.module.css';
@@ -36,7 +37,7 @@ class Navigation extends Component {
         <ul className={`${styles['desktop-nav']} hide-on-med-and-down`}>
           <li><a href='https://tanachstudy.com'>Home</a></li>
           <li><a href='https://tanachstudy.com/about'>About</a></li>
-          <li><a href='https://tanachstudy.com/signup'>Sign Up</a></li>
+          <li><Link to='/signup'>Sign Up</Link></li>
           <li><a href='https://tanachstudy.com/donate'>Donate</a></li>
           <li><a href='https://tanachstudy.com/contact'>Contact</a></li>
         </ul>
@@ -47,7 +48,7 @@ class Navigation extends Component {
               <ul className={`${styles['mobile-nav']} tsblue-text`}>
                 <li><a href='https://tanachstudy.com'>Home</a></li>
                 <li><a href='https://tanachstudy.com/about'>About</a></li>
-                <li><a href='https://tanachstudy.com/signup'>Sign Up</a></li>
+                <li><Link to='/signup'>Sign Up</Link></li>
                 <li><a href='https://tanachstudy.com/donate'>Donate</a></li>
                 <li><a href='https://tanachstudy.com/contact'>Contact</a></li>
               </ul>
