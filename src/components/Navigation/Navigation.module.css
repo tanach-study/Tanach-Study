@@ -1,5 +1,11 @@
 .tsnav {
   box-shadow: unset;
+  min-height: 60px;
+  height: 10vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .tsnav a {
@@ -7,27 +13,25 @@
 }
 
 /* Larger than mobile width */
-@media screen and (min-width:601px) {
-  .tsnav {
-    min-height: 60px;
-    height: 10vh;
-    padding-right: 5vw;
+@media screen and (min-width:993px) {
+  .nav-list {
+    margin-right: 5vw;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: right;
   }
 
-  .nav-list {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: right;
+  .nav-image {
+    height: 75px;
+    width: auto;
+    margin-left: 5vw;
+    margin-top: 5vh;
   }
 }
 
-/* Smaller than mobile width */
-@media screen and (max-width:600px) {
+/* Smaller than desktop width */
+@media screen and (max-width:992px) {
   .tsnav.active {
     height: 100vh;
     width: 100vw;
@@ -35,22 +39,30 @@
     left: 0;
     top: 0;
     z-index: 1000;
-    box-shadow: unset;
-    display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
-  .tsnav:not(.active) .nav-list {
+  .nav-image-link {
+    margin-left: 5%;
+    width: 10%;
+  }
+
+  .nav-image {
+    height: 50px;
+  }
+
+  .nav-list:not(.active) {
     display: none;
   }
 
-  .nav-list {
-    order: 1;
+  .nav-list.active {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
   }
 
@@ -59,8 +71,9 @@
   }
 
   .mobile-activator {
-    order: 0;
-    width: 90%;
+    width: 10%;
+    margin-right: 5%;
     text-align: right;
+    cursor: pointer;
   }
 }

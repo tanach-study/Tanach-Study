@@ -25,18 +25,25 @@ class Navigation extends Component {
       [styles.tsnav]: true,
       [styles.active]: isMobileActive,
     });
+    const navListClass = classNames({
+      [styles['nav-list']]: true,
+      [styles.active]: isMobileActive,
+    });
     return (
       <nav className={`white ${mobileNavClass}`}>
-        <ul className={styles['nav-list']}>
+        <a className={styles['nav-image-link']} href='https://tanachstudy.com'>
+          <img className={styles['nav-image']} src='https://cdn.tanachstudy.com/assets/images/logo.png' alt='Tanach Study' />
+        </a>
+        <ul className={navListClass}>
           <li><a href='https://tanachstudy.com'>Home</a></li>
           <li><a href='https://tanachstudy.com/about'>About</a></li>
           <li><Link to='/signup'>Sign Up</Link></li>
           <li><a href='https://tanachstudy.com/donate'>Donate</a></li>
           <li><a href='https://tanachstudy.com/contact'>Contact</a></li>
         </ul>
-        <div className={`${styles['mobile-activator']} hide-on-large-only black-text`} onClick={() => this.toggleMobileNav()}>
+        <span className={`${styles['mobile-activator']} hide-on-large-only black-text`} onClick={() => this.toggleMobileNav()}>
           <i className='material-icons'>menu</i>
-        </div>
+        </span>
       </nav>
     );
   }
