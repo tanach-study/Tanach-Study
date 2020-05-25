@@ -1,7 +1,10 @@
 import React from 'react';
 
-if (typeof window !== 'undefined') window.location.replace('https://tanachstudy.com');
-
-const IndexPage = () => {};
+const IndexPage = () => {
+  if (typeof window !== 'undefined') window.location.replace('https://tanachstudy.com');
+  return (
+    <></>
+  );
+};
 
 export default IndexPage;
