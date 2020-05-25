@@ -1,12 +1,10 @@
 import React from 'react';
 
-import Layout from '../layouts/main.jsx';
-import HomePage from '../components/HomePage/HomePage.jsx';
-
-const IndexPage = ({ location }) => (
-  <Layout location={location}>
-    <HomePage />
-  </Layout>
-);
+const IndexPage = () => {
+  if (typeof window !== 'undefined') window.location.replace('https://tanachstudy.com');
+  return (
+    <></>
+  );
+};
 
 export default IndexPage;

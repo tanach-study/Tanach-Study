@@ -7,7 +7,7 @@ if (NODE_ENV !== 'production') {
   dotenv.config({ silent: false });
 }
 
-const bucket = TRAVIS_BRANCH === 'master' ? 'tanachstudy.com' : 'beta.tanachstudy.com';
+const bucket = TRAVIS_BRANCH === 'master' ? 'app.tanachstudy.com' : 'beta.tanachstudy.com';
 log.info('bucket to deploy to:', bucket);
 
 module.exports = {
@@ -18,13 +18,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
-      },
-    },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
