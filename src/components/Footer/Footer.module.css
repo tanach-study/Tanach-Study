@@ -1,35 +1,6 @@
-footer.page-footer {
-  margin: 0;
-}
-
-/* Larger than mobile width */
-@media screen and (min-width:601px) {
-  .footer-container {
-    height: 10vh;
-    min-height: 80px;
-  }
-  .created-container {
-    text-align: left;
-  }
-  .links-container {
-    text-align: right;
-  }
-}
-
-/* Smaller than mobile width */
-@media screen and (max-width:600px) {
-  .footer-container {
-    height: 10vh;
-    min-height: 180px;
-  }
-  .created-container {
-    text-align: center;
-    order: 1;
-  }
-  .links-container {
-    text-align: center;
-    order: 0;
-  }
+footer {
+  padding: 1%;
+  background-color: #253551;
 }
 
 .footer-wrapper {
@@ -51,4 +22,9 @@ footer.page-footer {
 .social-icons img {
   height: 32px;
   width: 32px;
+}
+
+.footer-link {
+  color: white;
+  border-bottom: 1px solid white;
 }
