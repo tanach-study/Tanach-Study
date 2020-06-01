@@ -15,7 +15,7 @@ function PartLink({ book, i, books }) {
   if (book.active) {
     return (
       <Link to={book.url} className={`col s12 m6 l4 ${classAdd}`} key={i}>
-        <div className='card msred btn waves-effect hoverable full-width'>
+        <div className='card talmudyellow btn waves-effect hoverable full-width'>
           <div className='col-content'>{book.name}</div>
         </div>
       </Link>
