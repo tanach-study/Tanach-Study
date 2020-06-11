@@ -187,10 +187,13 @@ exports.createPages = async ({ graphql, actions }) => {
           talmud[segment] = {};
         }
         if (!talmud[segment][section]) {
-          talmud[segment][section] = [];
+          talmud[segment][section] = {};
         }
-        // segment is the seder, section is the masechet
-        talmud[segment][section].push(curr);
+        if (!talmud[segment][section][unit]) {
+          talmud[segment][section][unit] = [];
+        }
+        // segment is the seder, section is the masechet, unit is the daf
+        talmud[segment][section][unit].push(curr);
         break;
       default:
         break;
@@ -417,22 +420,24 @@ exports.createPages = async ({ graphql, actions }) => {
         },
       });
 
+      // dapim is an object of daf -> []
       const dapim = talmud[seder][masechet];
-      dapim.forEach((daf, i) => {
+      const dapimKeys = Object.keys(dapim);
+      dapimKeys.forEach((daf, j) => {
         let nextDaf = '';
         let prevDaf = '';
-        log.info('creating page', `/talmud-study/dapim/${seder}/${masechet}/${daf.unit}`);
-        if (i < dapim.length - 1) {
-          nextDaf = `/talmud-study/dapim/${seder}/${masechet}/${dapim[i + 1].unit}`;
+        log.info('creating page', `/talmud-study/dapim/${seder}/${masechet}/${daf}`);
+        if (j < dapimKeys.length - 1) {
+          nextDaf = `/talmud-study/dapim/${seder}/${masechet}/${parseInt(daf, 10) + 1}`;
         }
-        if (i > 0) {
-          prevDaf = `/talmud-study/dapim/${seder}/${masechet}/${dapim[i - 1].unit}`;
+        if (j > 0) {
+          prevDaf = `/talmud-study/dapim/${seder}/${masechet}/${parseInt(daf, 10) - 1}`;
         }
         createPage({
-          path: `/talmud-study/dapim/${seder}/${masechet}/${daf.unit}`,
+          path: `/talmud-study/dapim/${seder}/${masechet}/${daf}`,
           component: talmudDafTemplate,
           context: {
-            data: daf,
+            data: dapim[daf],
             nextDaf,
             prevDaf,
           },

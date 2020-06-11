@@ -3,12 +3,12 @@ import DafItem from './DafItem.jsx';
 
 const DafList = (props) => {
   const { dapim, seder, masechet } = props;
-  const mapped = dapim.map(daf => (
+  const mapped = dapim.map((daf) => (
     <DafItem
-      daf={daf.unit}
+      daf={daf}
       masechet={masechet}
       seder={seder}
-      key={`seder-${seder}-masechet-${masechet}-daf-${daf.unit}-listitem`}
+      key={`seder-${seder}-masechet-${masechet}-daf-${daf}-listitem`}
     />
   ));
   return (

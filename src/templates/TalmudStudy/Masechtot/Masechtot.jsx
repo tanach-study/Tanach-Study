@@ -10,28 +10,31 @@ function Masechtot(props) {
   const dapim = new Set();
   const teacherStrings = new Set();
   const teachers = [];
-  data.forEach((record) => {
-    dapim.add(record);
-    const { teacher_title: title } = record;
-    const { teacher_fname: fname } = record;
-    const { teacher_mname: mname } = record;
-    const { teacher_lname: lname } = record;
-    const teacherString = `${title}-${fname}-${mname}-${lname}`;
-    if (!teacherStrings.has(teacherString)) {
-      teacherStrings.add(teacherString);
-      const { teacher_short_bio: shortBio } = record;
-      const { teacher_long_bio: longBio } = record;
-      const { teacher_image_url: image } = record;
-      teachers.push({
-        title,
-        fname,
-        mname,
-        lname,
-        shortBio,
-        longBio,
-        image,
-      });
-    }
+  const keys = Object.keys(data);
+  keys.forEach((key) => {
+    data[key].forEach((record) => {
+      dapim.add(record);
+      const { teacher_title: title } = record;
+      const { teacher_fname: fname } = record;
+      const { teacher_mname: mname } = record;
+      const { teacher_lname: lname } = record;
+      const teacherString = `${title}-${fname}-${mname}-${lname}`;
+      if (!teacherStrings.has(teacherString)) {
+        teacherStrings.add(teacherString);
+        const { teacher_short_bio: shortBio } = record;
+        const { teacher_long_bio: longBio } = record;
+        const { teacher_image_url: image } = record;
+        teachers.push({
+          title,
+          fname,
+          mname,
+          lname,
+          shortBio,
+          longBio,
+          image,
+        });
+      }
+    });
   });
   const [activeIndex, updateIndex] = useState(0);
 
@@ -41,7 +44,7 @@ function Masechtot(props) {
       <div
         key={`${title}-${fname}-${lname}-chip`}
         className='chip pointer'
-        onClick={e => updateIndex(i)}
+        onClick={(e) => updateIndex(i)}
       >
         {title} {fname}{mname ? ` ${mname} ` : ' '}{lname}
       </div>
@@ -61,9 +64,10 @@ function Masechtot(props) {
       </div>
     );
   });
-  const masechetTitle = data[0].section_title;
-  const masechetSponsor = data[0].section_sponsor;
-  const divisionSponsor = data[0].division_sponsor;
+  const firstDaf = data[Object.keys(data)[0]][0];
+  const masechetTitle = firstDaf.section_title;
+  const masechetSponsor = firstDaf.section_sponsor;
+  const divisionSponsor = firstDaf.division_sponsor;
   const sederName = seder;
   const masechetName = masechet;
 
@@ -84,7 +88,7 @@ function Masechtot(props) {
         </div>
         {teacherCards[activeIndex]}
         <DafList
-          dapim={Array.from(dapim)}
+          dapim={Object.keys(data)}
           seder={sederName}
           masechet={masechetName}
         />

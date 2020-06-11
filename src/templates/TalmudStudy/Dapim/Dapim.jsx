@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../../../layouts/main.jsx';
-// import Talumd from '../../../components/Talumd/Talumd.jsx';
 import MediaPlayer from '../../../components/MediaPlayer/MediaPlayer.jsx';
 
 function getSefariaLink(masechet, daf) {
@@ -27,24 +26,46 @@ function getSefariaLink(masechet, daf) {
 
 function Dapim(props) {
   const { location, pageContext } = props;
-  const { data: dafObj, nextDaf, prevDaf } = pageContext;
-  const { segment_name: sederN, section_name: masechetN, unit_name: dafN } = dafObj;
-  const { segment_title: sederT, section_title: masechetT, unit_title: dafT } = dafObj;
-  const { segment: seder, section: masechet, unit: daf } = dafObj;
+  const { data: dapim, nextDaf, prevDaf } = pageContext;
+  const dapimCards = dapim.map((dafObj) => {
+    const { unit: daf, unit_name: dafN, unit_title: dafT, audio_url: url } = dafObj;
 
-  const { section_sponsor: sSpon, division_sponsor: divisionSponsor } = dafObj;
-  const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
+    const { teacher_title: teacherT,
+      teacher_fname: teacherFN,
+      teacher_mname: teacherMN,
+      teacher_lname: teacherLN,
+      teacher_short_bio: teacherBio,
+      teacher_image_url: teacherImage } = dafObj;
+
+    return (
+      <MediaPlayer
+        key={url}
+        type='audio'
+        url={url}
+        name={dafN}
+        title={dafT}
+        part={daf}
+        teacherTitle={teacherT}
+        teacherFirst={teacherFN}
+        teacherMiddle={teacherMN}
+        teacherLast={teacherLN}
+        teacherImage={teacherImage}
+        teacherBio={teacherBio}
+        className='col l6 m6 s12'
+      />
+    );
+  });
+
+  const { segment_name: sederN, section_name: masechetN } = dapim[0];
+  const { segment_title: sederT, section_title: masechetT } = dapim[0];
+  const { segment: seder, section: masechet, unit: daf } = dapim[0];
+
+  const { section_sponsor: sSpon, division_sponsor: divisionSponsor } = dapim[0];
+
+  const sponsor = Array.isArray(sSpon) ? sSpon.map((l) => <div key={l}>{l}</div>) : sSpon;
   const dSponsor = Array.isArray(divisionSponsor)
-    ? divisionSponsor.map(l => <div key={l}>{l}</div>)
+    ? divisionSponsor.map((l) => <div key={l}>{l}</div>)
     : divisionSponsor;
-  const { audio_url: url } = dafObj;
-
-  const { teacher_title: teacherT,
-    teacher_fname: teacherFN,
-    teacher_mname: teacherMN,
-    teacher_lname: teacherLN,
-    teacher_short_bio: teacherBio,
-    teacher_image_url: teacherImage } = dafObj;
 
   const sederString = `${sederN || 'Seder'} ${sederT || seder}`;
   const masechetString = `${masechetN || 'Masechet'} ${masechetT || masechet}`;
@@ -65,20 +86,7 @@ function Dapim(props) {
           </div>
         </section>
         <section className='row'>
-          <MediaPlayer
-            type='audio'
-            url={url}
-            name={dafN}
-            title={dafT}
-            part={daf}
-            teacherTitle={teacherT}
-            teacherFirst={teacherFN}
-            teacherMiddle={teacherMN}
-            teacherLast={teacherLN}
-            teacherImage={teacherImage}
-            teacherBio={teacherBio}
-            className='col l6 m6 s12'
-          />
+          {dapimCards}
         </section>
         <section className='row'>
           <div className='l6 m12 s12 offset-l3 center'>
