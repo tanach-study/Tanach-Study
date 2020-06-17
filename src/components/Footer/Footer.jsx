@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import styles from './Footer.module.css';
 
@@ -36,7 +35,7 @@ function Footer(props) {
                 <a className={styles['footer-link']} href='https://tanachstudy.com/donate'>Donate</a>
               </div>
               <div className='col l12 m12 s12'>
-                <Link className={styles['footer-link']} to='/signup'>Sign Up</Link>
+                <a className={styles['footer-link']} href='https://tanachstudy.com/signup'>Sign Up</a>
               </div>
             </div>
           </div>
