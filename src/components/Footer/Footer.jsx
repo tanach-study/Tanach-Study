@@ -32,6 +32,9 @@ function Footer(props) {
                 <a className={styles['footer-link']} href='https://tanachstudy.com/about'>About</a>
               </div>
               <div className='col l12 m12 s12'>
+                <a className={styles['footer-link']} href='https://tanachstudy.com/events'>Events</a>
+              </div>
+              <div className='col l12 m12 s12'>
                 <a className={styles['footer-link']} href='https://tanachstudy.com/donate'>Donate</a>
               </div>
               <div className='col l12 m12 s12'>

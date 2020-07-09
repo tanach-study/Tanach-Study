@@ -117,12 +117,12 @@
     {
       "name": "Masechet Moed Katan",
       "url": "/mishna-study/masechet/moed/moed-katan",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Hagigah",
       "url": "/mishna-study/masechet/moed/hagiga",
-      "active": false
+      "active": true
     }
   ],
   "nashim": [
