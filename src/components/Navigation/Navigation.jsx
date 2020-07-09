@@ -38,6 +38,7 @@ class Navigation extends Component {
           <li><a href='https://tanachstudy.com'>Home</a></li>
           <li><a href='https://tanachstudy.com/about'>About</a></li>
           <li><a href='https://tanachstudy.com/signup'>Sign Up</a></li>
+          <li><a href='https://tanachstudy.com/events'>Events</a></li>
           <li><a href='https://tanachstudy.com/donate'>Donate</a></li>
           <li><a href='https://tanachstudy.com/contact'>Contact</a></li>
         </ul>
