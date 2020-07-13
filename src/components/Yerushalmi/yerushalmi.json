@@ -144,6 +144,15 @@
       "chapters":  [
         { "number": 2, "path": "/mishna-study/perek/moed/taanit/2" }
       ]
+    },
+    {
+      "name": "sanhedrin",
+      "title": "Sanhedrin",
+      "modifier": "Masechet",
+      "unavailable": true,
+      "chapters":  [
+        { "number": 4, "path": "/mishna-study/perek/moed/taanit/4" }
+      ]
     }
   ]
 }

@@ -10,6 +10,7 @@ function BookItem(props) {
       bookName={name}
       chapter={chapter}
       length={chapters.length}
+      unavailable={props.unavailable}
       i={i}
     />
   ));
