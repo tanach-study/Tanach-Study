@@ -32,6 +32,11 @@ function Yerushalmi(props) {
             title='Ketuvim'
             section={data.ketuvim || []}
           />
+          <div className='divider' />
+          <BookList
+            title='Mishna'
+            section={data.mishna || []}
+          />
         </div>
       </div>
     </Layout>

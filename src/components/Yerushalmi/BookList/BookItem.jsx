@@ -10,12 +10,13 @@ function BookItem(props) {
       bookName={name}
       chapter={chapter}
       length={chapters.length}
+      unavailable={props.unavailable}
       i={i}
     />
   ));
   return (
     <div className='section row'>
-      <h5 className='col l12 m12 s12'>Sefer {title}</h5>
+      <h5 className='col l12 m12 s12'>{props.modifier || 'Sefer'} {title}</h5>
       {props.notes ? <p className='col l12 m12 s12'>{props.notes}</p> : null}
       {chapterItems}
     </div>

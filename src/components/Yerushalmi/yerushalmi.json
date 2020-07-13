@@ -11,9 +11,7 @@
         { "number": 16, "path": "/parasha-study/perakim/bereshit/lech-lecha" },
         { "number": 18, "path": "/parasha-study/perakim/bereshit/vayera" },
         { "number": 19, "path": "/parasha-study/perakim/bereshit/vayera" },
-        { "number": 27, "path": "/parasha-study/perakim/bereshit/toledot" },
-        { "number": 28, "path": "/parasha-study/perakim/bereshit/toledot" },
-        { "number": 29, "path": "/parasha-study/perakim/bereshit/vayetze" }
+        { "number": 27, "path": "/parasha-study/perakim/bereshit/toledot" }
       ]
     },
     {
@@ -28,8 +26,7 @@
       "name": "vayikra",
       "title": "Vayikra",
       "chapters": [
-        { "number": 19, "path": "/parasha-study/perakim/vayikra/kedoshim" },
-        { "number": 25, "path": "/parasha-study/perakim/vayikra/behar" }
+        { "number": 19, "path": "/parasha-study/perakim/vayikra/kedoshim" }
       ]
     },
     {
@@ -37,9 +34,7 @@
       "title": "Devarim",
       "chapters": [
         { "number": 20, "path": "/parasha-study/perakim/devarim/shofetim" },
-        { "number": 21, "path": "/parasha-study/perakim/devarim/ki-tetze" },
-        { "number": 33, "path": "/parasha-study/perakim/devarim/vezot-haberacha" },
-        { "number": 34, "path": "/parasha-study/perakim/devarim/vezot-haberacha" }
+        { "number": 21, "path": "/parasha-study/perakim/devarim/ki-tetze" }
       ]
     }
   ],
@@ -53,18 +48,6 @@
         { "number": 3 },
         { "number": 4 },
         { "number": 5 }
-      ]
-    },
-    {
-      "name": "shofetim",
-      "title": "Shofetim",
-      "chapters": [
-        { "number": 6 },
-        { "number": 7 },
-        { "number": 8 },
-        { "number": 9 },
-        { "number": 17 },
-        { "number": 18 }
       ]
     },
     {
@@ -101,8 +84,7 @@
         { "number": 2 },
         { "number": 11 },
         { "number": 36 },
-        { "number": 37 },
-        { "number": 40 }
+        { "number": 37 }
       ]
     },
     {
@@ -113,15 +95,6 @@
         { "number": 31 },
         { "number": 32 }
       ]
-    },
-    {
-      "name": "michah",
-      "title": "Michah",
-      "chapters": [
-        { "number": 3 },
-        { "number": 4 },
-        { "number": 5 }
-      ]
     }
   ],
   "ketuvim": [
@@ -131,7 +104,7 @@
       "chapters":  [
         { "number": 1 },
         { "number": 8 },
-        { "number": 74 }
+        { "number": 23 }
       ]
     },
     {
@@ -143,25 +116,42 @@
         { "number": 3 },
         { "number": 4 }
       ]
+    }
+  ],
+  "mishna": [
+    {
+      "name": "berachot",
+      "title": "Berachot",
+      "modifier": "Masechet",
+      "chapters":  [
+        { "number": 4, "path": "/mishna-study/perek/zeraim/berachot/4" },
+        { "number": 5, "path": "/mishna-study/perek/zeraim/berachot/5" },
+        { "number": 6, "path": "/mishna-study/perek/zeraim/berachot/6" }
+      ]
     },
     {
-      "name": "ezra",
-      "title": "Ezra",
-      "chapters": [
-        { "number": 7 },
-        { "number": 8 },
-        { "number": 9 }
-      ],
-      "notes": "The test does not cover the Aramaic parts or the lists of people."
+      "name": "yoma",
+      "title": "Yoma",
+      "modifier": "Masechet",
+      "chapters":  [
+        { "number": 8, "path": "/mishna-study/perek/moed/yoma/8" }
+      ]
     },
     {
-      "name": "nehemya",
-      "title": "Nehemya",
-      "chapters": [
-        { "number": 1 },
-        { "number": 2 },
-        { "number": 4 },
-        { "number": 5 }
+      "name": "taanit",
+      "title": "Taanit",
+      "modifier": "Masechet",
+      "chapters":  [
+        { "number": 2, "path": "/mishna-study/perek/moed/taanit/2" }
+      ]
+    },
+    {
+      "name": "sanhedrin",
+      "title": "Sanhedrin",
+      "modifier": "Masechet",
+      "unavailable": true,
+      "chapters":  [
+        { "number": 4, "path": "/mishna-study/perek/moed/taanit/4" }
       ]
     }
   ]

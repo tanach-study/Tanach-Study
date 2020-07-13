@@ -23,6 +23,15 @@ function ChapterItem(props) {
 
   const link = path || `/tanach-study/perakim/${bookName}/${number}`;
 
+  if (props.unavailable) {
+    return (
+      <div className={`col s12 m6 l4 ${classAdd}`}>
+        <div className='card tsblue disabled btn waves-effect hoverable full-width'>
+          <div className='col-content'>{bookName} {number}</div>
+        </div>
+      </div>
+    );
+  }
   return (
     <Link to={link} className={`col s12 m6 l4 ${classAdd}`} key={`${bookName}-${number}-${i}`}>
       <div className='card tsblue btn waves-effect hoverable full-width'>
