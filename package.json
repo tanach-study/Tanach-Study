@@ -24,7 +24,6 @@
     "npm": "6.13.4"
   },
   "dependencies": {
-    "classnames": "2.2.6",
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.2",
     "gatsby-plugin-google-fonts": "^1.0.1",
