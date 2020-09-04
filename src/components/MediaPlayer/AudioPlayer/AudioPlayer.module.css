@@ -1,3 +1,7 @@
 .tabs-container {
   border-top: 1px solid #ddd;
 }
+
+.speed-selector {
+  display: unset;
+}
