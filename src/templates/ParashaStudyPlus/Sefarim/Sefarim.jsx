@@ -14,33 +14,6 @@ class Sefarim extends Component {
     this.selectParasha = this.selectParasha.bind(this);
   }
 
-  componentDidMount() {
-    const query = this.getQueryParams();
-    const { part } = query;
-    const currentParasha = part ? parseInt(part, 10) - 1 : 0;
-    const { currentParasha: old } = this.state;
-    if (currentParasha !== old) {
-      this.setState({
-        currentParasha,
-      });
-    }
-  }
-
-  getQueryParams() {
-    const { location } = this.props;
-    const queryString = location.search;
-    if (queryString) {
-      const pairs = queryString.slice(1).split('&');
-      const params = {};
-      for (let i = 0; i < pairs.length; i++) {
-        const kv = pairs[i].split('=');
-        params[kv[0]] = kv[1];
-      }
-      return params;
-    }
-    return {};
-  }
-
   selectParasha(i) {
     this.setState({
       currentParasha: i,
@@ -57,10 +30,10 @@ class Sefarim extends Component {
     const { segment: track, section: sefer } = base;
 
     const { segment_sponsor: sSpon } = base;
-    const sponsor = Array.isArray(sSpon) ? sSpon.map(l => <div key={l}>{l}</div>) : sSpon;
+    const sponsor = Array.isArray(sSpon) ? sSpon.map((l) => <div key={l}>{l}</div>) : sSpon;
     const parashaObj = parashot[currentParasha] || {};
-    const { audio_url: audioURL, unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
-    const { video_url: videoURL } = parashaObj;
+    const { unit_name: parashaN, unit_title: parashaT, unit: parasha } = parashaObj;
+    const { audio_url: audioURL, video_url: videoURL } = parashaObj;
 
     const hasVideo = !!videoURL;
 
