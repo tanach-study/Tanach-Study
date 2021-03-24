@@ -176,17 +176,17 @@
     {
       "name": "Masechet Bava Batra",
       "url": "/mishna-study/masechet/nezikin/bava-batra",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Sanhedrin",
       "url": "/mishna-study/masechet/nezikin/sanhedrin",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Makkot",
       "url": "/mishna-study/masechet/nezikin/makkot",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Shevuot",
