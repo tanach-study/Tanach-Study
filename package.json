@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A Gatsbyjs/React-based client app for the Tanach Study Program",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "build": "gatsby build",
     "clean": "rm -rf dist && rm -rf node_modules && rm -f package-lock.json && rm -rf .cache && rm -rf public",
@@ -20,29 +21,29 @@
   "author": "Joey Pinhas",
   "license": "MIT",
   "engines": {
-    "node": "12.16.1",
-    "npm": "6.13.4"
+    "node": "v17.0.1",
+    "npm": "8.1.0"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.24.10",
+    "dotenv": "^10.0.0",
+    "gatsby": "^4.4.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.4.20",
-    "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-plugin-s3": "^0.3.4",
+    "gatsby-plugin-manifest": "^4.4.0",
+    "gatsby-plugin-react-helmet": "^5.4.0",
+    "gatsby-plugin-s3": "^0.3.8",
     "materialize-css": "^1.0.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.0",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "eslint": "7.5.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "2.22.0",
-    "eslint-plugin-jsx-a11y": "6.3.1",
-    "eslint-plugin-react": "7.20.3"
+    "eslint": "8.5.0",
+    "eslint-config-airbnb": "^19.0.2",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-react": "7.27.1"
   },
   "jest": {
     "moduleNameMapper": {
