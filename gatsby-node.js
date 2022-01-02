@@ -4,10 +4,6 @@ const log = require('./lib/logger.js');
 
 const { API_URL } = process.env;
 
-const { onCreateWebpackConfig } = require('./lib/webpack-config-fix.js');
-
-exports.onCreateWebpackConfig = onCreateWebpackConfig;
-
 function teacherComparator(t1, t2) {
   if (t1.lname > t2.lname) {
     return 1;
