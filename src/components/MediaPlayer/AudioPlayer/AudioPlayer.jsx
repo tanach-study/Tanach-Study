@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AudioContent from './AudioContent.jsx';
-import styles from './AudioPlayer.module.css';
+import { tabsContainer } from './AudioPlayer.module.css';
 
 function AudioPlayer(props) {
   const { className, url, name, title, part, tabs } = props;
@@ -31,7 +31,7 @@ function AudioPlayer(props) {
         />
         {tabs && (
           <div className='card-tabs'>
-            <ul className={`tabs tabs-fixed-width ${styles['tabs-container']}`}>
+            <ul className={`tabs tabs-fixed-width ${tabsContainer}`}>
               {tabs}
             </ul>
           </div>

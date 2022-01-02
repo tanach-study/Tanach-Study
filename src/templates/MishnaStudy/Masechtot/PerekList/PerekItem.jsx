@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import styles from './PerekItem.module.css';
+import { perekLink } from './PerekItem.module.css';
 
 const MishnaPerekItem = (props) => {
   const { perek, seder, masechet } = props;
@@ -9,7 +9,7 @@ const MishnaPerekItem = (props) => {
   const url = `/mishna-study/perek/${seder}/${masechet}/${perek}`;
   return (
     <div className='col l4 m6 s12'>
-      <Link to={url} className={styles['perek-link']}>
+      <Link to={url} className={perekLink}>
         <div className='card hoverable full-width'>
           <div className='card-content'>
             <p>{perekName}</p>

@@ -5,7 +5,7 @@ import MediaPlayer from '../../../components/MediaPlayer/MediaPlayer.jsx';
 import TeamimCard from './TeamimCard.jsx';
 import Tanach from '../../../components/Tanach/Tanach.jsx';
 
-import styles from './NachPerek.module.css';
+import { activePart } from './NachPerek.module.css';
 
 import { ProgramContext } from '../../../app-context.js';
 
@@ -68,7 +68,7 @@ class NachPerek extends Component {
             <li className='tab' key={`${perekN} ${p.part}`}>
               <div
                 onClick={() => this.selectPart(i)}
-                className={`${partIndex === i ? styles['active-part'] : ''} tsblue-text`}
+                className={`${partIndex === i ? activePart : ''} tsblue-text`}
               >
                 {`Part ${p.part.toUpperCase()}`}
               </div>

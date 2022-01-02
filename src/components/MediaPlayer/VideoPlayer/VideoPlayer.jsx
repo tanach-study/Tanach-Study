@@ -1,7 +1,7 @@
 import React from 'react';
 
 import VideoContent from './VideoContent.jsx';
-import styles from './VideoPlayer.module.css';
+import { tabsContainer } from './VideoPlayer.module.css';
 
 function VideoPlayer(props) {
   const { className, url, name, title, part, tabs } = props;
@@ -33,7 +33,7 @@ function VideoPlayer(props) {
         />
         {tabs && (
           <div className='card-tabs'>
-            <ul className={`tabs tabs-fixed-width ${styles['tabs-container']}`}>
+            <ul className={`tabs tabs-fixed-width ${tabsContainer}`}>
               {tabs}
             </ul>
           </div>

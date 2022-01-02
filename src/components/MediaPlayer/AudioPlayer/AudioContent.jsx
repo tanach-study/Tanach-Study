@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-import styles from './AudioPlayer.module.css';
+import { speedSelector } from './AudioPlayer.module.css';
 
 function AudioContent(props) {
   const { className, nowPlaying, title, image, teacher, bio, src } = props;
@@ -30,7 +30,7 @@ function AudioContent(props) {
       <div className='row'>
         <audio src={src} controls className='col l12 m12 s12' ref={audioPlayer} />
       </div>
-      <select className={styles['speed-selector']} value={speed} onChange={handleSpeedChange}>
+      <select className={speedSelector} value={speed} onChange={handleSpeedChange}>
         <option value='0.5'>0.5x</option>
         <option value='0.75'>0.75x</option>
         <option value='0.9'>0.9x</option>
