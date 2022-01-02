@@ -5,7 +5,7 @@ import AudioContent from './AudioPlayer/AudioContent.jsx';
 import VideoPlayer from './VideoPlayer/VideoPlayer.jsx';
 import VideoContent from './VideoPlayer/VideoContent.jsx';
 
-import styles from './MediaPlayer.module.css';
+import { activeTab, tabContent, tabLi } from './MediaPlayer.module.css';
 
 function MediaPlayer(props) {
   const { className, type } = props;
@@ -35,19 +35,19 @@ function MediaPlayer(props) {
     const Content = isVideo ? VideoContent : AudioContent;
     const src = isVideo ? videoURL : audioURL;
 
-    const liClass = `tab psplusgreen-text col l6 m6 s6 ${styles['tab-li']}`;
+    const liClass = `tab psplusgreen-text col l6 m6 s6 ${tabLi}`;
     return (
       <div className={className}>
         <div className='card'>
           <div className='card-tabs'>
             <ul className='tabs'>
-              <li className={`${liClass} ${!isVideo && styles['active-tab']}`}>
-                <div className={styles['tab-content']} onClick={() => selectType('audio')}>
+              <li className={`${liClass} ${!isVideo && activeTab}`}>
+                <div className={tabContent} onClick={() => selectType('audio')}>
                   Audio
                 </div>
               </li>
-              <li className={`${liClass} ${isVideo && styles['active-tab']}`}>
-                <div className={styles['tab-content']} onClick={() => selectType('video')}>
+              <li className={`${liClass} ${isVideo && activeTab}`}>
+                <div className={tabContent} onClick={() => selectType('video')}>
                   Video
                 </div>
               </li>

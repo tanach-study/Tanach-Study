@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ProgramContext } from '../../app-context.js';
 
-import styles from './Tanach.module.css';
+import { activePart, partTab } from './Tanach.module.css';
 
 // helper function to convert a hex value to rgb
 // obtained from https://stackoverflow.com/a/5624139
@@ -18,7 +18,7 @@ function hexToRgb(hex) {
 
 function TabItem(props) {
   const { key, isActive, click, content, className } = props;
-  const activeClass = isActive ? styles['active-part'] : '';
+  const activeClass = isActive ? activePart : '';
   const extraClass = className || '';
   return (
     <ProgramContext.Consumer>
@@ -34,7 +34,7 @@ function TabItem(props) {
         return (
           <li
             key={key}
-            className={`tab ${styles['part-tab']} ${text} ${activeClass} clickable ${extraClass}`}
+            className={`tab ${partTab} ${text} ${activeClass} clickable ${extraClass}`}
             onClick={click}
             style={isActive ? activeStyle : {}}
           >

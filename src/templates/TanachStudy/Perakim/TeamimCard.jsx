@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TeamimItem from './TeamimItem.jsx';
 
-import styles from './TeamimItem.module.css';
+import { activeReader, tabsContainer } from './TeamimItem.module.css';
 
 import { ProgramContext } from '../../../app-context.js';
 
@@ -24,7 +24,6 @@ class ReaderCard extends Component {
     const { teamim } = this.props;
     const { selectedItem } = this.state;
 
-    const active = styles['active-reader'];
     if (teamim) {
       if (Array.isArray(teamim)) {
         if (teamim.length > 1) {
@@ -34,7 +33,7 @@ class ReaderCard extends Component {
                 <li className='tab' key={item.url}>
                   <div
                     onClick={() => this.handleClick(i)}
-                    className={`${selectedItem === i ? active : ''} ${theme.textClass}`}
+                    className={`${selectedItem === i ? activeReader : ''} ${theme.textClass}`}
                   >
                     {item.reader_title} {item.reader_lname}
                   </div>
@@ -51,7 +50,7 @@ class ReaderCard extends Component {
                   />
                 </div>
                 <div className='card-tabs'>
-                  <ul className={`tabs tabs-fixed-width ${styles['tabs-container']}`}>
+                  <ul className={`tabs tabs-fixed-width ${tabsContainer}`}>
                     {teamimTabs}
                   </ul>
                 </div>

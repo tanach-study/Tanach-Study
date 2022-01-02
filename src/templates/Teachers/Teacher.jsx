@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../../layouts/main.jsx';
-import styles from './Teacher.module.css';
+import { teacherTitle } from './Teacher.module.css';
 
 class Teacher extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class Teacher extends Component {
                     <img src={url} alt='' className='responsive-img full-width circle' />
                   </div>
                   <div className='col l8 m8 s12 valign'>
-                    <h2 className={styles['teacher-title']}>{teacherString}</h2>
+                    <h2 className={teacherTitle}>{teacherString}</h2>
                     <div><i>{short}</i></div>
                   </div>
                 </div>
