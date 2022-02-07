@@ -27,11 +27,12 @@ class Sefarim extends Component {
         teachers.push({ title, fname, mname, lname, shortBio, longBio, image });
       }
     });
+    const seferSponsor = data[0].section_sponsor.split('\\n');
     this.state = {
       seferName: sefer,
       units: Array.from(units),
       seferTitle: data[0].section_title,
-      seferSponsor: data[0].section_sponsor,
+      seferSponsor: seferSponsor.length > 1 ? seferSponsor : seferSponsor[0],
       part: data[0].division,
       activeIndex: 0,
       teachers,
@@ -75,7 +76,7 @@ class Sefarim extends Component {
     });
 
     const sponsor = Array.isArray(seferSponsor)
-      ? seferSponsor.map(l => <div key={l}>{l}</div>)
+      ? seferSponsor.map(l => <h4 className='no-margin' key={l}>{l}</h4>)
       : seferSponsor;
 
     return (
