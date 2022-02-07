@@ -66,7 +66,7 @@ class Perakim extends Component {
       ? divisionSponsor.map(l => <div key={l}>{l}</div>)
       : divisionSponsor;
     const mishna = mishnayot[currentMishna] || {};
-    const { audio_url: url } = mishna;
+    const { audio_url: audioURL, video_url: videoURL } = mishna;
 
     const { part_name: partN, part_title: partT, part } = mishna;
     const { teacher_title: teacherT,
@@ -110,8 +110,9 @@ class Perakim extends Component {
               className='col l6 m6 s12 collection'
             />
             <MediaPlayer
-              type='audio'
-              url={url}
+              type='combo'
+              audioURL={audioURL}
+              videoURL={videoURL}
               name={partN}
               title={partT}
               part={part}
