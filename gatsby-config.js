@@ -1,13 +1,15 @@
 const dotenv = require('dotenv');
 const log = require('./lib/logger.js');
 
-const { NODE_ENV, TRAVIS_BRANCH } = process.env;
+const { NODE_ENV, TRAVIS_BRANCH, GITHUB_REF } = process.env;
 
 if (NODE_ENV !== 'production') {
   dotenv.config({ silent: false });
 }
 
-const bucket = TRAVIS_BRANCH === 'master' ? 'app.tanachstudy.com' : 'beta.tanachstudy.com';
+const travisBucket = TRAVIS_BRANCH === 'master' ? 'app.tanachstudy.com' : '';
+const githubBucket = GITHUB_REF === 'refs/heads/master' ? 'app.tanachstudy.com' : '';
+const bucket = travisBucket || githubBucket || 'beta.tanachstudy.com';
 log.info('bucket to deploy to:', bucket);
 
 module.exports = {
