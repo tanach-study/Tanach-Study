@@ -108,7 +108,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   for (let i = 0; i < rawData.length; i++) {
     const curr = rawData[i] || {};
-    const { division, segment, section, unit } = curr;
+    const { division, segment, section, unit, teacher_lname } = curr;
+    // skip anything that doesn't have a real teacher defined
+    if (teacher_lname === 'Testing') {
+      continue
+    }
     switch (division) {
       case 'torah':
         // section is the sefer

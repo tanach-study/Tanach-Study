@@ -1,11 +1,20 @@
 import React from 'react';
+import { navigate } from "gatsby";
 
 import Layout from '../layouts/main.jsx';
 
+function goBack() {
+  navigate(-1);
+}
+
 const NotFoundPage = ({ location }) => (
   <Layout location={location}>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div className='container'>
+      <div className='section center'>
+        <h3>This page doesn't exist</h3>
+        <p>Sorry about that!</p>
+      </div>
+    </div>
   </Layout>
 );
 
