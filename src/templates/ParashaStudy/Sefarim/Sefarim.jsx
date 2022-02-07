@@ -27,7 +27,8 @@ class Sefarim extends Component {
         teachers.push({ title, fname, mname, lname, shortBio, longBio, image });
       }
     });
-    const seferSponsor = data[0].section_sponsor.split('\\n');
+    let seferSponsor = data[0].section_sponsor || '';
+    seferSponsor = seferSponsor.split('\\n');
     this.state = {
       seferName: sefer,
       units: Array.from(units),
