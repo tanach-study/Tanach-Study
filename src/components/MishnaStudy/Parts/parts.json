@@ -20,37 +20,37 @@
     {
       "name": "Masechet Demai",
       "url": "/mishna-study/masechet/zeraim/demai",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Kilayim",
       "url": "/mishna-study/masechet/zeraim/kilayim",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Sheviit",
       "url": "/mishna-study/masechet/zeraim/sheviit",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Terumot",
       "url": "/mishna-study/masechet/zeraim/terumot",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Maasrot",
       "url": "/mishna-study/masechet/zeraim/maasrot",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Maaser Sheni",
       "url": "/mishna-study/masechet/zeraim/maaser-sheni",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Halla",
       "url": "/mishna-study/masechet/zeraim/halla",
-      "active": false
+      "active": true
     },
     {
       "name": "Masechet Orla",
