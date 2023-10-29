@@ -9,8 +9,8 @@
     "deploy": "gatsby-plugin-s3 deploy",
     "develop": "NODE_ENV=development gatsby develop",
     "lint": "eslint './src/**/*.js' './src/**/*.jsx'",
-    "lint:fix": "npm run lint -- --fix",
-    "start": "npm run develop",
+    "lint:fix": "yarn run lint -- --fix",
+    "start": "yarn run develop",
     "serve": "gatsby serve"
   },
   "repository": {
@@ -49,5 +49,6 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
       "\\.(css|less)$": "<rootDir>/test/__mocks__/styleMock.js"
     }
-  }
+  },
+  "packageManager": "yarn@4.0.1"
 }
