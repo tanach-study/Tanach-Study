@@ -15,7 +15,7 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version-file: 'package.json'
-    - run: yarn install --frozen-lockfile
+    - run: yarn install
     - run: yarn run build
       env:
         API_URL: ${{ secrets.API_URL }}
