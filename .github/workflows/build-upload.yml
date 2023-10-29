@@ -12,10 +12,9 @@ jobs:
     timeout-minutes: 3
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js 20.0.0
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
-        node-version: 20
+        node-version-file: 'package.json'
     - run: yarn install --frozen-lockfile
     - run: yarn run build
       env:

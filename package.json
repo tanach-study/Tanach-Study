@@ -20,8 +20,8 @@
   "author": "Joey Pinhas",
   "license": "MIT",
   "engines": {
-    "node": "v20.0.0",
-    "npm": "v9.6.4"
+    "node": "v20.9.0",
+    "yarn": "v4.0.1"
   },
   "dependencies": {
     "dotenv": "16.0.3",
