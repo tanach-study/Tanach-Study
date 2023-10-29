@@ -7,7 +7,7 @@ if (NODE_ENV !== 'production') {
   dotenv.config({ silent: false });
 }
 
-const bucket = GITHUB_REF === 'refs/heads/master' ? 'app.tanachstudy.com' : 'beta.tanachstudy.com';
+const bucket = GITHUB_REF === 'refs/heads/gatsby' ? 'app.tanachstudy.com' : 'beta.tanachstudy.com';
 log.info('bucket to deploy to:', bucket);
 
 module.exports = {
