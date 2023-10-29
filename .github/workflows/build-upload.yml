@@ -2,7 +2,7 @@ name: Build & Upload Gatsby
 
 on:
   push:
-    branches: [ master ]
+    branches: [ gatsby ]
   schedule:
     - cron: '10 2,14 * * *'
 
